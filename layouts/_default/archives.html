@@ -1,40 +1,36 @@
 {{ define "main" }}
 <header class="page-header">
-    <h1 style="font-family: 'SimSun'; font-weight: 500; text-shadow: 0.2px 0.2px 0.2px rgba(34,34,34,0.4);">{{ .Title }}</h1>
+    <h1 class="simsun-bold">{{ .Title }}</h1>
 </header>
 
-<div class="archive-container">
-    {{/* 情况 A：如果你创建了子文件夹（如 archives/cpp/） */}}
-    {{- range .Sections }}
-    <div class="archive-card">
-        <h2 class="archive-big-title">{{ .Title }}</h2>
-        <ul class="archive-posts">
-            {{- range .Pages }}
-            <li class="archive-entry">
-                <a href="{{ .Permalink }}">
-                    <span class="entry-date">{{ .Date.Format "2006-01-02" }}</span>
-                    <span class="entry-title">{{ .Title }}</span>
-                </a>
-            </li>
-            {{- end }}
-        </ul>
-    </div>
-    {{- end }}
-
-    {{/* 情况 B：如果你直接把 md 文件放在 archives/ 目录下 */}}
-    {{- if .RegularPages }}
-    <div class="archive-card">
-        <h2 class="archive-big-title">未分类笔记</h2>
-        <ul class="archive-posts">
-            {{- range .RegularPages }}
-            <li class="archive-entry">
-                <a href="{{ .Permalink }}">
-                    <span class="entry-date">{{ .Date.Format "2006-01-02" }}</span>
-                    <span class="entry-title">{{ .Title }}</span>
-                </a>
-            </li>
-            {{- end }}
-        </ul>
+<div class="tree-archive-container">
+    {{- range .Sections }} {{/* 遍历一级：如 LeetCode, C++ 笔记 */}}
+    <div class="glass-section-level-1">
+        <h2 class="archive-title-l1"># {{ .Title }}</h2>
+        
+        {{- range .Sections }} {{/* 遍历二级：如 栈, 哈希 */}}
+        <div class="glass-section-level-2">
+            <h3 class="archive-title-l2">📁 {{ .Title }}</h3>
+            
+            <div class="archive-sub-grid">
+                {{- range .Sections }} {{/* 遍历三级：如 easy, medium */}}
+                <div class="glass-section-level-3">
+                    <h4 class="archive-title-l3">{{ .Title | upper }}</h4>
+                    <ul class="archive-list">
+                        {{- range .Pages }}
+                        <li>
+                            <a href="{{ .Permalink }}">
+                                <span class="date">{{ .Date.Format "01-02" }}</span>
+                                <span class="title">{{ .Title }}</span>
+                            </a>
+                        </li>
+                        {{- end }}
+                    </ul>
+                </div>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
     </div>
     {{- end }}
 </div>

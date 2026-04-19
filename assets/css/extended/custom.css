@@ -233,3 +233,89 @@ details.toc summary {
     padding: 5px;
     outline: none;
 }
+
+/* 容器布局 */
+.tree-archive-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* 一级大卡片：全透明磨砂 */
+.glass-section-level-1 {
+    padding: 20px;
+}
+
+.archive-title-l1 {
+    font-family: "SimSun", serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--primary);
+    border-bottom: 2px solid #eee;
+    margin-bottom: 25px;
+}
+
+/* 二级卡片：玻璃质感容器 */
+.glass-section-level-2 {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.archive-title-l2 {
+    font-family: "SimSun", serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 三级布局：非对称 Grid 风格 */
+.archive-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.glass-section-level-3 {
+    background: rgba(255, 255, 255, 0.3);
+    border-left: 3px solid #6496ff; /* 对应你背景球的蓝色，起到标记作用 */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.archive-title-l3 {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.archive-list {
+    list-style: none;
+    padding: 0;
+}
+
+.archive-list li a {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--primary);
+    padding: 4px 0;
+    transition: 0.2s;
+}
+
+.archive-list li a:hover {
+    color: #6496ff;
+    transform: translateX(5px);
+}
+
+.archive-list li a .date {
+    font-family: monospace;
+    color: #bbb;
+    font-size: 0.8rem;
+}
