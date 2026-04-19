@@ -1,0 +1,33 @@
+<!doctype html><html lang=en dir=auto data-theme=light><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>C++ | 榎aaaa的个人主页</title><meta name=keywords content><meta name=description content="图形学、C++ 渲染与游戏引擎开发笔记"><meta name=author content="榎aaaa"><link rel=canonical href=https://JiaT-T.github.io/categories/c++/><link crossorigin=anonymous href=/assets/css/stylesheet.4b32121bb7dda8819c97f2da9842bd2ffa3f918bfb6619b23a92a87c9f6d3855.css integrity="sha256-SzISG7fdqIGcl/LamEK9L/o/kYv7ZhmyOpKofJ9tOFU=" rel="preload stylesheet" as=style><link rel=icon href=https://JiaT-T.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://JiaT-T.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://JiaT-T.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://JiaT-T.github.io/apple-touch-icon.png><link rel=mask-icon href=https://JiaT-T.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://JiaT-T.github.io/categories/c++/index.xml title=rss><link rel=alternate hreflang=en href=https://JiaT-T.github.io/categories/c++/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="https://JiaT-T.github.io/categories/c++/"><meta property="og:site_name" content="榎aaaa的个人主页"><meta property="og:title" content="C++"><meta property="og:description" content="图形学、C++ 渲染与游戏引擎开发笔记"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="C++"><meta name=twitter:description content="图形学、C++ 渲染与游戏引擎开发笔记"></head><body class=list id=top><header class=header><nav class=header-nav><div class=logo><a href=https://JiaT-T.github.io/ accesskey=h title="榎aaaa的个人主页 (Alt + H)">榎aaaa的个人主页</a></div><ul id=menu class=menu><li><a href=https://JiaT-T.github.io/posts/ title=所有文章><span>所有文章</span></a></li><li><a href=https://JiaT-T.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://JiaT-T.github.io/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><h1>C++</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Fundamentals of Cpp：现代 C++ 核心笔记</h2></header><div class=entry-content><p>这里是整理的一些c++基础知识….
+就这样吧….
+语法—————————————————— 1.C++的三大特性 封装，继承，多态（同时也是面向对象编程的三大特性）
+1).简要解释一下上面三者 ·封装：隐藏内部具体的实现细节，对外部只暴露必要的接口来访问对象
+·继承：允许一个类从另一个类继承属性和方法，从而实现代码复用和层次化抽象
+·多态：同一个函数名拥有多种状态，或是同一个接口具有不同的行为
+** LINK：**
+如何理解面向对象编程三大特性——封装、继承、多态
+2).多态的类别 ·运行时多态（动态联编）：通过重载和模板实现
+·编译时多态（静态联编）：通过继承和虚函数实现
+2.虚函数 简单来说，虚函数就是允许在基类（父类）中定义一个函数，并允许派生类（子类）对其进行重写 (Override)
+1).虚函数的实现机制 ·通过虚函数表实现，虚函数表是一个由编译器生成的静态数组，位于类的全局静态内存区中，包含了一个类所有的虚函数的地址（即该类所有虚函数的入口）
+·在类对象（不是类！）内存空间的头部，有一个虚函数表指针，它指向该类虚函数表的首地址
+·当子类对象对父类虚函数进行重写的时候，虚函数表中相应的虚函数的地址会被更改为重写后的虚函数地址
+2).虚函数调用是在编译时确定还是运行时确定的？如何确定调用哪个函数？ ·一般来说是在运行时确定，可以通过虚函数表中的地址来确定调用什么函数
+3).能否在基类的构造函数和析构函数中调用虚函数？ ·在语法上来说没有问题，但是在实际调用时，无法实现多态的效果，因为构造函数会先初始化基类的成员，而此时子类的成员还是一片空白，如果这时使用子类中还未被初始化的成员，会出现错误；同理，析构函数是先从子类开始析构，如果在基类的析构函数中调用虚函数的话，因为此时子类已经被析构，是无法调用其特有成分的
+4).当一个类需要被继承是，它的析构函数必须是虚函数 如果基类的析构函数不为虚函数，那么当对派生类对象进行删除（delete）操作时，就只会调用基类的析构函数，这会导致内存泄漏；
+而当基类包含虚析构函数时，在同样的情况下，编译器会先查询虚函数表，并调用对应的析构函数
+3.C++的内存管理 1).C++有哪些内存区域 ·栈：由编译器自动分配与释放，多用于存储局部变量；速度极快，但空间有限（通常只有几MB）
+·堆：需要手动控制生存周期， 从 new 或 malloc 开始，直到 delete 或 free；空间极大，分配位置不连续
+·全局/静态存储区： 存储全局变量和静态变量，在程序启动时分配，程序退出时才释放 ；
+.data 段：存储已初始化的全局/静态变量。
+.bss 段：存储未初始化的全局/静态变量（自动初始化****为 0）。
+·常量存储区： 存储只读数据
+·自由存储区：通过new和delete分配和释放空间的内存，具体实现可能是堆或者内存池
+·代码区：存储经过编译之后的机器指令（二进制代码）
+Link:
+C++内存管理 - 还没放弃的老张 - 博客园
+...</p></div><footer class=entry-footer><span title='2026-04-19 00:00:00 +0000 UTC'>April 19, 2026</span>&nbsp;·&nbsp;<span>榎aaaa</span></footer><a class=entry-link aria-label="post link to Fundamentals of Cpp：现代 C++ 核心笔记" href=https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://JiaT-T.github.io/>榎aaaa的个人主页</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script></body></html>
