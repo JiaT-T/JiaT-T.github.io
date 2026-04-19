@@ -4,34 +4,57 @@
 </header>
 
 <div class="tree-archive-container">
-    {{- range .Sections }} {{/* 遍历一级：如 LeetCode, C++ 笔记 */}}
-    <div class="glass-section-level-1">
-        <h2 class="archive-title-l1"># {{ .Title }}</h2>
+    {{/* 关键：使用 site.Sections 抓取 content 目录下所有的文件夹（如 leetcode, posts） */}}
+    {{- range site.Sections }} 
         
-        {{- range .Sections }} {{/* 遍历二级：如 栈, 哈希 */}}
-        <div class="glass-section-level-2">
-            <h3 class="archive-title-l2">📁 {{ .Title }}</h3>
+        {{/* 过滤掉不需要显示的页面，比如搜索页 */}}
+        {{- if ne .Section "search" }}
+        
+        <div class="glass-section-level-1">
+            <h2 class="archive-title-l1"># {{ .Title }}</h2>
             
-            <div class="archive-sub-grid">
-                {{- range .Sections }} {{/* 遍历三级：如 easy, medium */}}
-                <div class="glass-section-level-3">
-                    <h4 class="archive-title-l3">{{ .Title | upper }}</h4>
-                    <ul class="archive-list">
-                        {{- range .Pages }}
-                        <li>
-                            <a href="{{ .Permalink }}">
-                                <span class="date">{{ .Date.Format "01-02" }}</span>
-                                <span class="title">{{ .Title }}</span>
-                            </a>
-                        </li>
-                        {{- end }}
-                    </ul>
+            {{/* 递归遍历二级目录：如 栈, 链表 */}}
+            {{- range .Sections }}
+            <div class="glass-section-level-2">
+                <h3 class="archive-title-l2">📁 {{ .Title }}</h3>
+                
+                <div class="archive-sub-grid">
+                    {{/* 递归遍历三级目录：如 easy, medium */}}
+                    {{- range .Sections }}
+                    <div class="glass-section-level-3">
+                        <h4 class="archive-title-l3">{{ .Title | upper }}</h4>
+                        <ul class="archive-list">
+                            {{- range .Pages }}
+                            <li>
+                                <a href="{{ .Permalink }}">
+                                    <span class="date">{{ .Date.Format "01-02" }}</span>
+                                    <span class="title">{{ .Title }}</span>
+                                </a>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </div>
+                    {{- end }}
+
+                    {{/* 处理二级目录下直接放的文章（没有三级文件夹的情况） */}}
+                    {{- if .RegularPages }}
+                    <div class="glass-section-level-3">
+                        <ul class="archive-list">
+                            {{- range .RegularPages }}
+                            <li>
+                                <a href="{{ .Permalink }}">
+                                    <span class="title">{{ .Title }}</span>
+                                </a>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </div>
+                    {{- end }}
                 </div>
-                {{- end }}
             </div>
+            {{- end }}
         </div>
         {{- end }}
-    </div>
     {{- end }}
 </div>
 {{ end }}

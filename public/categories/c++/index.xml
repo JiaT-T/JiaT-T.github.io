@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/categories/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fundamentals of Cpp：现代 C&#43;&#43; 核心笔记</title>
-      <link>http://localhost:1313/posts/cpp-fundamentals/</link>
+      <link>http://localhost:1313/posts/cpp-fundamentals/cpp-fundamentals/</link>
       <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cpp-fundamentals/</guid>
+      <guid>http://localhost:1313/posts/cpp-fundamentals/cpp-fundamentals/</guid>
       <description>涵盖从 C&#43;&#43;11 到 C&#43;&#43;23 的核心特性，包含内存管理、RAII 及底层架构思考。</description>
     </item>
   </channel>
