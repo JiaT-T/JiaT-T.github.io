@@ -1,0 +1,235 @@
+/* ============================================================
+   1. 核心颜色与排版 (纯净明亮模式)
+   ============================================================ */
+:root {
+    --primary: #222222;     /* 主标题与正文：深黑 */
+    --secondary: #666666;   /* 日期与元数据：深灰 */
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    background-color: #fafafa;
+    color: var(--primary) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .post-title, .post-content {
+    color: var(--primary) !important;
+}
+
+.entry-hint-parent, .post-meta {
+    color: var(--secondary) !important;
+}
+
+/* ============================================================
+   2. 背景装饰球 (果粉氛围感)
+   ============================================================ */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    filter: blur(70px);
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
+}
+body::before { top: -100px; left: -100px; background: radial-gradient(circle, #6496ff 0%, transparent 70%); }
+body::after { bottom: -100px; right: -100px; background: radial-gradient(circle, #ff64c8 0%, transparent 70%); }
+
+/* ============================================================
+   3. 主页非对称布局 (桌面端)
+   ============================================================ */
+@media (min-width: 768px) {
+    .profile_inner {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-areas: "tl tr" "bb bb";
+        gap: 25px;
+        text-align: left !important;
+        align-items: start;
+        margin-top: 40px;
+    }
+    .profile_inner > :nth-child(1) { grid-area: tl; } 
+    .profile_inner .buttons { grid-area: tr; justify-content: flex-end !important; } 
+    
+    /* 滑动介绍框 */
+    .profile_inner .profile_description {
+        grid-area: bb;
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 20px;
+        border-radius: 16px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+        color: var(--primary) !important;
+    }
+}
+
+/* ============================================================
+   4. 代码块：经典深色背景 (类似 VS Code)
+   ============================================================ */
+.post-content pre, .post-content code {
+    background: #1e1e1e !important;
+    color: #d4d4d4 !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+/* 语法高亮颜色微调 */
+.post-content .chroma .k { color: #569cd6 !important; } /* 关键字蓝 */
+.post-content .chroma .s { color: #ce9178 !important; } /* 字符串红 */
+.post-content .chroma .c { color: #6a9955 !important; } /* 注释绿 */
+
+.post-content .ln {
+    background: transparent !important;
+    color: #888 !important;
+    padding-right: 15px !important;
+}
+
+/* ============================================================
+   5. 导航栏与组件玻璃化
+   ============================================================ */
+.header {
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    background: var(--glass-bg) !important;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.custom-collapse {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--primary) !important;
+}
+
+/* ============================================================
+   6. 多级归档页 (Archives) 适配
+   ============================================================ */
+.archive-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* 玻璃质感大卡片 */
+.archive-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+}
+
+.archive-big-title {
+    font-family: "SimSun", serif !important;
+    font-weight: 500;
+    font-size: 1.6rem;
+    border-bottom: 1.5px solid var(--primary);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-shadow: 0.2px 0.2px 0.2px rgba(34,34,34,0.4);
+}
+
+.archive-small-title {
+    font-family: "SimSun", serif !important;
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--secondary) !important;
+    margin: 15px 0 10px 10px;
+}
+
+.archive-small-title::before {
+    content: "◈";
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.archive-posts {
+    list-style: none;
+    padding-left: 25px;
+}
+
+.archive-entry a {
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: all 0.2s ease;
+}
+
+.archive-entry a:hover {
+    transform: translateX(8px);
+    color: #6496ff !important; /* 悬浮色贴合你的背景装饰球颜色 */
+}
+
+.entry-date {
+    font-family: monospace; /* 强制日期等宽 */
+    color: var(--secondary);
+    min-width: 90px;
+}
+
+/* ============================================================
+   7. 目录 (TOC) 磨砂玻璃样式适配
+   ============================================================ */
+.toc {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin: 20px 0 30px 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+}
+
+/* 目录标题：强制宋体与物理加粗 */
+.toc .toctitle h2 {
+    font-family: "SimSun", serif !important;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-shadow: 0.2px 0.2px 0.2px rgba(34,34,34,0.4);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 5px;
+}
+
+/* 目录链接样式 */
+.toc ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.toc ul li {
+    margin: 6px 0;
+}
+
+.toc ul li a {
+    color: var(--primary) !important;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* 悬浮效果：变色并微调位移 */
+.toc ul li a:hover {
+    color: #6496ff !important; /* 匹配你背景球的蓝色 */
+    padding-left: 5px;
+}
+
+/* 针对 PaperMod 的折叠目录 (如果开启了 toc-open) */
+details.toc summary {
+    font-family: "SimSun", serif;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+}

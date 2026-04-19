@@ -1,0 +1,66 @@
+baseURL = "https://JiaT-T.github.io/"
+languageCode = "zh-cn"
+title = "榎aaaa的个人主页"
+theme = "PaperMod"
+
+[params]
+    env = "production"
+    title = "代码与艺术"
+    description = "图形学、C++ 渲染与游戏引擎开发笔记"
+    author = "榎aaaa"
+    defaultTheme = "light" # 允许自动切换
+    disableThemeToggle = true    # 隐藏右上角的太阳/月亮切换按钮
+    displayRGBColor = true
+
+    # 主页配置
+    [params.profileMode]
+        enabled = true
+        title = "榎aaaa"
+subtitle = """
+北京林业大学计算机专业在读，主要研究方向为计算机图形学与游戏引擎开发。
+
+具备基本的现代 C++ 基础与数据结构能力，熟悉 Git/GitHub 敏捷开发工作流。在 GitHub 上维护着多个图形学相关开源项目，包括独立实现的 C++ 软光栅引擎、路径追踪器，以及定制化的 Unity 卡通渲染管线 (Toon Shader)。
+
+持续探索 UE5 架构与高性能渲染算法，致力于成为一名优秀的图形程序员。
+"""
+        imageUrl = "images/avatar.jpg"
+        imageWidth = 100
+        imageHeight = 100
+        
+        # 按钮配置
+[[params.profileMode.buttons]]
+            name = "📚 进入笔记入口"
+            url = "/archives/"  # 这里的 URL 指向刚才创建的 archives 页面
+
+    # 社交链接（显示在名字下方）
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/JiaT-T"
+    [[params.socialIcons]]
+        name = "email"
+        url = "mailto:你的邮箱@example.com"
+
+[markup.highlight]
+    noClasses = false # 这里改为 false，我们需要用类名来控制反向颜色
+    style = "monokai" # 明亮模式下使用的深色风格
+    lineNos = true
+
+[markup.goldmark.renderer]
+    unsafe = true # 支持在 MD 中嵌套一些简单的 HTML
+
+# 顶部导航栏分类
+[[menu.main]]
+    identifier = "posts"
+    name = "所有文章"
+    url = "/posts/"
+    weight = 10
+[[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 20
+[[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 30

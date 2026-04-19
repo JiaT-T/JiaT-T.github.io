@@ -1,0 +1,9 @@
+<details class="custom-collapse">
+    <summary>
+        <span class="collapse-title">{{ .Get "title" | default "点击展开" }}</span>
+        <span class="collapse-icon">▶</span>
+    </summary>
+    <div class="collapse-content">
+        {{ .Inner | markdownify }}
+    </div>
+</details>

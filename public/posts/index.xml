@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on 榎aaaa的个人主页</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on 榎aaaa的个人主页</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Apr 2026 14:37:20 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello</title>
+      <link>http://localhost:1313/posts/hello/</link>
+      <pubDate>Sun, 19 Apr 2026 14:37:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hello/</guid>
+      <description>&lt;p&gt;榎 aaaa&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fundamentals of Cpp：现代 C&#43;&#43; 核心笔记</title>
+      <link>http://localhost:1313/posts/cpp-fundamentals/cpp-fundamentals/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/cpp-fundamentals/cpp-fundamentals/</guid>
+      <description>涵盖从 C&#43;&#43;11 到 C&#43;&#43;23 的核心特性，包含内存管理、RAII 及底层架构思考。</description>
+    </item>
+  </channel>
+</rss>
