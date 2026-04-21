@@ -5,7 +5,16 @@
 最后如果整个栈都为空，就意味着所有的括号都得到了匹配，那么就返回true
 注意：在一开始的时候，要判断一下特殊情况——
 元素个数为奇数，就意味着总会有一个括号无法被匹配，直接返回false
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 bool isValid(string s) { std::vector&lt;char> stack; if(s.size() % 2 == 1) return false; for(int n = 0; n &lt; s.size(); n++) { if(s[n] == '(' || s[n] == '[' || s[n] == '{') stack.push_back(s[n]); else { if (stack.empty()) return false; if(s[n] == ')' && stack.back() == '(') stack.pop_back(); else if(s[n] == ']' && stack.back() == '[') stack.pop_back(); else if(s[n] == '}' && stack.back() == '{') stack.pop_back(); else return false; } } if(stack.empty()) return true; return false; }</p></div><footer class=entry-footer><span>榎aaaa</span></footer><a class=entry-link aria-label="post link to " href=https://JiaT-T.github.io/leetcode/stack/easy/leetcode-20/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://JiaT-T.github.io/>榎aaaa的个人主页</a></span> ·
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 bool isValid(string s) { std::vector&lt;char> stack; if(s.size() % 2 == 1) return false; for(int n = 0; n &lt; s.size(); n++) { if(s[n] == '(' || s[n] == '[' || s[n] == '{') stack.push_back(s[n]); else { if (stack.empty()) return false; if(s[n] == ')' && stack.back() == '(') stack.pop_back(); else if(s[n] == ']' && stack.back() == '[') stack.pop_back(); else if(s[n] == '}' && stack.back() == '{') stack.pop_back(); else return false; } } if(stack.empty()) return true; return false; }</p></div><footer class=entry-footer><span>榎aaaa</span></footer><a class=entry-link aria-label="post link to " href=https://JiaT-T.github.io/leetcode/stack/easy/leetcode-stack-easy/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent></h2></header><div class=entry-content><p>第一百五十五题：最小栈 对这个类需要完成的任务有五个：
+1.初始化 2.入栈 3.出栈 4.获取栈顶元素 5.获取最小值
+因为初始的时候没有元素需要初始化，所以这个类的构造函数不需要去管他
+通过在这个类中构建一个STL自带的stack，就可以实现234的操作，而5则需要再使用一个辅助栈，这题的难点也是在5
+题目要求在常数时间内检索到最小值，所以一个一个去遍历肯定是不行的，这也是引入辅助栈的原因，我们可以通过不断地将更小的元素压入这个辅助栈（minst），来达到”栈顶的元素肯定是最小“的条件；之后如果需要取出最小元素的话，只需要对minst进行一次出栈操作即可
+具体实现：
+1.当有元素传入时，如果此时minst为空，就直接入栈，此后入栈的元素都是当前栈顶元素与传入元素的更小值
+2.出栈操作也应该是两者同时进行的，因为最小值需要根据st的元素动态更新（假如此时st的栈顶就是最小元素，而下一步操作就是出栈，那么之后栈中的最小元素也应该发生变化）
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 class MinStack { public: std::stack&lt;int> minst; std::stack&lt;int> st; MinStack() { } void push(int val) { st.push(val); if(minst.empty()) minst.push(val); else minst.push(std::min(val, minst.top())); } void pop() { minst.pop(); st.pop(); } int top() { return st.top(); } int getMin() { return minst.top(); } }; 第三百九十四题：字符串解码 使用到的是栈和递归
+...</p></div><footer class=entry-footer><span>榎aaaa</span></footer><a class=entry-link aria-label="post link to " href=https://JiaT-T.github.io/leetcode/stack/easy/leetcode-stack-medium/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://JiaT-T.github.io/>榎aaaa的个人主页</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
