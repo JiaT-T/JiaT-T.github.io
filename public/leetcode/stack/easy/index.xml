@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>榎aaaa的个人主页</title>
+    <title>easy on 榎aaaa的个人主页</title>
     <link>http://localhost:1313/leetcode/stack/easy/</link>
-    <description>Recent content on 榎aaaa的个人主页</description>
+    <description>Recent content in easy on 榎aaaa的个人主页</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <atom:link href="http://localhost:1313/leetcode/stack/easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>http://localhost:1313/leetcode/stack/easy/leetcode-20/</link>
+      <title>20</title>
+      <link>http://localhost:1313/leetcode/stack/easy/leetcode-stack-easy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/leetcode/stack/easy/leetcode-20/</guid>
+      <guid>http://localhost:1313/leetcode/stack/easy/leetcode-stack-easy/</guid>
       <description>&lt;h4 id=&#34;第二十题&#34;&gt;&lt;font style=&#34;color:#DF2A3F;&#34;&gt;第二十题&lt;/font&gt;：&lt;a href=&#34;https://leetcode.cn/problems/valid-parentheses/&#34;&gt;&lt;font style=&#34;color:rgb(10, 132, 255);&#34;&gt;有效的括号&lt;/font&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;使用到的知识点是栈&lt;/p&gt;
 &lt;p&gt;利用栈的FILO的特性，可以很好的对相应的括号进行匹配&lt;/p&gt;

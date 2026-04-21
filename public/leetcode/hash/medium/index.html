@@ -93,6 +93,22 @@
     </nav>
 </header>
 <main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>第四十九题：字母异位词分组 实现思路：记录每个字符串中单个字母的出现频率，并以字符串形式存储起来（如”0110200000….&#34;)，可以提前将字符串的空间预留26位（对应26个字母），然后将这个字符串作为哈希表的key，用来查找表中存储着异位词的vector值
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) { std::vector&lt;vector&lt;string&gt;&gt; res; std::unordered_map&lt;string, std::vector&lt;string&gt;&gt; um_pair; for(auto&amp; str : strs) { string count(26, 0); for(auto&amp; c : str) { count[c - &#39;a&#39;] &#43;= 1; } um_pair[count].push_back(str); } for(auto&amp; pair : um_pair) { res.push_back(pair.second); } return res; } 第一百二十八题：最长连续序列 使用到了unordered_set，它只存储key，逻辑意义是“这个元素是否存在于集合中？”
+具体思路：对于一个元素，首先判断他的上一个元素（当前值减去1）是否在集合中，
+- 如果在，就意味着当前元素不是起始位置，不需要管他，直接进行下一次循环；- 如果不在，代表着当前元素是起始位置，然后从他开始向后遍历，直到下一个元素不存在于集合中，此时得到的长度即为连续序列的长度每一层循环都对res进行一次比较，如果当前长度更大，就替换之前的res
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 int longestConsecutive(vector&lt;int&gt;&amp; nums) { int res = 0; std::unordered_set&lt;int&gt; seqs(nums.begin(), nums.end()); for(auto num : seqs) { int temp = 1; if(seqs.contains(num - 1)) continue; while(seqs.contains(num &#43; 1)) { temp&#43;&#43;; num&#43;&#43;; } res = std::max(temp, res); } return res; } </p>
+  </div>
+  <footer class="entry-footer"><span>榎aaaa</span></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/leetcode/hash/medium/leetcode-hash-medium/"></a>
+</article>
     </main>
     
 <footer class="footer">

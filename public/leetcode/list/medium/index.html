@@ -93,6 +93,20 @@
     </nav>
 </header>
 <main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>第二题：两数相加 首先明确思路，逐节点的将l1和l2相加，如果遇到需要进位的情况，就单独将所进的位数保存起来，并加到下一次的sum中去，然后在同一次循环中构造好相加后的链表
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) { ListNode dummy(0); ListNode* curr = &amp;dummy; int carry = 0; while(l1 || l2 || carry != 0) { int sum = carry; if(l1) { sum &#43;= l1-&gt;val; l1 = l1-&gt;next; } if(l2) { sum &#43;= l2-&gt;val; l2 = l2-&gt;next; } // 进位 carry = sum / 10; int digit = sum % 10; curr-&gt;next = new ListNode(digit); curr = curr-&gt;next; } return dummy.next; } 第十九题：删除链表的倒数第 N 个结点 使用的是双指针
+...</p>
+  </div>
+  <footer class="entry-footer"><span>榎aaaa</span></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/leetcode/list/medium/leetcode-list-medium/"></a>
+</article>
     </main>
     
 <footer class="footer">

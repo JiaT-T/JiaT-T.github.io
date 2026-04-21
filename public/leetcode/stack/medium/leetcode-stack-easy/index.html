@@ -9,7 +9,7 @@
 <meta name="keywords" content="">
 <meta name="description" content=" - 榎aaaa的个人主页">
 <meta name="author" content="榎aaaa">
-<link rel="canonical" href="http://localhost:1313/leetcode/binary-tree/easy/">
+<link rel="canonical" href="http://localhost:1313/leetcode/stack/medium/leetcode-stack-easy/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.de4dfaea8d499e8a8f0054a18ce39487ddbf580aa3d564b06b9d108409832d39.css" integrity="sha256-3k366o1JnoqPAFShjOOUh92/WAqj1WSwa50QhAmDLTk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/leetcode/binary-tree/easy/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/leetcode/binary-tree/easy/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/leetcode/stack/medium/leetcode-stack-easy/">
 <noscript>
     <style>
         #theme-toggle,
@@ -28,12 +27,13 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="http://localhost:1313/leetcode/binary-tree/easy/">
+</noscript><meta property="og:url" content="http://localhost:1313/leetcode/stack/medium/leetcode-stack-easy/">
   <meta property="og:site_name" content="榎aaaa的个人主页">
   <meta property="og:title" content="榎aaaa的个人主页">
   <meta property="og:description" content="图形学、C&#43;&#43; 渲染与游戏引擎开发笔记">
   <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="leetcode">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="榎aaaa的个人主页">
@@ -54,20 +54,59 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "二叉树",
-      "item": "http://localhost:1313/leetcode/binary-tree/"
+      "name": "栈",
+      "item": "http://localhost:1313/leetcode/stack/"
     }, 
     {
       "@type": "ListItem",
       "position":  3 ,
       "name": "",
-      "item": "http://localhost:1313/leetcode/binary-tree/easy/"
+      "item": "http://localhost:1313/leetcode/stack/medium/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "",
+      "item": "http://localhost:1313/leetcode/stack/medium/leetcode-stack-easy/"
     }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "",
+  "keywords": [
+    
+  ],
+  "articleBody": "",
+  "wordCount" : "0",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "榎aaaa"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/leetcode/stack/medium/leetcode-stack-easy/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "榎aaaa的个人主页",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
@@ -92,34 +131,23 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>第九十四题：二叉树的中序遍历 非常基础的一个遍历，感觉没什么好说的….
-首先确定递归函数的参数和返回值：void–因为这里直接传入了一个vector的引用
-然后明确递归终止的条件：当前节点为空
-这也就意味着当前分支上的所有节点都已经遍历完了，所以应该进入下一个分支
-比如中序遍历，顺序是“左中右”，所以inorder函数中就是先递归左分支，再将中间节点压入vector，最后遍历右分支
-其他两个遍历以此类推
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 void inorder(TreeNode* root, std::vector&lt;int&gt;&amp; traversal) { if(root == NULL) return; inorder(root-&gt;left, traversal); traversal.push_back(root-&gt;val); inorder(root-&gt;right, traversal); } vector&lt;int&gt; inorderTraversal(TreeNode* root) { std::vector&lt;int&gt; traversal; inorder(root, traversal); return traversal; } 第一百零一题：对称二叉树 要判断一个二叉树是否对称，就是判断这个树根节点的左右子树是否能够翻转，而判断能否翻转，则需要判断这棵二叉树的内外侧节点是否相同
-因为需要拿到左右子树各自的信息，所以使用后序遍历
-首先对特殊情况进行判断：
-1.传入的左节点不为空，右节点为空，那么无法翻转
-2.左空右不空同理
-3.两边都为空时，可以翻转
-4.两遍都不为空，但是值不同，不能翻转
-5.只有当两者都不为空且值相等时，才进入递归逻辑，判断左子树的左节点与右子树的右节点能否翻转（外侧），以及左子树的右节点与右子树的左节点能否翻转（内侧）
-最后，只有当左右节点都能反转时，才可以认为这棵树 / 子树能翻转
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 bool Compare(TreeNode* left, TreeNode* right) { if(!left &amp;&amp; right) return false; else if(left &amp;&amp; !right) return false; else if(!left &amp;&amp; !right) return true; else if(left-&gt;val != right-&gt;val) return false; else { bool outside = Compare(left-&gt;left, right-&gt;right); bool inside = Compare(left-&gt;right, right-&gt;left); return outside &amp;&amp; inside; } } bool isSymmetric(TreeNode* root) { return Compare(root-&gt;left, root-&gt;right); } 第一百零四题：二叉树的最大深度 求深度：用前序遍历；求高度：用后序遍历
-...</p>
-  </div>
-  <footer class="entry-footer"><span>榎aaaa</span></footer>
-  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/leetcode/binary-tree/easy/leetcode-binary-tree-easy/"></a>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta"><span>榎aaaa</span>
+
+</div>
+  </header> 
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     

@@ -1,3 +1,8 @@
++++
+title = "20"
++++
+
+
 #### <font style="color:#DF2A3F;">第二十题</font>：[<font style="color:rgb(10, 132, 255);">有效的括号</font>](https://leetcode.cn/problems/valid-parentheses/)
 使用到的知识点是栈
 

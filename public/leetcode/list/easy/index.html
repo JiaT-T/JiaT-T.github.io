@@ -93,6 +93,25 @@
     </nav>
 </header>
 <main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>第二十一题：合并两个有序链表 使用的是递归的方法
+首先判断是否有链表为空，如果是，则直接返回另一个链表
+之后对list1和list2的值进行判断，更小者的下一个节点将调用原函数继续递归（比如情况一，list1的值更小，就让list1的next节点继续调用函数，将list1剩下的节点继续与list2比较）
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) { if(list1 == nullptr) return list2; if(list2 == nullptr) return list1; if(list1-&gt;val &lt; list2-&gt;val) { list1-&gt;next = mergeTwoLists(list1-&gt;next, list2); return list1; } else { list2-&gt;next = mergeTwoLists(list1, list2-&gt;next); return list2; } } 第一百一十四题：环形链表 使用的是双指针（快慢指针）
+如果链表中此存在环的话，那么两个指针就一定会在这个环内循环，也就一定会相遇，因此可以将两个指针相等作为链表中存在环的判断条件（至于为什么会相遇：这里令慢指针的速度为1，快指针速度为2，两者的相对速度为1，所以在进入环之后，相当于是快指针在以1的速度追慢指针，之后一定会追上）
+注：这里的两个if一定要先判断head与fast是否为空！！！！！
+1 2 3 4 5 6 7 8 9 10 11 12 bool hasCycle(ListNode *head) { if(head == nullptr || head-&gt;next == nullptr) return false; ListNode *slow = head, *fast = head-&gt;next; while(slow != fast) { if( fast == nullptr || fast-&gt;next == nullptr) return false; slow = slow-&gt;next; fast = fast-&gt;next-&gt;next; } return true; } 第一百六十题：相交链表 设节点指针A，B分别指向两个链表的头节点，C为首个公共节点
+...</p>
+  </div>
+  <footer class="entry-footer"><span>榎aaaa</span></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/leetcode/list/easy/leetcode-list-easy/"></a>
+</article>
     </main>
     
 <footer class="footer">

@@ -319,3 +319,13 @@ details.toc summary {
     color: #bbb;
     font-size: 0.8rem;
 }
+
+/* 强制隐藏归档页的日期及间距 */
+.archive-month .archive-entry .archive-meta {
+    display: none !important;
+}
+
+/* 如果你的布局中日期占用了左侧宽度，强制清除左边距 */
+.archive-entry {
+    padding-left: 0 !important;
+}

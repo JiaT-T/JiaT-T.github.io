@@ -1,3 +1,8 @@
++++
+title = "155、394、739"
++++
+
+
 #### <font style="color:#DF2A3F;">第一百五十五题</font>：[最小栈](https://leetcode.cn/problems/min-stack/)
 对这个类需要完成的任务有五个：
 
