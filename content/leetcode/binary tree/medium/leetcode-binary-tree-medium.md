@@ -177,20 +177,20 @@ private :
 
 ```cpp
 void flatten(TreeNode* root)
+{
+    while(root)
     {
-        while(root)
+        if(root->left)
         {
-            if(root->left)
-            {
-                auto temp = root->left;
-                while(temp->right) temp = temp->right;
-                temp->right = root->right;
-                root->right = root->left;
-                root->left = nullptr;
-            }
-            root = root->right;
+            auto temp = root->left;
+            while(temp->right) temp = temp->right;
+            temp->right = root->right;
+            root->right = root->left;
+            root->left = nullptr;
         }
+        root = root->right;
     }
+}
 ```
 
 #### <font style="color:#DF2A3F;">第二百三十题</font>：[二叉搜索树中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/)
