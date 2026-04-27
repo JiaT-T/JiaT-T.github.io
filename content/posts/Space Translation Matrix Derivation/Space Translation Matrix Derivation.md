@@ -98,7 +98,14 @@ $ 绕 Y 轴旋转 \\theta：R\_y(\\theta) = \\begin{bmatrix}
 
 \\end{bmatrix} $
 
-
+---
+title: "MVP矩阵推导"
+date: 2026-04-27
+description: "图形渲染管线的顶点处理阶段使用到的三个矩阵"
+categories: ["图形学"]
+draft: false
+TocOpen: true  # 这篇文章的目录默认保持展开
+---
 
 $ 绕 Z 轴旋转 \\theta：R\_z(\\theta) = \\begin{bmatrix} 
 
