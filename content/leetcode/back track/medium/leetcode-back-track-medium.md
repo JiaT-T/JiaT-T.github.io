@@ -1,3 +1,7 @@
++++
+title = "39、46、78、79、131"
++++
+
 #### <font style="color:#DF2A3F;">第三十九题</font>：[组合总和](https://leetcode.cn/problems/combination-sum/)
 核心思路：**每次添加元素之后都将target减少对应的值，直到等于或小于零**
 

@@ -1,3 +1,7 @@
++++
+title = "70、118"
++++
+
 #### <font style="color:#DF2A3F;">第七十题</font>：[爬楼梯](https://leetcode.cn/problems/climbing-stairs/)
 简单的斐波那契公式
 

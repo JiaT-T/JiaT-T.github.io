@@ -1,3 +1,7 @@
++++
+title = "98、102、105、114、230、236、437"
++++
+
 #### <font style="color:#DF2A3F;">第三十三题</font>：[搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/)
 一开始的想法是：先遍历一遍旋转后的数组，分别找到两个各自单调的子数组，之后对这两个数组分别进行二分查找；但这会导致线性的时间复杂度，而不是题目要求的logn
 

@@ -1,3 +1,7 @@
++++
+title = "139、152、198、279、300、322、416"
++++
+
 #### <font style="color:#DF2A3F;">第一百三十九题</font>：[单词拆分](https://leetcode.cn/problems/word-break/)
     1. 确定状态：dp[ i ] 代表前 i 个字符组成的字符串是否能够被拆分
     2. 状态转移：dp[ i ] = (**dp[ j ]** && **s.substr(j, i - j)**也能够被拆分)，其中 j 为区间 [ 0, i ] 的任意整数
