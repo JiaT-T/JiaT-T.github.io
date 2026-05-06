@@ -8,10 +8,10 @@
     {{- range site.Sections }} 
         
         {{/* 过滤掉不需要显示的页面，比如搜索页 */}}
-        {{- if ne .Section "search" }}
+        {{- if and (ne .Section "search") (.Sections) }}
         
         <div class="glass-section-level-1">
-            <h2 class="archive-title-l1"># {{ .Title }}</h2>
+            <h2 class="archive-title-l1">{{ .Title }}</h2>
             
             {{/* 递归遍历二级目录：如 栈, 链表 */}}
             {{- range .Sections }}
@@ -24,10 +24,9 @@
                     <div class="glass-section-level-3">
                         <h4 class="archive-title-l3">{{ .Title | upper }}</h4>
                         <ul class="archive-list">
-                            {{- range .Pages }}
+                            {{- range .RegularPages }}
                             <li>
                                 <a href="{{ .Permalink }}">
-                                    <span class="date">{{ .Date.Format "01-02" }}</span>
                                     <span class="title">{{ .Title }}</span>
                                 </a>
                             </li>

@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - 榎aaaa的个人主页">
 <meta name="author" content="榎aaaa">
 <link rel="canonical" href="http://localhost:1313/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa268e8e17435d4d6e9c32357c82bf2d03e5fb5d88e20b26c29fd170a88baa55.css" integrity="sha256-&#43;iaOjhdDXU1unDI1fIK/LQPl&#43;12I4gsmwp/RcKiLqlU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e2827ffde8e09ad63f49e1236e2978882c0c2796a8214110cbf43777eb527f8a.css" integrity="sha256-4oJ//ejgmtY/SeEjbil4iCwMJ5aoIUEQy/Q3d&#43;tSf4o=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -73,7 +73,7 @@
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="搜索">
+                <a href="http://localhost:1313/search/" title="搜索 (Alt &#43; /)" accesskey=/>
                     <span>搜索</span>
                 </a>
             </li>
@@ -114,8 +114,8 @@
 ·多态：同一个函数名拥有多种状态，或是同一个接口具有不同的行为
 ** LINK：**
 如何理解面向对象编程三大特性——封装、继承、多态
-2).多态的类别 ·运行时多态（动态联编）：通过重载和模板实现
-·编译时多态（静态联编）：通过继承和虚函数实现
+2).多态的类别 ·运行时多态（动态联编）：通过继承和虚函数实现
+·编译时多态（静态联编）：通过重载和模板实现
 2.虚函数 简单来说，虚函数就是允许在基类（父类）中定义一个函数，并允许派生类（子类）对其进行重写 (Override)
 1).虚函数的实现机制 ·通过虚函数表实现，虚函数表是一个由编译器生成的静态数组，位于类的全局静态内存区中，包含了一个类所有的虚函数的地址（即该类所有虚函数的入口）
 ·在类对象（不是类！）内存空间的头部，有一个虚函数表指针，它指向该类虚函数表的首地址
@@ -138,6 +138,47 @@ C&#43;&#43;内存管理 - 还没放弃的老张 - 博客园
   </div>
   <footer class="entry-footer"><span title='2026-04-19 00:00:00 +0000 UTC'>April 19, 2026</span>&nbsp;·&nbsp;<span>榎aaaa</span></footer>
   <a class="entry-link" aria-label="post link to Fundamentals of Cpp：现代 C&#43;&#43; 核心笔记" href="http://localhost:1313/posts/cpp-fundamentals/cpp-fundamentals/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p></p>
+  </div>
+  <footer class="entry-footer"><span>榎aaaa</span></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>## 空间变换的过程：
+**模型/局部空间（Model/Local Space） –&gt; **
+**世界空间（World Space） –&gt; **
+**观察/摄像机空间（View/Camera Space）–&gt; **
+**齐次裁剪空间（Clip Space） –&gt; **
+**标准设备坐标空间（NDC Space） –&gt; **
+**屏幕空间（Screen Space）**
+****
+### 1 . 模型空间（Model Space） –&gt; 世界空间（World Space）
+a . 模型空间中的点 乘上 模型矩阵 即可变换到 世界空间 ————** **_**P**__**World **__**= M**__**Model**__** * P**__**Model**_
+****
+b . $ M_{model} = M_{translation} \cdot M_{rotation} \cdot M_{scaling} $
+其中，S是**缩放矩阵（Scaling Matrix）**，R是**旋转矩阵（Rotation Matrix）**，T是**平移矩阵	（Translation Matrix）**
+坐标的变换必须严格按照“**先缩放，后旋转，再平移**”的顺序进行
+**i. 缩放矩阵 (Scaling Matrix) ** ：
+$ M_{scaling} = \begin{bmatrix}
+s_x &amp; 0 &amp; 0 &amp; 0 \\
+...</p>
+  </div>
+  <footer class="entry-footer"><span>榎aaaa</span></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/"></a>
 </article>
     </main>
     

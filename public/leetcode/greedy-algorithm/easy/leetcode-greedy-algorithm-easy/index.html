@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>榎aaaa的个人主页</title>
+<meta name="keywords" content="">
+<meta name="description" content="第一百二十一题：买卖股票的最佳时机
+思路：
+所谓贪心算法，就是每个步骤都挑选局部最优解，从而最终达到全局最优解的效果
+在这题中，”贪心“体现在——在遍历过程中，每次都只将当前价格与之前遇到的最低价格进行利润计算
+这样就可以避免不必要的计算
+具体实现如下：
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+
+
+int maxProfit(vector&lt;int&gt;&amp; prices) 
+{
+    if(prices.empty()) return 0;
+    int max_profit = 0, min_price = prices[0];
+    for(int price : prices)
+    {
+        if(price &lt; min_price)
+            min_price = price;
+        else
+        {
+            int curr_profit = price - min_price;
+            max_profit = curr_profit &lt; max_profit ? max_profit : curr_profit;
+        }
+    }
+    return max_profit;
+}
+
+
+">
+<meta name="author" content="榎aaaa">
+<link rel="canonical" href="http://localhost:1313/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.711be1c082f8d5327c1004feeceb9a0e5c3ad90d981ce64d615fe5f741287a48.css" integrity="sha256-cRvhwIL41TJ8EAT&#43;7OuaDlw62Q2YHOZNYV/l90Eoekg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/">
+  <meta property="og:site_name" content="榎aaaa的个人主页">
+  <meta property="og:title" content="榎aaaa的个人主页">
+  <meta property="og:description" content="第一百二十一题：买卖股票的最佳时机 思路：
+所谓贪心算法，就是每个步骤都挑选局部最优解，从而最终达到全局最优解的效果
+在这题中，”贪心“体现在——在遍历过程中，每次都只将当前价格与之前遇到的最低价格进行利润计算
+这样就可以避免不必要的计算
+具体实现如下：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 int maxProfit(vector&lt;int&gt;&amp; prices) { if(prices.empty()) return 0; int max_profit = 0, min_price = prices[0]; for(int price : prices) { if(price &lt; min_price) min_price = price; else { int curr_profit = price - min_price; max_profit = curr_profit &lt; max_profit ? max_profit : curr_profit; } } return max_profit; }">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="leetcode">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="榎aaaa的个人主页">
+  <meta name="twitter:description" content="第一百二十一题：买卖股票的最佳时机 思路：
+所谓贪心算法，就是每个步骤都挑选局部最优解，从而最终达到全局最优解的效果
+在这题中，”贪心“体现在——在遍历过程中，每次都只将当前价格与之前遇到的最低价格进行利润计算
+这样就可以避免不必要的计算
+具体实现如下：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 int maxProfit(vector&lt;int&gt;&amp; prices) { if(prices.empty()) return 0; int max_profit = 0, min_price = prices[0]; for(int price : prices) { if(price &lt; min_price) min_price = price; else { int curr_profit = price - min_price; max_profit = curr_profit &lt; max_profit ? max_profit : curr_profit; } } return max_profit; }">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "LeetCode Hot 100",
+      "item": "http://localhost:1313/leetcode/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "贪心算法",
+      "item": "http://localhost:1313/leetcode/greedy-algorithm/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Easy",
+      "item": "http://localhost:1313/leetcode/greedy-algorithm/easy/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "",
+      "item": "http://localhost:1313/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "第一百二十一题：买卖股票的最佳时机 思路：\n所谓贪心算法，就是每个步骤都挑选局部最优解，从而最终达到全局最优解的效果\n在这题中，”贪心“体现在——在遍历过程中，每次都只将当前价格与之前遇到的最低价格进行利润计算\n这样就可以避免不必要的计算\n具体实现如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 int maxProfit(vector\u0026lt;int\u0026gt;\u0026amp; prices) { if(prices.empty()) return 0; int max_profit = 0, min_price = prices[0]; for(int price : prices) { if(price \u0026lt; min_price) min_price = price; else { int curr_profit = price - min_price; max_profit = curr_profit \u0026lt; max_profit ? max_profit : curr_profit; } } return max_profit; } ",
+  "keywords": [
+    
+  ],
+  "articleBody": "第一百二十一题：买卖股票的最佳时机 思路：\n所谓贪心算法，就是每个步骤都挑选局部最优解，从而最终达到全局最优解的效果\n在这题中，”贪心“体现在——在遍历过程中，每次都只将当前价格与之前遇到的最低价格进行利润计算\n这样就可以避免不必要的计算\n具体实现如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 int maxProfit(vector\u003cint\u003e\u0026 prices) { if(prices.empty()) return 0; int max_profit = 0, min_price = prices[0]; for(int price : prices) { if(price \u003c min_price) min_price = price; else { int curr_profit = price - min_price; max_profit = curr_profit \u003c max_profit ? max_profit : curr_profit; } } return max_profit; } ",
+  "wordCount" : "69",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "榎aaaa"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "榎aaaa的个人主页",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="榎aaaa的个人主页 (Alt + H)">榎aaaa的个人主页</a>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="所有文章">
+                    <span>所有文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta"><span>榎aaaa</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h4 id="第一百二十一题买卖股票的最佳时机"><font style="color:#DF2A3F;">第一百二十一题</font>：<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/">买卖股票的最佳时机</a><a hidden class="anchor" aria-hidden="true" href="#第一百二十一题买卖股票的最佳时机">#</a></h4>
+<p>思路：</p>
+<p>所谓贪心算法，就是每个步骤都挑选局部最优解，从而最终达到全局最优解的效果</p>
+<p>在这题中，”贪心“体现在——<strong>在遍历过程中，每次都只将当前价格与之前遇到的最低价格进行利润计算</strong></p>
+<p>这样就可以避免不必要的计算</p>
+<p>具体实现如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">maxProfit</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">prices</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">prices</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max_profit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">min_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">price</span> <span class="p">:</span> <span class="n">prices</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">price</span> <span class="o">&lt;</span> <span class="n">min_price</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">min_price</span> <span class="o">=</span> <span class="n">price</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">curr_profit</span> <span class="o">=</span> <span class="n">price</span> <span class="o">-</span> <span class="n">min_price</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">max_profit</span> <span class="o">=</span> <span class="n">curr_profit</span> <span class="o">&lt;</span> <span class="n">max_profit</span> <span class="o">?</span> <span class="nl">max_profit</span> <span class="p">:</span> <span class="n">curr_profit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">max_profit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">榎aaaa的个人主页</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+</body>
+
+</html>

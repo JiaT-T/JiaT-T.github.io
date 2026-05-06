@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>榎aaaa的个人主页</title>
+<title>94、101、104、108、226、543 | 榎aaaa的个人主页</title>
 <meta name="keywords" content="">
 <meta name="description" content="第九十四题：二叉树的中序遍历
 非常基础的一个遍历，感觉没什么好说的&hellip;.
@@ -104,7 +104,7 @@ bool Compare(TreeNode* left, TreeNode* right)
 求深度：用前序遍历；求高度：用后序遍历">
 <meta name="author" content="榎aaaa">
 <link rel="canonical" href="http://localhost:1313/leetcode/binary-tree/easy/leetcode-binary-tree-easy/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa268e8e17435d4d6e9c32357c82bf2d03e5fb5d88e20b26c29fd170a88baa55.css" integrity="sha256-&#43;iaOjhdDXU1unDI1fIK/LQPl&#43;12I4gsmwp/RcKiLqlU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e2827ffde8e09ad63f49e1236e2978882c0c2796a8214110cbf43777eb527f8a.css" integrity="sha256-4oJ//ejgmtY/SeEjbil4iCwMJ5aoIUEQy/Q3d&#43;tSf4o=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -123,7 +123,7 @@ bool Compare(TreeNode* left, TreeNode* right)
     </style>
 </noscript><meta property="og:url" content="http://localhost:1313/leetcode/binary-tree/easy/leetcode-binary-tree-easy/">
   <meta property="og:site_name" content="榎aaaa的个人主页">
-  <meta property="og:title" content="榎aaaa的个人主页">
+  <meta property="og:title" content="94、101、104、108、226、543">
   <meta property="og:description" content="第九十四题：二叉树的中序遍历 非常基础的一个遍历，感觉没什么好说的….
 首先确定递归函数的参数和返回值：void–因为这里直接传入了一个vector的引用
 然后明确递归终止的条件：当前节点为空
@@ -145,7 +145,7 @@ bool Compare(TreeNode* left, TreeNode* right)
     <meta property="article:section" content="leetcode">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="榎aaaa的个人主页">
+  <meta name="twitter:title" content="94、101、104、108、226、543">
   <meta name="twitter:description" content="第九十四题：二叉树的中序遍历 非常基础的一个遍历，感觉没什么好说的….
 首先确定递归函数的参数和返回值：void–因为这里直接传入了一个vector的引用
 然后明确递归终止的条件：当前节点为空
@@ -172,7 +172,7 @@ bool Compare(TreeNode* left, TreeNode* right)
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "",
+      "name": "LeetCode Hot 100",
       "item": "http://localhost:1313/leetcode/"
     }, 
     {
@@ -184,13 +184,13 @@ bool Compare(TreeNode* left, TreeNode* right)
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "",
+      "name": "Easy",
       "item": "http://localhost:1313/leetcode/binary-tree/easy/"
     }, 
     {
       "@type": "ListItem",
       "position":  4 ,
-      "name": "",
+      "name": "94、101、104、108、226、543",
       "item": "http://localhost:1313/leetcode/binary-tree/easy/leetcode-binary-tree-easy/"
     }
   ]
@@ -200,8 +200,8 @@ bool Compare(TreeNode* left, TreeNode* right)
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "",
-  "name": "",
+  "headline": "94、101、104、108、226、543",
+  "name": "94、101、104、108、226、543",
   "description": "第九十四题：二叉树的中序遍历 非常基础的一个遍历，感觉没什么好说的\u0026hellip;.\n首先确定递归函数的参数和返回值：void\u0026ndash;因为这里直接传入了一个vector的引用\n然后明确递归终止的条件：当前节点为空\n这也就意味着当前分支上的所有节点都已经遍历完了，所以应该进入下一个分支\n比如中序遍历，顺序是“左中右”，所以inorder函数中就是先递归左分支，再将中间节点压入vector，最后遍历右分支\n其他两个遍历以此类推\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 void inorder(TreeNode* root, std::vector\u0026lt;int\u0026gt;\u0026amp; traversal) { if(root == NULL) return; inorder(root-\u0026gt;left, traversal); traversal.push_back(root-\u0026gt;val); inorder(root-\u0026gt;right, traversal); } vector\u0026lt;int\u0026gt; inorderTraversal(TreeNode* root) { std::vector\u0026lt;int\u0026gt; traversal; inorder(root, traversal); return traversal; } 第一百零一题：对称二叉树 要判断一个二叉树是否对称，就是判断这个树根节点的左右子树是否能够翻转，而判断能否翻转，则需要判断这棵二叉树的内外侧节点是否相同\n因为需要拿到左右子树各自的信息，所以使用后序遍历\n首先对特殊情况进行判断：\n1.传入的左节点不为空，右节点为空，那么无法翻转\n2.左空右不空同理\n3.两边都为空时，可以翻转\n4.两遍都不为空，但是值不同，不能翻转\n5.只有当两者都不为空且值相等时，才进入递归逻辑，判断左子树的左节点与右子树的右节点能否翻转（外侧），以及左子树的右节点与右子树的左节点能否翻转（内侧）\n最后，只有当左右节点都能反转时，才可以认为这棵树 / 子树能翻转\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 bool Compare(TreeNode* left, TreeNode* right) { if(!left \u0026amp;\u0026amp; right) return false; else if(left \u0026amp;\u0026amp; !right) return false; else if(!left \u0026amp;\u0026amp; !right) return true; else if(left-\u0026gt;val != right-\u0026gt;val) return false; else { bool outside = Compare(left-\u0026gt;left, right-\u0026gt;right); bool inside = Compare(left-\u0026gt;right, right-\u0026gt;left); return outside \u0026amp;\u0026amp; inside; } } bool isSymmetric(TreeNode* root) { return Compare(root-\u0026gt;left, root-\u0026gt;right); } 第一百零四题：二叉树的最大深度 求深度：用前序遍历；求高度：用后序遍历\n",
   "keywords": [
     
@@ -248,7 +248,7 @@ bool Compare(TreeNode* left, TreeNode* right)
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="搜索">
+                <a href="http://localhost:1313/search/" title="搜索 (Alt &#43; /)" accesskey=/>
                     <span>搜索</span>
                 </a>
             </li>
@@ -261,7 +261,7 @@ bool Compare(TreeNode* left, TreeNode* right)
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      
+      94、101、104、108、226、543
     </h1>
     <div class="post-meta"><span>榎aaaa</span>
 

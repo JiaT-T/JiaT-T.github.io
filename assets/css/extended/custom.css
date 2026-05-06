@@ -329,3 +329,259 @@ details.toc summary {
 .archive-entry {
     padding-left: 0 !important;
 }
+
+/* ============================================================
+   Liquid glass refresh
+   ============================================================ */
+:root {
+    --theme: #f6f7f9;
+    --primary: #1b1d22;
+    --secondary: #666d78;
+    --tertiary: rgba(255, 255, 255, 0.42);
+    --entry: rgba(255, 255, 255, 0.54);
+    --border: rgba(255, 255, 255, 0.74);
+    --liquid-surface: rgba(255, 255, 255, 0.58);
+    --liquid-surface-soft: rgba(255, 255, 255, 0.34);
+    --liquid-stroke: rgba(255, 255, 255, 0.78);
+    --liquid-shadow: 0 18px 45px rgba(31, 41, 55, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.74);
+    --liquid-shadow-hover: 0 22px 58px rgba(31, 41, 55, 0.17), inset 0 1px 0 rgba(255, 255, 255, 0.86);
+    --liquid-accent: #2f7ef7;
+    --liquid-accent-2: #e45c67;
+    --search-hit: #d61f35;
+}
+
+body {
+    background:
+        linear-gradient(135deg, rgba(246, 248, 252, 0.96), rgba(235, 242, 248, 0.9) 42%, rgba(249, 246, 242, 0.92)),
+        linear-gradient(45deg, rgba(47, 126, 247, 0.08), rgba(228, 92, 103, 0.07));
+    min-height: 100vh;
+}
+
+body::before,
+body::after {
+    display: none !important;
+}
+
+.header,
+.profile_inner .profile_description,
+.toc,
+.custom-collapse,
+.post-entry,
+.first-entry,
+.archive-card,
+.glass-section-level-2,
+.glass-section-level-3,
+.searchbox,
+.searchResults .post-entry {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--liquid-stroke) !important;
+    border-radius: 8px !important;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.36) 50%, rgba(255, 255, 255, 0.52)),
+        var(--liquid-surface) !important;
+    box-shadow: var(--liquid-shadow) !important;
+    backdrop-filter: blur(22px) saturate(175%) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(175%) !important;
+}
+
+.header::before,
+.profile_inner .profile_description::before,
+.toc::before,
+.custom-collapse::before,
+.post-entry::before,
+.first-entry::before,
+.archive-card::before,
+.glass-section-level-2::before,
+.glass-section-level-3::before,
+.searchbox::before,
+.searchResults .post-entry::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.08) 38%, transparent 68%),
+        radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.72), transparent 34%),
+        radial-gradient(circle at 100% 100%, rgba(47, 126, 247, 0.12), transparent 34%);
+    opacity: 0.72;
+}
+
+.post-entry > :not(.entry-link),
+.first-entry > :not(.entry-link),
+.archive-card > *,
+.glass-section-level-2 > *,
+.glass-section-level-3 > *,
+.searchbox > *,
+.searchResults .post-entry > *,
+.toc > *,
+.custom-collapse > * {
+    position: relative;
+    z-index: 1;
+}
+
+.post-entry .entry-link,
+.first-entry .entry-link {
+    inset: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.post-entry:hover,
+.first-entry:hover,
+.glass-section-level-2:hover,
+.glass-section-level-3:hover,
+.searchResults .post-entry:hover {
+    box-shadow: var(--liquid-shadow-hover) !important;
+    transform: translateY(-2px);
+}
+
+.tree-archive-container {
+    gap: 28px;
+}
+
+.glass-section-level-1 {
+    padding: 0;
+}
+
+.archive-title-l1 {
+    border-bottom: 1px solid rgba(27, 29, 34, 0.12);
+    font-family: inherit !important;
+    font-size: 1.55rem;
+    letter-spacing: 0;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+}
+
+.archive-title-l2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary) !important;
+    font-family: inherit !important;
+    margin-bottom: 18px;
+}
+
+.archive-title-l3 {
+    color: var(--secondary) !important;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+    text-transform: none;
+}
+
+.archive-list {
+    display: grid;
+    gap: 8px;
+}
+
+.archive-list li a {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 8px;
+    color: var(--primary) !important;
+    gap: 10px;
+    justify-content: flex-start;
+    min-height: 42px;
+    padding: 9px 12px;
+}
+
+.archive-list li a:hover {
+    background: rgba(255, 255, 255, 0.54);
+    color: var(--liquid-accent) !important;
+}
+
+.archive-list li a .date {
+    display: none !important;
+}
+
+.searchbox {
+    margin-top: 18px;
+    padding: 18px;
+}
+
+#searchInput {
+    width: 100%;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.58);
+    color: var(--primary);
+    font-size: 1rem;
+    outline: none;
+    padding: 0 16px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+#searchInput:focus {
+    border-color: rgba(47, 126, 247, 0.55);
+    box-shadow: 0 0 0 3px rgba(47, 126, 247, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.searchResults {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+.searchResults .post-entry {
+    margin: 0;
+    padding: 0;
+}
+
+.searchResults .search-result-link {
+    color: inherit;
+    display: block;
+    height: auto;
+    left: auto;
+    min-height: 78px;
+    padding: 16px 18px;
+    position: relative;
+    text-decoration: none;
+    top: auto;
+    width: auto;
+    z-index: 1;
+}
+
+.search-result-title {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.search-result-text {
+    color: var(--secondary);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-top: 8px;
+}
+
+.search-highlight {
+    background: rgba(214, 31, 53, 0.12);
+    border-radius: 4px;
+    color: var(--search-hit);
+    font-weight: 700;
+    padding: 0 0.12em;
+}
+
+.search-status {
+    color: var(--secondary);
+    margin: 14px 2px 0;
+}
+
+@media (max-width: 640px) {
+    .glass-section-level-2,
+    .glass-section-level-3,
+    .searchbox {
+        padding: 16px;
+    }
+
+    .archive-sub-grid {
+        grid-template-columns: 1fr;
+    }
+}

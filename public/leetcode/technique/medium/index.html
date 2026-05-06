@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>榎aaaa的个人主页</title>
+<title>Medium | 榎aaaa的个人主页</title>
 <meta name="keywords" content="">
-<meta name="description" content=" - 榎aaaa的个人主页">
+<meta name="description" content="Medium - 榎aaaa的个人主页">
 <meta name="author" content="榎aaaa">
 <link rel="canonical" href="http://localhost:1313/leetcode/technique/medium/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa268e8e17435d4d6e9c32357c82bf2d03e5fb5d88e20b26c29fd170a88baa55.css" integrity="sha256-&#43;iaOjhdDXU1unDI1fIK/LQPl&#43;12I4gsmwp/RcKiLqlU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.711be1c082f8d5327c1004feeceb9a0e5c3ad90d981ce64d615fe5f741287a48.css" integrity="sha256-cRvhwIL41TJ8EAT&#43;7OuaDlw62Q2YHOZNYV/l90Eoekg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -30,13 +30,13 @@
     </style>
 </noscript><meta property="og:url" content="http://localhost:1313/leetcode/technique/medium/">
   <meta property="og:site_name" content="榎aaaa的个人主页">
-  <meta property="og:title" content="榎aaaa的个人主页">
+  <meta property="og:title" content="Medium">
   <meta property="og:description" content="图形学、C&#43;&#43; 渲染与游戏引擎开发笔记">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="榎aaaa的个人主页">
+  <meta name="twitter:title" content="Medium">
   <meta name="twitter:description" content="图形学、C&#43;&#43; 渲染与游戏引擎开发笔记">
 
 
@@ -48,7 +48,7 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "",
+      "name": "LeetCode Hot 100",
       "item": "http://localhost:1313/leetcode/"
     }, 
     {
@@ -60,7 +60,7 @@
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "",
+      "name": "Medium",
       "item": "http://localhost:1313/leetcode/technique/medium/"
     }
   ]
@@ -85,7 +85,7 @@
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="搜索">
+                <a href="http://localhost:1313/search/" title="搜索 (Alt &#43; /)" accesskey=/>
                     <span>搜索</span>
                 </a>
             </li>
@@ -93,6 +93,27 @@
     </nav>
 </header>
 <main class="main"> 
+<header class="page-header">
+  <h1>
+    Medium
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 第三十一题：下一个排列 思路：找到下一个排序，意思就是将当前数组视作一串数字，通过对元素的重新组合，找到第一个大于当前数字的数字
+具体实现：
+首先从后往前找到第一个逆序的数字，保存它的下标——如：123546718，这里会保存数字“4”的下标，也就是 4，之后再在 46718 这个范围内从后往前寻找第一个小于 5 的数字，并将其进行交换（123146758）；最后将46758进行降序·排序即可得到下一个排序
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 void nextPermutation(vector&lt;int&gt;&amp; nums) { int sz = nums.size(); if(sz &lt;= 1) return; int i = sz - 1; while(0 &lt; i &amp;&amp; nums[i] &lt;= nums[i - 1]) { i--; } // 如果 i == 0，说明整个序列都是降序的（如 54321），已经是最大排列 if(0 &lt; i) { int j = sz - 1; while(nums[j] &lt;= nums[i - 1]) { j--; } std::swap(nums[i - 1], nums[j]); } std::sort(nums.begin() &#43; i, nums.end()); } 第七十五题：颜色分类 解法一：
+...</p>
+  </div>
+  <footer class="entry-footer"><span>榎aaaa</span></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/leetcode/technique/medium/leetcode-technique-medium/"></a>
+</article>
     </main>
     
 <footer class="footer">

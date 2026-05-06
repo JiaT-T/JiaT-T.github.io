@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>榎aaaa的个人主页</title>
+<title>Medium | 榎aaaa的个人主页</title>
 <meta name="keywords" content="">
-<meta name="description" content=" - 榎aaaa的个人主页">
+<meta name="description" content="Medium - 榎aaaa的个人主页">
 <meta name="author" content="榎aaaa">
 <link rel="canonical" href="http://localhost:1313/leetcode/binary-tree/medium/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa268e8e17435d4d6e9c32357c82bf2d03e5fb5d88e20b26c29fd170a88baa55.css" integrity="sha256-&#43;iaOjhdDXU1unDI1fIK/LQPl&#43;12I4gsmwp/RcKiLqlU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.711be1c082f8d5327c1004feeceb9a0e5c3ad90d981ce64d615fe5f741287a48.css" integrity="sha256-cRvhwIL41TJ8EAT&#43;7OuaDlw62Q2YHOZNYV/l90Eoekg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -30,13 +30,13 @@
     </style>
 </noscript><meta property="og:url" content="http://localhost:1313/leetcode/binary-tree/medium/">
   <meta property="og:site_name" content="榎aaaa的个人主页">
-  <meta property="og:title" content="榎aaaa的个人主页">
+  <meta property="og:title" content="Medium">
   <meta property="og:description" content="图形学、C&#43;&#43; 渲染与游戏引擎开发笔记">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="榎aaaa的个人主页">
+  <meta name="twitter:title" content="Medium">
   <meta name="twitter:description" content="图形学、C&#43;&#43; 渲染与游戏引擎开发笔记">
 
 
@@ -48,7 +48,7 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "",
+      "name": "LeetCode Hot 100",
       "item": "http://localhost:1313/leetcode/"
     }, 
     {
@@ -60,7 +60,7 @@
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "",
+      "name": "Medium",
       "item": "http://localhost:1313/leetcode/binary-tree/medium/"
     }
   ]
@@ -85,7 +85,7 @@
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="搜索">
+                <a href="http://localhost:1313/search/" title="搜索 (Alt &#43; /)" accesskey=/>
                     <span>搜索</span>
                 </a>
             </li>
@@ -93,6 +93,30 @@
     </nav>
 </header>
 <main class="main"> 
+<header class="page-header">
+  <h1>
+    Medium
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">98、102、105、114、230、236、437
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>第九十八题：验证二叉搜索树 解法一：通过中序遍历将整棵树装入vector，再判断数组是否单调
+具体实现非常简单，但不是一个好方法，因为他需要先将所有节点的数值装入容器，再进行比较，然而实际上每次比较只需要使用到两个节点，这会造成空间的浪费
+所以应该使用“边遍历，边比较”的方法
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 void traversal(TreeNode* root, std::vector&lt;int&gt;&amp; v) { if(!root) return; traversal(root-&gt;left, v); v.push_back(root-&gt;val); traversal(root-&gt;right, v); } bool isValidBST(TreeNode* root) { std::vector&lt;int&gt; vec; traversal(root, vec); int sz = vec.size(); for(int i = 0; i &lt; sz - 1; i&#43;&#43;) { if(vec[i&#43;1] &lt;= vec[i]) return false; } return true; } 解法二：使用指针成员装载当前节点的父节点，并在访问当前节点时就继续比较
+这样就避免了在堆上分配内存，所有操作都只在栈上进行
+相较于上一个方法，这个方法的空间复杂度从O(n)下降到了O(h),其中h为树的最大深度
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 class Solution { public: bool isValidBST(TreeNode* root) { if(!root) return true; // 遍历到叶子节点之后进行剪枝，返回上一个节点 if(!isValidBST(root-&gt;left)) return false; // 如果左子树底下的节点已经不满足规则，就没必要继续遍历了 if(prev &amp;&amp; root-&gt;val &lt;= prev-&gt;val) return false; prev = root; return isValidBST(root-&gt;right); // 此时左边已经全部满足规则，只需要判断右子树是否也全部满足规则即可 } private : TreeNode* prev = nullptr; }; 第一百零二题： 二叉树的层序遍历 使用的是队列与深度优先搜索
+...</p>
+  </div>
+  <footer class="entry-footer"><span>榎aaaa</span></footer>
+  <a class="entry-link" aria-label="post link to 98、102、105、114、230、236、437" href="http://localhost:1313/leetcode/binary-tree/medium/leetcode-binary-tree-medium/"></a>
+</article>
     </main>
     
 <footer class="footer">

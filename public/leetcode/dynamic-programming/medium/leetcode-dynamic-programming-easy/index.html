@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>139、152、198、279、300、322、416 | 榎aaaa的个人主页</title>
+<meta name="keywords" content="">
+<meta name="description" content="第一百三十九题：单词拆分
+1. 确定状态：dp[ i ] 代表前 i 个字符组成的字符串是否能够被拆分
+2. 状态转移：dp[ i ] = (**dp[ j ]** &amp;&amp; **s.substr(j, i - j)**也能够被拆分)，其中 j 为区间 [ 0, i ] 的任意整数
+
+具体实现：
+首先将字典转换为无序集合，提高查找速度；原字符串拷贝至string_view类型，以实现零开销访问范围内的部分字符串；最后定义dp数组，用来记录前 i 个字符能否被拆分，注意这里的首位元素为真，因为空字符串肯定是能够被拆分的，其他位默认为假
+进入循环——外层循环遍历原字符串，内层循环遍历字典；之后根据上述的 b 条件，确定字符串前i个元素是否能拆分
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+
+bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict)
+{
+    std::unordered_set&lt;string_view&gt; dict(wordDict.begin(), wordDict.end());
+    std::string_view sv = s;
+    std::vector&lt;bool&gt; dp(s.size() &#43; 1, false);
+    dp[0] = true;
+
+    for(int i = 1; i &lt;= s.size(); i&#43;&#43;)
+    {
+        for(int j = 0; j &lt; i; j&#43;&#43;)
+        {
+            if(dp[j] &amp;&amp; dict.find(sv.substr(j, i - j)) != dict.end()) 
+            {
+                dp[i] = true;
+                break;
+            }
+        }
+    }
+    return dp[s.size()];
+}
+
+
+第一百九十八题：打家劫舍
+1.状态定义：">
+<meta name="author" content="榎aaaa">
+<link rel="canonical" href="http://localhost:1313/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.711be1c082f8d5327c1004feeceb9a0e5c3ad90d981ce64d615fe5f741287a48.css" integrity="sha256-cRvhwIL41TJ8EAT&#43;7OuaDlw62Q2YHOZNYV/l90Eoekg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/">
+  <meta property="og:site_name" content="榎aaaa的个人主页">
+  <meta property="og:title" content="139、152、198、279、300、322、416">
+  <meta property="og:description" content="第一百三十九题：单词拆分 1. 确定状态：dp[ i ] 代表前 i 个字符组成的字符串是否能够被拆分2. 状态转移：dp[ i ] = (**dp[ j ]** &amp;&amp; **s.substr(j, i - j)**也能够被拆分)，其中 j 为区间 [ 0, i ] 的任意整数具体实现：
+首先将字典转换为无序集合，提高查找速度；原字符串拷贝至string_view类型，以实现零开销访问范围内的部分字符串；最后定义dp数组，用来记录前 i 个字符能否被拆分，注意这里的首位元素为真，因为空字符串肯定是能够被拆分的，其他位默认为假
+进入循环——外层循环遍历原字符串，内层循环遍历字典；之后根据上述的 b 条件，确定字符串前i个元素是否能拆分
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) { std::unordered_set&lt;string_view&gt; dict(wordDict.begin(), wordDict.end()); std::string_view sv = s; std::vector&lt;bool&gt; dp(s.size() &#43; 1, false); dp[0] = true; for(int i = 1; i &lt;= s.size(); i&#43;&#43;) { for(int j = 0; j &lt; i; j&#43;&#43;) { if(dp[j] &amp;&amp; dict.find(sv.substr(j, i - j)) != dict.end()) { dp[i] = true; break; } } } return dp[s.size()]; } 第一百九十八题：打家劫舍 1.状态定义：">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="leetcode">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="139、152、198、279、300、322、416">
+  <meta name="twitter:description" content="第一百三十九题：单词拆分 1. 确定状态：dp[ i ] 代表前 i 个字符组成的字符串是否能够被拆分2. 状态转移：dp[ i ] = (**dp[ j ]** &amp;&amp; **s.substr(j, i - j)**也能够被拆分)，其中 j 为区间 [ 0, i ] 的任意整数具体实现：
+首先将字典转换为无序集合，提高查找速度；原字符串拷贝至string_view类型，以实现零开销访问范围内的部分字符串；最后定义dp数组，用来记录前 i 个字符能否被拆分，注意这里的首位元素为真，因为空字符串肯定是能够被拆分的，其他位默认为假
+进入循环——外层循环遍历原字符串，内层循环遍历字典；之后根据上述的 b 条件，确定字符串前i个元素是否能拆分
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) { std::unordered_set&lt;string_view&gt; dict(wordDict.begin(), wordDict.end()); std::string_view sv = s; std::vector&lt;bool&gt; dp(s.size() &#43; 1, false); dp[0] = true; for(int i = 1; i &lt;= s.size(); i&#43;&#43;) { for(int j = 0; j &lt; i; j&#43;&#43;) { if(dp[j] &amp;&amp; dict.find(sv.substr(j, i - j)) != dict.end()) { dp[i] = true; break; } } } return dp[s.size()]; } 第一百九十八题：打家劫舍 1.状态定义：">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "LeetCode Hot 100",
+      "item": "http://localhost:1313/leetcode/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "动态规划",
+      "item": "http://localhost:1313/leetcode/dynamic-programming/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Medium",
+      "item": "http://localhost:1313/leetcode/dynamic-programming/medium/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "139、152、198、279、300、322、416",
+      "item": "http://localhost:1313/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "139、152、198、279、300、322、416",
+  "name": "139、152、198、279、300、322、416",
+  "description": "第一百三十九题：单词拆分 1. 确定状态：dp[ i ] 代表前 i 个字符组成的字符串是否能够被拆分\r2. 状态转移：dp[ i ] = (**dp[ j ]** \u0026amp;\u0026amp; **s.substr(j, i - j)**也能够被拆分)，其中 j 为区间 [ 0, i ] 的任意整数\r具体实现：\n首先将字典转换为无序集合，提高查找速度；原字符串拷贝至string_view类型，以实现零开销访问范围内的部分字符串；最后定义dp数组，用来记录前 i 个字符能否被拆分，注意这里的首位元素为真，因为空字符串肯定是能够被拆分的，其他位默认为假\n进入循环——外层循环遍历原字符串，内层循环遍历字典；之后根据上述的 b 条件，确定字符串前i个元素是否能拆分\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 bool wordBreak(string s, vector\u0026lt;string\u0026gt;\u0026amp; wordDict) { std::unordered_set\u0026lt;string_view\u0026gt; dict(wordDict.begin(), wordDict.end()); std::string_view sv = s; std::vector\u0026lt;bool\u0026gt; dp(s.size() + 1, false); dp[0] = true; for(int i = 1; i \u0026lt;= s.size(); i++) { for(int j = 0; j \u0026lt; i; j++) { if(dp[j] \u0026amp;\u0026amp; dict.find(sv.substr(j, i - j)) != dict.end()) { dp[i] = true; break; } } } return dp[s.size()]; } 第一百九十八题：打家劫舍 1.状态定义：\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "第一百三十九题：单词拆分 1. 确定状态：dp[ i ] 代表前 i 个字符组成的字符串是否能够被拆分\r2. 状态转移：dp[ i ] = (**dp[ j ]** \u0026\u0026 **s.substr(j, i - j)**也能够被拆分)，其中 j 为区间 [ 0, i ] 的任意整数\r具体实现：\n首先将字典转换为无序集合，提高查找速度；原字符串拷贝至string_view类型，以实现零开销访问范围内的部分字符串；最后定义dp数组，用来记录前 i 个字符能否被拆分，注意这里的首位元素为真，因为空字符串肯定是能够被拆分的，其他位默认为假\n进入循环——外层循环遍历原字符串，内层循环遍历字典；之后根据上述的 b 条件，确定字符串前i个元素是否能拆分\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 bool wordBreak(string s, vector\u003cstring\u003e\u0026 wordDict) { std::unordered_set\u003cstring_view\u003e dict(wordDict.begin(), wordDict.end()); std::string_view sv = s; std::vector\u003cbool\u003e dp(s.size() + 1, false); dp[0] = true; for(int i = 1; i \u003c= s.size(); i++) { for(int j = 0; j \u003c i; j++) { if(dp[j] \u0026\u0026 dict.find(sv.substr(j, i - j)) != dict.end()) { dp[i] = true; break; } } } return dp[s.size()]; } 第一百九十八题：打家劫舍 1.状态定义：\ndp[i]指的是”到达第i个房子时，目前为止能偷到的最大金额是多少“\n2.转移方程：\n用一个例子来解释——\n假如当前已经偷完了前3栋房子，来到了第四栋房子（里面有num元）\n那么现在就有两个选择：\n1).不偷第四栋房子，那么金额就是dp[3]（也就是前三栋房子的最优结果）\n2).偷第四栋房子，那么总金额就是dp[i-1] + num（前两栋房子的最优结果加上第四栋房子）\n因此，前四栋房子的最大金额就是两者中的更大者\n1 2 3 4 5 6 7 8 9 10 11 12 int rob(vector\u003cint\u003e\u0026 nums) { int pre = 0, curr = 0; int temp; for(int num : nums) { temp = curr; curr = std::max(pre + num, curr); pre = temp; } return curr; } 第二百七十九题：完全平方数 定义了一个数组，用来存储n之前每一个元素的完全平方数的最少数量，这样就得到了状态转移方程：\n$ dp[i] = 1 + \\min_{1 \\le j^2 \\le i} { dp[i - j^2] } $\n其中，i 是从1到 n 的所有数字，j^2是小于等于 i 的所有完全平方数\n每次当 n 减去 i 之后，都会以 i 为右边界进行一次遍历，此时就是对每一个 i 进行”局部穷举“，看看此时有哪些组成 j^2 的最少数字数量，我们会选取最小的作为当前的结果\n1 2 3 4 5 6 7 8 9 10 11 12 13 int numSquares(int n) { std::vector\u003cint\u003e f(n + 1); for(int i = 1; i \u003c= n; i++) { int minn = INT_MAX; for(int j = 1; j * j \u003c= i; j++) minn = std::min(minn, f[i - j * j]); f[i] = minn + 1; } return f[n]; } 第三百题：最长递增子序列 解法一：动态规划\n状态定义：dp[ i ]指的是“以第 i 个元素结尾的子序列的最大长度”\n状态转移：dp[ i ] = max( dp[ i ], dp[ j ] + 1 )，其中 j 是不大于 i 的正整数；\n方程的意义是——假设正在处理 nums[i]，我们想把它接在一个现有的子序列后面。\n为了保证“严格递增”，必须满足两个条件：\n1. **位置在前后**：那个数必须在 i 之前（即 j \u003c i）。\r2. **数值从小到大**：那个数必须比 `nums[i]` 小（即 nums[j] \u003c nums[i]）。\r1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 int lengthOfLIS(vector\u003cint\u003e\u0026 nums) { if(nums.empty()) return 0; std::vector\u003cint\u003e dp(nums.size(), 1); int res = 1; for(int i = 0; i \u003c nums.size(); i++) { for(int j = 0; j \u003c i; j++) { if(nums[j] \u003c nums[i]) { dp[i] = std::max(dp[i], dp[j] + 1); } } res = std::max(res, dp[i]); } return res; } 第三百二十二题：零钱兑换 确定状态：dp[ i ]代表 为了凑出 i 元，所需要的硬币数量\n状态转移：dp[ i ] = min(dp[ i ], dp[ i - coin ] + 1)，即金额 i 的最优解，必然是由某个较小的金额** i - coin**转移而来的。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 int coinChange(vector\u003cint\u003e\u0026 coins, int amount) { std::vector\u003cint\u003e dp(amount + 1, amount + 1); dp[0] = 0; for(int i = 1; i \u003c= amount; i++) { for(auto coin :coins) { if(coin \u003c= i) dp[i] = std::min(dp[i], dp[i - coin] + 1); } } return dp[amount] \u003e amount ? -1 : dp[amount]; } 第一百五十二题：乘积最大子数组 确定状态：dp[ i ] 代表“以当前元素为结尾的最大/最小乘积是多少”\n状态转移：（具体公式见下图）一开始的想法是——如果当前元素乘上dp数组的上一个元素之后，所得乘积比上一个还要小，那么就以当前元素为起点向后乘；反之，将所得乘积作为以当前元素（nums[ i ]）为结尾的连续乘积存入dp数组\n但是这会导致一个问题——如果原数组是 [ -2, 3, -4 ] 这种类型的话，期望结果是24（因为负负得正），但是上一个方法却会直接抛弃-2 * 3的结果，转而从 -4 开始重新计数，又因为此时已经到达了末尾，此时dp数组为 [-2, -6, -4 ] 所以最后会返回-2\n上一种方法相当于只记录了最大正乘积，没有考虑到最小负乘积可能会与负数相乘，因此还需要定义一个dp数组，用于存放最小乘积\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 int maxProduct(vector\u003cint\u003e\u0026 nums) { if(nums.size() == 1) return nums[0]; std::vector\u003cint\u003e dp_max(nums.size(), 1), dp_min(nums.size(), 1); dp_max[0] = dp_min[0] = nums[0]; int res = nums[0]; for(int i = 1; i \u003c nums.size(); i++) { int choice1 = dp_max[i -1] * nums[i]; int choice2 = dp_min[i -1] * nums[i]; dp_max[i] = std::max({nums[i], choice1, choice2}); dp_min[i] = std::min({nums[i], choice1, choice2}); res = res \u003c dp_max[i] ? dp_max[i] : res; } return res; } 第四百一十六题：分割等和子集 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 bool canPartition(vector\u003cint\u003e\u0026 nums) { int sum = reduce(nums.begin(), nums.end()); if(sum % 2 != 0) return false; sum /= 2; int n = nums.size(); std::vector\u003cbool\u003e dp(sum + 1, false); dp[0] = true; for(int num : nums) { for(int i = sum; num \u003c= i; i--) { if(dp[i - num]) dp[i] = true; } if(dp[sum]) return true; } return dp[sum]; } ",
+  "wordCount" : "663",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "榎aaaa"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "榎aaaa的个人主页",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="榎aaaa的个人主页 (Alt + H)">榎aaaa的个人主页</a>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="所有文章">
+                    <span>所有文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      139、152、198、279、300、322、416
+    </h1>
+    <div class="post-meta"><span>榎aaaa</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h4 id="第一百三十九题单词拆分"><font style="color:#DF2A3F;">第一百三十九题</font>：<a href="https://leetcode.cn/problems/word-break/">单词拆分</a><a hidden class="anchor" aria-hidden="true" href="#第一百三十九题单词拆分">#</a></h4>
+<pre><code>1. 确定状态：dp[ i ] 代表前 i 个字符组成的字符串是否能够被拆分
+2. 状态转移：dp[ i ] = (**dp[ j ]** &amp;&amp; **s.substr(j, i - j)**也能够被拆分)，其中 j 为区间 [ 0, i ] 的任意整数
+</code></pre>
+<p>具体实现：</p>
+<p>首先将字典转换为无序集合，提高查找速度；原字符串拷贝至string_view类型，以实现零开销访问范围内的部分字符串；最后定义dp数组，用来记录前 i 个字符能否被拆分，注意这里的首位元素为真，因为空字符串肯定是能够被拆分的，其他位默认为假</p>
+<p>进入循环——外层循环遍历原字符串，内层循环遍历字典；之后根据上述的 b 条件，确定字符串前i个元素是否能拆分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">wordBreak</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordDict</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string_view</span><span class="o">&gt;</span> <span class="n">dict</span><span class="p">(</span><span class="n">wordDict</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">wordDict</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">sv</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">dict</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">sv</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="p">))</span> <span class="o">!=</span> <span class="n">dict</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> 
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第一百九十八题打家劫舍"><font style="color:#DF2A3F;">第一百九十八题</font>：<a href="https://leetcode.cn/problems/house-robber/">打家劫舍</a><a hidden class="anchor" aria-hidden="true" href="#第一百九十八题打家劫舍">#</a></h4>
+<p>1.状态定义：</p>
+<p>dp[i]指的是”到达第i个房子时，目前为止能偷到的最大金额是多少“</p>
+<p>2.转移方程：</p>
+<p>用一个例子来解释——</p>
+<p>假如当前已经偷完了前3栋房子，来到了第四栋房子（里面有num元）</p>
+<p>那么现在就有两个选择：</p>
+<p>1).不偷第四栋房子，那么金额就是dp[3]（也就是前三栋房子的最优结果）</p>
+<p>2).偷第四栋房子，那么总金额就是dp[i-1] + num（前两栋房子的最优结果加上第四栋房子）</p>
+<p>因此，前四栋房子的最大金额就是两者中的更大者</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">rob</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">curr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">temp</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">curr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">pre</span> <span class="o">+</span> <span class="n">num</span><span class="p">,</span> <span class="n">curr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pre</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">curr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第二百七十九题完全平方数"><font style="color:#DF2A3F;">第二百七十九题</font>：<a href="https://leetcode.cn/problems/perfect-squares/">完全平方数</a><a hidden class="anchor" aria-hidden="true" href="#第二百七十九题完全平方数">#</a></h4>
+<p>定义了一个数组，用来存储n之前每一个元素的完全平方数的最少数量，这样就得到了状态转移方程：</p>
+<p>$ dp[i] = 1 + \min_{1 \le j^2 \le i} { dp[i - j^2] } $</p>
+<p>其中，i 是从1到 n 的所有数字，j^2是小于等于 i 的所有完全平方数</p>
+<p>每次当 n 减去 i 之后，都会以 i 为右边界进行一次遍历，此时就是对每一个 i 进行”局部穷举“，看看此时有哪些组成 j^2 的最少数字数量，我们会选取最小的作为当前的结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">numSquares</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">minn</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">*</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">minn</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">minn</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">*</span> <span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">minn</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第三百题最长递增子序列"><font style="color:#DF2A3F;">第三百题</font>：<a href="https://leetcode.cn/problems/longest-increasing-subsequence/">最长递增子序列</a><a hidden class="anchor" aria-hidden="true" href="#第三百题最长递增子序列">#</a></h4>
+<p><font style="background-color:#FBDE28;">解法一：动态规划</font></p>
+<p>状态定义：dp[ i ]指的是“以第 i 个元素结尾的子序列的最大长度”</p>
+<p>状态转移：dp[ i ] = max( dp[ i ], dp[ j ] + 1 )，其中 j 是不大于 i 的正整数；</p>
+<p>方程的意义是——假设正在处理 <code>nums[i]</code>，我们想把它接在一个现有的子序列后面。</p>
+<p>为了保证“严格递增”，必须满足两个条件：</p>
+<pre><code>1. **位置在前后**：那个数必须在 i 之前（即 j &lt; i）。
+2. **数值从小到大**：那个数必须比 `nums[i]` 小（即 nums[j] &lt; nums[i]）。
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">lengthOfLIS</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第三百二十二题零钱兑换"><font style="color:#DF2A3F;">第三百二十二题</font>：<a href="https://leetcode.cn/problems/coin-change/">零钱兑换</a><a hidden class="anchor" aria-hidden="true" href="#第三百二十二题零钱兑换">#</a></h4>
+<p>确定状态：dp[ i ]代表 为了凑出 i 元，所需要的硬币数量</p>
+<p>状态转移：dp[ i ] = min(dp[ i ], dp[ i - coin ] + 1)，即金额 i 的最优解，必然是由某个较小的金额** i - coin**转移而来的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">coinChange</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">coins</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">amount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">coin</span> <span class="p">:</span><span class="n">coins</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">coin</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">coin</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">amount</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第一百五十二题乘积最大子数组"><font style="color:#DF2A3F;">第一百五十二题</font>：<a href="https://leetcode.cn/problems/maximum-product-subarray/">乘积最大子数组</a><a hidden class="anchor" aria-hidden="true" href="#第一百五十二题乘积最大子数组">#</a></h4>
+<p><font style="background-color:#FBDE28;">确定状态</font>：dp[ i ] 代表“以当前元素为结尾的最大/最小乘积是多少”</p>
+<p><font style="background-color:#FBDE28;">状态转移</font>：（具体公式见下图）一开始的想法是——如果当前元素乘上dp数组的上一个元素之后，所得乘积比上一个还要小，那么就以当前元素为起点向后乘；反之，将所得乘积作为以当前元素（nums[ i ]）为结尾的连续乘积存入dp数组</p>
+<p>但是这会导致一个问题——如果原数组是 [ -2, 3, -4 ] 这种类型的话，期望结果是24（因为负负得正），但是上一个方法却会直接抛弃-2 * 3的结果，转而从 -4 开始重新计数，又因为此时已经到达了末尾，此时dp数组为 [-2, -6, -4 ] 所以最后会返回-2</p>
+<p>上一种方法相当于只记录了最大正乘积，没有考虑到最小负乘积可能会与负数相乘，因此<strong>还需要定义一个dp数组，用于存放最小乘积</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">maxProduct</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp_max</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dp_min</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp_max</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp_min</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">choice1</span> <span class="o">=</span> <span class="n">dp_max</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">choice2</span> <span class="o">=</span> <span class="n">dp_min</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">dp_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">({</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">choice1</span><span class="p">,</span> <span class="n">choice2</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">({</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">choice1</span><span class="p">,</span> <span class="n">choice2</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">&lt;</span> <span class="n">dp_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">?</span> <span class="n">dp_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">:</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第四百一十六题分割等和子集"><font style="color:#DF2A3F;">第四百一十六题</font>：<a href="https://leetcode.cn/problems/partition-equal-subset-sum/">分割等和子集</a><a hidden class="anchor" aria-hidden="true" href="#第四百一十六题分割等和子集">#</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">canPartition</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">sum</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sum</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">sum</span><span class="p">;</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">num</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">sum</span><span class="p">])</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">sum</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">榎aaaa的个人主页</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+</body>
+
+</html>

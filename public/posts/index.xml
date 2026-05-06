@@ -22,5 +22,35 @@
       <guid>http://localhost:1313/posts/cpp-fundamentals/cpp-fundamentals/</guid>
       <description>涵盖从 C&#43;&#43;11 到 C&#43;&#43;23 的核心特性，包含内存管理、RAII 及底层架构思考。</description>
     </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</guid>
+      <description>&lt;p&gt;## &lt;font style=&#34;color:#DF2A3F;&#34;&gt;空间变换的过程&lt;/font&gt;：&lt;/p&gt;
+&lt;p&gt;**模型/局部空间（Model/Local Space）    &amp;ndash;&amp;gt; **&lt;/p&gt;
+&lt;p&gt;**世界空间（World Space）                       &amp;ndash;&amp;gt; **&lt;/p&gt;
+&lt;p&gt;**观察/摄像机空间（View/Camera Space）&amp;ndash;&amp;gt; **&lt;/p&gt;
+&lt;p&gt;**齐次裁剪空间（Clip Space）                     &amp;ndash;&amp;gt; **&lt;/p&gt;
+&lt;p&gt;**标准设备坐标空间（NDC Space）             &amp;ndash;&amp;gt; **&lt;/p&gt;
+&lt;p&gt;**屏幕空间（Screen Space）**&lt;/p&gt;
+&lt;p&gt;****&lt;/p&gt;
+&lt;p&gt;### &lt;font style=&#34;color:#117CEE;&#34;&gt;1 . 模型空间（Model Space） &amp;ndash;&amp;gt; 世界空间（World Space）&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;a .&lt;u&gt; 模型空间中的点&lt;/u&gt; 乘上 &lt;u&gt;模型矩阵&lt;/u&gt; 即可变换到 &lt;u&gt;世界空间&lt;/u&gt; ————** **_**P**_&lt;sub&gt;_**World **_&lt;/sub&gt;_**= M**_&lt;sub&gt;_**Model**_&lt;/sub&gt;_** * P**_&lt;sub&gt;_**Model**_&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;****&lt;/p&gt;
+&lt;p&gt;b . $ M_{model} = M_{translation} \cdot M_{rotation} \cdot M_{scaling} $&lt;/p&gt;
+&lt;p&gt;其中，S是**缩放矩阵（Scaling Matrix）**，R是**旋转矩阵（Rotation Matrix）**，T是**平移矩阵	       	 （Translation Matrix）**&lt;/p&gt;
+&lt;p&gt;坐标的变换必须严格按照“**先缩放，后旋转，再平移**”的顺序进行&lt;/p&gt;
+&lt;p&gt;**i. 缩放矩阵 (Scaling Matrix) ** ：&lt;/p&gt;
+&lt;p&gt;$ M_{scaling} = \begin{bmatrix}&lt;/p&gt;
+&lt;p&gt;s_x &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
