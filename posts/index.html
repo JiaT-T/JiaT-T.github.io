@@ -26,23 +26,18 @@
 ·代码区：存储经过编译之后的机器指令（二进制代码）
 Link:
 C++内存管理 - 还没放弃的老张 - 博客园
-...</p></div><footer class=entry-footer><span title='2026-04-19 00:00:00 +0000 UTC'>April 19, 2026</span>&nbsp;·&nbsp;<span>榎aaaa</span></footer><a class=entry-link aria-label="post link to Fundamentals of Cpp：现代 C++ 核心笔记" href=https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent></h2></header><div class=entry-content><p></p></div><footer class=entry-footer><span>榎aaaa</span></footer><a class=entry-link aria-label="post link to " href=https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent></h2></header><div class=entry-content><p>## 空间变换的过程：
-**模型/局部空间（Model/Local Space） –> **
+...</p></div><footer class=entry-footer><span title='2026-04-19 00:00:00 +0000 UTC'>April 19, 2026</span>&nbsp;·&nbsp;<span>榎aaaa</span></footer><a class=entry-link aria-label="post link to Fundamentals of Cpp：现代 C++ 核心笔记" href=https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent></h2></header><div class=entry-content><p></p></div><footer class=entry-footer><span>榎aaaa</span></footer><a class=entry-link aria-label="post link to " href=https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent></h2></header><div class=entry-content><p>空间变换的过程： **模型/局部空间（Model/Local Space） –> **
 **世界空间（World Space） –> **
 **观察/摄像机空间（View/Camera Space）–> **
 **齐次裁剪空间（Clip Space） –> **
 **标准设备坐标空间（NDC Space） –> **
-**屏幕空间（Screen Space）**
-****
-### 1 . 模型空间（Model Space） –> 世界空间（World Space）
-a . 模型空间中的点 乘上 模型矩阵 即可变换到 世界空间 ————** **_**P**__**World **__**= M**__**Model**__** * P**__**Model**_
-****
+屏幕空间（Screen Space）
+1 . 模型空间（Model Space） –> 世界空间（World Space） a . 模型空间中的点 乘上 模型矩阵 即可变换到 世界空间 ————** P**World **_= M**Model** * P**Model_
 b . $ M_{model} = M_{translation} \cdot M_{rotation} \cdot M_{scaling} $
-其中，S是**缩放矩阵（Scaling Matrix）**，R是**旋转矩阵（Rotation Matrix）**，T是**平移矩阵 （Translation Matrix）**
-坐标的变换必须严格按照“**先缩放，后旋转，再平移**”的顺序进行
+其中，S是缩放矩阵（Scaling Matrix），R是旋转矩阵（Rotation Matrix），T是平移矩阵 （Translation Matrix）
+坐标的变换必须严格按照“先缩放，后旋转，再平移”的顺序进行
 **i. 缩放矩阵 (Scaling Matrix) ** ：
-$ M_{scaling} = \begin{bmatrix}
-s_x & 0 & 0 & 0 \\
+$ M_{scaling} = \begin{bmatrix} s_x & 0 & 0 & 0 \ 0 & s_y & 0 & 0 \ 0 & 0 & s_z & 0 \ 0 & 0 & 0 & 1 \end{bmatrix} $
 ...</p></div><footer class=entry-footer><span>榎aaaa</span></footer><a class=entry-link aria-label="post link to " href=https://JiaT-T.github.io/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://JiaT-T.github.io/>榎aaaa的个人主页</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

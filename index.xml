@@ -726,23 +726,27 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id="第七十五题颜色分类"&gt;&lt;font style="color:#DF2A3F;"&gt;第七十五题&lt;/font&gt;：&lt;a href="https://leetcode.cn/problems/sort-colors/"&gt;颜色分类&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;font style="background-color:#FBDE28;"&gt;解法一：&lt;/font&gt;&lt;/p&gt;</description></item><item><title/><link>https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</guid><description/></item><item><title/><link>https://JiaT-T.github.io/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</guid><description>&lt;p&gt;## &lt;font style="color:#DF2A3F;"&gt;空间变换的过程&lt;/font&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;font style="background-color:#FBDE28;"&gt;解法一：&lt;/font&gt;&lt;/p&gt;</description></item><item><title/><link>https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</guid><description/></item><item><title/><link>https://JiaT-T.github.io/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</guid><description>&lt;h2 id="空间变换的过程"&gt;&lt;font style="color:#DF2A3F;"&gt;空间变换的过程&lt;/font&gt;：&lt;/h2&gt;
 &lt;p&gt;**模型/局部空间（Model/Local Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
 &lt;p&gt;**世界空间（World Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
 &lt;p&gt;**观察/摄像机空间（View/Camera Space）&amp;ndash;&amp;gt; **&lt;/p&gt;
 &lt;p&gt;**齐次裁剪空间（Clip Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
 &lt;p&gt;**标准设备坐标空间（NDC Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
-&lt;p&gt;**屏幕空间（Screen Space）**&lt;/p&gt;
-&lt;p&gt;****&lt;/p&gt;
-&lt;p&gt;### &lt;font style="color:#117CEE;"&gt;1 . 模型空间（Model Space） &amp;ndash;&amp;gt; 世界空间（World Space）&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;a .&lt;u&gt; 模型空间中的点&lt;/u&gt; 乘上 &lt;u&gt;模型矩阵&lt;/u&gt; 即可变换到 &lt;u&gt;世界空间&lt;/u&gt; ————** **_**P**_&lt;sub&gt;_**World **_&lt;/sub&gt;_**= M**_&lt;sub&gt;_**Model**_&lt;/sub&gt;_** * P**_&lt;sub&gt;_**Model**_&lt;/sub&gt;&lt;/p&gt;
-&lt;p&gt;****&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;屏幕空间（Screen Space）&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="1--模型空间model-space--世界空间world-space"&gt;&lt;font style="color:#117CEE;"&gt;1 . 模型空间（Model Space） &amp;ndash;&amp;gt; 世界空间（World Space）&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;a .&lt;u&gt; 模型空间中的点&lt;/u&gt; 乘上 &lt;u&gt;模型矩阵&lt;/u&gt; 即可变换到 &lt;u&gt;世界空间&lt;/u&gt; ————** &lt;strong&gt;&lt;em&gt;&lt;strong&gt;P&lt;/strong&gt;&lt;/em&gt;&lt;sub&gt;&lt;em&gt;**World **&lt;/em&gt;&lt;/sub&gt;_&lt;/strong&gt;= M**&lt;em&gt;&lt;sub&gt;&lt;/em&gt;&lt;strong&gt;Model&lt;/strong&gt;&lt;em&gt;&lt;/sub&gt;&lt;/em&gt;** * P**&lt;em&gt;&lt;sub&gt;&lt;/em&gt;&lt;strong&gt;Model&lt;/strong&gt;_&lt;/sub&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;b . $ M_{model} = M_{translation} \cdot M_{rotation} \cdot M_{scaling} $&lt;/p&gt;
-&lt;p&gt;其中，S是**缩放矩阵（Scaling Matrix）**，R是**旋转矩阵（Rotation Matrix）**，T是**平移矩阵 （Translation Matrix）**&lt;/p&gt;
-&lt;p&gt;坐标的变换必须严格按照“**先缩放，后旋转，再平移**”的顺序进行&lt;/p&gt;
+&lt;p&gt;其中，S是&lt;strong&gt;缩放矩阵（Scaling Matrix）&lt;/strong&gt;，R是&lt;strong&gt;旋转矩阵（Rotation Matrix）&lt;/strong&gt;，T是&lt;strong&gt;平移矩阵 （Translation Matrix）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;坐标的变换必须严格按照“&lt;strong&gt;先缩放，后旋转，再平移&lt;/strong&gt;”的顺序进行&lt;/p&gt;
 &lt;p&gt;**i. 缩放矩阵 (Scaling Matrix) ** ：&lt;/p&gt;
-&lt;p&gt;$ M_{scaling} = \begin{bmatrix}&lt;/p&gt;
-&lt;p&gt;s_x &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\&lt;/p&gt;</description></item><item><title>11</title><link>https://JiaT-T.github.io/leetcode/double-pointers/medium/leetcode-double-pointers-medium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/leetcode/double-pointers/medium/leetcode-double-pointers-medium/</guid><description>&lt;p&gt;#### &lt;font style="color:#DF2A3F;"&gt;第十一题&lt;/font&gt;：[&lt;font style="color:rgb(10, 132, 255);"&gt;盛最多水的容器&lt;/font&gt;](&lt;a href="https://leetcode.cn/problems/container-with-most-water/"&gt;https://leetcode.cn/problems/container-with-most-water/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;$ M_{scaling} = \begin{bmatrix}
+s_x &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; s_y &amp;amp; 0 &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; s_z &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+\end{bmatrix} $&lt;/p&gt;</description></item><item><title>11</title><link>https://JiaT-T.github.io/leetcode/double-pointers/medium/leetcode-double-pointers-medium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/leetcode/double-pointers/medium/leetcode-double-pointers-medium/</guid><description>&lt;p&gt;#### &lt;font style="color:#DF2A3F;"&gt;第十一题&lt;/font&gt;：[&lt;font style="color:rgb(10, 132, 255);"&gt;盛最多水的容器&lt;/font&gt;](&lt;a href="https://leetcode.cn/problems/container-with-most-water/"&gt;https://leetcode.cn/problems/container-with-most-water/&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;如果直接用两个for循环遍历所有容积情况，时间复杂度是O(n^2)，会超时&amp;hellip;..&lt;/p&gt;
 &lt;p&gt;所有需要使用正确的算法&lt;/p&gt;
 &lt;p&gt;那么这题使用的就是双指针的方法。&lt;/p&gt;
@@ -1016,7 +1020,48 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description></item><item><title>33、34、74、153</title><link>https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/</guid><description>&lt;h4 id="第三十三题搜索旋转排序数组"&gt;&lt;font style="color:#DF2A3F;"&gt;第三十三题&lt;/font&gt;：&lt;a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/"&gt;搜索旋转排序数组&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;</description></item><item><title>215、347</title><link>https://JiaT-T.github.io/leetcode/heap/medium/leetcode-heap-medium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/leetcode/heap/medium/leetcode-heap-medium/</guid><description>&lt;h4 id="第二百一十五题数组中的第k个最大元素"&gt;&lt;font style="color:#DF2A3F;"&gt;第二百一十五题&lt;/font&gt;：&lt;a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/"&gt;数组中的第K个最大元素&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;font style="background-color:#FBDE28;"&gt;解法一：优先队列（堆）&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;时间复杂度&lt;/strong&gt;：O(n log k)&lt;font style="color:rgb(249, 250, 251);"&gt; &lt;/font&gt;&lt;strong&gt;空间复杂度&lt;/strong&gt;：O(k)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;手动维护一个大小为 k 的最小堆（堆顶是堆中的最小元素），每当堆的大小超过 k 时，就将堆顶的元素弹出，这样最终留下来的堆顶元素就是 第k大的元素&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;findKthLargest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;priority_queue&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;greater&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="nl"&gt;num&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emplace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;font style="background-color:#FBDE28;"&gt;解法二：快速选择&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;平均时间复杂度&lt;/strong&gt;是 O(n)&lt;/p&gt;
+&lt;p&gt;常规情况下的快排的平均时间复杂度是nlogn，所以需要手写一个快排&lt;/p&gt;
+&lt;p&gt;具体实现：&lt;/p&gt;
+&lt;p&gt;定义三个数组，分别&lt;strong&gt;存储大于、等于、小于基准值&lt;/strong&gt;的数，通过一轮循环将其填充&lt;/p&gt;
+&lt;p&gt;之后的判断存在三种情况：&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:#74B602;"&gt;1.k 小于等于 big 数组的大小&lt;/font&gt;——也就是说，big数组中存在第一大、第二大&amp;hellip;..&lt;strong&gt;一直到第 k 大甚至更多元素&lt;/strong&gt;，此时第 k 大的元素一定存在于 big 数组中，那么接下来就只需要在 big 数组里寻找即可&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:#74B602;"&gt;2.k 大于原数组大小减去 small 数组大小&lt;/font&gt;——nums.size() - small.size() 代表的是 big 数组加上 equal 数组的大小，也就是说&lt;strong&gt;此时 big 与 equal 数组中的元素数量加起来都不足 k 个，那么第 k 大的元素就一定在 small数组里了&lt;/strong&gt;；注意 quickSeclet 的第二个参数从 k 变成了 k - nums.size() + small.size()，这是因为，相对于整个数组，需要寻找的是第 k 大的元素，而相对于 small 数组来说，这个元素是第&lt;/p&gt;</description></item><item><title>33、34、74、153</title><link>https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/</guid><description>&lt;h4 id="第三十三题搜索旋转排序数组"&gt;&lt;font style="color:#DF2A3F;"&gt;第三十三题&lt;/font&gt;：&lt;a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/"&gt;搜索旋转排序数组&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;一开始的想法是：先遍历一遍旋转后的数组，分别找到两个各自单调的子数组，之后对这两个数组分别进行二分查找；但这会导致线性的时间复杂度，而不是题目要求的logn&lt;/p&gt;
 &lt;p&gt;而下面这种方法就是不通过遍历，&lt;strong&gt;直接在二分查找中对有序的子数组进行判断&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;具体实现：&lt;/p&gt;
