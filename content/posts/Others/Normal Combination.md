@@ -1,3 +1,18 @@
+
+---
+
+title: "如何混合法线贴图"
+
+date: 2026-05-10
+
+categories: ["图形学"]
+
+draft: false
+
+TocOpen: true  # 这篇文章的目录默认保持展开
+
+---
+
 \### <font style="color:#117CEE;">一：Linear Blending</font>
 
 代码实现：
@@ -41,22 +56,6 @@ float3 n = normalize(normal\_1 + normal\_2);
 \_e.g. 有两张法线贴图，一张代表“砖块的粗糙纹理”，另一张代表“划痕”，线性混合的行为逻辑是：“我有 50% 像砖块，50% 像划痕”， 但真实的逻辑应该是：“在砖块的斜率基础上，叠加划痕的斜率”\_
 
 
-
----
-
-
-
----
-
-title: "如何混合法线贴图"
-
-date: 2026-05-10
-
-categories: \["图形学"]
-
-draft: false
-
-TocOpen: true  # 这篇文章的目录默认保持展开
 
 ---
 
