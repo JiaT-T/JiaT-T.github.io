@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>medium on 榎aaaa的个人主页</title>
-    <link>http://localhost:1313/leetcode/stack/medium/</link>
+    <link>https://JiaT-T.github.io/leetcode/stack/medium/</link>
     <description>Recent content in medium on 榎aaaa的个人主页</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <atom:link href="http://localhost:1313/leetcode/stack/medium/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://JiaT-T.github.io/leetcode/stack/medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>155、394、739</title>
-      <link>http://localhost:1313/leetcode/stack/medium/leetcode-stack-medium/</link>
+      <link>https://JiaT-T.github.io/leetcode/stack/medium/leetcode-stack-medium/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/leetcode/stack/medium/leetcode-stack-medium/</guid>
+      <guid>https://JiaT-T.github.io/leetcode/stack/medium/leetcode-stack-medium/</guid>
       <description>&lt;h4 id=&#34;第一百五十五题最小栈&#34;&gt;&lt;font style=&#34;color:#DF2A3F;&#34;&gt;第一百五十五题&lt;/font&gt;：&lt;a href=&#34;https://leetcode.cn/problems/min-stack/&#34;&gt;最小栈&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;对这个类需要完成的任务有五个：&lt;/p&gt;
 &lt;p&gt;1.初始化	2.入栈	3.出栈	 4.获取栈顶元素	5.获取最小值&lt;/p&gt;

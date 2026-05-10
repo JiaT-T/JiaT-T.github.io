@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>榎aaaa的个人主页</title>
+<meta name="keywords" content="">
+<meta name="description" content="### 一：Linear Blending
+代码实现：
+
+
+1
+2
+3
+4
+5
+6
+
+
+
+float3 normal\_1 = tex2D(normal\_tex1, uv).xyz \* 2.0f - 1.0f;
+
+float3 normal\_2 = tex2D(normal\_tex2, uv).xyz \* 2.0f - 1.0f;
+
+float3 n = normalize(normal\_1 &#43; normal\_2);
+
+
+这是一种非常暴力的方法，实现起来也是最简单的（相加后再归一化即可）；虽然最终可以实现混合法线贴图的效果，但是会导致**混合后的法线变平，细节也就会更加模糊**
+产生这种结果的原因有两个，可以分别从**几何维度与物理维度**的方向来分析：
+1.几何维度：
+法线本质上是定义在球面上的向量，当我们使用线性的公式对两个法线向量进行混合时，计算的路径实际上是沿着“弦”而非“弧”进行的；这会导致**两个法线向量相加得到的中间向量的模始终小于 1**，虽然可以通过normalize 将模长拉回至 1，但这又会使得“** 角速度非均匀**  ”，表现在混合后的法线上就是：混合结果在中间部分的变化比两端更慢，并且高频的法线会在这种非线性的映射中被抹平，产生“**细节模糊**”；细节模糊的另一个原因是——当两个法线的方向差异过大（接近180度，也就是反向）时，这样的线性混合得到的结果会趋近于垂直向上，丢失了原有的细节
+2.物理维度：
+法线贴图存储的并不是颜色，而是物体表面的偏导数（斜率），如果使用处理颜色的办法去混合两个法线，**只会导致数据的平均，而不是细节的叠加**
+_e.g. 有两张法线贴图，一张代表“砖块的粗糙纹理”，另一张代表“划痕”，线性混合的行为逻辑是：“我有 50% 像砖块，50% 像划痕”， 但真实的逻辑应该是：“在砖块的斜率基础上，叠加划痕的斜率”_
+
+
+title: &ldquo;如何混合法线贴图&rdquo;
+date: 2026-05-10
+categories: [&ldquo;图形学&rdquo;]
+draft: false
+TocOpen: true  # 这篇文章的目录默认保持展开
+
+代码实现：
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+
+float3 normal\_1 = tex2D(normal\_tex1, uv).xyz \* 2.0f - 1.0f;
+
+float3 normal\_2 = tex2D(normal\_tex2, uv).xyz \* 2.0f - 1.0f;
+
+float3 n  = normal\_1 &lt; 0.5 ? 2 \* normal\_1 \* normal\_2 : 1 – 2 \* (1 - normal\_1) \* (1 - normal\_2);
+
+n = normalize(n \* 2 - 1);
+
+
+相比于线性混合，Overlay Blending 是对两张法线贴图进行了类似 PS 中“正片叠底”的处理，虽然 overlay 对于增强二维图像的对比度又很好的效果，但是法线贴图本身并不应该被当作颜色贴图进行处理；overlay 并不理解法线贴图存储的是斜率信息，因此他会对x、y、z分量无差别地进行非线性缩放，这会导致严重的数学错误与视觉伪影">
+<meta name="author" content="榎aaaa">
+<link rel="canonical" href="https://JiaT-T.github.io/posts/others/normal-combination/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e2827ffde8e09ad63f49e1236e2978882c0c2796a8214110cbf43777eb527f8a.css" integrity="sha256-4oJ//ejgmtY/SeEjbil4iCwMJ5aoIUEQy/Q3d&#43;tSf4o=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://JiaT-T.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://JiaT-T.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://JiaT-T.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://JiaT-T.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://JiaT-T.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://JiaT-T.github.io/posts/others/normal-combination/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://JiaT-T.github.io/posts/others/normal-combination/">
+  <meta property="og:site_name" content="榎aaaa的个人主页">
+  <meta property="og:title" content="榎aaaa的个人主页">
+  <meta property="og:description" content="### 一：Linear Blending
+代码实现：
+1 2 3 4 5 6 float3 normal\_1 = tex2D(normal\_tex1, uv).xyz \* 2.0f - 1.0f; float3 normal\_2 = tex2D(normal\_tex2, uv).xyz \* 2.0f - 1.0f; float3 n = normalize(normal\_1 &#43; normal\_2); 这是一种非常暴力的方法，实现起来也是最简单的（相加后再归一化即可）；虽然最终可以实现混合法线贴图的效果，但是会导致**混合后的法线变平，细节也就会更加模糊**
+产生这种结果的原因有两个，可以分别从**几何维度与物理维度**的方向来分析：
+1.几何维度：
+法线本质上是定义在球面上的向量，当我们使用线性的公式对两个法线向量进行混合时，计算的路径实际上是沿着“弦”而非“弧”进行的；这会导致**两个法线向量相加得到的中间向量的模始终小于 1**，虽然可以通过normalize 将模长拉回至 1，但这又会使得“** 角速度非均匀** ”，表现在混合后的法线上就是：混合结果在中间部分的变化比两端更慢，并且高频的法线会在这种非线性的映射中被抹平，产生“**细节模糊**”；细节模糊的另一个原因是——当两个法线的方向差异过大（接近180度，也就是反向）时，这样的线性混合得到的结果会趋近于垂直向上，丢失了原有的细节
+2.物理维度：
+法线贴图存储的并不是颜色，而是物体表面的偏导数（斜率），如果使用处理颜色的办法去混合两个法线，**只会导致数据的平均，而不是细节的叠加**
+_e.g. 有两张法线贴图，一张代表“砖块的粗糙纹理”，另一张代表“划痕”，线性混合的行为逻辑是：“我有 50% 像砖块，50% 像划痕”， 但真实的逻辑应该是：“在砖块的斜率基础上，叠加划痕的斜率”_
+title: “如何混合法线贴图”
+date: 2026-05-10
+categories: [“图形学”]
+draft: false
+TocOpen: true # 这篇文章的目录默认保持展开
+代码实现：
+1 2 3 4 5 6 7 8 float3 normal\_1 = tex2D(normal\_tex1, uv).xyz \* 2.0f - 1.0f; float3 normal\_2 = tex2D(normal\_tex2, uv).xyz \* 2.0f - 1.0f; float3 n = normal\_1 &lt; 0.5 ? 2 \* normal\_1 \* normal\_2 : 1 – 2 \* (1 - normal\_1) \* (1 - normal\_2); n = normalize(n \* 2 - 1); 相比于线性混合，Overlay Blending 是对两张法线贴图进行了类似 PS 中“正片叠底”的处理，虽然 overlay 对于增强二维图像的对比度又很好的效果，但是法线贴图本身并不应该被当作颜色贴图进行处理；overlay 并不理解法线贴图存储的是斜率信息，因此他会对x、y、z分量无差别地进行非线性缩放，这会导致严重的数学错误与视觉伪影">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="榎aaaa的个人主页">
+  <meta name="twitter:description" content="### 一：Linear Blending
+代码实现：
+1 2 3 4 5 6 float3 normal\_1 = tex2D(normal\_tex1, uv).xyz \* 2.0f - 1.0f; float3 normal\_2 = tex2D(normal\_tex2, uv).xyz \* 2.0f - 1.0f; float3 n = normalize(normal\_1 &#43; normal\_2); 这是一种非常暴力的方法，实现起来也是最简单的（相加后再归一化即可）；虽然最终可以实现混合法线贴图的效果，但是会导致**混合后的法线变平，细节也就会更加模糊**
+产生这种结果的原因有两个，可以分别从**几何维度与物理维度**的方向来分析：
+1.几何维度：
+法线本质上是定义在球面上的向量，当我们使用线性的公式对两个法线向量进行混合时，计算的路径实际上是沿着“弦”而非“弧”进行的；这会导致**两个法线向量相加得到的中间向量的模始终小于 1**，虽然可以通过normalize 将模长拉回至 1，但这又会使得“** 角速度非均匀** ”，表现在混合后的法线上就是：混合结果在中间部分的变化比两端更慢，并且高频的法线会在这种非线性的映射中被抹平，产生“**细节模糊**”；细节模糊的另一个原因是——当两个法线的方向差异过大（接近180度，也就是反向）时，这样的线性混合得到的结果会趋近于垂直向上，丢失了原有的细节
+2.物理维度：
+法线贴图存储的并不是颜色，而是物体表面的偏导数（斜率），如果使用处理颜色的办法去混合两个法线，**只会导致数据的平均，而不是细节的叠加**
+_e.g. 有两张法线贴图，一张代表“砖块的粗糙纹理”，另一张代表“划痕”，线性混合的行为逻辑是：“我有 50% 像砖块，50% 像划痕”， 但真实的逻辑应该是：“在砖块的斜率基础上，叠加划痕的斜率”_
+title: “如何混合法线贴图”
+date: 2026-05-10
+categories: [“图形学”]
+draft: false
+TocOpen: true # 这篇文章的目录默认保持展开
+代码实现：
+1 2 3 4 5 6 7 8 float3 normal\_1 = tex2D(normal\_tex1, uv).xyz \* 2.0f - 1.0f; float3 normal\_2 = tex2D(normal\_tex2, uv).xyz \* 2.0f - 1.0f; float3 n = normal\_1 &lt; 0.5 ? 2 \* normal\_1 \* normal\_2 : 1 – 2 \* (1 - normal\_1) \* (1 - normal\_2); n = normalize(n \* 2 - 1); 相比于线性混合，Overlay Blending 是对两张法线贴图进行了类似 PS 中“正片叠底”的处理，虽然 overlay 对于增强二维图像的对比度又很好的效果，但是法线贴图本身并不应该被当作颜色贴图进行处理；overlay 并不理解法线贴图存储的是斜率信息，因此他会对x、y、z分量无差别地进行非线性缩放，这会导致严重的数学错误与视觉伪影">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://JiaT-T.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "https://JiaT-T.github.io/posts/others/normal-combination/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "### 一：Linear Blending\n代码实现：\n1 2 3 4 5 6 float3 normal\\_1 = tex2D(normal\\_tex1, uv).xyz \\* 2.0f - 1.0f; float3 normal\\_2 = tex2D(normal\\_tex2, uv).xyz \\* 2.0f - 1.0f; float3 n = normalize(normal\\_1 + normal\\_2); 这是一种非常暴力的方法，实现起来也是最简单的（相加后再归一化即可）；虽然最终可以实现混合法线贴图的效果，但是会导致**混合后的法线变平，细节也就会更加模糊**\n产生这种结果的原因有两个，可以分别从**几何维度与物理维度**的方向来分析：\n1.几何维度：\n法线本质上是定义在球面上的向量，当我们使用线性的公式对两个法线向量进行混合时，计算的路径实际上是沿着“弦”而非“弧”进行的；这会导致**两个法线向量相加得到的中间向量的模始终小于 1**，虽然可以通过normalize 将模长拉回至 1，但这又会使得“** 角速度非均匀** ”，表现在混合后的法线上就是：混合结果在中间部分的变化比两端更慢，并且高频的法线会在这种非线性的映射中被抹平，产生“**细节模糊**”；细节模糊的另一个原因是——当两个法线的方向差异过大（接近180度，也就是反向）时，这样的线性混合得到的结果会趋近于垂直向上，丢失了原有的细节\n2.物理维度：\n法线贴图存储的并不是颜色，而是物体表面的偏导数（斜率），如果使用处理颜色的办法去混合两个法线，**只会导致数据的平均，而不是细节的叠加**\n_e.g. 有两张法线贴图，一张代表“砖块的粗糙纹理”，另一张代表“划痕”，线性混合的行为逻辑是：“我有 50% 像砖块，50% 像划痕”， 但真实的逻辑应该是：“在砖块的斜率基础上，叠加划痕的斜率”_\ntitle: \u0026ldquo;如何混合法线贴图\u0026rdquo;\ndate: 2026-05-10\ncategories: [\u0026ldquo;图形学\u0026rdquo;]\ndraft: false\nTocOpen: true # 这篇文章的目录默认保持展开\n代码实现：\n1 2 3 4 5 6 7 8 float3 normal\\_1 = tex2D(normal\\_tex1, uv).xyz \\* 2.0f - 1.0f; float3 normal\\_2 = tex2D(normal\\_tex2, uv).xyz \\* 2.0f - 1.0f; float3 n = normal\\_1 \u0026lt; 0.5 ? 2 \\* normal\\_1 \\* normal\\_2 : 1 – 2 \\* (1 - normal\\_1) \\* (1 - normal\\_2); n = normalize(n \\* 2 - 1); 相比于线性混合，Overlay Blending 是对两张法线贴图进行了类似 PS 中“正片叠底”的处理，虽然 overlay 对于增强二维图像的对比度又很好的效果，但是法线贴图本身并不应该被当作颜色贴图进行处理；overlay 并不理解法线贴图存储的是斜率信息，因此他会对x、y、z分量无差别地进行非线性缩放，这会导致严重的数学错误与视觉伪影\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "### 一：Linear Blending\n代码实现：\n1 2 3 4 5 6 float3 normal\\_1 = tex2D(normal\\_tex1, uv).xyz \\* 2.0f - 1.0f; float3 normal\\_2 = tex2D(normal\\_tex2, uv).xyz \\* 2.0f - 1.0f; float3 n = normalize(normal\\_1 + normal\\_2); 这是一种非常暴力的方法，实现起来也是最简单的（相加后再归一化即可）；虽然最终可以实现混合法线贴图的效果，但是会导致**混合后的法线变平，细节也就会更加模糊**\n产生这种结果的原因有两个，可以分别从**几何维度与物理维度**的方向来分析：\n1.几何维度：\n法线本质上是定义在球面上的向量，当我们使用线性的公式对两个法线向量进行混合时，计算的路径实际上是沿着“弦”而非“弧”进行的；这会导致**两个法线向量相加得到的中间向量的模始终小于 1**，虽然可以通过normalize 将模长拉回至 1，但这又会使得“** 角速度非均匀** ”，表现在混合后的法线上就是：混合结果在中间部分的变化比两端更慢，并且高频的法线会在这种非线性的映射中被抹平，产生“**细节模糊**”；细节模糊的另一个原因是——当两个法线的方向差异过大（接近180度，也就是反向）时，这样的线性混合得到的结果会趋近于垂直向上，丢失了原有的细节\n2.物理维度：\n法线贴图存储的并不是颜色，而是物体表面的偏导数（斜率），如果使用处理颜色的办法去混合两个法线，**只会导致数据的平均，而不是细节的叠加**\n_e.g. 有两张法线贴图，一张代表“砖块的粗糙纹理”，另一张代表“划痕”，线性混合的行为逻辑是：“我有 50% 像砖块，50% 像划痕”， 但真实的逻辑应该是：“在砖块的斜率基础上，叠加划痕的斜率”_\ntitle: “如何混合法线贴图”\ndate: 2026-05-10\ncategories: [“图形学”]\ndraft: false\nTocOpen: true # 这篇文章的目录默认保持展开\n代码实现：\n1 2 3 4 5 6 7 8 float3 normal\\_1 = tex2D(normal\\_tex1, uv).xyz \\* 2.0f - 1.0f; float3 normal\\_2 = tex2D(normal\\_tex2, uv).xyz \\* 2.0f - 1.0f; float3 n = normal\\_1 \u003c 0.5 ? 2 \\* normal\\_1 \\* normal\\_2 : 1 – 2 \\* (1 - normal\\_1) \\* (1 - normal\\_2); n = normalize(n \\* 2 - 1); 相比于线性混合，Overlay Blending 是对两张法线贴图进行了类似 PS 中“正片叠底”的处理，虽然 overlay 对于增强二维图像的对比度又很好的效果，但是法线贴图本身并不应该被当作颜色贴图进行处理；overlay 并不理解法线贴图存储的是斜率信息，因此他会对x、y、z分量无差别地进行非线性缩放，这会导致严重的数学错误与视觉伪影\n### 三：Partical Derivative Blending\n代码实现：\n1 2 3 4 5 6 7 8 float3 normal\\_1 = tex2D(texBase, uv).xyz\\*2 - 1; float3 normal\\_2 = tex2D(texDetail, uv).xyz\\*2 - 1; float2 pd = normal\\_1.xy/normal\\_1.z + normal\\_2.xy/normal\\_2.z; //Add the PDs float3 n = normalize(float3(pd, 1)); 根据导数的线性性质：\n$ \\frac{\\partial F_{total}}{\\partial x} = \\frac{\\partial f_1}{\\partial x} + \\frac{\\partial f_2}{\\partial x} $\n可以得知要想混合两个法线，需要**对它们在切空间中对应的表面梯度进行线性累加，然后将合成后的梯度重新投影回法线空间**\n虽然这在数学上的定义是完美的，但实际的应用会涉及到两次除法以及一次 normalize，开销比较大，所以在离实时渲染中一般不会直接使用这个方法，但是在离线渲染中，由于编译器的优化，这几步对于整个的渲染流程的性能的影响微乎其微，所以用它可以得到非常好的混合法线质量\n",
+  "wordCount" : "187",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "榎aaaa"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://JiaT-T.github.io/posts/others/normal-combination/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "榎aaaa的个人主页",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://JiaT-T.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://JiaT-T.github.io/" accesskey="h" title="榎aaaa的个人主页 (Alt + H)">榎aaaa的个人主页</a>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://JiaT-T.github.io/posts/" title="所有文章">
+                    <span>所有文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://JiaT-T.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://JiaT-T.github.io/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta"><span>榎aaaa</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>### <font style="color:#117CEE;">一：Linear Blending</font></p>
+<p>代码实现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">normal</span><span class="err">\</span><span class="n">_1</span> <span class="o">=</span> <span class="n">tex2D</span><span class="p">(</span><span class="n">normal</span><span class="err">\</span><span class="n">_tex1</span><span class="p">,</span> <span class="n">uv</span><span class="p">).</span><span class="n">xyz</span> <span class="err">\</span><span class="o">*</span> <span class="mf">2.0f</span> <span class="o">-</span> <span class="mf">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">normal</span><span class="err">\</span><span class="n">_2</span> <span class="o">=</span> <span class="n">tex2D</span><span class="p">(</span><span class="n">normal</span><span class="err">\</span><span class="n">_tex2</span><span class="p">,</span> <span class="n">uv</span><span class="p">).</span><span class="n">xyz</span> <span class="err">\</span><span class="o">*</span> <span class="mf">2.0f</span> <span class="o">-</span> <span class="mf">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">n</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">normal</span><span class="err">\</span><span class="n">_1</span> <span class="o">+</span> <span class="n">normal</span><span class="err">\</span><span class="n">_2</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是一种非常暴力的方法，实现起来也是最简单的（相加后再归一化即可）；虽然最终可以实现混合法线贴图的效果，但是会导致**混合后的法线变平，细节也就会更加模糊**</p>
+<p>产生这种结果的原因有两个，可以分别从**几何维度与物理维度**的方向来分析：</p>
+<p><font style="background-color:#F1A2AB;">1.几何维度：</font></p>
+<p>法线本质上是定义在球面上的向量，当我们使用线性的公式对两个法线向量进行混合时，计算的路径实际上是沿着“弦”而非“弧”进行的；这会导致**两个法线向量相加得到的中间向量的模始终小于 1**，虽然可以通过normalize 将模长拉回至 1，但这又会使得“** 角速度非均匀**  ”，表现在混合后的法线上就是：<u>混合结果在中间部分的变化比两端更慢，并且高频的法线会在这种非线性的映射中被抹平</u>，产生“**细节模糊**”；细节模糊的另一个原因是——当两个法线的方向差异过大（接近180度，也就是反向）时，这样的<u>线性混合得到的结果会趋近于垂直向上，丢失了原有的细节</u></p>
+<p><font style="background-color:#F1A2AB;">2.物理维度：</font></p>
+<p>法线贴图存储的并不是颜色，而是物体表面的偏导数（斜率），如果使用处理颜色的办法去混合两个法线，**只会导致数据的平均，而不是细节的叠加**</p>
+<p>_e.g. 有两张法线贴图，一张代表“砖块的粗糙纹理”，另一张代表“划痕”，线性混合的行为逻辑是：“我有 50% 像砖块，50% 像划痕”， 但真实的逻辑应该是：“在砖块的斜率基础上，叠加划痕的斜率”_</p>
+<hr>
+<hr>
+<p>title: &ldquo;如何混合法线贴图&rdquo;</p>
+<p>date: 2026-05-10</p>
+<p>categories: [&ldquo;图形学&rdquo;]</p>
+<p>draft: false</p>
+<p>TocOpen: true  # 这篇文章的目录默认保持展开</p>
+<hr>
+<p>代码实现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">normal</span><span class="err">\</span><span class="n">_1</span> <span class="o">=</span> <span class="n">tex2D</span><span class="p">(</span><span class="n">normal</span><span class="err">\</span><span class="n">_tex1</span><span class="p">,</span> <span class="n">uv</span><span class="p">).</span><span class="n">xyz</span> <span class="err">\</span><span class="o">*</span> <span class="mf">2.0f</span> <span class="o">-</span> <span class="mf">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">normal</span><span class="err">\</span><span class="n">_2</span> <span class="o">=</span> <span class="n">tex2D</span><span class="p">(</span><span class="n">normal</span><span class="err">\</span><span class="n">_tex2</span><span class="p">,</span> <span class="n">uv</span><span class="p">).</span><span class="n">xyz</span> <span class="err">\</span><span class="o">*</span> <span class="mf">2.0f</span> <span class="o">-</span> <span class="mf">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">n</span>  <span class="o">=</span> <span class="n">normal</span><span class="err">\</span><span class="n">_1</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">?</span> <span class="mi">2</span> <span class="err">\</span><span class="o">*</span> <span class="n">normal</span><span class="err">\</span><span class="n">_1</span> <span class="err">\</span><span class="o">*</span> <span class="n">normal</span><span class="err">\</span><span class="nl">_2</span> <span class="p">:</span> <span class="mi">1</span> <span class="err">–</span> <span class="mi">2</span> <span class="err">\</span><span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">normal</span><span class="err">\</span><span class="n">_1</span><span class="p">)</span> <span class="err">\</span><span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">normal</span><span class="err">\</span><span class="n">_2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">n</span> <span class="err">\</span><span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>相比于线性混合，Overlay Blending 是对两张法线贴图进行了类似 PS 中“正片叠底”的处理，虽然 overlay 对于增强二维图像的对比度又很好的效果，但是法线贴图本身并不应该被当作颜色贴图进行处理；overlay 并不理解法线贴图存储的是斜率信息，因此他会对x、y、z分量无差别地进行非线性缩放，这会导致严重的数学错误与视觉伪影</p>
+<hr>
+<p>### <font style="color:#117CEE;">三：Partical Derivative Blending</font></p>
+<p>代码实现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">normal</span><span class="err">\</span><span class="n">_1</span> <span class="o">=</span> <span class="n">tex2D</span><span class="p">(</span><span class="n">texBase</span><span class="p">,</span> <span class="n">uv</span><span class="p">).</span><span class="n">xyz</span><span class="err">\</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">normal</span><span class="err">\</span><span class="n">_2</span> <span class="o">=</span> <span class="n">tex2D</span><span class="p">(</span><span class="n">texDetail</span><span class="p">,</span> <span class="n">uv</span><span class="p">).</span><span class="n">xyz</span><span class="err">\</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float2</span> <span class="n">pd</span> <span class="o">=</span> <span class="n">normal</span><span class="err">\</span><span class="n">_1</span><span class="p">.</span><span class="n">xy</span><span class="o">/</span><span class="n">normal</span><span class="err">\</span><span class="n">_1</span><span class="p">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">normal</span><span class="err">\</span><span class="n">_2</span><span class="p">.</span><span class="n">xy</span><span class="o">/</span><span class="n">normal</span><span class="err">\</span><span class="n">_2</span><span class="p">.</span><span class="n">z</span><span class="p">;</span> <span class="c1">//Add the PDs
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float3</span> <span class="n">n</span>  <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">float3</span><span class="p">(</span><span class="n">pd</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据导数的线性性质：</p>
+<p>$ \frac{\partial F_{total}}{\partial x} = \frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial x} $</p>
+<p>可以得知要想混合两个法线，需要**对它们在切空间中对应的表面梯度进行线性累加，然后将合成后的梯度重新投影回法线空间**</p>
+<p>虽然这在数学上的定义是完美的，但实际的应用会涉及到两次除法以及一次 normalize，开销比较大，所以在离实时渲染中一般不会直接使用这个方法，但是在离线渲染中，由于编译器的优化，这几步对于整个的渲染流程的性能的影响微乎其微，所以用它可以得到非常好的混合法线质量</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://JiaT-T.github.io/">榎aaaa的个人主页</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+</body>
+
+</html>

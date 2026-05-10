@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Medium on 榎aaaa的个人主页</title>
-    <link>http://localhost:1313/leetcode/binary-search/medium/</link>
+    <link>https://JiaT-T.github.io/leetcode/binary-search/medium/</link>
     <description>Recent content in Medium on 榎aaaa的个人主页</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <atom:link href="http://localhost:1313/leetcode/binary-search/medium/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://JiaT-T.github.io/leetcode/binary-search/medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>33、34、74、153</title>
-      <link>http://localhost:1313/leetcode/binary-search/medium/leetcode-binary-search-medium/</link>
+      <link>https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/leetcode/binary-search/medium/leetcode-binary-search-medium/</guid>
+      <guid>https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/</guid>
       <description>&lt;h4 id=&#34;第三十三题搜索旋转排序数组&#34;&gt;&lt;font style=&#34;color:#DF2A3F;&#34;&gt;第三十三题&lt;/font&gt;：&lt;a href=&#34;https://leetcode.cn/problems/search-in-rotated-sorted-array/&#34;&gt;搜索旋转排序数组&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;一开始的想法是：先遍历一遍旋转后的数组，分别找到两个各自单调的子数组，之后对这两个数组分别进行二分查找；但这会导致线性的时间复杂度，而不是题目要求的logn&lt;/p&gt;
 &lt;p&gt;而下面这种方法就是不通过遍历，&lt;strong&gt;直接在二分查找中对有序的子数组进行判断&lt;/strong&gt;&lt;/p&gt;

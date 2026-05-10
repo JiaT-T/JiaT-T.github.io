@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Medium on 榎aaaa的个人主页</title>
-    <link>http://localhost:1313/leetcode/technique/medium/</link>
+    <link>https://JiaT-T.github.io/leetcode/technique/medium/</link>
     <description>Recent content in Medium on 榎aaaa的个人主页</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <atom:link href="http://localhost:1313/leetcode/technique/medium/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://JiaT-T.github.io/leetcode/technique/medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/leetcode/technique/medium/leetcode-technique-medium/</link>
+      <link>https://JiaT-T.github.io/leetcode/technique/medium/leetcode-technique-medium/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/leetcode/technique/medium/leetcode-technique-medium/</guid>
+      <guid>https://JiaT-T.github.io/leetcode/technique/medium/leetcode-technique-medium/</guid>
       <description>&lt;h4 id=&#34;第三十一题&#34;&gt;&lt;font style=&#34;color:#DF2A3F;&#34;&gt; 第三十一题&lt;/font&gt;：&lt;a href=&#34;https://leetcode.cn/problems/next-permutation/&#34;&gt;&lt;font style=&#34;color:rgb(10, 132, 255);&#34;&gt;下一个排列&lt;/font&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;思路：&lt;u&gt;找到下一个排序，意思就是将当前数组视作一串数字，通过对元素的重新组合，找到&lt;/u&gt;&lt;u&gt;&lt;font style=&#34;background-color:#FBDE28;&#34;&gt;第一个大于当前数字的数字&lt;/font&gt;&lt;/u&gt;&lt;/p&gt;
 &lt;p&gt;具体实现：&lt;br&gt;
