@@ -1,1 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Memory Management on 榎aaaa的个人主页</title><link>https://JiaT-T.github.io/tags/memory-management/</link><description>Recent content in Memory Management on 榎aaaa的个人主页</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://JiaT-T.github.io/tags/memory-management/index.xml" rel="self" type="application/rss+xml"/><item><title>Fundamentals of Cpp：现代 C++ 核心笔记</title><link>https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/</link><pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/</guid><description>涵盖从 C++11 到 C++23 的核心特性，包含内存管理、RAII 及底层架构思考。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Memory Management on 榎aaaa的个人主页</title><link>https://JiaT-T.github.io/tags/memory-management/</link><description>Recent content in Memory Management on 榎aaaa的个人主页</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://JiaT-T.github.io/tags/memory-management/index.xml" rel="self" type="application/rss+xml"/><item><title>如何构造只能在堆/栈上创建对象的类</title><link>https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/</guid><description>&lt;p&gt;&lt;strong&gt;核心思想：****&lt;font style="background-color:#FBDE28;"&gt;阻止栈资源的释放&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当编译器在栈上分配资源时，必须确保其能够在离开作用域时通过调用析构函数被释放。如果人为指定析构函数不可见，那么编译器就会报错，从而阻止了栈上的资源分配。也就是说，需要**&lt;u&gt;破坏编译器在在栈上自动管理生命周期的能力&lt;/u&gt;**：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;private ：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;**HeapOnly() = default; **&lt;/p&gt;
+&lt;p&gt;此时类对象位于堆上，需要通过指针进行管理，因此在类中定义一个“静态工厂函数”：&lt;/p&gt;
+&lt;p&gt;**static std::unique_ptr&lt;HeapOnly&gt; create(){ return std::unique_ptr&lt;HeapOnly&gt;(new HeapOnly()); } **&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="二只能在栈上创建对象的类"&gt;&lt;font style="color:#117CEE;"&gt;二：只能在栈上创建对象的类&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;核心思想：禁止一切形式的 new 操作&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当我们在外部使用“new T（）”创建类对象时，编译器会在类或全局作用域下寻找 new 的重载，如果将 new 标记为 delete，就能从源头切断堆上的分配：&lt;/p&gt;
+&lt;p&gt;// 禁止&lt;strong&gt;单个对象&lt;/strong&gt;的堆分配&lt;/p&gt;
+&lt;p&gt;*&lt;em&gt;void&lt;/em&gt; operatornew(std::size_t)= delete; **&lt;/p&gt;
+&lt;p&gt;*&lt;em&gt;voidoperatordelete(void&lt;/em&gt;)= delete; **&lt;/p&gt;
+&lt;p&gt;// 禁止&lt;strong&gt;数组形式&lt;/strong&gt;的堆分配&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;void&lt;/em&gt; operatornew&lt;a href="std::size_t"&gt;&lt;/a&gt; = delete;&lt;/em&gt;*&lt;/p&gt;
+&lt;p&gt;** voidoperatordelete&lt;a href="void*"&gt;&lt;/a&gt; = delete; **&lt;/p&gt;</description></item><item><title>Fundamentals of Cpp：现代 C++ 核心笔记</title><link>https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/</link><pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/</guid><description>涵盖从 C++11 到 C++23 的核心特性，包含内存管理、RAII 及底层架构思考。</description></item></channel></rss>
