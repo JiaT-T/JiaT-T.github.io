@@ -12,11 +12,11 @@ TocOpen: true  # 这篇文章的目录默认保持展开
 
 **private ：**
 
-**HeapOnly() = default;  **
+**HeapOnly() = default;**
 
 此时类对象位于堆上，需要通过指针进行管理，因此在类中定义一个“静态工厂函数”：	
 
-**static std::unique_ptr<HeapOnly> create(){ return std::unique_ptr<HeapOnly>(new HeapOnly()); }  **
+**static std::unique_ptr<HeapOnly> create(){ return std::unique_ptr<HeapOnly>(new HeapOnly()); }**
 
 ****
 
@@ -27,14 +27,14 @@ TocOpen: true  # 这篇文章的目录默认保持展开
 
 // 禁止**单个对象**的堆分配
 
-**void* operatornew(std::size_t)= delete; **
+**void* operatornew(std::size_t)= delete;**
 
-**voidoperatordelete(void*)= delete; **
+**voidoperatordelete(void*)= delete;**
 
 // 禁止**数组形式**的堆分配
 
 **void* operatornew[](std::size_t) = delete;**
 
-** voidoperatordelete[](void*) = delete;  **
+**voidoperatordelete[](void*) = delete;**
 
 			

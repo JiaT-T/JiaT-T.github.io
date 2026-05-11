@@ -140,7 +140,7 @@ int lengthOfLIS(vector<int>& nums)
 #### <font style="color:#DF2A3F;">第三百二十二题</font>：[零钱兑换](https://leetcode.cn/problems/coin-change/)
 确定状态：dp[ i ]代表 为了凑出 i 元，所需要的硬币数量
 
-状态转移：dp[ i ] = min(dp[ i ], dp[ i - coin ] + 1)，即金额 i 的最优解，必然是由某个较小的金额** i - coin**转移而来的。
+状态转移：dp[ i ] = min(dp[ i ], dp[ i - coin ] + 1)，即金额 i 的最优解，必然是由某个较小的金额 **i - coin** 转移而来的。
 
 ```cpp
 int coinChange(vector<int>& coins, int amount)

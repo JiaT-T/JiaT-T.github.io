@@ -134,7 +134,7 @@ int minDistance(string word1, string word2)
 
 之后从(1, 1)开始进行遍历（因为i和j不是从零开始，所以之后如果要使用对应下标的text1与text2，要将i、j减一），如果<u>两个字符串的第i-1与j-1个字符相同</u>，就在矩阵对应的位置填充“dp[i - 1][j - 1] + 1”，其中**dp[i - 1][j - 1]代表着“text1的前 i 个字符与text2的前 j 个字符的最长公共子序列”**
 
-<u>如果不同</u>，就回滚到上一个字符，取**text1的前 i-1 个字符与text2的前 j 个字符 与 text1的前 i 个字符与text2的前 j - 1 个字符 **中的最大值
+<u>如果不同</u>，就回滚到上一个字符，取**text1的前 i-1 个字符与text2的前 j 个字符 与 text1的前 i 个字符与text2的前 j - 1 个字符**中的最大值
 
 ```cpp
 int longestCommonSubsequence(string text1, string text2)
