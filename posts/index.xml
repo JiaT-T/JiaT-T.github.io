@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 榎aaaa的个人主页</title><link>https://JiaT-T.github.io/posts/</link><description>Recent content in Posts on 榎aaaa的个人主页</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://JiaT-T.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>如何构造只能在堆/栈上创建对象的类</title><link>https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/</guid><description>&lt;p&gt;&lt;strong&gt;核心思想：****&lt;font style="background-color:#FBDE28;"&gt;阻止栈资源的释放&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;当编译器在栈上分配资源时，必须确保其能够在离开作用域时通过调用析构函数被释放。如果人为指定析构函数不可见，那么编译器就会报错，从而阻止了栈上的资源分配。也就是说，需要**&lt;u&gt;破坏编译器在在栈上自动管理生命周期的能力&lt;/u&gt;**：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;private ：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;**HeapOnly() = default; **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HeapOnly() = default;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;此时类对象位于堆上，需要通过指针进行管理，因此在类中定义一个“静态工厂函数”：&lt;/p&gt;
-&lt;p&gt;**static std::unique_ptr&lt;HeapOnly&gt; create(){ return std::unique_ptr&lt;HeapOnly&gt;(new HeapOnly()); } **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;static std::unique_ptr&lt;HeapOnly&gt; create(){ return std::unique_ptr&lt;HeapOnly&gt;(new HeapOnly()); }&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id="二只能在栈上创建对象的类"&gt;&lt;font style="color:#117CEE;"&gt;二：只能在栈上创建对象的类&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;核心思想：禁止一切形式的 new 操作&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;当我们在外部使用“new T（）”创建类对象时，编译器会在类或全局作用域下寻找 new 的重载，如果将 new 标记为 delete，就能从源头切断堆上的分配：&lt;/p&gt;
 &lt;p&gt;// 禁止&lt;strong&gt;单个对象&lt;/strong&gt;的堆分配&lt;/p&gt;
-&lt;p&gt;*&lt;em&gt;void&lt;/em&gt; operatornew(std::size_t)= delete; **&lt;/p&gt;
-&lt;p&gt;*&lt;em&gt;voidoperatordelete(void&lt;/em&gt;)= delete; **&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;void&lt;/em&gt; operatornew(std::size_t)= delete;&lt;/em&gt;*&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;voidoperatordelete(void&lt;/em&gt;)= delete;&lt;/em&gt;*&lt;/p&gt;
 &lt;p&gt;// 禁止&lt;strong&gt;数组形式&lt;/strong&gt;的堆分配&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;em&gt;void&lt;/em&gt; operatornew&lt;a href="std::size_t"&gt;&lt;/a&gt; = delete;&lt;/em&gt;*&lt;/p&gt;
-&lt;p&gt;** voidoperatordelete&lt;a href="void*"&gt;&lt;/a&gt; = delete; **&lt;/p&gt;</description></item><item><title>如何混合法线贴图</title><link>https://JiaT-T.github.io/posts/others/normal-combination/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/others/normal-combination/</guid><description>&lt;p&gt;### &lt;font style="color:#117CEE;"&gt;一：Linear Blending&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;voidoperatordelete&lt;a href="void*"&gt;&lt;/a&gt; = delete;&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>如何混合法线贴图</title><link>https://JiaT-T.github.io/posts/others/normal-combination/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/others/normal-combination/</guid><description>&lt;p&gt;### &lt;font style="color:#117CEE;"&gt;一：Linear Blending&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;代码实现：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -91,20 +91,20 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;根据导数的线性性质：&lt;/p&gt;</description></item><item><title>蒙特卡洛积分推导笔记</title><link>https://JiaT-T.github.io/posts/monte-carlo-integral-notes/monte-carlo-integral-notes/</link><pubDate>Fri, 08 May 2026 16:12:00 +0800</pubDate><guid>https://JiaT-T.github.io/posts/monte-carlo-integral-notes/monte-carlo-integral-notes/</guid><description>整理蒙特卡洛积分推导相关手写笔记。</description></item><item><title>重要性采样笔记</title><link>https://JiaT-T.github.io/posts/importance-sampling-notes/importance-sampling-notes/</link><pubDate>Fri, 08 May 2026 16:11:00 +0800</pubDate><guid>https://JiaT-T.github.io/posts/importance-sampling-notes/importance-sampling-notes/</guid><description>整理重要性采样与多重重要性采样相关手写笔记。</description></item><item><title>BRDF 相关公式笔记</title><link>https://JiaT-T.github.io/posts/brdf-notes/brdf-notes/</link><pubDate>Fri, 08 May 2026 16:10:00 +0800</pubDate><guid>https://JiaT-T.github.io/posts/brdf-notes/brdf-notes/</guid><description>整理 BRDF 与常见微表面反射模型相关手写笔记。</description></item><item><title>Hello</title><link>https://JiaT-T.github.io/posts/hello/</link><pubDate>Sun, 19 Apr 2026 14:37:20 +0800</pubDate><guid>https://JiaT-T.github.io/posts/hello/</guid><description>&lt;p&gt;榎 aaaa&lt;/p&gt;</description></item><item><title>Fundamentals of Cpp：现代 C++ 核心笔记</title><link>https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/</link><pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/</guid><description>涵盖从 C++11 到 C++23 的核心特性，包含内存管理、RAII 及底层架构思考。</description></item><item><title/><link>https://JiaT-T.github.io/posts/normal-combination/normal-combination/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/normal-combination/normal-combination/</guid><description/></item><item><title/><link>https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/plane-shadow-matrix-derivation/plane-shadow-matrix-derivation/</guid><description/></item><item><title/><link>https://JiaT-T.github.io/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/space-translation-matrix-derivation/space-translation-matrix-derivation/</guid><description>&lt;h2 id="空间变换的过程"&gt;&lt;font style="color:#DF2A3F;"&gt;空间变换的过程&lt;/font&gt;：&lt;/h2&gt;
-&lt;p&gt;**模型/局部空间（Model/Local Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
-&lt;p&gt;**世界空间（World Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
-&lt;p&gt;**观察/摄像机空间（View/Camera Space）&amp;ndash;&amp;gt; **&lt;/p&gt;
-&lt;p&gt;**齐次裁剪空间（Clip Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
-&lt;p&gt;**标准设备坐标空间（NDC Space） &amp;ndash;&amp;gt; **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;模型/局部空间（Model/Local Space） &amp;ndash;&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;世界空间（World Space） &amp;ndash;&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;观察/摄像机空间（View/Camera Space）&amp;ndash;&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;齐次裁剪空间（Clip Space） &amp;ndash;&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;标准设备坐标空间（NDC Space） &amp;ndash;&amp;gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;屏幕空间（Screen Space）&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id="1--模型空间model-space--世界空间world-space"&gt;&lt;font style="color:#117CEE;"&gt;1 . 模型空间（Model Space） &amp;ndash;&amp;gt; 世界空间（World Space）&lt;/font&gt;&lt;/h3&gt;
-&lt;p&gt;a .&lt;u&gt; 模型空间中的点&lt;/u&gt; 乘上 &lt;u&gt;模型矩阵&lt;/u&gt; 即可变换到 &lt;u&gt;世界空间&lt;/u&gt; ————** &lt;strong&gt;&lt;em&gt;&lt;strong&gt;P&lt;/strong&gt;&lt;/em&gt;&lt;sub&gt;&lt;em&gt;**World **&lt;/em&gt;&lt;/sub&gt;_&lt;/strong&gt;= M**&lt;em&gt;&lt;sub&gt;&lt;/em&gt;&lt;strong&gt;Model&lt;/strong&gt;&lt;em&gt;&lt;/sub&gt;&lt;/em&gt;** * P**&lt;em&gt;&lt;sub&gt;&lt;/em&gt;&lt;strong&gt;Model&lt;/strong&gt;_&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;a .&lt;u&gt; 模型空间中的点&lt;/u&gt; 乘上 &lt;u&gt;模型矩阵&lt;/u&gt; 即可变换到 &lt;u&gt;世界空间&lt;/u&gt; ———— &lt;strong&gt;&lt;em&gt;P&lt;sub&gt;World&lt;/sub&gt; = M&lt;sub&gt;Model&lt;/sub&gt; * P&lt;sub&gt;Model&lt;/sub&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;b . $ M_{model} = M_{translation} \cdot M_{rotation} \cdot M_{scaling} $&lt;/p&gt;
 &lt;p&gt;其中，S是&lt;strong&gt;缩放矩阵（Scaling Matrix）&lt;/strong&gt;，R是&lt;strong&gt;旋转矩阵（Rotation Matrix）&lt;/strong&gt;，T是&lt;strong&gt;平移矩阵 （Translation Matrix）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;坐标的变换必须严格按照“&lt;strong&gt;先缩放，后旋转，再平移&lt;/strong&gt;”的顺序进行&lt;/p&gt;
-&lt;p&gt;**i. 缩放矩阵 (Scaling Matrix) ** ：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;i. 缩放矩阵 (Scaling Matrix)&lt;/strong&gt; ：&lt;/p&gt;
 &lt;p&gt;$ M_{scaling} = \begin{bmatrix}
 s_x &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \
 0 &amp;amp; s_y &amp;amp; 0 &amp;amp; 0 \
