@@ -7,11 +7,11 @@ static std::unique_ptr create(){ return std::unique_ptr(new HeapOnly()); }
 二：只能在栈上创建对象的类 核心思想：禁止一切形式的 new 操作
 当我们在外部使用“new T（）”创建类对象时，编译器会在类或全局作用域下寻找 new 的重载，如果将 new 标记为 delete，就能从源头切断堆上的分配：
 // 禁止单个对象的堆分配
-void operatornew(std::size_t)= delete;*
-voidoperatordelete(void)= delete;*
+void operator new(std::size_t)= delete;*
+void operator delete(void)= delete;*
 // 禁止数组形式的堆分配
 void operatornew = delete;*
-voidoperatordelete = delete;</p></div><footer class=entry-footer><span title='2026-05-10 00:00:00 +0000 UTC'>May 10, 2026</span>&nbsp;·&nbsp;<span>榎aaaa</span></footer><a class=entry-link aria-label="post link to 如何构造只能在堆/栈上创建对象的类" href=https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Fundamentals of Cpp：现代 C++ 核心笔记</h2></header><div class=entry-content><p>这里是整理的一些c++基础知识….
+void operator delete = delete;</p></div><footer class=entry-footer><span title='2026-05-10 00:00:00 +0000 UTC'>May 10, 2026</span>&nbsp;·&nbsp;<span>榎aaaa</span></footer><a class=entry-link aria-label="post link to 如何构造只能在堆/栈上创建对象的类" href=https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Fundamentals of Cpp：现代 C++ 核心笔记</h2></header><div class=entry-content><p>这里是整理的一些c++基础知识….
 就这样吧….
 语法—————————————————— 1.C++的三大特性 封装，继承，多态（同时也是面向对象编程的三大特性）
 1).简要解释一下上面三者 ·封装：隐藏内部具体的实现细节，对外部只暴露必要的接口来访问对象
