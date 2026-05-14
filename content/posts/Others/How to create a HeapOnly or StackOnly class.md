@@ -27,14 +27,14 @@ TocOpen: true  # 这篇文章的目录默认保持展开
 
 // 禁止**单个对象**的堆分配
 
-**void* operatornew(std::size_t)= delete;**
+**void* operator new(std::size_t)= delete;**
 
-**voidoperatordelete(void*)= delete;**
+**void operator delete(void*)= delete;**
 
 // 禁止**数组形式**的堆分配
 
 **void* operatornew[](std::size_t) = delete;**
 
-**voidoperatordelete[](void*) = delete;**
+**void operator delete[](void*) = delete;**
 
 			
