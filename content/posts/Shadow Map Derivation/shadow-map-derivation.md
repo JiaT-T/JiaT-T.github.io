@@ -1,8 +1,8 @@
 +++
 date = '2026-05-13T20:20:00+08:00'
 draft = false
-title = 'Shadow Map 推导'
-summary = 'Shadow Map 推导相关手写笔记。'
+title = '平面阴影矩阵推导'
+summary = '平面阴影矩阵推导相关手写笔记。'
 tags = ['Computer Graphics', 'Rendering', 'Shadow Map', 'Technical Notes']
 +++
 
