@@ -20,8 +20,12 @@
         <h2 class="archive-title-l1">技术笔记</h2>
         <div class="archive-note-grid">
             {{- range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+            {{- $pageTitle := .Title }}
+            {{- if and (not $pageTitle) .File }}
+                {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
+            {{- end }}
             <a class="archive-note-card" href="{{ .RelPermalink }}">
-                <span class="archive-note-title">{{ .Title }}</span>
+                <span class="archive-note-title">{{ $pageTitle }}</span>
                 {{- with .Summary }}
                 <span class="archive-note-summary">{{ . | plainify | truncate 90 }}</span>
                 {{- end }}
@@ -45,9 +49,13 @@
                             <h3 class="archive-title-l3">{{ .Title | upper }}</h3>
                             <ul class="archive-list">
                                 {{- range .RegularPages.ByTitle }}
+                                {{- $pageTitle := .Title }}
+                                {{- if and (not $pageTitle) .File }}
+                                    {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
+                                {{- end }}
                                 <li>
                                     <a href="{{ .RelPermalink }}">
-                                        <span class="title">{{ .Title }}</span>
+                                        <span class="title">{{ $pageTitle }}</span>
                                     </a>
                                 </li>
                                 {{- end }}
@@ -60,9 +68,13 @@
                     <div class="glass-section-level-3">
                         <ul class="archive-list">
                             {{- range .RegularPages.ByTitle }}
+                            {{- $pageTitle := .Title }}
+                            {{- if and (not $pageTitle) .File }}
+                                {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
+                            {{- end }}
                             <li>
                                 <a href="{{ .RelPermalink }}">
-                                    <span class="title">{{ .Title }}</span>
+                                    <span class="title">{{ $pageTitle }}</span>
                                 </a>
                             </li>
                             {{- end }}
@@ -79,8 +91,12 @@
     <section class="glass-section-level-1">
         <div class="archive-note-grid">
             {{- range .RegularPages.ByTitle }}
+            {{- $pageTitle := .Title }}
+            {{- if and (not $pageTitle) .File }}
+                {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
+            {{- end }}
             <a class="archive-note-card" href="{{ .RelPermalink }}">
-                <span class="archive-note-title">{{ .Title }}</span>
+                <span class="archive-note-title">{{ $pageTitle }}</span>
                 {{- with .Summary }}
                 <span class="archive-note-summary">{{ . | plainify | truncate 90 }}</span>
                 {{- end }}
