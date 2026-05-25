@@ -3,45 +3,65 @@
     <h1 class="simsun-bold">{{ .Title }}</h1>
 </header>
 
+{{- if eq .RelPermalink "/archives/" }}
 <div class="tree-archive-container">
-    {{/* 关键：使用 site.Sections 抓取 content 目录下所有的文件夹（如 leetcode, posts） */}}
-    {{- range site.Sections }} 
-        
-        {{/* 过滤掉不需要显示的页面，比如搜索页 */}}
-        {{- if and (ne .Section "search") (.Sections) }}
-        
-        <div class="glass-section-level-1">
-            <h2 class="archive-title-l1">{{ .Title }}</h2>
-            
-            {{/* 递归遍历二级目录：如 栈, 链表 */}}
-            {{- range .Sections }}
+    {{- with site.GetPage "section" "leetcode" }}
+    <a class="archive-folder-card" href="{{ .RelPermalink }}">
+        <span class="archive-folder-icon">📁</span>
+        <span class="archive-folder-body">
+            <span class="archive-folder-title">LeetCode</span>
+            <span class="archive-folder-desc">{{ .Title }} · {{ len (where site.RegularPages "Section" "leetcode") }} 篇</span>
+        </span>
+        <span class="archive-folder-arrow">进入</span>
+    </a>
+    {{- end }}
+
+    <section class="glass-section-level-1">
+        <h2 class="archive-title-l1">技术笔记</h2>
+        <div class="archive-note-grid">
+            {{- range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+            <a class="archive-note-card" href="{{ .RelPermalink }}">
+                <span class="archive-note-title">{{ .Title }}</span>
+                {{- with .Summary }}
+                <span class="archive-note-summary">{{ . | plainify | truncate 90 }}</span>
+                {{- end }}
+            </a>
+            {{- end }}
+        </div>
+    </section>
+</div>
+{{- else }}
+<div class="tree-archive-container">
+    {{- if .Sections }}
+        {{- range .Sections }}
+            {{- if or .Sections .RegularPages }}
             <div class="glass-section-level-2">
-                <h3 class="archive-title-l2">📁 {{ .Title }}</h3>
-                
+                <h2 class="archive-title-l2">📁 {{ .Title }}</h2>
+
                 <div class="archive-sub-grid">
-                    {{/* 递归遍历三级目录：如 easy, medium */}}
                     {{- range .Sections }}
-                    <div class="glass-section-level-3">
-                        <h4 class="archive-title-l3">{{ .Title | upper }}</h4>
-                        <ul class="archive-list">
-                            {{- range .RegularPages }}
-                            <li>
-                                <a href="{{ .Permalink }}">
-                                    <span class="title">{{ .Title }}</span>
-                                </a>
-                            </li>
-                            {{- end }}
-                        </ul>
-                    </div>
+                        {{- if or .Sections .RegularPages }}
+                        <div class="glass-section-level-3">
+                            <h3 class="archive-title-l3">{{ .Title | upper }}</h3>
+                            <ul class="archive-list">
+                                {{- range .RegularPages.ByTitle }}
+                                <li>
+                                    <a href="{{ .RelPermalink }}">
+                                        <span class="title">{{ .Title }}</span>
+                                    </a>
+                                </li>
+                                {{- end }}
+                            </ul>
+                        </div>
+                        {{- end }}
                     {{- end }}
 
-                    {{/* 处理二级目录下直接放的文章（没有三级文件夹的情况） */}}
                     {{- if .RegularPages }}
                     <div class="glass-section-level-3">
                         <ul class="archive-list">
-                            {{- range .RegularPages }}
+                            {{- range .RegularPages.ByTitle }}
                             <li>
-                                <a href="{{ .Permalink }}">
+                                <a href="{{ .RelPermalink }}">
                                     <span class="title">{{ .Title }}</span>
                                 </a>
                             </li>
@@ -52,8 +72,23 @@
                 </div>
             </div>
             {{- end }}
-        </div>
         {{- end }}
     {{- end }}
+
+    {{- if .RegularPages }}
+    <section class="glass-section-level-1">
+        <div class="archive-note-grid">
+            {{- range .RegularPages.ByTitle }}
+            <a class="archive-note-card" href="{{ .RelPermalink }}">
+                <span class="archive-note-title">{{ .Title }}</span>
+                {{- with .Summary }}
+                <span class="archive-note-summary">{{ . | plainify | truncate 90 }}</span>
+                {{- end }}
+            </a>
+            {{- end }}
+        </div>
+    </section>
+    {{- end }}
 </div>
+{{- end }}
 {{ end }}

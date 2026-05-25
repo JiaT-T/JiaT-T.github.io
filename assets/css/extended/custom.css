@@ -441,6 +441,104 @@ body::after {
     gap: 28px;
 }
 
+.archive-folder-card,
+.archive-note-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--liquid-stroke) !important;
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.36) 50%, rgba(255, 255, 255, 0.52)),
+        var(--liquid-surface);
+    box-shadow: var(--liquid-shadow);
+    backdrop-filter: blur(22px) saturate(175%);
+    -webkit-backdrop-filter: blur(22px) saturate(175%);
+    color: var(--primary) !important;
+    text-decoration: none;
+}
+
+.archive-folder-card::before,
+.archive-note-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.08) 38%, transparent 68%),
+        radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.72), transparent 34%),
+        radial-gradient(circle at 100% 100%, rgba(47, 126, 247, 0.12), transparent 34%);
+    opacity: 0.72;
+}
+
+.archive-folder-card > *,
+.archive-note-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.archive-folder-card {
+    align-items: center;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: auto 1fr auto;
+    min-height: 96px;
+    padding: 22px 24px;
+}
+
+.archive-folder-card:hover,
+.archive-note-card:hover {
+    box-shadow: var(--liquid-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.archive-folder-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.archive-folder-body {
+    display: grid;
+    gap: 6px;
+}
+
+.archive-folder-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.archive-folder-desc,
+.archive-note-summary {
+    color: var(--secondary);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.archive-folder-arrow {
+    color: var(--liquid-accent);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.archive-note-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.archive-note-card {
+    display: grid;
+    gap: 10px;
+    min-height: 118px;
+    padding: 18px;
+}
+
+.archive-note-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
 .glass-section-level-1 {
     padding: 0;
 }
@@ -583,5 +681,13 @@ body::after {
 
     .archive-sub-grid {
         grid-template-columns: 1fr;
+    }
+
+    .archive-folder-card {
+        grid-template-columns: auto 1fr;
+    }
+
+    .archive-folder-arrow {
+        grid-column: 2;
     }
 }
