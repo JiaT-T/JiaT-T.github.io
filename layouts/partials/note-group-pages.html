@@ -1,0 +1,28 @@
+{{- $group := .group -}}
+{{- $pages := slice -}}
+{{- range where site.RegularPages "Section" "posts" -}}
+    {{- $tags := "" -}}
+    {{- with .Params.tags -}}
+        {{- $tags = delimit . " " -}}
+    {{- end -}}
+    {{- $categories := "" -}}
+    {{- with .Params.categories -}}
+        {{- $categories = delimit . " " -}}
+    {{- end -}}
+    {{- $path := "" -}}
+    {{- with .File -}}
+        {{- $path = .Path -}}
+    {{- end -}}
+    {{- $haystack := lower (printf "%s %s %s %s" $path .Title $tags $categories) -}}
+    {{- $isDirectX := or (in $haystack "dx12") (or (in $haystack "directx") (in $haystack "directx 12")) -}}
+    {{- $isCpp := or (in $haystack "c++") (or (in $haystack "cpp") (or (in $haystack "modern c") (or (in $haystack "raii") (or (in $haystack "memory management") (or (in $haystack "design pattern") (or (in $haystack "shared ptr") (or (in $haystack "shared_ptr") (or (in $haystack "heaponly") (or (in $haystack "stackonly") (or (in $haystack "编程基础") (in $haystack "hello"))))))))))) -}}
+
+    {{- if and (eq $group "directx12") $isDirectX -}}
+        {{- $pages = $pages | append . -}}
+    {{- else if and (eq $group "cpp") $isCpp (not $isDirectX) -}}
+        {{- $pages = $pages | append . -}}
+    {{- else if and (eq $group "graphics") (not $isDirectX) (not $isCpp) -}}
+        {{- $pages = $pages | append . -}}
+    {{- end -}}
+{{- end -}}
+{{- return $pages -}}

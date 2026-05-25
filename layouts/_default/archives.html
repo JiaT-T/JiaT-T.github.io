@@ -4,22 +4,32 @@
 </header>
 
 {{- if eq .RelPermalink "/archives/" }}
+{{- $noteGroups := slice
+    (dict "title" "LeetCode" "url" "/leetcode/" "desc" "LeetCode Hot 100" "count" (len (where site.RegularPages "Section" "leetcode")))
+    (dict "title" "C++" "url" "/cpp/" "desc" "现代 C++、设计模式与基础语法笔记" "count" (len (partial "note-group-pages.html" (dict "group" "cpp"))))
+    (dict "title" "图形学" "url" "/graphics/" "desc" "渲染、采样、阴影与图形学公式笔记" "count" (len (partial "note-group-pages.html" (dict "group" "graphics"))))
+    (dict "title" "DirectX 12" "url" "/directx12/" "desc" "DX12 API 与渲染管线笔记" "count" (len (partial "note-group-pages.html" (dict "group" "directx12"))))
+-}}
 <div class="tree-archive-container">
-    {{- with site.GetPage "section" "leetcode" }}
-    <a class="archive-folder-card" href="{{ .RelPermalink }}">
+    <div class="archive-root-grid">
+    {{- range $noteGroups }}
+    <a class="archive-folder-card" href="{{ .url }}">
         <span class="archive-folder-icon">📁</span>
         <span class="archive-folder-body">
-            <span class="archive-folder-title">LeetCode</span>
-            <span class="archive-folder-desc">{{ .Title }} · {{ len (where site.RegularPages "Section" "leetcode") }} 篇</span>
+            <span class="archive-folder-title">{{ .title }}</span>
+            <span class="archive-folder-desc">{{ .desc }} · {{ .count }} 篇</span>
         </span>
         <span class="archive-folder-arrow">进入</span>
     </a>
     {{- end }}
-
+    </div>
+</div>
+{{- else if .Params.archiveGroup }}
+{{- $groupPages := partial "note-group-pages.html" (dict "group" .Params.archiveGroup) }}
+<div class="tree-archive-container">
     <section class="glass-section-level-1">
-        <h2 class="archive-title-l1">技术笔记</h2>
         <div class="archive-note-grid">
-            {{- range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+            {{- range $groupPages.ByDate.Reverse }}
             {{- $pageTitle := .Title }}
             {{- if and (not $pageTitle) .File }}
                 {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}

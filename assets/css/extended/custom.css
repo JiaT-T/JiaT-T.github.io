@@ -441,6 +441,12 @@ body::after {
     gap: 28px;
 }
 
+.archive-root-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
 .archive-folder-card,
 .archive-note-card {
     position: relative;
