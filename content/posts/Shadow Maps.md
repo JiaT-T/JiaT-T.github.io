@@ -4,6 +4,7 @@ draft = false
 title = 'Shadow Maps'
 summary = '整理 Shadow Map 的软阴影、概率阴影、矩阴影以及 PSM、CSM 等精度与分辨率优化方法。'
 tags = ['Computer Graphics', 'Rendering', 'Shadow', 'Technical Notes']
+math = true
 +++
 **【Reference】：**[**https://zhuanlan.zhihu.com/p/104687855**](https://zhuanlan.zhihu.com/p/104687855)
 
