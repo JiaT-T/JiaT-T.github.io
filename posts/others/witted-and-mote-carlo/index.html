@@ -41,50 +41,50 @@
 
 三：简单对比
 
-  
-      
-          项目
-          递归式光线追踪
-          路径追踪
-      
-  
-  
-      
-          代表算法
-          Whitted Ray Tracing
-          Monte Carlo Path Tracing
-      
-      
-          光线传播
-          反射、折射递归分支
-          随机采样一条或多条路径
-      
-      
-          主要效果
-          镜面、玻璃、阴影
-          全局光照、软阴影、间接光
-      
-      
-          漫反射间接光
-          通常不自然支持
-          天然支持
-      
-      
-          结果
-          比较干净
-          有噪声，需要采样收敛
-      
-      
-          成本
-          相对低
-          通常更高
-      
-      
-          物理真实性
-          有限
-          更接近物理真实
-      
-  
+	
+			
+					项目
+					递归式光线追踪
+					路径追踪
+			
+	
+	
+			
+					代表算法
+					Whitted Ray Tracing
+					Monte Carlo Path Tracing
+			
+			
+					光线传播
+					反射、折射递归分支
+					随机采样一条或多条路径
+			
+			
+					主要效果
+					镜面、玻璃、阴影
+					全局光照、软阴影、间接光
+			
+			
+					漫反射间接光
+					通常不自然支持
+					天然支持
+			
+			
+					结果
+					比较干净
+					有噪声，需要采样收敛
+			
+			
+					成本
+					相对低
+					通常更高
+			
+			
+					物理真实性
+					有限
+					更接近物理真实
+			
+	
 "><meta name=author content="榎aaaa"><link rel=canonical href=https://JiaT-T.github.io/posts/others/witted-and-mote-carlo/><link crossorigin=anonymous href=/assets/css/stylesheet.9c1a327d6acf893630ded55149194ce3692f96d6f283cae0e98788cf415c8d42.css integrity="sha256-nBoyfWrPiTYw3tVRSRlM42kvltbyg8rg6YeIz0FcjUI=" rel="preload stylesheet" as=style><link rel=icon href=https://JiaT-T.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://JiaT-T.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://JiaT-T.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://JiaT-T.github.io/apple-touch-icon.png><link rel=mask-icon href=https://JiaT-T.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://JiaT-T.github.io/posts/others/witted-and-mote-carlo/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="https://JiaT-T.github.io/posts/others/witted-and-mote-carlo/"><meta property="og:site_name" content="榎aaaa的个人主页"><meta property="og:title" content="Whitted-style 光线追踪与 Monte Carlo 路径追踪的主要区别"><meta property="og:description" content="一：Whitted-style 光线追踪 流程：
 从相机发出主光线 命中物体之后根据材质种类继续发射： 反射光线 折射光线 阴影光线 最后通过递归计算所有光线对像素的贡献值 主要用于模拟直接光照与理想情况下的反射、折射现象，对于真实世界的漫反射、全局光照、颜色渗透等并不擅长，因为它的路径通常是确定的：遇到镜面就反射，遇到玻璃就折射。
 二：Monte Carlo 路径追踪 流程：
