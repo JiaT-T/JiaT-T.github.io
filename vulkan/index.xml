@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Vulkans on 榎aaaa的个人主页</title><link>https://JiaT-T.github.io/vulkan/</link><description>Recent content in Vulkans on 榎aaaa的个人主页</description><generator>Hugo</generator><language>zh-cn</language><atom:link href="https://JiaT-T.github.io/vulkan/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/initialization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/initialization/</guid><description>&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;Vulkan 的核心思想是“显式（Explicit）”，这意味着任何底层资源和状态都必须亲手创建和绑定。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;## &lt;font style="color:rgb(31, 31, 31);"&gt;Vulkan 初始化核心流程&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;整个初始化工作，实际上就是为了建立起程序与显卡之间顺畅的通信管道。主要分为以下 &lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;5 大核心步骤&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;### &lt;font style="color:rgb(31, 31, 31);"&gt;1. 创建 Vulkan 实例 (&lt;/font&gt;&lt;code&gt;&amp;lt;font style=&amp;quot;color:rgba(0, 0, 0, 0.55);&amp;quot;&amp;gt;VkInstance&amp;lt;/font&amp;gt;&lt;/code&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;这是应用程序与 Vulkan 运行时（Runtime）建立联系的起点。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;+ **&lt;font style="color:rgb(31, 31, 31);"&gt;需要做什么：&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt; 填写应用信息（&lt;/font&gt;&lt;code&gt;&amp;lt;font style=&amp;quot;color:rgba(0, 0, 0, 0.55);&amp;quot;&amp;gt;VkApplicationInfo&amp;lt;/font&amp;gt;&lt;/code&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;），并开启你需要的&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;全局扩展（Extensions）&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;（如与窗口系统交互的 GLFW 扩展）和&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;全局校验层（Validation Layers）&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;+ **&lt;font style="color:rgb(31, 31, 31);"&gt;校验层（Validation Layers）：&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt; Vulkan 本身为了性能几乎不做错误检查，校验层就像一个贴身的“纠错老师”，会在调用 API 不规范时在控制台疯狂报错，是开发时的救命稻草。&lt;/font&gt;&lt;/p&gt;</description></item><item><title/><link>https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queuefamily/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queuefamily/</guid><description>&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;在讲队列族（Queue Family）之前，我们可以用一个非常形象的现实生活场景来理解它：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;想象一下，GPU 是一个大型的&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;高效工厂&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;，而队列族就是这个工厂里的&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;不同车间&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;+ **&lt;font style="color:rgb(31, 31, 31);"&gt;车间 A（图形渲染车间）：&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt; 里面有一批专门负责涂色、画画的工人，也配有搬运工。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;+ **&lt;font style="color:rgb(31, 31, 31);"&gt;车间 B（纯数据搬运车间）：&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt; 里面全是搬运工，专门负责把原材料（数据）从外面的仓库（CPU/内存）搬进工厂内部（显存）。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;每个车间里的工人，就是一条条具体的&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;队列（VkQueue）&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;。你把任务（Command Buffer）写在单子上，丢给某一个车间的某一个工人，他们就会开始排队干活。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;在 Vulkan 中，&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;队列族（Queue Family）&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt; 就是对具有&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;相同硬件功能、共享相同硬件特质的一组队列&lt;/font&gt;**&lt;font style="color:rgb(31, 31, 31);"&gt;的抽象分类。&lt;/font&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;**分类是按“族（Family）”来分的**&lt;font style="color:rgb(31, 31, 31);"&gt;：图形是一族，计算可能是一族，传输可能是一族。&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;**“队列（Queue）”是族里面的具体执行成员**&lt;font style="color:rgb(31, 31, 31);"&gt;：同一个族里的所有队列，&lt;/font&gt;**功能是完全一模一样的**&lt;font style="color:rgb(31, 31, 31);"&gt;。&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;### &lt;font style="color:rgb(31, 31, 31);"&gt;1. 为什么 Vulkan 要引入“族”的概念？&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style="color:rgb(31, 31, 31);"&gt;传统的图形 API（如 OpenGL）通常隐式地提供一个“大总管”上下文，不管下达什么指令它都吞下去，但我们根本不知道 GPU 底层是谁在干活。&lt;/font&gt;&lt;/p&gt;</description></item></channel></rss>
