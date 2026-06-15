@@ -18,8 +18,11 @@
     {{- $isDirectX := or (in $haystack "dx12") (or (in $haystack "directx") (in $haystack "directx 12")) -}}
     {{- $isCpp := or (in $haystack "c++") (or (in $haystack "cpp") (or (in $haystack "modern c") (or (in $haystack "raii") (or (in $haystack "memory management") (or (in $haystack "design pattern") (or (in $haystack "shared ptr") (or (in $haystack "shared_ptr") (or (in $haystack "heaponly") (or (in $haystack "stackonly") (or (in $haystack "编程基础") (in $haystack "hello"))))))))))) -}}
     {{- $isVulkan := or (eq $section "vulkan") (in $haystack "vulkan") -}}
+    {{- $isUnreal := or (eq $section "ue") (or (in $haystack "unreal") (in $haystack "gameplay framework")) -}}
 
-    {{- if and (eq $group "vulkan") $isVulkan -}}
+    {{- if and (eq $group "unreal") $isUnreal -}}
+        {{- $pages = $pages | append . -}}
+    {{- else if and (eq $group "vulkan") $isVulkan -}}
         {{- $pages = $pages | append . -}}
     {{- else if and (eq $group "directx12") (eq $section "posts") $isDirectX -}}
         {{- $pages = $pages | append . -}}
