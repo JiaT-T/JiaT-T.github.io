@@ -64,9 +64,16 @@
                                 {{- if and (not $pageTitle) .File }}
                                     {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
                                 {{- end }}
+                                {{- $problemList := "" }}
+                                {{- if and (eq .Section "leetcode") (isset .Params "problems") }}
+                                    {{- $problemList = delimit .Params.problems "、" }}
+                                    {{- if not $problemList }}
+                                        {{- $problemList = "暂无" }}
+                                    {{- end }}
+                                {{- end }}
                                 <li>
                                     <a href="{{ .RelPermalink }}">
-                                        <span class="title">{{ $pageTitle }}</span>
+                                        <span class="title">{{ if $problemList }}{{ $problemList }}{{ else }}{{ $pageTitle }}{{ end }}</span>
                                     </a>
                                 </li>
                                 {{- end }}
@@ -83,9 +90,16 @@
                             {{- if and (not $pageTitle) .File }}
                                 {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
                             {{- end }}
+                            {{- $problemList := "" }}
+                            {{- if and (eq .Section "leetcode") (isset .Params "problems") }}
+                                {{- $problemList = delimit .Params.problems "、" }}
+                                {{- if not $problemList }}
+                                    {{- $problemList = "暂无" }}
+                                {{- end }}
+                            {{- end }}
                             <li>
                                 <a href="{{ .RelPermalink }}">
-                                    <span class="title">{{ $pageTitle }}</span>
+                                    <span class="title">{{ if $problemList }}{{ $problemList }}{{ else }}{{ $pageTitle }}{{ end }}</span>
                                 </a>
                             </li>
                             {{- end }}

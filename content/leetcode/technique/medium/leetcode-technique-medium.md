@@ -1,3 +1,8 @@
++++
+title = "31、75、287"
+problems = [31, 75, 287]
++++
+
 #### <font style="color:#DF2A3F;"> 第三十一题</font>：[<font style="color:rgb(10, 132, 255);">下一个排列</font>](https://leetcode.cn/problems/next-permutation/)
 思路：<u>找到下一个排序，意思就是将当前数组视作一串数字，通过对元素的重新组合，找到</u><u><font style="background-color:#FBDE28;">第一个大于当前数字的数字</font></u>
 

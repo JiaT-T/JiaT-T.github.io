@@ -1,10 +1,7 @@
 +++
-
 title = "11"
-
+problems = [11]
 +++
-
-
 
 \#### <font style="color:#DF2A3F;">第十一题</font>：\[<font style="color:rgb(10, 132, 255);">盛最多水的容器</font>](https://leetcode.cn/problems/container-with-most-water/)
 

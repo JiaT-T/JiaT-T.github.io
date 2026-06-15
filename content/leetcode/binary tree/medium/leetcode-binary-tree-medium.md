@@ -1,5 +1,6 @@
 +++
 title = "98、102、105、114、230、236、437"
+problems = [98, 102, 105, 114, 230, 236, 437]
 +++
 
 #### <font style="color:#DF2A3F;">第九十八题</font>：[验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)

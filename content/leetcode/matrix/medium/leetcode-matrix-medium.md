@@ -1,3 +1,8 @@
++++
+title = "48、54、73、240"
+problems = [48, 54, 73, 240]
++++
+
 \#### <font style="color:#DF2A3F;">第四十八题</font>：\[旋转图像](https://leetcode.cn/problems/rotate-image/)
 
 以矩阵的\*\*四个对角点\*\*为例（左上A，右上B，右下C，左下D），从A开始，顺序是\*\*D->A, A->B, B->C, C->D\*\*

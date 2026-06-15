@@ -1,3 +1,8 @@
++++
+title = "1"
+problems = [1]
++++
+
 #### <font style="color:#DF2A3F;">第一题</font>：[两数之和](https://leetcode.cn/problems/two-sum/)
 最容易想到的方法就是两层for循环，时间复杂度为O(n^2)
 

@@ -1,5 +1,6 @@
 +++
 title = "62、64、72、1143"
+problems = [62, 64, 72, 1143]
 +++
 
 #### <font style="color:#DF2A3F;">第六十二题</font>：[不同路径](https://leetcode.cn/problems/unique-paths/)

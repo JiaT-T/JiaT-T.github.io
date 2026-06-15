@@ -1,3 +1,8 @@
++++
+title = "25"
+problems = [25]
++++
+
 #### <font style="color:#DF2A3F;">第二十五题</font>：[K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
 ```cpp
 ListNode* reverseKGroup(ListNode* head, int k)

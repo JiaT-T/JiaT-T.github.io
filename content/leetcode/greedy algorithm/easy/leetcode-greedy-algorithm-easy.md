@@ -1,3 +1,8 @@
++++
+title = "121"
+problems = [121]
++++
+
 #### <font style="color:#DF2A3F;">第一百二十一题</font>：[买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)
 思路：
 

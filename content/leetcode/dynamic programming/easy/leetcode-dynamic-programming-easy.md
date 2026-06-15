@@ -1,5 +1,6 @@
 +++
 title = "70、118"
+problems = [70, 118]
 +++
 
 #### <font style="color:#DF2A3F;">第七十题</font>：[爬楼梯](https://leetcode.cn/problems/climbing-stairs/)

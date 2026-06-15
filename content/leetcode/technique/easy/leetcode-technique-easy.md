@@ -1,3 +1,8 @@
++++
+title = "136、169"
+problems = [136, 169]
++++
+
 #### <font style="color:#DF2A3F;">第一百三十六题</font>：[只出现一次的数字](https://leetcode.cn/problems/single-number/)
 题目要求的是线性时间复杂度以及常量额外空间，所以像哈希表之类的解法都不能使用
 

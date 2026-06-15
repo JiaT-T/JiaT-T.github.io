@@ -1,5 +1,6 @@
 +++
 title = "94、101、104、108、226、543"
+problems = [94, 101, 104, 108, 226, 543]
 +++
 
 #### <font style="color:#DF2A3F;">第九十四题</font>：[二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)

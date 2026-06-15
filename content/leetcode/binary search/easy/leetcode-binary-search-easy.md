@@ -1,5 +1,6 @@
 +++
 title = "35"
+problems = [35]
 +++
 
 #### <font style="color:#DF2A3F;">第三十五题</font>：[搜索插入位置](https://leetcode.cn/problems/search-insert-position/)

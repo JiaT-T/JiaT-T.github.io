@@ -1,5 +1,6 @@
 +++
 title = "39、46、78、79、131"
+problems = [39, 46, 78, 79, 131]
 +++
 
 #### <font style="color:#DF2A3F;">第三十九题</font>：[组合总和](https://leetcode.cn/problems/combination-sum/)
