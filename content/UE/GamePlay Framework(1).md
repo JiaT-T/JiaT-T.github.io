@@ -9,7 +9,6 @@ tags: ["Unreal Engine", "Gameplay Framework", "Game Architecture"]
 
 **Reference:** [Gameplay Framework in Unreal Engine](https://dev.epicgames.com/documentation/unreal-engine/gameplay-framework-in-unreal-engine?application_version=5.7)
 
-Gameplay Framework 最容易混乱的地方，不是类很多，而是这些类的**职责范围、网络可见性和生命周期不同**。比起把所有类平铺罗列，更适合按“规则与状态、控制与实体、世界与生命周期、展示与工具”来分类。
 
 ## 一：规则与全局状态
 
@@ -132,13 +131,12 @@ Gameplay Framework 最容易混乱的地方，不是类很多，而是这些类�
 
 ## 总结
 
-可以按下面的规则记忆：
 
-- **GameMode：** 服务器权威规则。
-- **GameState：** 所有人都能看到的全局状态。
-- **PlayerState：** 某个玩家的可复制状态。
-- **Controller：** 控制意图。
-- **Pawn / Character：** 被控制的世界实体。
-- **Actor / Component：** 世界对象与模块化能力。
-- **GameInstance / Subsystem：** 跨关卡生命周期与长期服务。
-- **HUD / UI / Camera：** 本地展示、交互和观察方式。
+- **GameMode：** 服务器权威规则
+- **GameState：** 所有人都能看到的全局状态
+- **PlayerState：** 某个玩家的可复制状态
+- **Controller：** 控制意图
+- **Pawn / Character：** 被控制的世界实体
+- **Actor / Component：** 世界对象与模块化能力
+- **GameInstance / Subsystem：** 跨关卡生命周期与长期服务
+- **HUD / UI / Camera：** 本地展示、交互和观察方式
