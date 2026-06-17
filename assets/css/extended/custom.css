@@ -70,13 +70,29 @@ body::after { bottom: -100px; right: -100px; background: radial-gradient(circle,
 }
 
 /* ============================================================
-   4. 代码块：经典深色背景 (类似 VS Code)
+   4. 代码样式
    ============================================================ */
-.post-content pre, .post-content code {
+.post-content pre {
     background: #1e1e1e !important;
     color: #d4d4d4 !important;
     border-radius: 10px !important;
     border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+.post-content code {
+    background: #e6e8eb !important;
+    color: #4b5563 !important;
+    font-weight: 600;
+    border-radius: 8px !important;
+    border: 1px solid rgba(75, 85, 99, 0.14) !important;
+}
+
+.post-content pre code {
+    background: transparent !important;
+    color: #d4d4d4 !important;
+    font-weight: 400;
+    border: 0 !important;
+    border-radius: 0 !important;
 }
 
 /* 语法高亮颜色微调 */
