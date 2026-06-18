@@ -28,7 +28,7 @@
         {{- $pages = $pages | append . -}}
     {{- else if and (eq $group "cpp") (eq $section "posts") $isCpp (not $isDirectX) -}}
         {{- $pages = $pages | append . -}}
-    {{- else if and (eq $group "graphics") (eq $section "posts") (not $isDirectX) (not $isCpp) -}}
+    {{- else if and (eq $group "graphics") (or (eq $section "graphics") (and (eq $section "posts") (not $isDirectX) (not $isCpp))) -}}
         {{- $pages = $pages | append . -}}
     {{- end -}}
 {{- end -}}
