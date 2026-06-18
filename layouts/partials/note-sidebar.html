@@ -1,0 +1,44 @@
+{{- $current := . -}}
+<aside class="note-sidebar" aria-label="文章目录">
+    <div class="note-sidebar-heading">文章</div>
+    <nav class="note-sidebar-nav">
+        <a class="note-sidebar-home" href="/archives/">技术笔记归档</a>
+
+        {{- with site.GetPage "section" "leetcode" }}
+        {{ partial "note-sidebar-section.html" (dict "node" . "current" $current) }}
+        {{- end }}
+
+        {{- $groups := slice
+            (dict "title" "C++" "url" "/cpp/" "group" "cpp")
+            (dict "title" "图形学" "url" "/graphics/" "group" "graphics")
+            (dict "title" "DirectX 12" "url" "/directx12/" "group" "directx12")
+            (dict "title" "Vulkan" "url" "/vulkan/" "group" "vulkan")
+            (dict "title" "Unreal Engine" "url" "/ue/" "group" "unreal")
+        -}}
+        {{- range $groups }}
+        {{- $pages := partial "note-group-pages.html" (dict "group" .group) -}}
+        {{- $isOpen := eq $current.RelPermalink .url -}}
+        {{- range $pages -}}
+            {{- if eq .RelPermalink $current.RelPermalink -}}
+                {{- $isOpen = true -}}
+            {{- end -}}
+        {{- end -}}
+        <details class="note-sidebar-group" {{ if $isOpen }}open{{ end }}>
+            <summary>
+                <a href="{{ .url }}">{{ .title }}</a>
+            </summary>
+            <ul>
+                {{- range $pages.ByDate.Reverse }}
+                {{- $pageTitle := .Title -}}
+                {{- if and (not $pageTitle) .File -}}
+                    {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) -}}
+                {{- end -}}
+                <li>
+                    <a class="note-sidebar-link {{ if eq .RelPermalink $current.RelPermalink }}is-active{{ end }}" href="{{ .RelPermalink }}">{{ $pageTitle }}</a>
+                </li>
+                {{- end }}
+            </ul>
+        </details>
+        {{- end }}
+    </nav>
+</aside>

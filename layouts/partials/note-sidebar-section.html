@@ -1,0 +1,30 @@
+{{- $node := .node -}}
+{{- $current := .current -}}
+{{- $isOpen := hasPrefix $current.RelPermalink $node.RelPermalink -}}
+{{- if or $node.Sections $node.RegularPages -}}
+<details class="note-sidebar-group note-sidebar-tree" {{ if $isOpen }}open{{ end }}>
+    <summary>
+        <a href="{{ $node.RelPermalink }}">{{ $node.Title }}</a>
+    </summary>
+    <ul>
+        {{- range $node.Sections.ByTitle }}
+        <li>{{ partial "note-sidebar-section.html" (dict "node" . "current" $current) }}</li>
+        {{- end }}
+        {{- range $node.RegularPages.ByTitle }}
+        {{- $pageTitle := .Title -}}
+        {{- if and (not $pageTitle) .File -}}
+            {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) -}}
+        {{- end -}}
+        {{- if and (eq .Section "leetcode") (isset .Params "problems") -}}
+            {{- $problemList := delimit .Params.problems "、" -}}
+            {{- if $problemList -}}
+                {{- $pageTitle = $problemList -}}
+            {{- end -}}
+        {{- end -}}
+        <li>
+            <a class="note-sidebar-link {{ if eq .RelPermalink $current.RelPermalink }}is-active{{ end }}" href="{{ .RelPermalink }}">{{ $pageTitle }}</a>
+        </li>
+        {{- end }}
+    </ul>
+</details>
+{{- end -}}

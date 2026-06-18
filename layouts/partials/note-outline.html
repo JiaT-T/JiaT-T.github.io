@@ -1,0 +1,9 @@
+{{- $headers := findRE "<h[1-6][^>]*>" .Content -}}
+{{- if ge (len $headers) 1 -}}
+<aside class="note-toc-sidebar" aria-label="文章大纲">
+    <div class="note-toc-title">大纲</div>
+    <div class="note-toc-content">
+        {{ .TableOfContents }}
+    </div>
+</aside>
+{{- end -}}
