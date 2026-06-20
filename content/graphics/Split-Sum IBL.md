@@ -3,6 +3,7 @@ title: "Split-Sum IBL"
 slug: "split-sum-ibl"
 date: 2026-06-20T00:00:00+08:00
 draft: false
+math: true
 summary: "整理 PBR IBL 中 Irradiance Map、Prefiltered Environment Map 与 BRDF LUT 的拆分思路和运行时组合方式。"
 categories: ["图形学"]
 tags: ["Computer Graphics", "Rendering", "PBR", "IBL"]
@@ -18,7 +19,9 @@ tags: ["Computer Graphics", "Rendering", "PBR", "IBL"]
 
 漫反射片元会接收半球方向（Hemisphere）上所有入射光线的贡献。常规计算需要对整个半球进行蒙特卡洛积分：
 
-$I = \int_{\Omega} L_i(p, \omega_i)(\mathbf{n} \cdot \omega_i)d\omega_i$
+$$
+I = \int_{\Omega} L_i(p, \omega_i)(\mathbf{n} \cdot \omega_i) d\omega_i
+$$
 
 在实时渲染中，不可能对每个像素都运行这种高采样率的积分。
 
@@ -38,7 +41,9 @@ $I = \int_{\Omega} L_i(p, \omega_i)(\mathbf{n} \cdot \omega_i)d\omega_i$
 
 Epic Games 在推广微表面模型（Microfacet Model）的 IBL 时，引入了**裂项近似（Split-Sum Approximation）**，将镜面反射的积分项拆分为两部分。第一部分只关注环境光与表面粗糙度的关系：
 
-$\int_{\Omega} L_i(p, \omega_i)d\omega_i \approx \frac{1}{N}\sum_{i=1}^{N}L_i(p, \omega_k)$
+$$
+\int_{\Omega} L_i(p, \omega_i) d\omega_i \approx \frac{1}{N}\sum_{i=1}^{N}L_i(p, \omega_k)
+$$
 
 ### 怎么做与存什么
 
@@ -58,7 +63,9 @@ $\int_{\Omega} L_i(p, \omega_i)d\omega_i \approx \frac{1}{N}\sum_{i=1}^{N}L_i(p,
 
 裂项近似拆出来的第二部分，代表了在特定粗糙度下，不同入射角所带来的能量衰减与菲涅尔效应的整合，包括几何遮蔽 $G$ 项和菲涅尔 $F$ 项的积分：
 
-$\int_{\Omega} f_r(\omega_i, \omega_o)(\mathbf{n} \cdot \omega_i)d\omega_i$
+$$
+\int_{\Omega} f_r(\omega_i, \omega_o)(\mathbf{n} \cdot \omega_i) d\omega_i
+$$
 
 这个积分虽然复杂，但它的自变量只有两个：**法线与视角夹角的余弦值 $\cos\theta_v$，即 $\mathbf{n} \cdot \mathbf{v}$**，以及**材质的粗糙度（Roughness）**。
 
@@ -81,7 +88,9 @@ $\int_{\Omega} f_r(\omega_i, \omega_o)(\mathbf{n} \cdot \omega_i)d\omega_i$
 
 ### 1. 漫反射
 
-$\text{Diffuse} = \text{TextureCube}(\text{IrradianceMap}, \mathbf{n}) \times \text{Albedo}$
+$$
+\text{Diffuse} = \text{TextureCube}(\text{IrradianceMap}, \mathbf{n}) \times \text{Albedo}
+$$
 
 ### 2. 镜面反射
 
