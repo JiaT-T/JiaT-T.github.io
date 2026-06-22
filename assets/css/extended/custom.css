@@ -800,12 +800,51 @@ body::after {
 }
 
 .note-sidebar-heading,
-.note-toc-title {
+.note-toc-summary {
     color: #1f2937;
     font-size: 1rem;
     font-weight: 800;
     line-height: 1.4;
     margin-bottom: 14px;
+}
+
+.note-toc-summary {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    user-select: none;
+}
+
+.note-toc-summary::-webkit-details-marker {
+    display: none;
+}
+
+.note-toc-title {
+    display: inline-flex;
+}
+
+.note-toc-chevron {
+    color: #6b7280;
+    display: inline-flex;
+    font-size: 1.05rem;
+    line-height: 1;
+    transform: rotate(90deg);
+    transition: transform 160ms ease;
+}
+
+.note-toc-sidebar:not([open]) {
+    max-height: none;
+    overflow-y: visible;
+}
+
+.note-toc-sidebar:not([open]) .note-toc-summary {
+    margin-bottom: 0;
+}
+
+.note-toc-sidebar:not([open]) .note-toc-chevron {
+    transform: rotate(0deg);
 }
 
 .note-sidebar-nav {
@@ -917,6 +956,41 @@ body::after {
     display: block;
     font-size: 0.92rem;
     line-height: 1.45;
+}
+
+.note-toc-content li.has-children > a {
+    display: inline;
+}
+
+.note-toc-node-toggle {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: #6b7280;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    height: 1.45em;
+    justify-content: center;
+    margin: 0 4px 0 -2px;
+    padding: 0;
+    vertical-align: top;
+    width: 16px;
+}
+
+.note-toc-node-toggle span {
+    display: inline-flex;
+    line-height: 1;
+    transform: rotate(90deg);
+    transition: transform 160ms ease;
+}
+
+.note-toc-content li.has-children:not(.is-open) > .note-toc-node-toggle span {
+    transform: rotate(0deg);
+}
+
+.note-toc-node-toggle:hover {
+    color: var(--liquid-accent);
 }
 
 .note-toc-content > nav > ul > li > a {

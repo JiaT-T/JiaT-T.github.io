@@ -1,9 +1,44 @@
 {{- $headers := findRE "<h[1-6][^>]*>" .Content -}}
 {{- if ge (len $headers) 1 -}}
-<aside class="note-toc-sidebar" aria-label="文章大纲">
-    <div class="note-toc-title">大纲</div>
+<details class="note-toc-sidebar" aria-label="文章大纲" open>
+    <summary class="note-toc-summary">
+        <span class="note-toc-title">大纲</span>
+        <span class="note-toc-chevron" aria-hidden="true">›</span>
+    </summary>
     <div class="note-toc-content">
         {{ .TableOfContents }}
     </div>
-</aside>
+</details>
+<script>
+  (() => {
+    const toc = document.currentScript.previousElementSibling;
+    const content = toc ? toc.querySelector(".note-toc-content") : null;
+    if (!content || content.dataset.collapsibleReady) return;
+
+    content.dataset.collapsibleReady = "true";
+    content.querySelectorAll("li").forEach((item) => {
+      const childList = Array.from(item.children).find((child) => child.tagName === "UL");
+      const link = Array.from(item.children).find((child) => child.tagName === "A");
+      if (!childList || !link) return;
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "note-toc-node-toggle";
+      button.setAttribute("aria-label", "折叠此级大纲");
+      button.setAttribute("aria-expanded", "true");
+      button.innerHTML = '<span aria-hidden="true">›</span>';
+      link.before(button);
+      item.classList.add("has-children", "is-open");
+
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = item.classList.toggle("is-open");
+        childList.hidden = !isOpen;
+        button.setAttribute("aria-expanded", String(isOpen));
+        button.setAttribute("aria-label", isOpen ? "折叠此级大纲" : "展开此级大纲");
+      });
+    });
+  })();
+</script>
 {{- end -}}
