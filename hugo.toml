@@ -43,6 +43,11 @@ subtitle = """
     style = "monokai" # 明亮模式下使用的深色风格
     lineNos = true
 
+[markup.tableOfContents]
+    startLevel = 2
+    endLevel = 5
+    ordered = false
+
 [markup.goldmark.renderer]
     unsafe = true # 支持在 MD 中嵌套一些简单的 HTML
 
