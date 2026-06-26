@@ -1019,3 +1019,173 @@ body::after {
         display: none;
     }
 }
+
+/* ============================================================
+   Global code block theme
+   ============================================================ */
+.post-content .highlight,
+.post-content .chroma {
+    background: #282c34 !important;
+    color: #abb2bf !important;
+}
+
+.post-content .highlight {
+    border: 1px solid rgba(148, 163, 184, 0.14) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.18) !important;
+    margin: 1.5rem 0 !important;
+    overflow: hidden;
+}
+
+.post-content .highlight .chroma {
+    margin: 0 !important;
+}
+
+.post-content .highlight table,
+.post-content .highlight .lntable {
+    border-spacing: 0 !important;
+    display: table !important;
+    margin: 0 !important;
+    width: 100%;
+}
+
+.post-content .highlight .lntd {
+    border: 0 !important;
+    padding: 0 !important;
+    vertical-align: top !important;
+}
+
+.post-content .highlight .lntd:first-child {
+    background: #282c34 !important;
+    width: 3.4rem;
+}
+
+.post-content pre {
+    background: #282c34 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    color: #abb2bf !important;
+    font-family: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace !important;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0 !important;
+    overflow-x: auto;
+    padding: 1rem 1.1rem !important;
+}
+
+.post-content pre code {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    color: inherit !important;
+    font-weight: 400;
+}
+
+.post-content .chroma .line {
+    display: flex;
+    min-height: 1.65em;
+}
+
+.post-content .chroma .lnt,
+.post-content .chroma .ln {
+    background: #282c34 !important;
+    color: #d6deeb !important;
+    padding: 0 1rem 0 0.75rem !important;
+    text-align: right;
+}
+
+.post-content .chroma .hl {
+    background: #343b46 !important;
+}
+
+.post-content .chroma .cl,
+.post-content .chroma .p {
+    color: #abb2bf !important;
+}
+
+.post-content .chroma .k,
+.post-content .chroma .kc,
+.post-content .chroma .kd,
+.post-content .chroma .kn,
+.post-content .chroma .kp,
+.post-content .chroma .kr {
+    color: #c678dd !important;
+}
+
+.post-content .chroma .kt,
+.post-content .chroma .nb,
+.post-content .chroma .bp {
+    color: #22d3ee !important;
+}
+
+.post-content .chroma .n,
+.post-content .chroma .nx,
+.post-content .chroma .nv,
+.post-content .chroma .vc,
+.post-content .chroma .vg,
+.post-content .chroma .vi,
+.post-content .chroma .nc {
+    color: #22d3ee !important;
+}
+
+.post-content .chroma .nf,
+.post-content .chroma .fm {
+    color: #e5c07b !important;
+}
+
+.post-content .chroma .na,
+.post-content .chroma .no,
+.post-content .chroma .py {
+    color: #ff6b81 !important;
+}
+
+.post-content .chroma .s,
+.post-content .chroma .sa,
+.post-content .chroma .sb,
+.post-content .chroma .sc,
+.post-content .chroma .dl,
+.post-content .chroma .sd,
+.post-content .chroma .s2,
+.post-content .chroma .se,
+.post-content .chroma .sh,
+.post-content .chroma .si,
+.post-content .chroma .sx,
+.post-content .chroma .sr,
+.post-content .chroma .s1,
+.post-content .chroma .ss,
+.post-content .chroma .cpf {
+    color: #98c379 !important;
+}
+
+.post-content .chroma .m,
+.post-content .chroma .mb,
+.post-content .chroma .mf,
+.post-content .chroma .mh,
+.post-content .chroma .mi,
+.post-content .chroma .il,
+.post-content .chroma .mo {
+    color: #d19a66 !important;
+}
+
+.post-content .chroma .o,
+.post-content .chroma .ow,
+.post-content .chroma .cp {
+    color: #56b6c2 !important;
+}
+
+.post-content .chroma .c,
+.post-content .chroma .ch,
+.post-content .chroma .cm,
+.post-content .chroma .c1,
+.post-content .chroma .cs {
+    color: #7f848e !important;
+}
+
+.post-content .chroma .gd,
+.post-content .chroma .err {
+    color: #ff6b6b !important;
+}
+
+.post-content .chroma .gi {
+    color: #98c379 !important;
+}
