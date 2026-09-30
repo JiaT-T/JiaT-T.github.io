@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_stage": "LOCAL_VALIDATION_AFTER_PARALLEL_MAIN_INTEGRATION",
+  "branch": "content/yuque-migration",
+  "baseline_commit": "f1566a2b6270fdf2ebaca7c459235fdebe8b3e00",
+  "parallel_main_integration_commit_short": "f0d973a",
+  "catalog": {
+    "total_entries": 135,
+    "all_entries_accounted_for": true,
+    "full_public_table": "migration-report.md",
+    "private_placeholders": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6"
+    ],
+    "private_original_metadata_in_this_report": false
+  },
+  "execution_counts": {
+    "REQUIRES_MANUAL_REVIEW": 6,
+    "MAPPED_EXISTING_SECTION": 17,
+    "MIGRATED_NEW": 37,
+    "SKIP_STUB": 2,
+    "PRESERVED_EXISTING": 29,
+    "SKIP_EMPTY": 23,
+    "COMPLETED_EXISTING": 18,
+    "FORMAT_REPAIRED": 2,
+    "FILLED_EXISTING_EMPTY": 1
+  },
+  "content_file_counts": {
+    "baseline_markdown": 110,
+    "parallel_main_new_markdown": 1,
+    "migration_new_markdown": 48,
+    "final_markdown": 159,
+    "new_article_files": 37,
+    "new_section_index_files": 11,
+    "kind_page": 100,
+    "note_archive_entries": 97,
+    "portfolio_pages": 1,
+    "utility_kind_pages": 2,
+    "search_index_entries": 98
+  },
+  "source_conversion": {
+    "scope": "All 135 exported documents to temporary converted Markdown, including withheld records; not all published",
+    "counts": {
+      "documents": 135,
+      "headings": 631,
+      "code_blocks": 489,
+      "math_cards": 95,
+      "image_cards": 68
+    },
+    "passed": true
+  },
+  "source_images": {
+    "source_reference_count": 68,
+    "coverage_categories": {
+      "NEW_OR_FILLED_ARTICLE_LOCALIZED": 35,
+      "EXACT_BASELINE_DISPLAY_CROP": 6,
+      "EXACT_BASELINE_IMAGE": 21,
+      "EXISTING_REMOTE_REFERENCE_LOCALIZED": 6
+    },
+    "all_references_covered": true,
+    "uncovered_references": 0,
+    "unique_source_image_hashes": 67,
+    "new_website_image_files": 41,
+    "baseline_image_files_byte_checked": 40,
+    "baseline_images_removed_or_changed": 0,
+    "baseline_mp4_files": 1,
+    "baseline_mp4_bytes_unchanged": true
+  },
+  "hugo_build": {
+    "version": "hugo v0.167.0-3fff6fb5c267dacb26280c78dbe8c344054249c8+extended windows/amd64 BuildDate=2026-09-28T14:50:38Z VendorInfo=gohugoio",
+    "passed": true,
+    "reported_pages": 439,
+    "static_files": 82,
+    "html_files": 423,
+    "scope": "Local final build after integrating parallel main; not proof of deployment"
+  },
+  "new_or_filled_article_render_check": {
+    "article_count": 38,
+    "counts": {
+      "expected_headings": 260,
+      "rendered_headings": 260,
+      "expected_code_blocks": 353,
+      "rendered_code_blocks": 353,
+      "ignored_line_number_columns": 353,
+      "expected_image_cards": 35,
+      "rendered_images": 35,
+      "expected_math_cards": 1,
+      "math_cards_preserved": 1
+    },
+    "search_covers_all_applied": true,
+    "each_permalink_occurs_once": true,
+    "passed": true,
+    "scope": "38 new or filled articles only; other changes audited separately"
+  },
+  "archive_groups": {
+    "LeetCode": 35,
+    "C++": 9,
+    "graphics": 27,
+    "DirectX 12": 5,
+    "Vulkan": 13,
+    "Unreal Engine": 8
+  },
+  "local_static_links": {
+    "missing_targets": 0,
+    "missing_fragments": 0,
+    "missing_resource_targets": [
+      "/apple-touch-icon.png",
+      "/favicon-16x16.png",
+      "/favicon-32x32.png",
+      "/favicon.ico",
+      "/safari-pinned-tab.svg"
+    ],
+    "missing_resource_count": 5,
+    "all_missing_resources_are_existing_site_icons": true,
+    "external_reference_count": 844,
+    "all_external_links_network_verified": false
+  },
+  "math": {
+    "source_math_card_count": 95,
+    "source_payloads_preserved": true,
+    "website_math_page_count": 9,
+    "website_static_issue_count": 0,
+    "source_card_count_and_website_page_count_are_different_units": true,
+    "browser_checked_samples_have_no_mathjax_error": true,
+    "all_source_equations_mathematically_verified": false
+  },
+  "browser_validation": {
+    "record_count": 23,
+    "scope": "Representative articles and site flows; not exhaustive all-page visual acceptance",
+    "existing_video_ready_state": 4,
+    "existing_video_reported_error": null
+  },
+  "final_diff_audit": {
+    "changed_existing_files_checked": 29,
+    "baseline_articles_removed": 0,
+    "baseline_code_not_preserved_blocks": 0,
+    "new_article_source_code_mismatch_articles": 0,
+    "old_static_images_removed_or_changed": 0,
+    "introduced_duplicate_lc_code_groups": 0,
+    "private_sources_published_count": 0
+  },
+  "known_issues": {
+    "existing_icon_targets_missing": 5,
+    "technical_review_items": 13,
+    "technical_review_path": "content-review.md",
+    "code_examples_compiled_or_runtime_verified": false,
+    "whole_site_zero_issues_claimed": false
+  },
+  "remote_delivery": {
+    "authorization": "direct_merge_authorized",
+    "status": "PUSHED_PR_OPEN_PENDING_MERGE",
+    "branch_pushed": true,
+    "pr_url": "https://github.com/JiaT-T/JiaT-T.github.io/pull/7",
+    "merge_commit": null,
+    "deployment_validation": "SKIPPED_BY_USER_INSTRUCTION",
+    "deployment_verified_commit": null,
+    "results_will_be_appended_to_local_delivery_report": true
+  },
+  "evidence_sources": {
+    "execution": "execution-statistics.json",
+    "manifest": "yuque-manifest.json",
+    "content_render": "hugo-content-verification.json",
+    "static_links_and_math": "migration-validation.json",
+    "image_coverage": "image-existing-comparison.json",
+    "diff_audit": "final-diff-review.json",
+    "browser_samples": "browser-validation.json",
+    "remote_results": "PR #7 created and branch pushed; actual merge result recorded by root. Online verification skipped by user instruction."
+  }
+}

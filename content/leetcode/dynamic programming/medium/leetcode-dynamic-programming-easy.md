@@ -1,6 +1,6 @@
 +++
 title = "139、152、198、279、300、322、416"
-problems = [139, 152, 198, 279, 300, 322, 416]
+problems = [139, 152, 198, 279, 300, 322, 416, 213]
 +++
 
 #### <font style="color:#DF2A3F;">第一百三十九题</font>：[单词拆分](https://leetcode.cn/problems/word-break/)
@@ -138,6 +138,86 @@ int lengthOfLIS(vector<int>& nums)
 
 
 
+
+
+<strong>补充解法：二分查找维护最小末尾</strong>
+
+<a id="u169cc786"></a>维护一个数组 dp，dp【i】的含义是：<strong>长度为 i + 1 的子数组的末尾元素的最小值</strong>
+
+<a id="u109d1d59"></a>然后遍历数组 nums，在 dp 中通过二分查找，看看 num 的位置在哪里
+
+<ul data-yuque-indent="1" style="margin-left: 2em"><li id="uef96fc8d">如果不存在任何一个数大于等于 num，也就是 it = num.end（），就将 num 接入 dp 的末尾，意味着子序列的长度可以加一</li><li id="u0e3c5291">如果当前数组中已经有一个数大于等于 num 了，就将这个数替换为 num（降低末尾元素的值，确保后续可以有更多元素加入）</li></ul>
+
+- <a id="ucde1169c"></a><strong>时间复杂度</strong>：<strong>O(</strong><em><strong>n</strong></em> <strong>log</strong><em><strong>n</strong></em><strong>)</strong>，其中 <em>n</em> 为 <em>nums</em> 的长度
+- <a id="u4d2ab594"></a><strong>空间复杂度</strong>：<strong>O(</strong><em><strong>n</strong></em><strong>)</strong>
+
+<a id="yyLuB"></a>
+```cpp
+int lengthOfLIS(vector<int>& nums)
+{
+    std::vector<int> dp;
+
+    for(int num : nums)
+    {
+        auto it = std::lower_bound(dp.begin(), dp.end(), num);
+        if(it == dp.end())
+        {
+            dp.push_back(num);
+        }
+        else
+        {
+            *it = num;
+        }
+    }
+    return dp.size();
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/ixw7uw6xa05tg08k)
+
+
+<a id="DMet3"></a>
+
+<strong>补充解法：原地修改</strong>
+
+<a id="u6dfd6846"></a>直接对传入的 nums 数组进行修改，避免再创建一个新数组
+
+<a id="mtKVu"></a>
+lengthOfLIS（）
+
+```cpp
+int lengthOfLIS(vector<int>& nums)
+{
+    // 从第一个元素开始
+    auto end = nums.begin();
+
+    for(int num : nums)
+    {
+        // 在区间内找到第一个大于等于 num 的位置
+        auto it = lower_bound(nums.begin(), end, num);
+
+        // 将原来 g[j] 的值（一个较大的数）替换成更小的 num
+        // 为什么直接认为 num 一定小于之前的末尾元素？
+        /* 因为 lower_bound(first, last, x) 返回的是第一个满足 元素 >= x 的位置。
+        因此，当 it != end 时，*it >= x 恒成立。
+        于是执行 *it = x 后：
+        如果 *it > x，新值变小（这正是我们想要的，因为要降低该长度的最小末尾）。
+        如果 *it == x，新值不变（没有影响）。
+        没有可能出现 *it < x 的情况，所以不存在“当前元素大于原末尾”的问题*/
+        *it = num;
+
+        if(it == end)
+        {
+            // 此时将长度加一
+            end++;
+        }
+    }
+    return end - nums.begin();
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/ixw7uw6xa05tg08k)
+
 #### <font style="color:#DF2A3F;">第三百二十二题</font>：[零钱兑换](https://leetcode.cn/problems/coin-change/)
 确定状态：dp[ i ]代表 为了凑出 i 元，所需要的硬币数量
 
@@ -220,3 +300,46 @@ bool canPartition(vector<int>& nums)
     return dp[sum];
 }
 ```
+
+<a id="cKKTl"></a>
+#### 第二百一十三题：[打家劫舍 II](<https://leetcode.cn/problems/house-robber-ii/>)
+
+<a id="u1e5b4ff2"></a>核心是<strong>将“环”拆解为“两个线性表”</strong>
+
+<a id="ue2edefbb"></a>对于环形的 n 间房屋，可以将其拆解为两个场景：
+
+- <a id="u4ab58ddb"></a><strong>场景 A</strong>：<strong>不偷最后一间房</strong>。此时可以偷的范围是 `nums[0]` 到 `nums[n-2]`
+- <a id="u06559b45"></a><strong>场景 B</strong>：<strong>不偷第一间房</strong>。此时可以偷的范围是 `nums[1]` 到 `nums[n-1]`
+
+<a id="u7a9c499f"></a>最后的结果一定是<strong>两者中的更大值</strong>
+
+<a id="ZfOxO"></a>
+rob ()
+```cpp
+// 这里的辅助函数与上题一样
+int robRange(std::vector<int>& nums, int start, int end)
+{
+    int prev1 = 0, prev2 = 0;
+    for(int i = start; i < end; i++)
+    {
+        int temp = prev2;
+        prev2 = std::max(prev2, prev1 + nums[i]);
+        prev1 = temp;
+    }
+    return prev2;
+}
+int rob(vector<int>& nums)
+{
+    int n = nums.size();
+    if(n == 1) return nums[0];
+    if(n == 2) return std::max(nums[0], nums[1]);
+
+    int res1 = robRange(nums, 0, n - 1);
+    int res2 = robRange(nums, 1, n);
+
+    return std::max(res1, res2);
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/ixw7uw6xa05tg08k)
+

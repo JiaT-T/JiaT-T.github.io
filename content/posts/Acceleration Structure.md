@@ -4,6 +4,7 @@ draft = false
 title = '加速结构'
 summary = '整理 BVH、KD-Tree、八叉树、均匀网格以及实时光线追踪中的 BLAS/TLAS 加速结构。'
 tags = ['Computer Graphics', 'Rendering', 'Ray Tracing', 'Technical Notes']
+math = true
 +++
 
 **【Reference】：** [https://zhuanlan.zhihu.com/p/349594815](https://zhuanlan.zhihu.com/p/349594815)

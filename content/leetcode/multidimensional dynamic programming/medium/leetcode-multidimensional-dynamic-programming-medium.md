@@ -75,6 +75,41 @@ int minPathSum(vector<vector<int>>& grid)
 
 
 
+
+<a id="mXe6J"></a>
+
+<strong>补充解法：一维滚动数组</strong>
+
+```cpp
+int minPathSum(vector<vector<int>>& grid)
+    {
+        if(grid.empty()) return 0;
+        int m = grid.size(), n = grid[0].size();
+        std::vector<int> dp(n, 0);
+
+        // 初始化第一行
+        dp[0] = grid[0][0];
+        for(int i = 1; i < n; i++)
+        {
+            dp[i] = dp[i - 1] + grid[0][i];
+        }
+
+        // 填充其余行
+        for(int i = 1; i < m; i++)
+        {
+            // 先更新每行第一个元素
+            dp[0] += grid[i][0];
+            for(int j = 1; j < n; j++)
+            {
+                dp[j] = std::min(dp[j], dp[j - 1]) + grid[i][j];
+            }
+        }
+        return dp[n - 1];
+    }
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/gi8yqyu3poekg322)
+
 #### <font style="color:#DF2A3F;">第七十二题</font>：[编辑距离](https://leetcode.cn/problems/edit-distance/)
 和下面一题差不多，需要处理的只有两种情况——字符相同与不相同
 

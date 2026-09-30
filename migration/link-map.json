@@ -1,0 +1,951 @@
+{
+  "scope": "Actual Hugo list output; no guessed URLs. Original source citations are retained.",
+  "mapped": 104,
+  "entries": [
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gpub5f725a5fn01m",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "REQUIRES_MANUAL_REVIEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/me3uwh91xvrc48kv",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "REQUIRES_MANUAL_REVIEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/nyqwlrrua8fapo3g",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "REQUIRES_MANUAL_REVIEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/blsyv7v27eyg0vz1",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "REQUIRES_MANUAL_REVIEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/eqongrgyd4po13ds",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "REQUIRES_MANUAL_REVIEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/skhqtaex5vdy2kld",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "REQUIRES_MANUAL_REVIEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/dhqfbc9thhdf7equ",
+      "hugo_url": "https://JiaT-T.github.io/ue/",
+      "hugo_path": "/ue/",
+      "target": "content/UE/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ram4tq4ttst4qpgi",
+      "hugo_url": "https://JiaT-T.github.io/ue/gameplay-ability-system/",
+      "hugo_path": "/ue/gameplay-ability-system/",
+      "target": "content/UE/gameplay-ability-system.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/okaniocao1i382fn",
+      "hugo_url": "https://JiaT-T.github.io/cpp/network-and-os-notes/",
+      "hugo_path": "/cpp/network-and-os-notes/",
+      "target": "content/cpp/network-and-os-notes.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/qll8et82fkf65inq",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue-low-level-notes/",
+      "hugo_path": "/ue/ue-low-level-notes/",
+      "target": "content/UE/ue-low-level-notes.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/wbo8e7bypunghgd1",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_STUB"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/olf5vtkv97pprwff",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue-serialization/",
+      "hugo_path": "/ue/ue-serialization/",
+      "target": "content/UE/ue-serialization.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/aao4999s8s2lf2s4",
+      "hugo_url": "https://JiaT-T.github.io/ue/reflection-system/",
+      "hugo_path": "/ue/reflection-system/",
+      "target": "content/UE/Reflection Syetem.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/reqfeeb3lipn9bpn",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/yt20bb4igx0lsyq4",
+      "hugo_url": "https://JiaT-T.github.io/ue/gameplay-framework1/",
+      "hugo_path": "/ue/gameplay-framework1/",
+      "target": "content/UE/GamePlay Framework(1).md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/xle6wz959o7asdvg",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue5-material-reference/",
+      "hugo_path": "/ue/ue5-material-reference/",
+      "target": "content/UE/ue5-material-reference.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ozbxcaz6quwou5ur",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue-deferred-rendering-pipeline/",
+      "hugo_path": "/ue/ue-deferred-rendering-pipeline/",
+      "target": "content/UE/ue-deferred-rendering-pipeline.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/sviggwt1wbu6w4lz",
+      "hugo_url": "https://JiaT-T.github.io/ue/cpp-in-ue5/",
+      "hugo_path": "/ue/cpp-in-ue5/",
+      "target": "content/UE/CPP in UE5.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/cgt6t4uildnidsl5",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/",
+      "hugo_path": "/vulkan/",
+      "target": "content/Vulkan/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/douio0pyg8snnk8n",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/easyvulkan-chapter-6/",
+      "hugo_path": "/vulkan/easyvulkan-chapter-6/",
+      "target": "content/Vulkan/easyvulkan-chapter-6.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/wtm8ednr7m6i7g7m",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/easyvulkan-chapter-7/",
+      "hugo_path": "/vulkan/easyvulkan-chapter-7/",
+      "target": "content/Vulkan/easyvulkan-chapter-7.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ob2d9980xg1gxorl",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/axmdc38ebmg8qz3y",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/evfnm0tw19piregm",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/bgnzzcb51o5ard7r",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queuefamily/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queuefamily/",
+      "target": "content/Vulkan/基础知识/QueueFamily.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/tu6m6ag7e2eddccz",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-glfw/",
+      "hugo_path": "/vulkan/vulkan-glfw/",
+      "target": "content/Vulkan/vulkan-glfw.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/eoz37blkm9xp59gy",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-synchronization-primitives/",
+      "hugo_path": "/vulkan/vulkan-synchronization-primitives/",
+      "target": "content/Vulkan/vulkan-synchronization-primitives.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/zucwsv0166un96bw",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-vkresult/",
+      "hugo_path": "/vulkan/vulkan-vkresult/",
+      "target": "content/Vulkan/vulkan-vkresult.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/hybr7ptp0v5co4hu",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queue-categories/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queue-categories/",
+      "target": "content/Vulkan/基础知识/Queue Categories.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/bl0v0eqytgfq8c31",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/initialization/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/initialization/",
+      "target": "content/Vulkan/基础知识/Initialization.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/eeg2ouxti0x7ocyb",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-window-surface/",
+      "hugo_path": "/vulkan/vulkan-window-surface/",
+      "target": "content/Vulkan/vulkan-window-surface.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/lpr29hqedel9szd5",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/swapchain/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/swapchain/",
+      "target": "content/Vulkan/基础知识/Swapchain.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ggiph719w6ba27dt",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/layers-and-extensions/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/layers-and-extensions/",
+      "target": "content/Vulkan/基础知识/Layers and Extensions.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/tt7ficyniuk3245h",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/validationlayers/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/validationlayers/",
+      "target": "content/Vulkan/基础知识/ValidationLayers.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/qd6744i7vx8eyxm6",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/physical-and-logic-device/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/physical-and-logic-device/",
+      "target": "content/Vulkan/基础知识/Physical and Logic Device.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/rhd7wb13tid8hgze",
+      "hugo_url": "https://JiaT-T.github.io/posts/directx12-hresult/",
+      "hugo_path": "/posts/directx12-hresult/",
+      "target": "content/posts/directx12-hresult.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/rk3k1k9ql8uytqkh",
+      "hugo_url": "https://JiaT-T.github.io/posts/directx-raytracing-notes/",
+      "hugo_path": "/posts/directx-raytracing-notes/",
+      "target": "content/posts/directx-raytracing-notes.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/fzrf52x49oee89f0",
+      "hugo_url": "https://JiaT-T.github.io/posts/dx12/",
+      "hugo_path": "/posts/dx12/",
+      "target": "content/posts/DX12.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/lku4ihkhc4gqy7cu",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/pdqkkw46v93xhzlt",
+      "hugo_url": "https://JiaT-T.github.io/posts/dxr-dx12-types/",
+      "hugo_path": "/posts/dxr-dx12-types/",
+      "target": "content/posts/dxr-dx12-types.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ylfz9hlyr71qgbrb",
+      "hugo_url": "https://JiaT-T.github.io/posts/dxr-dx12-functions/",
+      "hugo_path": "/posts/dxr-dx12-functions/",
+      "target": "content/posts/dxr-dx12-functions.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gohssvf77kgltx1s",
+      "hugo_url": "https://JiaT-T.github.io/graphics/",
+      "hugo_path": "/graphics/",
+      "target": "content/graphics/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/hfa3z3byxyw0yy4f",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/popg0qnt92wkgryp",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/sfgs52rg6z8x0vwb",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/rts4e4gmux0xim5r",
+      "hugo_url": "https://JiaT-T.github.io/posts/design-modes/",
+      "hugo_path": "/posts/design-modes/",
+      "target": "content/posts/Design Modes.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/yz8sacngxgn6mpk5",
+      "hugo_url": "https://JiaT-T.github.io/posts/others/normal-combination/",
+      "hugo_path": "/posts/others/normal-combination/",
+      "target": "content/posts/Others/Normal Combination.md",
+      "result": "FORMAT_REPAIRED"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/vtsvcciptge68bun",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/uakx81pyr6yn5gx1",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_STUB"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/etflgg7zwq47qyi8",
+      "hugo_url": "https://JiaT-T.github.io/posts/acceleration-structure/",
+      "hugo_path": "/posts/acceleration-structure/",
+      "target": "content/posts/Acceleration Structure.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/dvq44f3av82df43l",
+      "hugo_url": "https://JiaT-T.github.io/cpp/sorting-algorithms/",
+      "hugo_path": "/cpp/sorting-algorithms/",
+      "target": "content/cpp/sorting-algorithms.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/hsv07gzrd6bfu20g",
+      "hugo_url": "https://JiaT-T.github.io/graphics/rendering-paths/",
+      "hugo_path": "/graphics/rendering-paths/",
+      "target": "content/graphics/Rendering Paths.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ma8lyabvg5fma6ut",
+      "hugo_url": "https://JiaT-T.github.io/posts/shadow-techniques/",
+      "hugo_path": "/posts/shadow-techniques/",
+      "target": "content/posts/Shadow Techniques.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/erbuu8ky9dn39bpn",
+      "hugo_url": "https://JiaT-T.github.io/graphics/pathtracer-project-details/",
+      "hugo_path": "/graphics/pathtracer-project-details/",
+      "target": "content/graphics/pathtracer-project-details.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/nkevqitsx6ossrx3",
+      "hugo_url": "https://JiaT-T.github.io/posts/anti-aliasing/",
+      "hugo_path": "/posts/anti-aliasing/",
+      "target": "content/posts/Anti-Aliasing.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/rcszwgcg9xkdpw53",
+      "hugo_url": "https://JiaT-T.github.io/graphics/%E8%BE%90%E5%B0%84%E5%BA%A6%E9%87%8F%E5%AD%A6/",
+      "hugo_path": "/graphics/%E8%BE%90%E5%B0%84%E5%BA%A6%E9%87%8F%E5%AD%A6/",
+      "target": "content/graphics/辐射度量学.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ggq3b7yklk5ggogc",
+      "hugo_url": "https://JiaT-T.github.io/posts/shadow-maps/",
+      "hugo_path": "/posts/shadow-maps/",
+      "target": "content/posts/Shadow Maps.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/syudig8bn0rqm74s",
+      "hugo_url": "https://JiaT-T.github.io/graphics/split-sum-ibl/",
+      "hugo_path": "/graphics/split-sum-ibl/",
+      "target": "content/graphics/Split-Sum IBL.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/xkyt3prgqt2mnn3g",
+      "hugo_url": "https://JiaT-T.github.io/graphics/pathtracer-code-notes/",
+      "hugo_path": "/graphics/pathtracer-code-notes/",
+      "target": "content/graphics/pathtracer-code-notes.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/aiuqyhoo3eahr5ck",
+      "hugo_url": "https://JiaT-T.github.io/graphics/pbr-models/",
+      "hugo_path": "/graphics/pbr-models/",
+      "target": "content/graphics/PRB Models.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/swduz6vkpin3tlt2",
+      "hugo_url": "https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/",
+      "hugo_path": "/posts/cpp-fundamentals/cpp-fundamentals/",
+      "target": "content/posts/cpp-fundamentals/cpp-fundamentals.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/wt1ggoaf6c648y9w",
+      "hugo_url": "https://JiaT-T.github.io/cpp/cpp-to-exe/",
+      "hugo_path": "/cpp/cpp-to-exe/",
+      "target": "content/cpp/cpp to exe.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gxg3siirrkudfh28",
+      "hugo_url": "https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/",
+      "hugo_path": "/posts/others/how-to-create-a-heaponly-or-stackonly-class/",
+      "target": "content/posts/Others/How to create a HeapOnly or StackOnly class.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/oqkgdshdqamx6oqh",
+      "hugo_url": "https://JiaT-T.github.io/cpp/data-race-and-race-condition/",
+      "hugo_path": "/cpp/data-race-and-race-condition/",
+      "target": "content/cpp/Data Race and Race Condition.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/udc2or1vxxk1y73i",
+      "hugo_url": "https://JiaT-T.github.io/posts/others/witted-and-mote-carlo/",
+      "hugo_path": "/posts/others/witted-and-mote-carlo/",
+      "target": "content/posts/Others/Witted and Mote Carlo.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/xlhm5r8yqaonqpm1",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/kkwa49pu4636zwi2",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/kac10rzqpbkt848b",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games101-assignment-2/",
+      "hugo_path": "/graphics/games101-assignment-2/",
+      "target": "content/graphics/games101-assignment-2.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/aqz5wqy5rm2g5rn0",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/fwq5chksbcy7lq6v",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games101-assignment-4/",
+      "hugo_path": "/graphics/games101-assignment-4/",
+      "target": "content/graphics/games101-assignment-4.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/vcqo0i8o7smmgqv7",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games101-assignment-5/",
+      "hugo_path": "/graphics/games101-assignment-5/",
+      "target": "content/graphics/games101-assignment-5.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/pdhlxzqmt178id5g",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/vbaha1r9x4gg5m6b",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/txw2gqu9nq6275fx",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/umm5tmc22sb4pw5y",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/hlcti7lg4g2b7lp2",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-engine-architecture/",
+      "hugo_path": "/graphics/games104-engine-architecture/",
+      "target": "content/graphics/games104-engine-architecture.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/bcpq57y01e04q16g",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-game-world/",
+      "hugo_path": "/graphics/games104-game-world/",
+      "target": "content/graphics/games104-game-world.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/wx6sx5vc0lk8i525",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-rendering-practice/",
+      "hugo_path": "/graphics/games104-rendering-practice/",
+      "target": "content/graphics/games104-rendering-practice.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ngr6yns3m64phwpl",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-atmosphere-and-clouds/",
+      "hugo_path": "/graphics/games104-atmosphere-and-clouds/",
+      "target": "content/graphics/games104-atmosphere-and-clouds.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/trgf9fggzg79cepi",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/leetcode-overview/",
+      "hugo_path": "/leetcode/leetcode-overview/",
+      "target": "content/leetcode/leetcode-overview.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/etianepuxgpp1q65",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/",
+      "hugo_path": "/leetcode/stack/",
+      "target": "content/leetcode/stack/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/mz1u7y5haqw7i1ug",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/easy/leetcode-stack-easy/",
+      "hugo_path": "/leetcode/stack/easy/leetcode-stack-easy/",
+      "target": "content/leetcode/stack/easy/leetcode-stack-easy.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ycrbu8cmk9hdwiae",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/medium/leetcode-stack-medium/",
+      "hugo_path": "/leetcode/stack/medium/leetcode-stack-medium/",
+      "target": "content/leetcode/stack/medium/leetcode-stack-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/evf1id2gv1gqhd7o",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/hard/leetcode-stack-hard/",
+      "hugo_path": "/leetcode/stack/hard/leetcode-stack-hard/",
+      "target": "content/leetcode/stack/hard/leetcode-stack-hard.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gtvn1gz2ny2a4vfw",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/heap/",
+      "hugo_path": "/leetcode/heap/",
+      "target": "content/leetcode/heap/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/yqdwdfptic3ez88z",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/heap/easy/leetcode-heap-easy/",
+      "hugo_path": "/leetcode/heap/easy/leetcode-heap-easy/",
+      "target": "content/leetcode/heap/easy/leetcode-heap-easy.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ztym1g80ect1kk8g",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/heap/medium/leetcode-heap-medium/",
+      "hugo_path": "/leetcode/heap/medium/leetcode-heap-medium/",
+      "target": "content/leetcode/heap/medium/leetcode-heap-medium.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ng5mh24ydcyosu2s",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/rywn7o9d9zgvzt8r",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/hhhgyq3wipki294y",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/substring/medium/leetcode-substring-medium/",
+      "hugo_path": "/leetcode/substring/medium/leetcode-substring-medium/",
+      "target": "content/leetcode/substring/medium/leetcode-substring-medium.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/pexszspw259pqf38",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/substring/hard/leetcode-substring-hard/",
+      "hugo_path": "/leetcode/substring/hard/leetcode-substring-hard/",
+      "target": "content/leetcode/substring/hard/leetcode-substring-hard.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gh4zd0hsiauprnm7",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/back-track/backtracking-overview/",
+      "hugo_path": "/leetcode/back-track/backtracking-overview/",
+      "target": "content/leetcode/back track/backtracking-overview.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/tvmshwlzcw3s2ta1",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/back-track/medium/leetcode-back-track-medium/",
+      "hugo_path": "/leetcode/back-track/medium/leetcode-back-track-medium/",
+      "target": "content/leetcode/back track/medium/leetcode-back-track-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/lugsovel7scl5k08",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/matrix/",
+      "hugo_path": "/leetcode/matrix/",
+      "target": "content/leetcode/matrix/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/lkfl1ggu70twyyzc",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gpysoglysdbi9dly",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/matrix/medium/leetcode-matrix-medium/",
+      "hugo_path": "/leetcode/matrix/medium/leetcode-matrix-medium/",
+      "target": "content/leetcode/matrix/medium/leetcode-matrix-medium.md",
+      "result": "FORMAT_REPAIRED"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/vcoxa4x5huocqcit",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/hash/",
+      "hugo_path": "/leetcode/hash/",
+      "target": "content/leetcode/hash/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/iyctdall69ru0wes",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/hash/easy/leetcode-hash-medium/",
+      "hugo_path": "/leetcode/hash/easy/leetcode-hash-medium/",
+      "target": "content/leetcode/hash/easy/leetcode-hash-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/di3nplg5fg7crhpz",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/hash/medium/leetcode-hash-medium/",
+      "hugo_path": "/leetcode/hash/medium/leetcode-hash-medium/",
+      "target": "content/leetcode/hash/medium/leetcode-hash-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ne975vaygerexun6",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/graph/",
+      "hugo_path": "/leetcode/graph/",
+      "target": "content/leetcode/graph/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/hctg06pbe24l2mdq",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/graph/medium/leetcode-graph-medium/",
+      "hugo_path": "/leetcode/graph/medium/leetcode-graph-medium/",
+      "target": "content/leetcode/graph/medium/leetcode-graph-medium.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ncurtm097dvoiv2l",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/",
+      "hugo_path": "/leetcode/list/",
+      "target": "content/leetcode/list/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/rwokfudhgtaxkknc",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/easy/leetcode-list-easy/",
+      "hugo_path": "/leetcode/list/easy/leetcode-list-easy/",
+      "target": "content/leetcode/list/easy/leetcode-list-easy.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/cnlga8u2ysfoqru7",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/medium/leetcode-list-medium/",
+      "hugo_path": "/leetcode/list/medium/leetcode-list-medium/",
+      "target": "content/leetcode/list/medium/leetcode-list-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/av5kg1ai1uglgc6i",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/hard/leetcode-list-hard/",
+      "hugo_path": "/leetcode/list/hard/leetcode-list-hard/",
+      "target": "content/leetcode/list/hard/leetcode-list-hard.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/tpzco3tldqepxh7u",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/technique/",
+      "hugo_path": "/leetcode/technique/",
+      "target": "content/leetcode/technique/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/pffe6tb99geqgzak",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/technique/easy/leetcode-technique-easy/",
+      "hugo_path": "/leetcode/technique/easy/leetcode-technique-easy/",
+      "target": "content/leetcode/technique/easy/leetcode-technique-easy.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ox2xxiwaz2zwo5wg",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/technique/medium/leetcode-technique-medium/",
+      "hugo_path": "/leetcode/technique/medium/leetcode-technique-medium/",
+      "target": "content/leetcode/technique/medium/leetcode-technique-medium.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/xs8r3ik475o1eym6",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/double-pointers/",
+      "hugo_path": "/leetcode/double-pointers/",
+      "target": "content/leetcode/double pointers/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ilsg74kn6vu4qdhw",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/double-pointers/easy/leetcode-double-pointers-easy/",
+      "hugo_path": "/leetcode/double-pointers/easy/leetcode-double-pointers-easy/",
+      "target": "content/leetcode/double pointers/easy/leetcode-double-pointers-easy.md",
+      "result": "FILLED_EXISTING_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ozm4mkuk4gloh4gq",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/double-pointers/medium/leetcode-double-pointers-medium/",
+      "hugo_path": "/leetcode/double-pointers/medium/leetcode-double-pointers-medium/",
+      "target": "content/leetcode/double pointers/medium/leetcode-double-pointers-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/eeksghueh19pfi11",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/",
+      "hugo_path": "/leetcode/binary-tree/",
+      "target": "content/leetcode/binary tree/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ra46ilsmcmakspvr",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/easy/leetcode-binary-tree-easy/",
+      "hugo_path": "/leetcode/binary-tree/easy/leetcode-binary-tree-easy/",
+      "target": "content/leetcode/binary tree/easy/leetcode-binary-tree-easy.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gvwgx0lykh5yempx",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/medium/leetcode-binary-tree-medium/",
+      "hugo_path": "/leetcode/binary-tree/medium/leetcode-binary-tree-medium/",
+      "target": "content/leetcode/binary tree/medium/leetcode-binary-tree-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/et78lki3tfprbiwg",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/hard/leetcode-binary-tree-hard/",
+      "hugo_path": "/leetcode/binary-tree/hard/leetcode-binary-tree-hard/",
+      "target": "content/leetcode/binary tree/hard/leetcode-binary-tree-hard.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gvfnnacg46dp4p0p",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/szdzq62cywq3al39",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/string/easy/leetcode-string-easy/",
+      "hugo_path": "/leetcode/string/easy/leetcode-string-easy/",
+      "target": "content/leetcode/string/easy/leetcode-string-easy.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gp0n09fz9fdxfrgv",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/xs8g0sxico6bz66a",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/xt819i2tgf9y60tp",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/array/medium/leetcode-array-medium/",
+      "hugo_path": "/leetcode/array/medium/leetcode-array-medium/",
+      "target": "content/leetcode/array/medium/leetcode-array-medium.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/dom9yges8gygxlep",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-search/",
+      "hugo_path": "/leetcode/binary-search/",
+      "target": "content/leetcode/binary search/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/lglr5zpaiyn7chgc",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-search/easy/leetcode-binary-search-easy/",
+      "hugo_path": "/leetcode/binary-search/easy/leetcode-binary-search-easy/",
+      "target": "content/leetcode/binary search/easy/leetcode-binary-search-easy.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/kovh86nqrne4grtx",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/",
+      "hugo_path": "/leetcode/binary-search/medium/leetcode-binary-search-medium/",
+      "target": "content/leetcode/binary search/medium/leetcode-binary-search-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/nc0b6li0gz8yhas6",
+      "hugo_url": null,
+      "hugo_path": null,
+      "target": null,
+      "result": "SKIP_EMPTY"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/tgxmr9qtzzk7udtv",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/greedy-algorithm/",
+      "hugo_path": "/leetcode/greedy-algorithm/",
+      "target": "content/leetcode/greedy algorithm/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ne188hgk5rxky939",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/",
+      "hugo_path": "/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/",
+      "target": "content/leetcode/greedy algorithm/easy/leetcode-greedy-algorithm-easy.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/hak76l9s3kallgv4",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/greedy-algorithm/medium/leetcode-greedy-algorithmmedium/",
+      "hugo_path": "/leetcode/greedy-algorithm/medium/leetcode-greedy-algorithmmedium/",
+      "target": "content/leetcode/greedy algorithm/medium/leetcode-greedy-algorithmmedium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gdxrzb0yvnr2yxh9",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/sliding-window/",
+      "hugo_path": "/leetcode/sliding-window/",
+      "target": "content/leetcode/sliding window/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/yg57x00m0sytet7u",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/sliding-window/medium/leetcode-sliding-window-medium/",
+      "hugo_path": "/leetcode/sliding-window/medium/leetcode-sliding-window-medium/",
+      "target": "content/leetcode/sliding window/medium/leetcode-sliding-window-medium.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/nkkgc4p5l9qyiauc",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/sliding-window/hard/leetcode-sliding-window-hard/",
+      "hugo_path": "/leetcode/sliding-window/hard/leetcode-sliding-window-hard/",
+      "target": "content/leetcode/sliding window/hard/leetcode-sliding-window-hard.md",
+      "result": "MIGRATED_NEW"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/qyz1ivn3kp4wgqqp",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/dynamic-programming/",
+      "hugo_path": "/leetcode/dynamic-programming/",
+      "target": "content/leetcode/dynamic programming/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/arxtwk87cgav5xzg",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/dynamic-programming/easy/leetcode-dynamic-programming-easy/",
+      "hugo_path": "/leetcode/dynamic-programming/easy/leetcode-dynamic-programming-easy/",
+      "target": "content/leetcode/dynamic programming/easy/leetcode-dynamic-programming-easy.md",
+      "result": "PRESERVED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/ixw7uw6xa05tg08k",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/",
+      "hugo_path": "/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/",
+      "target": "content/leetcode/dynamic programming/medium/leetcode-dynamic-programming-easy.md",
+      "result": "COMPLETED_EXISTING"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/po0sk9k2nvnhb6xo",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/multidimensional-dynamic-programming/",
+      "hugo_path": "/leetcode/multidimensional-dynamic-programming/",
+      "target": "content/leetcode/multidimensional dynamic programming/_index.md",
+      "result": "MAPPED_EXISTING_SECTION"
+    },
+    {
+      "yuque_url": "https://www.yuque.com/u62694975/iaaa/gi8yqyu3poekg322",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/multidimensional-dynamic-programming/medium/leetcode-multidimensional-dynamic-programming-medium/",
+      "hugo_path": "/leetcode/multidimensional-dynamic-programming/medium/leetcode-multidimensional-dynamic-programming-medium/",
+      "target": "content/leetcode/multidimensional dynamic programming/medium/leetcode-multidimensional-dynamic-programming-medium.md",
+      "result": "COMPLETED_EXISTING"
+    }
+  ]
+}

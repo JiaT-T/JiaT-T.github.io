@@ -65,7 +65,7 @@ bool hasCycle(ListNode *head)
 
 构造while循环，只要A与B指针不相同，就继续向后遍历，因为最后走的距离相同，也就是循环的次数相同，所以在同一个循环中进行两者的遍历即可
 
-<img src="https://cdn.nlark.com/yuque/0/2026/png/64464470/1775536987303-96d113ec-6c22-4000-bf4a-312191e85f55.png" width="1604" title="" crop="0,0,1,1" id="u3e62db8c" class="ne-image">
+<img src="/images/leetcode-list-easy/leetcode-list-easy-01.png" width="1604" title="" crop="0,0,1,1" id="u3e62db8c" class="ne-image">
 
 ```cpp
 ListNode* getIntersectionNode(ListNode *headA, ListNode *headB)
