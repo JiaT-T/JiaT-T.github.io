@@ -1,0 +1,13 @@
+.main .profile { min-height: auto; padding: 20px 0 32px; }
+.portfolio-selection { padding: 12px 0 48px; }
+.portfolio-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.portfolio-heading h2 { font-size: 24px; }
+.portfolio-heading a, .portfolio-source { font-size: 14px; color: #34589b; }
+.portfolio-intro { margin: 12px 0 24px; color: var(--secondary); }
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.portfolio-card { padding: 24px; border: 1px solid #dddfe5; border-radius: 14px; background: rgba(255,255,255,.8); }
+.portfolio-card h3 { margin: 8px 0 12px; font-size: 20px; overflow-wrap: anywhere; }
+.portfolio-card > p:not(.portfolio-category) { margin-bottom: 18px; font-size: 15px; line-height: 1.7; }
+.portfolio-category { color: var(--secondary); font-size: 12px; letter-spacing: .03em; }
+.portfolio-card a:focus-visible { outline: 2px solid #34589b; outline-offset: 4px; }
+@media (max-width: 640px) { .portfolio-grid { grid-template-columns: 1fr; } .portfolio-heading { flex-wrap: wrap; } }

@@ -1,0 +1,8 @@
+[
+  {"name":"PathTracer-CPP","category":"CPU Rendering · C++","summary":"CPU 路径追踪器：PBR、GGX/VNDF、灯光与环境 MIS、BVH、渐进渲染与 A-Trous 降噪。","url":"https://github.com/JiaT-T/PathTracer-CPP"},
+  {"name":"DX12-Renderer","category":"Real-time Rendering · C++ / HLSL","summary":"DirectX 12 渲染器：Win32、PBR、IBL、阴影 PCF 与 HDR/ACES 色调映射。","url":"https://github.com/JiaT-T/DX12-Renderer"},
+  {"name":"Vulkan-Renderer","category":"Graphics API · C++ / GLSL","summary":"Vulkan 实验：前向与延迟渲染、G-buffer、深度、透明混合以及 SDR/HDR 输出。","url":"https://github.com/JiaT-T/Vulkan-Renderer"},
+  {"name":"Soft-Raster-Renderer","category":"Rasterization · C++","summary":"软件光栅化器：三角形插值、Z Buffer、Shadow Map、TBN 法线映射与 SSAO。","url":"https://github.com/JiaT-T/Soft-Raster-Renderer"},
+  {"name":"UE5-FFT-Ocean","category":"Unreal Engine · Niagara / HLSL","summary":"基于 Epic 社区教程的 Niagara GPU FFT 海面实验，包含级联、泡沫与散射材质调试。","url":"https://github.com/JiaT-T/UE5-FFT-Ocean"},
+  {"name":"UE5-Procedural-Grassland","category":"Unreal Engine · PCG / Materials","summary":"PCG 草地实验：WPO、实例数据、LOD 与交互 Render Target；实现以 UE 资产图为主。","url":"https://github.com/JiaT-T/UE5-Procedural-Grassland"}
+]
