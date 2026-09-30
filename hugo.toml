@@ -51,6 +51,13 @@ subtitle = """
 [markup.goldmark.renderer]
     unsafe = true # 支持在 MD 中嵌套一些简单的 HTML
 
+# 保留 LaTeX 原文，交给现有 MathJax 渲染。
+[markup.goldmark.extensions.passthrough]
+    enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)'], ['$', '$']]
+
 # 顶部导航栏分类
 [[menu.main]]
     identifier = "posts"

@@ -6,6 +6,7 @@ draft: false
 summary: "对比 PBR 中 Metallic-Roughness 与 Specular-Glossiness 两种材质工作流的贴图结构、能量守恒约束和显存开销。"
 categories: ["图形学"]
 tags: ["Computer Graphics", "Rendering", "PBR", "Materials"]
+math: true
 ---
 
 在 PBR 框架下，材质的视觉表现主要依赖于微表面（Microfacet）理论和能量守恒定律。为了在渲染引擎中标准化地输入这些物理参数，工业界发展出了两套主流的材质工作流：**金属度-粗糙度（Metallic-Roughness，MR 模型）**与**镜面反射-光泽度（Specular-Glossiness，SG 模型）**。

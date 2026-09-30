@@ -5,6 +5,7 @@ draft: false
 summary: "用硬件执行能力和现实类比梳理 Vulkan Queue Family 与 VkQueue 的关系。"
 categories: ["Vulkan"]
 tags: ["Vulkan", "Computer Graphics", "Rendering"]
+math: true
 ---
 
 在讲队列族（Queue Family）之前，我们可以用一个非常形象的现实生活场景来理解它：

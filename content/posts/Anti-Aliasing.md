@@ -4,6 +4,7 @@ draft = false
 title = '抗锯齿技术'
 summary = '整理 SSAA、MSAA、FXAA、SMAA、TAA、DLSS/DLAA 以及路径追踪中的抗锯齿思路。'
 tags = ['Computer Graphics', 'Rendering', 'Anti-Aliasing', 'Technical Notes']
+math = true
 +++
 
 **【Reference】：**
