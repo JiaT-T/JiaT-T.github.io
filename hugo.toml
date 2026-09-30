@@ -19,11 +19,11 @@ theme = "PaperMod"
     images = ["images/avatar.jpg"]
 
     [params.assets]
-        favicon = "favicon.svg"
-        favicon16x16 = "favicon-16x16.png"
-        favicon32x32 = "favicon-32x32.png"
-        apple_touch_icon = "apple-touch-icon.png"
-        safari_pinned_tab = "favicon.svg"
+        favicon = "favicon.svg?v=iaaa"
+        favicon16x16 = "favicon-16x16.png?v=iaaa"
+        favicon32x32 = "favicon-32x32.png?v=iaaa"
+        apple_touch_icon = "apple-touch-icon.png?v=iaaa"
+        safari_pinned_tab = "favicon.svg?v=iaaa"
         theme_color = "#111315"
 
     # 主页配置
