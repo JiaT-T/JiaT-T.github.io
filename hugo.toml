@@ -33,7 +33,6 @@ theme = "PaperMod"
 subtitle = """
 计算机专业本科在读，主要关注 C++、计算机图形学、实时渲染与 Unreal Engine。
 
-这里记录一些学习笔记，也整理自己做过的渲染与引擎相关小项目。
 """
         imageUrl = "/images/avatar.jpg"
         imageWidth = 100
