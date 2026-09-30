@@ -110,7 +110,11 @@
       "proposed_action": "REQUIRES_MANUAL_REVIEW",
       "mapped_to": null,
       "local_source_link_count": 0,
-      "metadata_redacted": true
+      "metadata_redacted": true,
+      "initial_migration_status": "UNCERTAIN",
+      "execution_result": "REQUIRES_MANUAL_REVIEW",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 1,
@@ -169,7 +173,11 @@
       "proposed_action": "REQUIRES_MANUAL_REVIEW",
       "mapped_to": null,
       "local_source_link_count": 0,
-      "metadata_redacted": true
+      "metadata_redacted": true,
+      "initial_migration_status": "UNCERTAIN",
+      "execution_result": "REQUIRES_MANUAL_REVIEW",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 2,
@@ -228,7 +236,11 @@
       "proposed_action": "REQUIRES_MANUAL_REVIEW",
       "mapped_to": null,
       "local_source_link_count": 0,
-      "metadata_redacted": true
+      "metadata_redacted": true,
+      "initial_migration_status": "UNCERTAIN",
+      "execution_result": "REQUIRES_MANUAL_REVIEW",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 3,
@@ -287,7 +299,11 @@
       "proposed_action": "REQUIRES_MANUAL_REVIEW",
       "mapped_to": null,
       "local_source_link_count": 0,
-      "metadata_redacted": true
+      "metadata_redacted": true,
+      "initial_migration_status": "UNCERTAIN",
+      "execution_result": "REQUIRES_MANUAL_REVIEW",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 4,
@@ -346,7 +362,11 @@
       "proposed_action": "REQUIRES_MANUAL_REVIEW",
       "mapped_to": null,
       "local_source_link_count": 0,
-      "metadata_redacted": true
+      "metadata_redacted": true,
+      "initial_migration_status": "UNCERTAIN",
+      "execution_result": "REQUIRES_MANUAL_REVIEW",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 5,
@@ -405,7 +425,11 @@
       "proposed_action": "REQUIRES_MANUAL_REVIEW",
       "mapped_to": null,
       "local_source_link_count": 0,
-      "metadata_redacted": true
+      "metadata_redacted": true,
+      "initial_migration_status": "UNCERTAIN",
+      "execution_result": "REQUIRES_MANUAL_REVIEW",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 6,
@@ -459,7 +483,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/UE/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/ue/",
+      "hugo_path": "/ue/",
+      "target_sha256": "0c341afe9aa9423fbe95fc169c42302c6f2966342cf0d193406b534c37301c3b"
     },
     {
       "index": 7,
@@ -494,7 +523,7 @@
       "content_fingerprint": "500a7dcc4a3d64b3d3de8b85535e7f12cb57d25e7a0b259a70d98fb4ee979075",
       "normalized_title": "gas",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-07-28T04:17:39.949Z",
       "content_updated_time": "2026-07-28T04:17:40.000Z",
@@ -519,8 +548,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/UE/gameplay-ability-system.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/ue/gameplay-ability-system/",
+      "hugo_path": "/ue/gameplay-ability-system/",
+      "target_sha256": "8e4f79324164fa066cafb0b49af0dcc58ee2f4824ad529050aafd8a038afdc17"
     },
     {
       "index": 8,
@@ -555,7 +590,7 @@
       "content_fingerprint": "bb83efb78aaf45d0da575637cd4d8db2567f2f3f62229562f626edf9514253ca",
       "normalized_title": "计 网 os",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-07-02T14:15:44.398Z",
       "content_updated_time": "2026-07-02T14:15:44.000Z",
@@ -577,8 +612,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/cpp/network-and-os-notes.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/cpp/network-and-os-notes/",
+      "hugo_path": "/cpp/network-and-os-notes/",
+      "target_sha256": "30b10b201720eb5534ffe34edb20f4cf4d2f0c1346047826154e7834cabcb843"
     },
     {
       "index": 9,
@@ -613,7 +654,7 @@
       "content_fingerprint": "7d66bfb659bc0d3cc247886b2d290bbc11a02a25ab2510b6b519d34b076ca5ab",
       "normalized_title": "可 能 的 ue 底 层 知 识",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-30T13:54:42.593Z",
       "content_updated_time": "2026-06-30T13:54:43.000Z",
@@ -635,8 +676,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/UE/ue-low-level-notes.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue-low-level-notes/",
+      "hugo_path": "/ue/ue-low-level-notes/",
+      "target_sha256": "89a8afce2ad06515f3cb44adb545e4dc4a7ecf5023623a4a1c4ac57c951e5e67"
     },
     {
       "index": 10,
@@ -694,7 +741,11 @@
       "is_stub": true,
       "proposed_action": "SKIP_STUB",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_STUB",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 11,
@@ -731,7 +782,7 @@
       "content_fingerprint": "67d25f84b5f61009e2da2c909935cee37d4570521c7ab1c68c07829b8be6b019",
       "normalized_title": "序 列 化",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-17T08:12:03.415Z",
       "content_updated_time": "2026-06-17T12:04:18.000Z",
@@ -753,8 +804,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/UE/ue-serialization.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue-serialization/",
+      "hugo_path": "/ue/ue-serialization/",
+      "target_sha256": "456377c10270e3f72f7d65138d754c937a0651ff12f5d598a7c2125c98acfd9a"
     },
     {
       "index": 12,
@@ -823,7 +880,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/UE/Reflection Syetem.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/ue/reflection-system/",
+      "hugo_path": "/ue/reflection-system/",
+      "target_sha256": "122ae78f8947d2b67e6291aff38aa373d3d785eb2a7987f4cb6c315be9aafe6b"
     },
     {
       "index": 13,
@@ -883,7 +945,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 14,
@@ -941,7 +1007,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/UE/GamePlay Framework(1).md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/ue/gameplay-framework1/",
+      "hugo_path": "/ue/gameplay-framework1/",
+      "target_sha256": "8d3287a078c4794de7c3461d70bdcb141aa222d824848868d3b6f4a15645bf15"
     },
     {
       "index": 15,
@@ -976,7 +1047,7 @@
       "content_fingerprint": "ef3988e7599794acbe6d857ef8472e7226a58cacbfb4ccaeefbffe2c717dabb7",
       "normalized_title": "ue5 材 质 备 忘 录",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-09T07:36:58.858Z",
       "content_updated_time": "2026-06-09T07:36:59.000Z",
@@ -998,8 +1069,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/UE/ue5-material-reference.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue5-material-reference/",
+      "hugo_path": "/ue/ue5-material-reference/",
+      "target_sha256": "d02d3fa5c2553e6295d9e59b3a88237e2590bd594666fd870eeba1f3737a6b6d"
     },
     {
       "index": 16,
@@ -1034,7 +1111,7 @@
       "content_fingerprint": "6ad155c7255e6736f45128b37b0544440c2bf24d56c38d7895533f5c643bac34",
       "normalized_title": "ue 渲 染 管 线 桌 面 端 延 迟 渲 染",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-28T04:23:56.307Z",
       "content_updated_time": "2026-06-28T06:45:52.000Z",
@@ -1069,8 +1146,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/UE/ue-deferred-rendering-pipeline.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/ue/ue-deferred-rendering-pipeline/",
+      "hugo_path": "/ue/ue-deferred-rendering-pipeline/",
+      "target_sha256": "42e1781c064116c8dc628ee35662aac774d41b188d65cfc0fe4986116ed1a9c3"
     },
     {
       "index": 17,
@@ -1143,7 +1226,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/UE/CPP in UE5.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/ue/cpp-in-ue5/",
+      "hugo_path": "/ue/cpp-in-ue5/",
+      "target_sha256": "b6da6445042559d07028fc45a5255d34f11b9f57cace39851974a4aa8f201fa2"
     },
     {
       "index": 18,
@@ -1197,7 +1285,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/Vulkan/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/",
+      "hugo_path": "/vulkan/",
+      "target_sha256": "5b91fc913cd2cd6e74d255326d98e4c6c0ffbd04834cc55fca095a9752838243"
     },
     {
       "index": 19,
@@ -1232,7 +1325,7 @@
       "content_fingerprint": "650d619f29bf3f2486506d9b9add3f61b8f93b4091074954204d7e040ad3e266",
       "normalized_title": "easyvulkan 第 六 章 学 习 笔 记",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-07-26T06:36:45.251Z",
       "content_updated_time": "2026-07-26T07:10:25.000Z",
@@ -1256,8 +1349,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/Vulkan/easyvulkan-chapter-6.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/easyvulkan-chapter-6/",
+      "hugo_path": "/vulkan/easyvulkan-chapter-6/",
+      "target_sha256": "718d9344a991af656e3e55c93c0d692efe2f020dcbd8e96fd490b77dd3858b89"
     },
     {
       "index": 20,
@@ -1292,7 +1391,7 @@
       "content_fingerprint": "9d7c3fe4acde09240803f63e0718ce61e996c14d63ee8e225fe627ed63dc2dee",
       "normalized_title": "easyvulkan 第 七 章 学 习 笔 记",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-07-26T06:12:36.450Z",
       "content_updated_time": "2026-07-26T06:29:52.000Z",
@@ -1317,8 +1416,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/Vulkan/easyvulkan-chapter-7.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/easyvulkan-chapter-7/",
+      "hugo_path": "/vulkan/easyvulkan-chapter-7/",
+      "target_sha256": "85246abd25ed99b5935a0b1d2f69d34cdb273aa3227ac9de8b936426687b712c"
     },
     {
       "index": 21,
@@ -1376,7 +1481,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 22,
@@ -1436,7 +1545,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 23,
@@ -1496,7 +1609,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 24,
@@ -1556,7 +1673,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/Vulkan/基础知识/QueueFamily.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queuefamily/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queuefamily/",
+      "target_sha256": "c2dc01b7eadb284dd2c15d92e3ae6fc8a958cf7f250fcc4ee56346120a19961b"
     },
     {
       "index": 25,
@@ -1593,7 +1715,7 @@
       "content_fingerprint": "e518efaa3f6641baee98c8cf7616d8f55d5269af9bcdd4715f0e9d71239c795b",
       "normalized_title": "glfw",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-07T06:44:39.077Z",
       "content_updated_time": "2026-06-07T06:44:39.000Z",
@@ -1617,8 +1739,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/Vulkan/vulkan-glfw.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-glfw/",
+      "hugo_path": "/vulkan/vulkan-glfw/",
+      "target_sha256": "590cb03416b6a8e65d99454159764ade12e3a4be2f8ab5a56cfebb1fa055537c"
     },
     {
       "index": 26,
@@ -1655,7 +1783,7 @@
       "content_fingerprint": "beb0bab4d5572b6d95bf25b44d5ecac4387b99dbd0d3ca71720015b2b9c70782",
       "normalized_title": "同 步 原 语",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-12T09:16:02.575Z",
       "content_updated_time": "2026-06-14T02:06:17.000Z",
@@ -1677,8 +1805,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/Vulkan/vulkan-synchronization-primitives.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-synchronization-primitives/",
+      "hugo_path": "/vulkan/vulkan-synchronization-primitives/",
+      "target_sha256": "847ac29a5d5dab28085c83de10b936c7d1482b2349088e15b2588b72a8155507"
     },
     {
       "index": 27,
@@ -1715,7 +1849,7 @@
       "content_fingerprint": "aeb16913ac57c78a6a34da78af261834202dfa4b9e69a6abf3b323397d08ce6d",
       "normalized_title": "vkresult",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-07T05:34:59.802Z",
       "content_updated_time": "2026-06-07T05:36:39.000Z",
@@ -1737,8 +1871,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/Vulkan/vulkan-vkresult.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-vkresult/",
+      "hugo_path": "/vulkan/vulkan-vkresult/",
+      "target_sha256": "ddff9c2069510da21ae719c243afda8433a22ba16084ef6624b75f06b0096c1d"
     },
     {
       "index": 28,
@@ -1798,7 +1938,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/Vulkan/基础知识/Queue Categories.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queue-categories/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/queue-categories/",
+      "target_sha256": "49f25aab13574d922a60461df99e4b2f1f04bee93ed28ef1be75785d7061efda"
     },
     {
       "index": 29,
@@ -1858,7 +2003,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/Vulkan/基础知识/Initialization.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/initialization/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/initialization/",
+      "target_sha256": "8c1af4472ca3e983525d9b0829050f3e1bff045c44c32451943559ed32be72ba"
     },
     {
       "index": 30,
@@ -1895,7 +2045,7 @@
       "content_fingerprint": "7f792a32656cf4e5dddd6df7b39d8ce5c4e0826e05efda68c1c182e2bc7a3a97",
       "normalized_title": "window surface",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-07T12:50:26.588Z",
       "content_updated_time": "2026-06-12T01:59:10.000Z",
@@ -1919,8 +2069,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/Vulkan/vulkan-window-surface.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/vulkan-window-surface/",
+      "hugo_path": "/vulkan/vulkan-window-surface/",
+      "target_sha256": "355a3f8321dd56bd9a74cb324ad8d0be097efa55b7280c5350eb9c9aec8aed79"
     },
     {
       "index": 31,
@@ -1980,7 +2136,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/Vulkan/基础知识/Swapchain.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/swapchain/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/swapchain/",
+      "target_sha256": "fdedf117185bda9065fdb3a293040cd3211aaca5c6302d2558b84f7c3039aaa2"
     },
     {
       "index": 32,
@@ -2040,7 +2201,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/Vulkan/基础知识/Layers and Extensions.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/layers-and-extensions/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/layers-and-extensions/",
+      "target_sha256": "e007efd5879648b2b53ab93525c36cebb41acd5b8efd1d67468c75750c3caaf8"
     },
     {
       "index": 33,
@@ -2104,7 +2270,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/Vulkan/基础知识/ValidationLayers.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/validationlayers/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/validationlayers/",
+      "target_sha256": "0fae4c76ab15edb68b5232a07f5c96c379e4b087ebaad88780c12f25700eb35b"
     },
     {
       "index": 34,
@@ -2164,7 +2335,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/Vulkan/基础知识/Physical and Logic Device.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/physical-and-logic-device/",
+      "hugo_path": "/vulkan/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/physical-and-logic-device/",
+      "target_sha256": "8bbea606f8763f9defe6ab133c4f99445c6816ec489b08d88867f11a72826e17"
     },
     {
       "index": 35,
@@ -2195,7 +2371,7 @@
       "content_fingerprint": "99f39a452cda558005124cb1dde97c8210e1b1dcf9c25028e505f7e393a267c7",
       "normalized_title": "dx12",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-01-08T06:52:30.663Z",
       "content_updated_time": "2026-05-19T13:38:38.000Z",
@@ -2338,8 +2514,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/posts/directx12-hresult.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/posts/directx12-hresult/",
+      "hugo_path": "/posts/directx12-hresult/",
+      "target_sha256": "8d1cc7cce46676ceb1bdd49f8a399ffdd953002e083ca9f20c8427ef8d95014f"
     },
     {
       "index": 36,
@@ -2374,7 +2556,7 @@
       "content_fingerprint": "0edfa1b79684854ee5c561e0132016743e7612ef3b51b06169c7a846239ec236",
       "normalized_title": "dxr",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-01T13:52:28.359Z",
       "content_updated_time": "2026-03-07T03:13:54.000Z",
@@ -2433,8 +2615,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/posts/directx-raytracing-notes.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/posts/directx-raytracing-notes/",
+      "hugo_path": "/posts/directx-raytracing-notes/",
+      "target_sha256": "c0b12e32e2e61568591ea3b494776480f76cfed15c2424c8e24dceceb6612d8b"
     },
     {
       "index": 37,
@@ -2469,7 +2657,7 @@
       "content_fingerprint": "db65699b2dcc0a30a6b87bcb4a7d5dfcaabe8d073c401d96327658cb55a9a4c7",
       "normalized_title": "dx12 杂 谈",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-05-14T10:55:06.523Z",
       "content_updated_time": "2026-05-20T08:22:53.000Z",
@@ -2492,7 +2680,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/posts/DX12.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/dx12/",
+      "hugo_path": "/posts/dx12/",
+      "target_sha256": "5e58d703987fca87bd6079cdd984b4359b5dd69a034dfddd21bbae4c0c7443cd"
     },
     {
       "index": 38,
@@ -2550,7 +2743,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 39,
@@ -2587,7 +2784,7 @@
       "content_fingerprint": "7dcb256231331b2576a529b574f8aa0031b4cafc0ceb5a58c44bf78eb5871c9f",
       "normalized_title": "类 型",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-22T11:37:06.284Z",
       "content_updated_time": "2026-03-22T11:37:06.000Z",
@@ -2609,8 +2806,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/posts/dxr-dx12-types.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/posts/dxr-dx12-types/",
+      "hugo_path": "/posts/dxr-dx12-types/",
+      "target_sha256": "0c9b4da5abf34b815978117b8e27168f9ca778fce004a281199114b05e8b64fc"
     },
     {
       "index": 40,
@@ -2647,7 +2850,7 @@
       "content_fingerprint": "2002c821991bf9c9b8ec3fdcb6a53917f2ebe8f61818b4923c661e8b1a602f16",
       "normalized_title": "函 数",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-22T11:37:19.511Z",
       "content_updated_time": "2026-03-22T11:37:20.000Z",
@@ -2669,8 +2872,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/posts/dxr-dx12-functions.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/posts/dxr-dx12-functions/",
+      "hugo_path": "/posts/dxr-dx12-functions/",
+      "target_sha256": "5cc3983e5363e1b930a26d919a1faddec82975284dc843755c64dff553a6997f"
     },
     {
       "index": 41,
@@ -2724,7 +2933,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/graphics/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/graphics/",
+      "hugo_path": "/graphics/",
+      "target_sha256": "47f4316a13946ba1c8052c6154fec2686c145bd3f5212253650f138d37b68b24"
     },
     {
       "index": 42,
@@ -2782,7 +2996,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 43,
@@ -2840,7 +3058,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 44,
@@ -2898,7 +3120,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 45,
@@ -2958,7 +3184,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/Design Modes.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/design-modes/",
+      "hugo_path": "/posts/design-modes/",
+      "target_sha256": "b2c5f7bb14407a277e09041d4bd8aaeb795d6ec6b45e6fc53458e82ca44e8238"
     },
     {
       "index": 46,
@@ -2993,7 +3224,7 @@
       "content_fingerprint": "e4927898fda1f165f296f863b35724ce938a73aa96f53695117bfad3c3b5ed51",
       "normalized_title": "如 何 混 合 法 线 贴 图",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Same article has unmatched source code or more source resources; preserve mature prose and inspect differences",
       "first_published_time": "2026-05-08T07:56:27.366Z",
       "content_updated_time": "2026-05-08T08:50:41.000Z",
@@ -3018,7 +3249,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_RESOURCE_OR_CODE_DIFF",
       "mapped_to": "content/posts/Others/Normal Combination.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "FORMAT_REPAIRED",
+      "hugo_url": "https://JiaT-T.github.io/posts/others/normal-combination/",
+      "hugo_path": "/posts/others/normal-combination/",
+      "target_sha256": "ef37445de616eec887cc18e272a1e59252784e5cfe0cd63576346312a4bf0c24"
     },
     {
       "index": 47,
@@ -3076,7 +3312,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 48,
@@ -3134,7 +3374,11 @@
       "is_stub": true,
       "proposed_action": "SKIP_STUB",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_STUB",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 49,
@@ -3211,7 +3455,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/Acceleration Structure.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/acceleration-structure/",
+      "hugo_path": "/posts/acceleration-structure/",
+      "target_sha256": "19488c447ef6fa54854596230f62ab568494abd22d408ad35fc0b7823ab91ed6"
     },
     {
       "index": 50,
@@ -3246,7 +3495,7 @@
       "content_fingerprint": "1bf17a9eb6fd4ae03f9144df2cc2a1421442f44618b1cc53a8c93a0c6ef34e84",
       "normalized_title": "排 序 算 法",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-05-30T11:45:24.477Z",
       "content_updated_time": "2026-06-11T08:25:42.000Z",
@@ -3270,8 +3519,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/cpp/sorting-algorithms.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/cpp/sorting-algorithms/",
+      "hugo_path": "/cpp/sorting-algorithms/",
+      "target_sha256": "0fdc641389f6dc6b0154f6da3a3fd5afe7b387caa86f45147ee36bc4b2b84d78"
     },
     {
       "index": 51,
@@ -3331,7 +3586,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/graphics/Rendering Paths.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/graphics/rendering-paths/",
+      "hugo_path": "/graphics/rendering-paths/",
+      "target_sha256": "adcdb4de3e585e78baad1442f769583c678e63dc2da60ecdbfe1b54f9086be3a"
     },
     {
       "index": 52,
@@ -3426,7 +3686,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/Shadow Techniques.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/shadow-techniques/",
+      "hugo_path": "/posts/shadow-techniques/",
+      "target_sha256": "7bdc1f05e1ce98f6bfcb55d6c5d7c61bb5df196a34cefa2ff182b61fc8195f66"
     },
     {
       "index": 53,
@@ -3461,7 +3726,7 @@
       "content_fingerprint": "03384737643da0e05debdb7185297fd6849f172b55b569653f1fc43b5df9aa03",
       "normalized_title": "项 目 细 节",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-05-26T05:46:45.407Z",
       "content_updated_time": "2026-05-26T14:12:43.000Z",
@@ -3483,8 +3748,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/pathtracer-project-details.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/pathtracer-project-details/",
+      "hugo_path": "/graphics/pathtracer-project-details/",
+      "target_sha256": "fc2824162b226488735bd82ce5bdd88b9039dcfc4a04cd05a8bccc458db5e0f3"
     },
     {
       "index": 54,
@@ -3564,7 +3835,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/Anti-Aliasing.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/anti-aliasing/",
+      "hugo_path": "/posts/anti-aliasing/",
+      "target_sha256": "c32afcec367bc67afd8fac782ceda5477e008d5afc51b4daf540797f82a3ad64"
     },
     {
       "index": 55,
@@ -3599,7 +3875,7 @@
       "content_fingerprint": "a6e3ebe783aab5eadadb250ae821491dd37db0316cfa2c4d39ad12dcac82114a",
       "normalized_title": "辐 射 度 量 学",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-06-25T11:25:02.282Z",
       "content_updated_time": "2026-06-25T12:28:55.000Z",
@@ -3635,7 +3911,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/graphics/辐射度量学.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/graphics/%E8%BE%90%E5%B0%84%E5%BA%A6%E9%87%8F%E5%AD%A6/",
+      "hugo_path": "/graphics/%E8%BE%90%E5%B0%84%E5%BA%A6%E9%87%8F%E5%AD%A6/",
+      "target_sha256": "2678787c51f9e79a9e6b641b59d31be2012f0c659e970e2cace0b6e24ae53688"
     },
     {
       "index": 56,
@@ -3748,7 +4029,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/Shadow Maps.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/shadow-maps/",
+      "hugo_path": "/posts/shadow-maps/",
+      "target_sha256": "e37c76b802f1ec681fc7c0542652d79cbff20f26c70049bb6d0023cdb054271d"
     },
     {
       "index": 57,
@@ -3806,7 +4092,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/graphics/Split-Sum IBL.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/graphics/split-sum-ibl/",
+      "hugo_path": "/graphics/split-sum-ibl/",
+      "target_sha256": "5048a9c0d9e1df0b5e662a5f4075c5c54c33266a8649431d39e3d33368710f93"
     },
     {
       "index": 58,
@@ -3841,7 +4132,7 @@
       "content_fingerprint": "a53aa2c470b998dfcdf7a6e631ec4bd301d57d14cd333f6c91c88590600e4d36",
       "normalized_title": "pathtracer 梳 理",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-02T06:16:49.351Z",
       "content_updated_time": "2026-06-02T06:39:57.000Z",
@@ -3863,8 +4154,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 5
+      "mapped_to": "content/graphics/pathtracer-code-notes.md",
+      "local_source_link_count": 5,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/pathtracer-code-notes/",
+      "hugo_path": "/graphics/pathtracer-code-notes/",
+      "target_sha256": "d5d0b698e95c1bce3c0a181849ff71bb9a167cfb61e3de61db73b81c9eb45e09"
     },
     {
       "index": 59,
@@ -3922,7 +4219,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/graphics/PRB Models.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/graphics/pbr-models/",
+      "hugo_path": "/graphics/pbr-models/",
+      "target_sha256": "aaee54a1690afe4abc4026c19ae4cd5d794f40189f55709c39a60aeabf59db9f"
     },
     {
       "index": 60,
@@ -3989,7 +4291,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/cpp-fundamentals/cpp-fundamentals.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/cpp-fundamentals/cpp-fundamentals/",
+      "hugo_path": "/posts/cpp-fundamentals/cpp-fundamentals/",
+      "target_sha256": "0caeff9fb92e6a2be4bba8be44fdcb1c61eb7f8fa8bc7f86135d96784797951b"
     },
     {
       "index": 61,
@@ -4054,7 +4361,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/cpp/cpp to exe.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/cpp/cpp-to-exe/",
+      "hugo_path": "/cpp/cpp-to-exe/",
+      "target_sha256": "b807f8f4d362611a2d96d5a859323fe4be49860980ad60c5825fb23a94f51bd7"
     },
     {
       "index": 62,
@@ -4112,7 +4424,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/Others/How to create a HeapOnly or StackOnly class.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/others/how-to-create-a-heaponly-or-stackonly-class/",
+      "hugo_path": "/posts/others/how-to-create-a-heaponly-or-stackonly-class/",
+      "target_sha256": "d5b1b345126b3f1c3d2c2ebd3ba19cb89b33902034a5d9ba4c49a0e157528ff2"
     },
     {
       "index": 63,
@@ -4172,7 +4489,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/cpp/Data Race and Race Condition.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/cpp/data-race-and-race-condition/",
+      "hugo_path": "/cpp/data-race-and-race-condition/",
+      "target_sha256": "f6f92d42bbf90becbdfd964274acface5c0167948b03a8cb25f84bb64f987f1f"
     },
     {
       "index": 64,
@@ -4230,7 +4552,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/posts/Others/Witted and Mote Carlo.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/posts/others/witted-and-mote-carlo/",
+      "hugo_path": "/posts/others/witted-and-mote-carlo/",
+      "target_sha256": "ff0f537181b6c387aafe2b9694829e23845122a7f0615e70fdedf745fdc828f8"
     },
     {
       "index": 65,
@@ -4288,7 +4615,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 66,
@@ -4348,7 +4679,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 67,
@@ -4387,7 +4722,7 @@
       "content_fingerprint": "a7c7c1ecc9e29a6dc118f4603ad8c458204b57778a1422f48fc421890bb6fc71",
       "normalized_title": "2",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-19T06:57:04.568Z",
       "content_updated_time": "2026-03-19T07:15:53.000Z",
@@ -4411,8 +4746,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/games101-assignment-2.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games101-assignment-2/",
+      "hugo_path": "/graphics/games101-assignment-2/",
+      "target_sha256": "46a01cb19a66adbbc0d6ae3d6606cad6bb6da31ca4d8b9afcff4ebe998a0ce36"
     },
     {
       "index": 68,
@@ -4474,7 +4815,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 69,
@@ -4513,7 +4858,7 @@
       "content_fingerprint": "93251680fb685de3d6cbbde9ca3a30a97485fffaf2c70f9019862e7c0fd92d00",
       "normalized_title": "4",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-22T06:47:23.267Z",
       "content_updated_time": "2026-03-22T08:31:23.000Z",
@@ -4537,8 +4882,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/games101-assignment-4.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games101-assignment-4/",
+      "hugo_path": "/graphics/games101-assignment-4/",
+      "target_sha256": "9d820eaaea2b0791c70a2ec835003b331af62237bff0bb76a016d91cf1cfbe76"
     },
     {
       "index": 70,
@@ -4577,7 +4928,7 @@
       "content_fingerprint": "a40b4c05e507119530ae897c29c5c95b3193c35e28afa3be3e386af387aa222f",
       "normalized_title": "5",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-26T07:39:10.224Z",
       "content_updated_time": "2026-03-26T08:38:13.000Z",
@@ -4614,8 +4965,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/games101-assignment-5.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games101-assignment-5/",
+      "hugo_path": "/graphics/games101-assignment-5/",
+      "target_sha256": "3ba31fc448c0bd76bb2801bdc3e57be44e123a4939a080dec2e9ef17ad9f3e74"
     },
     {
       "index": 71,
@@ -4677,7 +5034,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 72,
@@ -4735,7 +5096,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 73,
@@ -4795,7 +5160,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 74,
@@ -4857,7 +5226,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 75,
@@ -4896,7 +5269,7 @@
       "content_fingerprint": "224f9d2bc4a03806ec82216894ec9485c83f0583e4bcd3e69654b3aaec6bc68b",
       "normalized_title": "引 擎 架 构 分 层",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-25T08:09:07.194Z",
       "content_updated_time": "2026-03-25T09:53:46.000Z",
@@ -4925,8 +5298,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/games104-engine-architecture.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-engine-architecture/",
+      "hugo_path": "/graphics/games104-engine-architecture/",
+      "target_sha256": "55130559f9c0272c525d3d49233218149e6336ffe8ad5d86d143bb5b1760d66e"
     },
     {
       "index": 76,
@@ -4965,7 +5344,7 @@
       "content_fingerprint": "ffb3ce6a360832c8664face9fd2ae77e6bd1358a654ec9e2e63978cfef3d0b6f",
       "normalized_title": "如 何 构 建 游 戏 世 界",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-26T01:10:19.117Z",
       "content_updated_time": "2026-03-26T02:31:45.000Z",
@@ -4994,8 +5373,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/games104-game-world.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-game-world/",
+      "hugo_path": "/graphics/games104-game-world/",
+      "target_sha256": "d55d3b3eb8631aeacf2096fee5334e792edc09215628ce609de13aae63dc8114"
     },
     {
       "index": 77,
@@ -5034,7 +5419,7 @@
       "content_fingerprint": "ffafc8770554a531f5d31df612e6815fb0ca84e0e05b8634410080c497de7916",
       "normalized_title": "渲 染 实 践",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-09T10:41:06.529Z",
       "content_updated_time": "2026-06-09T12:37:59.000Z",
@@ -5075,8 +5460,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/games104-rendering-practice.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-rendering-practice/",
+      "hugo_path": "/graphics/games104-rendering-practice/",
+      "target_sha256": "1319bda053eb28e9237ea57c53ad8ba3bdc9167791fedbef518318d2a833b2f9"
     },
     {
       "index": 78,
@@ -5115,7 +5506,7 @@
       "content_fingerprint": "34fb73be0246a9c3549664cb78ef2de70b8793881a25fd7f628f7d63a241ba12",
       "normalized_title": "大 气 与 云 的 渲 染",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-14T10:35:15.298Z",
       "content_updated_time": "2026-06-14T11:00:12.000Z",
@@ -5137,8 +5528,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/graphics/games104-atmosphere-and-clouds.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/graphics/games104-atmosphere-and-clouds/",
+      "hugo_path": "/graphics/games104-atmosphere-and-clouds/",
+      "target_sha256": "66c844552d564cde8f36acfd9c8b511225f2ebd10fe760f20171c44d35ee1498"
     },
     {
       "index": 79,
@@ -5169,7 +5566,7 @@
       "content_fingerprint": "30bbc7e6114185a183fd8213219a0702cb68ca06309c28b2718e07daede2698b",
       "normalized_title": "leetcode",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-03-17T07:29:36.137Z",
       "content_updated_time": "2026-05-27T03:48:09.000Z",
@@ -5193,8 +5590,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/leetcode-overview.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/leetcode-overview/",
+      "hugo_path": "/leetcode/leetcode-overview/",
+      "target_sha256": "fddff3373efbc075634b9fc57a78d9d732d70fe7952ead2d2671e6eb054f93e0"
     },
     {
       "index": 80,
@@ -5252,7 +5655,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/stack/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/",
+      "hugo_path": "/leetcode/stack/",
+      "target_sha256": "9fea242a6ee4f18cdd29949983ddec04126f618bf81feef79254ade736dc1753"
     },
     {
       "index": 81,
@@ -5289,7 +5697,7 @@
       "content_fingerprint": "a11f19debd75e125b202b322572b43cb0dbb9c9e93ba2608c3e254fc816202ad",
       "normalized_title": "easy",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-14T12:08:05.603Z",
       "content_updated_time": "2026-05-19T07:09:54.000Z",
@@ -5314,7 +5722,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/stack/easy/leetcode-stack-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/easy/leetcode-stack-easy/",
+      "hugo_path": "/leetcode/stack/easy/leetcode-stack-easy/",
+      "target_sha256": "a48580db81e0e3d12643a5a2feaf369c295869d83fc30d9ceee395de0ec311d6"
     },
     {
       "index": 82,
@@ -5351,7 +5764,7 @@
       "content_fingerprint": "589a834d6614158b1aeaf5970832fa1ab6ad8d36dabe155283cfb8efe18030d3",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-14T11:53:07.162Z",
       "content_updated_time": "2026-06-11T09:09:47.000Z",
@@ -5376,7 +5789,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/stack/medium/leetcode-stack-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/medium/leetcode-stack-medium/",
+      "hugo_path": "/leetcode/stack/medium/leetcode-stack-medium/",
+      "target_sha256": "5c840af11c44f2139353099fd61b74c4e2ac5ab346e0271c0ccc92f2abaab482"
     },
     {
       "index": 83,
@@ -5413,7 +5831,7 @@
       "content_fingerprint": "74842a8506b1af0947723750db9b50bd4ddc3127a0ca898cf0378ef3c1513b34",
       "normalized_title": "hard",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-02T04:40:49.462Z",
       "content_updated_time": "2026-06-02T04:55:39.000Z",
@@ -5437,8 +5855,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/stack/hard/leetcode-stack-hard.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/stack/hard/leetcode-stack-hard/",
+      "hugo_path": "/leetcode/stack/hard/leetcode-stack-hard/",
+      "target_sha256": "f3d6307fb3f69a33398a17d40f634af55b2c5ca0befafafb3345694ff1e29ece"
     },
     {
       "index": 84,
@@ -5496,7 +5920,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/heap/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/heap/",
+      "hugo_path": "/leetcode/heap/",
+      "target_sha256": "2ae89c14852b908863882c395e0c9671c7242cea0b9b81f905d12de182387838"
     },
     {
       "index": 85,
@@ -5533,7 +5962,7 @@
       "content_fingerprint": "d7f55cfa95fd006b6930a7c3c00618d617fd439f1e2a3deb45114e6195aa5fa2",
       "normalized_title": "easy",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-05-25T10:58:03.703Z",
       "content_updated_time": "2026-05-25T10:59:58.000Z",
@@ -5557,8 +5986,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/heap/easy/leetcode-heap-easy.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/heap/easy/leetcode-heap-easy/",
+      "hugo_path": "/leetcode/heap/easy/leetcode-heap-easy/",
+      "target_sha256": "b3d3a12d4596461865e0b53422215a0b19e753dcec16f3ad62b5124b13650fe2"
     },
     {
       "index": 86,
@@ -5620,7 +6055,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/leetcode/heap/medium/leetcode-heap-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/heap/medium/leetcode-heap-medium/",
+      "hugo_path": "/leetcode/heap/medium/leetcode-heap-medium/",
+      "target_sha256": "90e25e1dbc65f920762ed3f1258137889dd0356e7c762ace63edeeb57774c330"
     },
     {
       "index": 87,
@@ -5680,7 +6120,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 88,
@@ -5738,7 +6182,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 89,
@@ -5775,7 +6223,7 @@
       "content_fingerprint": "292beede6b420da42f548d9bab07d86577c9226b0a0be532a938d82a75ed8dca",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-05-04T04:07:13.090Z",
       "content_updated_time": "2026-05-26T01:41:00.000Z",
@@ -5799,8 +6247,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/substring/medium/leetcode-substring-medium.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/substring/medium/leetcode-substring-medium/",
+      "hugo_path": "/leetcode/substring/medium/leetcode-substring-medium/",
+      "target_sha256": "daa357684c6a0d91909f915446641c490d79c895b9120ec6aa813f2f11be0d42"
     },
     {
       "index": 90,
@@ -5837,7 +6291,7 @@
       "content_fingerprint": "1c5b8fbddf030f61d0f48388667ed42ece6e6f2c1a9f158abfce21b3077478b3",
       "normalized_title": "hard",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-03T04:10:13.575Z",
       "content_updated_time": "2026-06-03T04:39:14.000Z",
@@ -5861,8 +6315,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/substring/hard/leetcode-substring-hard.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/substring/hard/leetcode-substring-hard/",
+      "hugo_path": "/leetcode/substring/hard/leetcode-substring-hard/",
+      "target_sha256": "2f2261cf6b7d80a202b2ba91fa7965bbf1294b84d253373b5fd4c3e51b1fb586"
     },
     {
       "index": 91,
@@ -5897,7 +6357,7 @@
       "content_fingerprint": "bdcbd1a18575411acfb456ac3c934acf2e383d0e3de85bbc1295574d43df3a81",
       "normalized_title": "回 溯",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-05-16T02:55:40.648Z",
       "content_updated_time": "2026-05-17T05:35:09.000Z",
@@ -5921,8 +6381,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/back track/backtracking-overview.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/back-track/backtracking-overview/",
+      "hugo_path": "/leetcode/back-track/backtracking-overview/",
+      "target_sha256": "a317a78c1e3e0c355f8ad88dd795a8e3d2575533ce43668355e6cf55e5c81b59"
     },
     {
       "index": 92,
@@ -5959,7 +6425,7 @@
       "content_fingerprint": "d2f3014b90e5d18c33d2658c9c76da628e822e4fd78214d3c80ae7a42e5bf23f",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-26T06:47:51.342Z",
       "content_updated_time": "2026-05-27T00:24:26.000Z",
@@ -5984,7 +6450,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/back track/medium/leetcode-back-track-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/back-track/medium/leetcode-back-track-medium/",
+      "hugo_path": "/leetcode/back-track/medium/leetcode-back-track-medium/",
+      "target_sha256": "2cfb50743a108634673854f4e009aa5bbe7a9466405bd3de3250018b3fbec5f4"
     },
     {
       "index": 93,
@@ -6042,7 +6513,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/matrix/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/matrix/",
+      "hugo_path": "/leetcode/matrix/",
+      "target_sha256": "36529806c734cb438a6a342678990e4cca2aec6942bb3cb1902fa1636ff29f27"
     },
     {
       "index": 94,
@@ -6102,7 +6578,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 95,
@@ -6139,7 +6619,7 @@
       "content_fingerprint": "b9b011ed1f48dfcaa53e697f35a79fa805123612312d4db2dc241ee2626440e5",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Same article has unmatched source code or more source resources; preserve mature prose and inspect differences",
       "first_published_time": "2026-04-24T08:08:31.651Z",
       "content_updated_time": "2026-04-25T05:52:54.000Z",
@@ -6177,7 +6657,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_RESOURCE_OR_CODE_DIFF",
       "mapped_to": "content/leetcode/matrix/medium/leetcode-matrix-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "FORMAT_REPAIRED",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/matrix/medium/leetcode-matrix-medium/",
+      "hugo_path": "/leetcode/matrix/medium/leetcode-matrix-medium/",
+      "target_sha256": "91a59a560f65f1c9ef20ddc6799df6e73067546ba1e7bb347e9bb953281997b2"
     },
     {
       "index": 96,
@@ -6235,7 +6720,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/hash/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/hash/",
+      "hugo_path": "/leetcode/hash/",
+      "target_sha256": "0297fdd6ec0f7fc6b2bbe532ddd5c558e7c40f4ab725fded530e61b1e34d1cc5"
     },
     {
       "index": 97,
@@ -6272,7 +6762,7 @@
       "content_fingerprint": "7b17cec8cc69627941f0328725cc8b37b665ac8ceac4bef3debb509ff0bbaa2f",
       "normalized_title": "easy",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-22T09:53:52.761Z",
       "content_updated_time": "2026-06-30T03:56:25.000Z",
@@ -6297,7 +6787,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/hash/easy/leetcode-hash-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/hash/easy/leetcode-hash-medium/",
+      "hugo_path": "/leetcode/hash/easy/leetcode-hash-medium/",
+      "target_sha256": "05a9c0b0a75bbc35759036fdbbc207b882a1db975c39ea32d2dec528a0a0f995"
     },
     {
       "index": 98,
@@ -6334,7 +6829,7 @@
       "content_fingerprint": "2ee230216ce6cceb02db2c95f42d6236e9b878439b8ec44d997bd000b907a66a",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-15T06:53:33.468Z",
       "content_updated_time": "2026-05-27T00:19:22.000Z",
@@ -6359,7 +6854,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/hash/medium/leetcode-hash-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/hash/medium/leetcode-hash-medium/",
+      "hugo_path": "/leetcode/hash/medium/leetcode-hash-medium/",
+      "target_sha256": "3e06bad3d8936226cfe1c92a6c4e0c7d563a39c6f162dd9a6defe2b14215eee1"
     },
     {
       "index": 99,
@@ -6417,7 +6917,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/graph/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/graph/",
+      "hugo_path": "/leetcode/graph/",
+      "target_sha256": "9298ab409dd15bff5d5e1955b55a3d66473398d8b4c8ff258a838729bf21d92b"
     },
     {
       "index": 100,
@@ -6454,7 +6959,7 @@
       "content_fingerprint": "280186623e7fd5de8200850adf44fb0eeae4af22d95c02fa25e833b67123a6f9",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-04-12T06:09:30.609Z",
       "content_updated_time": "2026-04-13T13:02:01.000Z",
@@ -6478,8 +6983,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/graph/medium/leetcode-graph-medium.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/graph/medium/leetcode-graph-medium/",
+      "hugo_path": "/leetcode/graph/medium/leetcode-graph-medium/",
+      "target_sha256": "0cf7f05a42c560ef578835d489b9378f1214dd96850da794ea26dc07b4cc4e4e"
     },
     {
       "index": 101,
@@ -6537,7 +7048,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/list/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/",
+      "hugo_path": "/leetcode/list/",
+      "target_sha256": "9b6d53cbef1d2edefc038fc68cf0fad6859659085275c4106c96f5dc9e235266"
     },
     {
       "index": 102,
@@ -6606,7 +7122,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/leetcode/list/easy/leetcode-list-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/easy/leetcode-list-easy/",
+      "hugo_path": "/leetcode/list/easy/leetcode-list-easy/",
+      "target_sha256": "be1f5b0d2e12e2ad1fe18ac601e90e5d18b7f3e9a6c5ca6910922bd90ab8a706"
     },
     {
       "index": 103,
@@ -6643,7 +7164,7 @@
       "content_fingerprint": "0144a2a334ec061a1153801644a38300a1a52b4b981f981d919c366f12e8617a",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-10T04:05:49.953Z",
       "content_updated_time": "2026-06-30T07:23:43.000Z",
@@ -6675,7 +7196,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/list/medium/leetcode-list-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/medium/leetcode-list-medium/",
+      "hugo_path": "/leetcode/list/medium/leetcode-list-medium/",
+      "target_sha256": "c1dcca7d8f1d94cd74356a981b04bd459eb6ac3dfb898249efc0af18ee3c2c92"
     },
     {
       "index": 104,
@@ -6712,7 +7238,7 @@
       "content_fingerprint": "51d677568cd895b81f466775721dbcffea76e545dba20b0edf4724dadc7e42aa",
       "normalized_title": "hard",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-05-29T12:22:22.516Z",
       "content_updated_time": "2026-06-30T09:05:00.000Z",
@@ -6737,7 +7263,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/list/hard/leetcode-list-hard.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/list/hard/leetcode-list-hard/",
+      "hugo_path": "/leetcode/list/hard/leetcode-list-hard/",
+      "target_sha256": "48eb420ac3f994dc566a5779c393110bccb55b9b7f9e5ddbe8bd4076695914bf"
     },
     {
       "index": 105,
@@ -6795,7 +7326,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/technique/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/technique/",
+      "hugo_path": "/leetcode/technique/",
+      "target_sha256": "ac09133cb71206e7b221145b93757d54c1672b3ac65eba03949929a8b4d78d75"
     },
     {
       "index": 106,
@@ -6857,7 +7393,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/leetcode/technique/easy/leetcode-technique-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/technique/easy/leetcode-technique-easy/",
+      "hugo_path": "/leetcode/technique/easy/leetcode-technique-easy/",
+      "target_sha256": "2014b8560d9c2a1e9dd029293ee4fa853a7f7a168e662a0a670fc2af19b126a2"
     },
     {
       "index": 107,
@@ -6919,7 +7460,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/leetcode/technique/medium/leetcode-technique-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/technique/medium/leetcode-technique-medium/",
+      "hugo_path": "/leetcode/technique/medium/leetcode-technique-medium/",
+      "target_sha256": "ce62a8dcfb0509decc56e32926d1298b61268d6e1f73bd418245e8e780b7a01f"
     },
     {
       "index": 108,
@@ -6977,7 +7523,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/double pointers/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/double-pointers/",
+      "hugo_path": "/leetcode/double-pointers/",
+      "target_sha256": "335fff082e3cac7a25952166b2a1f504d0e8c4de6243399de02f6e74fa367dc5"
     },
     {
       "index": 109,
@@ -7014,7 +7565,7 @@
       "content_fingerprint": "b30115b0bf003b10a5db85fa61bae96460c017b7ce306fe0b0df9d26c5417c3b",
       "normalized_title": "easy",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Exact algorithm/difficulty counterpart is an existing empty placeholder; fill its existing path and URL, create no duplicate article",
       "first_published_time": "2026-05-08T04:33:55.382Z",
       "content_updated_time": "2026-06-18T01:31:05.000Z",
@@ -7039,7 +7590,13 @@
       "is_stub": false,
       "proposed_action": "FILL_EXISTING_EMPTY",
       "mapped_to": "content/leetcode/double pointers/easy/leetcode-double-pointers-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "FILLED_EXISTING_EMPTY",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/double-pointers/easy/leetcode-double-pointers-easy/",
+      "hugo_path": "/leetcode/double-pointers/easy/leetcode-double-pointers-easy/",
+      "target_sha256": "d07b41531e03309079fdcfed029e20787f2a91a319253eac9ec6d7119d3efcd4"
     },
     {
       "index": 110,
@@ -7076,7 +7633,7 @@
       "content_fingerprint": "3d04d1eb2a6c8af3b39fb53f0ab694276f2366ee0eedc455442a0fececf9bdb8",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-15T07:00:58.064Z",
       "content_updated_time": "2026-06-09T01:17:15.000Z",
@@ -7101,7 +7658,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/double pointers/medium/leetcode-double-pointers-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/double-pointers/medium/leetcode-double-pointers-medium/",
+      "hugo_path": "/leetcode/double-pointers/medium/leetcode-double-pointers-medium/",
+      "target_sha256": "93d10c8c6352d54bd5fd8ed8d5a737b9dfc14a2f0f91810735ad0876c2525021"
     },
     {
       "index": 111,
@@ -7159,7 +7721,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/binary tree/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/",
+      "hugo_path": "/leetcode/binary-tree/",
+      "target_sha256": "38127350d8b8d237ac37bca3cae35bc7ef93be2aaf209297479962382e765c48"
     },
     {
       "index": 112,
@@ -7196,7 +7763,7 @@
       "content_fingerprint": "ca10bd29e8c163c8dcedf210575dd4ef84a3455a24bb1263a8c23eff1e93ac7e",
       "normalized_title": "easy",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Same article has unmatched source code or more source resources; preserve mature prose and inspect differences",
       "first_published_time": "2026-04-10T03:47:49.771Z",
       "content_updated_time": "2026-05-26T14:30:41.000Z",
@@ -7221,7 +7788,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_RESOURCE_OR_CODE_DIFF",
       "mapped_to": "content/leetcode/binary tree/easy/leetcode-binary-tree-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/easy/leetcode-binary-tree-easy/",
+      "hugo_path": "/leetcode/binary-tree/easy/leetcode-binary-tree-easy/",
+      "target_sha256": "d248a9b5b4f515258540322611388b65038b7f78e80bdd9de4e96da237e4dbde"
     },
     {
       "index": 113,
@@ -7258,7 +7830,7 @@
       "content_fingerprint": "74acdbf9f8da573e4412e1cd29716ec828460c9b88830d852a8c6dd1d7a623ac",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-11T05:12:16.694Z",
       "content_updated_time": "2026-05-16T02:40:15.000Z",
@@ -7290,7 +7862,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/binary tree/medium/leetcode-binary-tree-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/medium/leetcode-binary-tree-medium/",
+      "hugo_path": "/leetcode/binary-tree/medium/leetcode-binary-tree-medium/",
+      "target_sha256": "8107eb91e50b8443033b9a2446c4e7f7b3902b713ce98a49b078a99c6d91d8cd"
     },
     {
       "index": 114,
@@ -7327,7 +7904,7 @@
       "content_fingerprint": "39423c4537bb5d6bfcbf54760497614935783d3f6cf89a4d53f833d18d72397e",
       "normalized_title": "hard",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-02T14:00:38.315Z",
       "content_updated_time": "2026-06-02T14:08:07.000Z",
@@ -7351,8 +7928,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/binary tree/hard/leetcode-binary-tree-hard.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-tree/hard/leetcode-binary-tree-hard/",
+      "hugo_path": "/leetcode/binary-tree/hard/leetcode-binary-tree-hard/",
+      "target_sha256": "c459140784ed0012979fce5c9168b7915f546f6d49c8fd49a0eb2b12aca4346a"
     },
     {
       "index": 115,
@@ -7410,7 +7993,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 116,
@@ -7447,7 +8034,7 @@
       "content_fingerprint": "b505673e8b5c5f1540ea9d40e6b8627dde31c67ec6963529c59b0405b2a48605",
       "normalized_title": "easy",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-06-11T03:16:36.186Z",
       "content_updated_time": "2026-06-11T03:20:20.000Z",
@@ -7471,8 +8058,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/string/easy/leetcode-string-easy.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/string/easy/leetcode-string-easy/",
+      "hugo_path": "/leetcode/string/easy/leetcode-string-easy/",
+      "target_sha256": "7865a4eac398b1bdde2d8db433d6e37e6533afe65e58cce42adb2cff5524c497"
     },
     {
       "index": 117,
@@ -7530,7 +8123,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 118,
@@ -7590,7 +8187,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 119,
@@ -7627,7 +8228,7 @@
       "content_fingerprint": "c418277c75e2ccb93ccc3aa8a627e549736f5ad5e51ef38b2f5e4eb733c38603",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-04-21T09:46:27.500Z",
       "content_updated_time": "2026-05-09T01:10:26.000Z",
@@ -7651,8 +8252,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/array/medium/leetcode-array-medium.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/array/medium/leetcode-array-medium/",
+      "hugo_path": "/leetcode/array/medium/leetcode-array-medium/",
+      "target_sha256": "3d358446501bdefcd4f7a86ff3545cd529db44c8def807c51c7412d5cb0ce487"
     },
     {
       "index": 120,
@@ -7710,7 +8317,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/binary search/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-search/",
+      "hugo_path": "/leetcode/binary-search/",
+      "target_sha256": "e847c3afbb1c9464570cf54174fcf34dfa17b8d7bdabb4216f1db3fcde891221"
     },
     {
       "index": 121,
@@ -7772,7 +8384,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/leetcode/binary search/easy/leetcode-binary-search-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-search/easy/leetcode-binary-search-easy/",
+      "hugo_path": "/leetcode/binary-search/easy/leetcode-binary-search-easy/",
+      "target_sha256": "68e3e0afa1fb941ecd6a68297f1ed229811c150b89adcdb4ef32ee9570999f57"
     },
     {
       "index": 122,
@@ -7809,7 +8426,7 @@
       "content_fingerprint": "5becaedecf2beeb40fb69741441e0185f3c1590c01bed8d4e7bd0c6fbc1d5a5a",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Same article has unmatched source code or more source resources; preserve mature prose and inspect differences",
       "first_published_time": "2026-04-27T14:07:36.196Z",
       "content_updated_time": "2026-05-19T02:25:22.000Z",
@@ -7834,7 +8451,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_RESOURCE_OR_CODE_DIFF",
       "mapped_to": "content/leetcode/binary search/medium/leetcode-binary-search-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/binary-search/medium/leetcode-binary-search-medium/",
+      "hugo_path": "/leetcode/binary-search/medium/leetcode-binary-search-medium/",
+      "target_sha256": "717ad1cc9e81ae05dfc9c675ae7f2bf67c5da0b74563ea8a5c6d9da26bc5b724"
     },
     {
       "index": 123,
@@ -7894,7 +8516,11 @@
       "is_stub": false,
       "proposed_action": "SKIP_EMPTY",
       "mapped_to": null,
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "execution_result": "SKIP_EMPTY",
+      "hugo_url": null,
+      "hugo_path": null
     },
     {
       "index": 124,
@@ -7952,7 +8578,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/greedy algorithm/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/greedy-algorithm/",
+      "hugo_path": "/leetcode/greedy-algorithm/",
+      "target_sha256": "9a01a47fd5056d65cb193e729c46a1fe019aa4ccce65fce1791793e40a4d15af"
     },
     {
       "index": 125,
@@ -7989,7 +8620,7 @@
       "content_fingerprint": "c5aa8ebcfefe6678d0e9506aace4da48236164a7232b4060501ba05f0f408eb6",
       "normalized_title": "easy",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-30T00:05:01.486Z",
       "content_updated_time": "2026-05-26T01:12:19.000Z",
@@ -8014,7 +8645,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/greedy algorithm/easy/leetcode-greedy-algorithm-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/",
+      "hugo_path": "/leetcode/greedy-algorithm/easy/leetcode-greedy-algorithm-easy/",
+      "target_sha256": "e4459e8158aacffc85a18b85a905c1ecb49ec1e74c6492ce2b18817ccac48603"
     },
     {
       "index": 126,
@@ -8051,7 +8687,7 @@
       "content_fingerprint": "02ddd0967a452fee392fbd1d04a00a79e12152d9a07cf5a49888311dfe1d55f0",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-29T23:59:40.224Z",
       "content_updated_time": "2026-06-09T01:42:53.000Z",
@@ -8076,7 +8712,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/greedy algorithm/medium/leetcode-greedy-algorithmmedium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/greedy-algorithm/medium/leetcode-greedy-algorithmmedium/",
+      "hugo_path": "/leetcode/greedy-algorithm/medium/leetcode-greedy-algorithmmedium/",
+      "target_sha256": "2b6d458d67eed9d4cf58e851c2b500e804f849cd604dee002181b8cf3ce2382c"
     },
     {
       "index": 127,
@@ -8134,7 +8775,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/sliding window/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/sliding-window/",
+      "hugo_path": "/leetcode/sliding-window/",
+      "target_sha256": "f16f4b5d3625724d796d7129955b9773282d6c8c4bad8a9fc3488137d0480b59"
     },
     {
       "index": 128,
@@ -8171,7 +8817,7 @@
       "content_fingerprint": "b145a4a4f670c7d714875b40f5f91b7b5ecbcefd21cf5108e52877ff1e4e77f7",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-15T07:02:03.077Z",
       "content_updated_time": "2026-06-09T00:38:21.000Z",
@@ -8196,7 +8842,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/sliding window/medium/leetcode-sliding-window-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/sliding-window/medium/leetcode-sliding-window-medium/",
+      "hugo_path": "/leetcode/sliding-window/medium/leetcode-sliding-window-medium/",
+      "target_sha256": "946ad14cbd8a1c6c872756d1d93eb7d01536d785b747ad72207e60f4fb8f0757"
     },
     {
       "index": 129,
@@ -8233,7 +8884,7 @@
       "content_fingerprint": "f21adb9004ecfa755e487295153e981d85485995d8e06f436cb645b610363199",
       "normalized_title": "hard",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "NOT_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "No existing article has reliable normalized-body overlap and corresponding topic",
       "first_published_time": "2026-05-30T02:43:10.419Z",
       "content_updated_time": "2026-05-30T02:43:41.000Z",
@@ -8257,8 +8908,14 @@
       "privacy_reasons": [],
       "is_stub": false,
       "proposed_action": "MIGRATE_MISSING",
-      "mapped_to": null,
-      "local_source_link_count": 0
+      "mapped_to": "content/leetcode/sliding window/hard/leetcode-sliding-window-hard.md",
+      "local_source_link_count": 0,
+      "initial_migration_status": "NOT_MIGRATED",
+      "date_basis": "Original Yuque created_at",
+      "execution_result": "MIGRATED_NEW",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/sliding-window/hard/leetcode-sliding-window-hard/",
+      "hugo_path": "/leetcode/sliding-window/hard/leetcode-sliding-window-hard/",
+      "target_sha256": "9c5c5f8b8c43cdc14228ac01020643918997413227139ebc3bdc35c536566994"
     },
     {
       "index": 130,
@@ -8316,7 +8973,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/dynamic programming/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/dynamic-programming/",
+      "hugo_path": "/leetcode/dynamic-programming/",
+      "target_sha256": "903ddc45601d003b30a2ae544490d762b07d4bc3af215b8c546393e7a22ff229"
     },
     {
       "index": 131,
@@ -8378,7 +9040,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_EXISTING",
       "mapped_to": "content/leetcode/dynamic programming/easy/leetcode-dynamic-programming-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "PRESERVED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/dynamic-programming/easy/leetcode-dynamic-programming-easy/",
+      "hugo_path": "/leetcode/dynamic-programming/easy/leetcode-dynamic-programming-easy/",
+      "target_sha256": "60b8e956c35038e2208be27ad50e56db4c0b40d6f27e26d45df1af60095f870b"
     },
     {
       "index": 132,
@@ -8415,7 +9082,7 @@
       "content_fingerprint": "f62c8a888c95683cffc3ae5509283e5fa185c1e25ce45c6d0a576a7264a627af",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Existing body is substantially contained in expanded source; compare missing sections before merging",
       "first_published_time": "2026-04-25T06:56:10.896Z",
       "content_updated_time": "2026-06-30T08:50:34.000Z",
@@ -8440,7 +9107,12 @@
       "is_stub": false,
       "proposed_action": "REVIEW_AND_MERGE_MISSING",
       "mapped_to": "content/leetcode/dynamic programming/medium/leetcode-dynamic-programming-easy.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/",
+      "hugo_path": "/leetcode/dynamic-programming/medium/leetcode-dynamic-programming-easy/",
+      "target_sha256": "02c7a185e92361d79b3e1a57020d0b9354bddef57d80e56750e1cd63ffb521c5"
     },
     {
       "index": 133,
@@ -8498,7 +9170,12 @@
       "is_stub": false,
       "proposed_action": "PRESERVE_SECTION",
       "mapped_to": "content/leetcode/multidimensional dynamic programming/_index.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "MIGRATED",
+      "execution_result": "MAPPED_EXISTING_SECTION",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/multidimensional-dynamic-programming/",
+      "hugo_path": "/leetcode/multidimensional-dynamic-programming/",
+      "target_sha256": "44aaaf209e0b3a557792a30c17b976cdea60ae1f81f50c5044e630dcf38a3a8d"
     },
     {
       "index": 134,
@@ -8535,7 +9212,7 @@
       "content_fingerprint": "ae6a37c23d8bb8b8fb98884a69e59f78660508c54550b8143a4ad58436bebf51",
       "normalized_title": "medium",
       "metadata_source": "Official UI-exported lakebook archive; catalog joined by exact slug",
-      "migration_status": "PARTIALLY_MIGRATED",
+      "migration_status": "MIGRATED",
       "status_reason": "Same article has unmatched source code or more source resources; preserve mature prose and inspect differences",
       "first_published_time": "2026-05-05T05:32:55.192Z",
       "content_updated_time": "2026-05-24T04:49:44.000Z",
@@ -8560,7 +9237,24 @@
       "is_stub": false,
       "proposed_action": "REVIEW_RESOURCE_OR_CODE_DIFF",
       "mapped_to": "content/leetcode/multidimensional dynamic programming/medium/leetcode-multidimensional-dynamic-programming-medium.md",
-      "local_source_link_count": 0
+      "local_source_link_count": 0,
+      "initial_migration_status": "PARTIALLY_MIGRATED",
+      "execution_result": "COMPLETED_EXISTING",
+      "hugo_url": "https://JiaT-T.github.io/leetcode/multidimensional-dynamic-programming/medium/leetcode-multidimensional-dynamic-programming-medium/",
+      "hugo_path": "/leetcode/multidimensional-dynamic-programming/medium/leetcode-multidimensional-dynamic-programming-medium/",
+      "target_sha256": "865a4bf0ce6b667af5b9436e30d3abadf44728599230a9914fb8e7f3c01aafb5"
     }
-  ]
+  ],
+  "execution_complete": true,
+  "execution_statistics": {
+    "REQUIRES_MANUAL_REVIEW": 6,
+    "MAPPED_EXISTING_SECTION": 17,
+    "MIGRATED_NEW": 37,
+    "SKIP_STUB": 2,
+    "PRESERVED_EXISTING": 29,
+    "SKIP_EMPTY": 23,
+    "COMPLETED_EXISTING": 18,
+    "FORMAT_REPAIRED": 2,
+    "FILLED_EXISTING_EMPTY": 1
+  }
 }
