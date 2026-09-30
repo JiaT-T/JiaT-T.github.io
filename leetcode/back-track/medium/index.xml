@@ -124,5 +124,4 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id="第七十八题子集"&gt;&lt;font style="color:#DF2A3F;"&gt;第七十八题&lt;/font&gt;：&lt;a href="https://leetcode.cn/problems/subsets/"&gt;子集&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;核心思路：&lt;font style="background-color:#FBDE28;"&gt;枚举每一个位置，并通过递归调用进入下一个位置&lt;/font&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;/div&gt;&lt;p&gt;&lt;a id="bk8XA"&gt;&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

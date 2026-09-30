@@ -50,4 +50,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description></item></channel></rss>
+&lt;/div&gt;&lt;p&gt;&lt;a id="FausE"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="第二百三十二题用栈实现队列"&gt;第二百三十二题：&lt;a href="https://leetcode.cn/problems/implement-queue-using-stacks/"&gt;用栈实现队列&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a id="u1294e3e3"&gt;&lt;/a&gt;解法一：&lt;/p&gt;
+&lt;p&gt;&lt;a id="u197f0da9"&gt;&lt;/a&gt;定义两个栈，一个正序记录输入的数字，另一个则倒序记录&lt;/p&gt;
+&lt;p&gt;&lt;a id="u0630c5db"&gt;&lt;/a&gt;对于 push，每次压入元素时，需要重新记录 sk2；&lt;/p&gt;</description></item></channel></rss>

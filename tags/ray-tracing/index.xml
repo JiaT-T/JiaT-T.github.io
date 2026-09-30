@@ -85,4 +85,4 @@
 &lt;td&gt;更接近物理真实&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</description></item></channel></rss>
+&lt;/table&gt;</description></item><item><title>GAMES101 作业 5：基础光线追踪</title><link>https://JiaT-T.github.io/graphics/games101-assignment-5/</link><pubDate>Thu, 26 Mar 2026 07:38:19 +0000</pubDate><guid>https://JiaT-T.github.io/graphics/games101-assignment-5/</guid><description>整理从像素坐标生成相机光线的空间变换流程，以及三角形求交的基础实现。</description></item><item><title>DXR / DX12 常用函数</title><link>https://JiaT-T.github.io/posts/dxr-dx12-functions/</link><pubDate>Sun, 22 Mar 2026 11:36:51 +0000</pubDate><guid>https://JiaT-T.github.io/posts/dxr-dx12-functions/</guid><description>整理 TraceRay 的参数、光线递归深度设置和 OMSetStencilRef 等函数的用途。</description></item><item><title>DXR 基础笔记</title><link>https://JiaT-T.github.io/posts/directx-raytracing-notes/</link><pubDate>Sun, 01 Mar 2026 13:52:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/directx-raytracing-notes/</guid><description>记录 DXR 着色器、TLAS 与 BLAS、光线追踪管线，以及资源描述结构在 CPU 与 GPU 之间的作用。</description></item></channel></rss>
