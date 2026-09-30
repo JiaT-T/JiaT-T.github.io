@@ -1,0 +1,13 @@
+{{ if not (.Param "hideFooter") }}
+<footer class="footer">
+  <span>© {{ now.Year }} <a href="{{ "" | relURL }}">榎aaaa / JiaT-T</a></span>
+  <span> · <a href="{{ "index.xml" | relURL }}">RSS</a> · <a href="{{ "search/" | relURL }}">搜索笔记</a></span>
+  <span class="footer-credit">Built with <a href="https://gohugo.io/" rel="noopener">Hugo</a> & <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener">PaperMod</a></span>
+</footer>
+{{ end }}
+<a href="#top" id="top-link" class="top-link hidden" aria-label="返回顶部" title="返回顶部">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>
+</a>
+{{ partial "extend_footer.html" . }}
+{{ $script := resources.Get "js/site.js" | minify | fingerprint }}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>

@@ -1,0 +1,8 @@
+{{ $current := . }}
+{{ range site.Menus.main }}
+  {{ $active := eq $current.RelPermalink .URL }}
+  {{ if eq .Identifier "notes" }}
+    {{ $active = and (not $current.IsHome) (ne $current.RelPermalink "/portfolio/") (ne $current.Layout "search") }}
+  {{ end }}
+  <li><a href="{{ .URL | relURL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+{{ end }}

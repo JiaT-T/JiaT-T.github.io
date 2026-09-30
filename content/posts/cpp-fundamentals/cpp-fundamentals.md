@@ -282,7 +282,7 @@ static在类中申明时不占用内存，只有在第一次执行到该变量�
 
 
 #### 9.noexcept
-当他出现在函数末尾时，就是在告诉编译器：这个函数绝对不会出现任何异常，如果有，就直接终止程序。在移动构造函数中常常使用到，用于跨越vector的性能陷阱：<img src="/images/cpp-fundamentals/cpp-fundamentals-01.png" width="1125" title="" crop="0,0,1,1" id="u7df05be4" class="ne-image">
+当他出现在函数末尾时，就是在告诉编译器：这个函数绝对不会出现任何异常，如果有，就直接终止程序。在移动构造函数中常常使用到，用于跨越vector的性能陷阱：<img src="/images/cpp-fundamentals/cpp-fundamentals-01.png" width="1125" title="" crop="0,0,1,1" id="u7df05be4" class="ne-image" alt="vector 扩容时，移动构造函数是否带 noexcept 的行为对比" loading="lazy" decoding="async" height="632">
 
 
 

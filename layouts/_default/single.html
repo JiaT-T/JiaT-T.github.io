@@ -34,13 +34,16 @@
     {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
     {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
 
+    <div class="note-reading-grid">
+    {{- partial "note-outline.html" . }}
     {{- if .Content }}
-    <div class="post-content md-content">
+    <div class="post-content md-content" id="article-content">
       {{- if not (.Param "disableAnchoredHeadings") }}
       {{- partial "anchored_headings.html" .Content -}}
       {{- else }}{{ .Content }}{{ end }}
     </div>
     {{- end }}
+    </div>
 
     <footer class="post-footer">
       {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
@@ -49,8 +52,24 @@
         <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
         {{- end }}
       </ul>
-      {{- if (.Param "ShowPostNavLinks") }}
-      {{- partial "post_nav_links.html" . }}
+      {{- if ne (.Param "ShowPostNavLinks") false }}
+      {{- $pages := .CurrentSection.RegularPages.ByDate.Reverse }}
+      {{- if gt (len $pages) 1 }}
+      <nav class="paginav" aria-label="相邻笔记">
+        {{- with $pages.Prev . }}
+        <a class="prev" href="{{ .RelPermalink }}">
+          <span class="title">← 上一篇</span>
+          <span>{{ .Title }}</span>
+        </a>
+        {{- end }}
+        {{- with $pages.Next . }}
+        <a class="next" href="{{ .RelPermalink }}">
+          <span class="title">下一篇 →</span>
+          <span>{{ .Title }}</span>
+        </a>
+        {{- end }}
+      </nav>
+      {{- end }}
       {{- end }}
       {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
       {{- partial "share_icons.html" . -}}
@@ -61,8 +80,9 @@
     {{- partial "comments.html" . }}
     {{- end }}
   </article>
-
-  {{- partial "note-outline.html" . }}
 </div>
+
+{{- $reading := resources.Get "js/reading.js" | minify | fingerprint }}
+<script defer src="{{ $reading.RelPermalink }}" integrity="{{ $reading.Data.Integrity }}"></script>
 
 {{- end }}{{/* end main */}}

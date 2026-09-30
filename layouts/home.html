@@ -1,17 +1,62 @@
 {{ define "main" }}
-{{ partial "index_profile.html" . }}
-<section class="portfolio-selection" aria-labelledby="portfolio-title">
-  <div class="portfolio-heading"><h2 id="portfolio-title">渲染与引擎项目</h2><a href="{{ "portfolio/" | relURL }}">技术说明 →</a></div>
-  <p class="portfolio-intro">从 CPU 渲染原理，到实时图形 API，再到 Unreal Engine 的材质与 GPU 模拟。</p>
-  <div class="portfolio-grid">
-    {{ range hugo.Data.portfolio }}
-    <article class="portfolio-card">
-      <p class="portfolio-category">{{ .category }}</p>
-      <h3><a href="{{ .url }}" rel="noopener">{{ .name }}</a></h3>
-      <p>{{ .summary }}</p>
-      <a class="portfolio-source" href="{{ .url }}" rel="noopener">查看代码与预览 ↗</a>
-    </article>
-    {{ end }}
-  </div>
-</section>
+<div class="home-page">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GRAPHICS & GAME DEVELOPMENT</p>
+      <h1 id="hero-title">{{ site.Params.profileMode.title }}<span class="hero-handle">/ JiaT-T</span></h1>
+      <p class="hero-statement">从渲染原理，<br>到屏幕上的世界。</p>
+      <p class="hero-description">专注 C++、实时渲染与 Unreal Engine。<br>在代码、图形学与游戏开发之间，持续探索与实践。</p>
+      <div class="hero-actions">
+        <a class="button-primary" href="{{ "portfolio/" | relURL }}">探索项目 <span aria-hidden="true">↗</span></a>
+        <a class="button-quiet" href="{{ "archives/" | relURL }}">阅读笔记 <span aria-hidden="true">→</span></a>
+        <a class="button-quiet" href="https://github.com/JiaT-T" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <aside class="hero-focus" aria-label="主要技术方向">
+      <p class="eyebrow">EXPLORING / 主要方向</p>
+      <dl>
+        <div><dt><span>01</span> 渲染与图形学</dt><dd>Path Tracing · PBR · Shader</dd></div>
+        <div><dt><span>02</span> 实时图形 API</dt><dd>DirectX 12 · Vulkan · C++</dd></div>
+        <div><dt><span>03</span> 游戏与引擎开发</dt><dd>Unreal Engine · Niagara · PCG</dd></div>
+      </dl>
+      <p class="focus-footnote">理解原理，也关心实现。</p>
+    </aside>
+  </section>
+  <section class="home-section" aria-labelledby="projects-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="projects-title">渲染与引擎项目<span class="section-count">{{ len hugo.Data.portfolio | printf "%02d" }}</span></h2></div>
+      <a class="text-link" href="{{ "portfolio/" | relURL }}">全部项目与技术说明 <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="section-intro">从 CPU 上的光线与三角形，到实时渲染管线与 Unreal Engine 实验。</p>
+    {{ partial "project-grid.html" . }}
+  </section>
+  <section class="home-section home-notes" aria-labelledby="notes-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">02 / FIELD NOTES</p><h2 id="notes-title">把理解留在笔记里。</h2></div>
+      <a class="text-link" href="{{ "archives/" | relURL }}">浏览笔记 <span aria-hidden="true">↗</span></a>
+    </div>
+    <nav class="notes-topics" aria-label="笔记主题">
+      {{ range (slice (dict "name" "图形学" "url" "graphics/") (dict "name" "Unreal Engine" "url" "ue/") (dict "name" "DirectX 12" "url" "directx12/") (dict "name" "Vulkan" "url" "vulkan/") (dict "name" "C++" "url" "cpp/") (dict "name" "算法" "url" "leetcode/")) }}
+      <a href="{{ .url | relURL }}">{{ .name }} <span aria-hidden="true">↗</span></a>
+      {{ end }}
+    </nav>
+    <div class="selected-notes">
+      {{ range (slice (dict "path" "graphics/pathtracer-project-details" "category" "GRAPHICS") (dict "path" "UE/gameplay-ability-system" "category" "UNREAL ENGINE") (dict "path" "Vulkan/vulkan-synchronization-primitives" "category" "VULKAN")) }}
+      {{ $category := .category }}
+      {{ with site.GetPage .path }}
+      <a class="note-row" href="{{ .RelPermalink }}"><span class="note-row-category">{{ $category }}</span><span class="note-row-title">{{ .Title }}</span><span class="note-row-arrow" aria-hidden="true">↗</span></a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </section>
+  <section class="home-section home-about" id="about" aria-labelledby="about-title">
+    <div><p class="eyebrow">03 / ABOUT</p><h2 id="about-title">你好，我是榎aaaa。</h2></div>
+    <div class="about-copy">
+      <img src="{{ "images/avatar.jpg" | relURL }}" width="64" height="64" alt="榎aaaa的个人头像" loading="lazy" decoding="async">
+      <p>计算机专业本科在读，主要关注 C++、计算机图形学、实时渲染与 Unreal Engine。</p>
+      <p>这里记录学习过程中的推导、实现与问题，也整理自己做过的渲染和引擎项目。希望把零散的理解，慢慢连成完整的知识。</p>
+      <a class="text-link" href="https://github.com/JiaT-T" rel="noopener">在 GitHub 继续交流 <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</div>
 {{ end }}

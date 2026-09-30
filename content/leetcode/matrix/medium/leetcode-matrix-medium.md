@@ -43,7 +43,7 @@ _**<font style="background-color:#FBDE28;">matrix </font>**_**<font style="backg
 
 因为这里的 “ /2 ”是整数除法，所以可以确保阶数为奇数时，中心元素不进行处理
 
- <img src="/images/leetcode-matrix-medium/leetcode-matrix-medium-01.png" width="1074" title="" crop="0,0,1,1" id="YfJh3" class="ne-image">
+ <img src="/images/leetcode-matrix-medium/leetcode-matrix-medium-01.png" width="1074" title="" crop="0,0,1,1" id="YfJh3" class="ne-image" alt="矩阵顺时针旋转 90 度时，元素位置从 [i][j] 映射到 [j][n-1-i]" loading="lazy" decoding="async" height="649">
 ```cpp
 
 void rotate(vector<vector<int>>& matrix)
@@ -368,7 +368,7 @@ void setZeroes(vector<vector<int>>& matrix)
 
 
 
-<img src="/images/leetcode-matrix-medium/leetcode-matrix-medium-02.png" width="670" title="" crop="0,0,1,1" id="u3701ace6" class="ne-image">
+<img src="/images/leetcode-matrix-medium/leetcode-matrix-medium-02.png" width="670" title="" crop="0,0,1,1" id="u3701ace6" class="ne-image" alt="有序矩阵与搜索图的对应关系，以及从右上角向较小或较大元素移动的方向" loading="lazy" decoding="async" height="495">
 ```cpp
 
 bool searchMatrix(vector<vector<int>>& matrix, int target)

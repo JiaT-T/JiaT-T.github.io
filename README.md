@@ -36,3 +36,15 @@ PR 分支不会自动更新在线网站。停止跟踪生成文件也不会缩�
 
 部分历史笔记仍在整理中。项目页描述源码或已有 UE 资产结构，不代表全部运行、性能或多人验证已完成。
 
+
+## 视觉与组件
+
+- 保留 PaperMod 与 Hugo Markdown 渲染，默认深色，可切换浅色并记住选择。
+- `assets/css/extended/custom.css` 定义全局主题、排版和导航；`home.css`、`portfolio.css`、`reading.css` 分别负责首页、项目和技术阅读。
+- 系统无衬线字体用于正文，系统等宽字体仅用于代码及 metadata；无外部字体请求、UI 框架或装饰性 WebGL。
+- 首页和 `/portfolio/` 共用 `layouts/partials/project-grid.html`；项目数据保留原说明，`imageSource` 记录截图来源。`assets/images/projects/` 为压缩后的真实预览，Hugo 输出响应式 WebP。
+- 所有原文章 URL 保留；`/archives/` 按主题组织，原 `/posts/`、`/categories/`、`/search/` 仍可访问。
+- 文章在桌面显示目录侧栏，小屏可折叠；历史语雀内联色值在阅读样式中做主题适配，不修改原笔记内容。
+- `assets/js/site.js` 处理主题、移动菜单、代码复制；`reading.js` 处理目录。动效尊重 `prefers-reduced-motion`。
+
+视觉改动后建议检查首页、项目、归档、长代码文章、公式文章和搜索，并在 375 / 430 / 768 / 1440 / 1920px 下确认布局、深浅主题、目录、键盘操作与控制台。

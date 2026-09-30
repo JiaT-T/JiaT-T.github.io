@@ -1,0 +1,41 @@
+<div class="portfolio-grid">
+  {{- range $index, $project := hugo.Data.portfolio }}
+  <article class="portfolio-card" aria-labelledby="project-{{ $index }}">
+    {{- with $project.image }}
+      {{- $image := resources.Get . }}
+      {{- $small := $image.Resize "480x webp q80" }}
+      {{- $medium := $image.Resize "800x webp q80" }}
+    <div class="portfolio-preview{{ if eq $project.imageFit "contain" }} portfolio-preview-contain{{ end }}">
+      <img src="{{ $medium.RelPermalink }}"
+        srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 800w, {{ $image.RelPermalink }} {{ $image.Width }}w"
+        sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1024px) calc((100vw - 64px) / 2), 368px"
+        width="{{ $medium.Width }}" height="{{ $medium.Height }}" alt="{{ $project.imageAlt }}" loading="lazy" decoding="async">
+    </div>
+    {{- else }}
+    <div class="portfolio-preview portfolio-diagram" role="img" aria-label="Vulkan 渲染路径示意：前向或延迟渲染、G-buffer 与 SDR 或 HDR 输出">
+      <span class="pipeline-label">VULKAN / RENDER PATHS</span>
+      <div class="pipeline-stages" aria-hidden="true"><span>Forward<small>Color + Depth</small></span><span>Deferred<small>G-buffer → Lighting</small></span></div>
+      <span class="pipeline-connector" aria-hidden="true">↓</span>
+      <span class="pipeline-output" aria-hidden="true">SDR · HDR</span>
+      <span class="pipeline-caption">渲染路径示意</span>
+    </div>
+    {{- end }}
+    <div class="portfolio-card-content">
+      <div class="portfolio-meta"><p class="portfolio-category">{{ $project.category }}</p><span class="portfolio-number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span></div>
+      {{ if $.IsHome }}
+      <h3 id="project-{{ $index }}"><a href="{{ $project.url }}" rel="noopener">{{ $project.name }}</a></h3>
+      {{ else }}
+      <h2 id="project-{{ $index }}"><a href="{{ $project.url }}" rel="noopener">{{ $project.name }}</a></h2>
+      {{ end }}
+      <p class="portfolio-summary">{{ $project.summary }}</p>
+      <ul class="portfolio-tags" aria-label="技术栈">
+        {{- range $project.tags }}<li>{{ . }}</li>{{ end }}
+      </ul>
+      <div class="portfolio-links">
+        <a class="portfolio-source" href="{{ $project.url }}" rel="noopener" aria-label="{{ $project.name }} GitHub 仓库">GitHub <span aria-hidden="true">↗</span></a>
+        {{- with $project.note }}<a class="portfolio-note" href="{{ . | relURL }}">实现笔记 <span aria-hidden="true">→</span></a>{{ end }}
+      </div>
+    </div>
+  </article>
+  {{- end }}
+</div>

@@ -221,13 +221,13 @@ void AMaterialShowcaseActor::Tick(float DeltaTime)
 
 在 UE 的内容浏览器中创建一个名为“M_ShowCase”的材质，进入蓝图后创建三个参数——BaseColor、Roughness、EmissiveStrength 并进行如图连接：
 
-<img src="/images/cpp-in-ue5/material-graph.png" width="749" title="" crop="0,0,1,0.6454" id="u1c5b9519" class="ne-image">
+<img src="/images/cpp-in-ue5/material-graph.png" width="749" title="" crop="0,0,1,0.6454" id="u1c5b9519" class="ne-image" alt="M_ShowCase 材质中 BaseColor、Roughness 和 EmissiveStrength 参数的节点连接" loading="lazy" decoding="async" height="544">
 
 ## 编译
 
 这里既可以直接在 IDE 中进行编译，同时也可以点击 UE 编辑器下方栏中的编译按钮，之后在内容浏览器中就能找到“C++ 类 / YourProject / Public / MaterialShowcaseActor”
 
-<img src="/images/cpp-in-ue5/compiled-actor.png" width="864" title="" crop="0,0,1,1" id="u755f83cb" class="ne-image">
+<img src="/images/cpp-in-ue5/compiled-actor.png" width="864" title="" crop="0,0,1,1" id="u755f83cb" class="ne-image" alt="UE 内容浏览器中编译生成的 MaterialShowcaseActor C++ 类" loading="lazy" decoding="async" height="440">
 
 ## 设置 Actor
 
