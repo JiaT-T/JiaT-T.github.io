@@ -17,7 +17,7 @@ theme = "PaperMod"
         enabled = true
         title = "榎aaaa"
 subtitle = """
-计算机专业本科在读，主要关注计算机图形学、实时渲染和游戏引擎方向。
+计算机专业本科在读，主要关注 C++、计算机图形学、实时渲染与 Unreal Engine。
 
 这里记录一些学习笔记，也整理自己做过的渲染与引擎相关小项目。
 """
@@ -27,6 +27,9 @@ subtitle = """
         
         # 按钮配置
 [[params.profileMode.buttons]]
+            name = "渲染与引擎项目"
+            url = "/portfolio/"
+[[params.profileMode.buttons]]
             name = "📚 进入笔记入口"
             url = "/archives/"  # 这里的 URL 指向刚才创建的 archives 页面
 
@@ -34,9 +37,6 @@ subtitle = """
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/JiaT-T"
-    [[params.socialIcons]]
-        name = "email"
-        url = "mailto:你的邮箱@example.com"
 
 [markup.highlight]
     noClasses = false # 这里改为 false，我们需要用类名来控制反向颜色
@@ -59,6 +59,11 @@ subtitle = """
     inline = [['\(', '\)'], ['$', '$']]
 
 # 顶部导航栏分类
+[[menu.main]]
+    identifier = "portfolio"
+    name = "项目"
+    url = "/portfolio/"
+    weight = 5
 [[menu.main]]
     identifier = "posts"
     name = "所有文章"

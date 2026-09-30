@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ partial "index_profile.html" . }}
+<section class="portfolio-selection" aria-labelledby="portfolio-title">
+  <div class="portfolio-heading"><h2 id="portfolio-title">渲染与引擎项目</h2><a href="{{ "portfolio/" | relURL }}">技术说明 →</a></div>
+  <p class="portfolio-intro">从 CPU 渲染原理，到实时图形 API，再到 Unreal Engine 的材质与 GPU 模拟。</p>
+  <div class="portfolio-grid">
+    {{ range hugo.Data.portfolio }}
+    <article class="portfolio-card">
+      <p class="portfolio-category">{{ .category }}</p>
+      <h3><a href="{{ .url }}" rel="noopener">{{ .name }}</a></h3>
+      <p>{{ .summary }}</p>
+      <a class="portfolio-source" href="{{ .url }}" rel="noopener">查看代码与预览 ↗</a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
