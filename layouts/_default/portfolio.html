@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="portfolio-page">
   <header class="post-header portfolio-page-header">
-    <p class="section-label">SELECTED WORK / 01—06</p>
+    <p class="section-label">PROJECTS</p>
     <h1 class="post-title">{{ .Title }}</h1>
     <p class="post-description">{{ .Description }}</p>
   </header>
@@ -9,7 +9,7 @@
   <section class="portfolio-details" aria-labelledby="project-details-title">
     <header class="portfolio-details-heading">
       <p class="section-label">PROJECT NOTES</p>
-      <h2 id="project-details-title">技术说明与阅读路径</h2>
+      <h2 id="project-details-title">技术说明</h2>
     </header>
     <div class="post-content">
       {{ partial "anchored_headings.html" .Content }}
