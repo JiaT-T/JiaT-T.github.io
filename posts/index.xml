@@ -96,11 +96,11 @@
 &lt;p&gt;&lt;strong&gt;核心思想：禁止一切形式的 new 操作&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;当我们在外部使用“new T（）”创建类对象时，编译器会在类或全局作用域下寻找 new 的重载，如果将 new 标记为 delete，就能从源头切断堆上的分配：&lt;/p&gt;
 &lt;p&gt;// 禁止&lt;strong&gt;单个对象&lt;/strong&gt;的堆分配&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;em&gt;void&lt;/em&gt; operator new(std::size_t)= delete;&lt;/em&gt;*&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;em&gt;void operator delete(void&lt;/em&gt;)= delete;&lt;/em&gt;*&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;void* operator new(std::size_t)= delete;&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;void operator delete(void*)= delete;&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;// 禁止&lt;strong&gt;数组形式&lt;/strong&gt;的堆分配&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;em&gt;void&lt;/em&gt; operatornew&lt;a href="std::size_t"&gt;&lt;/a&gt; = delete;&lt;/em&gt;*&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;void operator delete&lt;a href="void*"&gt;&lt;/a&gt; = delete;&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>如何混合法线贴图</title><link>https://JiaT-T.github.io/posts/others/normal-combination/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/others/normal-combination/</guid><description>&lt;p&gt;### &lt;font style="color:#117CEE;"&gt;一：Linear Blending&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;void* operator new[](std::size_t) = delete;&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;void operator delete[](void*) = delete;&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>如何混合法线贴图</title><link>https://JiaT-T.github.io/posts/others/normal-combination/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://JiaT-T.github.io/posts/others/normal-combination/</guid><description>&lt;p&gt;### &lt;font style="color:#117CEE;"&gt;一：Linear Blending&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;代码实现：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
