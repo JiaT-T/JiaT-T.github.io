@@ -91,6 +91,31 @@ int lowerBound(vector<int>& nums, int target)
 
 
 
+
+<a id="G8dlB"></a>
+
+<strong>补充解法：标准库 lower_bound</strong>
+
+<a id="IhRiH"></a>
+```cpp
+vector<int> searchRange(vector<int>& nums, int target)
+{
+    if(nums.empty()) return{-1,-1};
+    
+    int start = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+    
+    if(start == nums.size() || nums[start] != target)
+        return {-1, -1};
+
+    // 因为这里得到的是第一个 target + 1 的元素的下标
+    // 所以需要减一得到的才是 target 最后一个元素的下标
+    int end = lower_bound(nums.begin(), nums.end(), target + 1) - nums.begin() - 1;
+    return {start, end};
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/kovh86nqrne4grtx)
+
 #### <font style="color:#DF2A3F;">第七十四题</font>：[搜索二维矩阵](https://leetcode.cn/problems/search-a-2d-matrix/)
 <font style="background-color:#FBDE28;">解法一：</font>
 

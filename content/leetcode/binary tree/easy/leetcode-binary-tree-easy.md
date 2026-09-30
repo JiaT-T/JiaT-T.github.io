@@ -1,6 +1,6 @@
 +++
 title = "94、101、104、108、226、543"
-problems = [94, 101, 104, 108, 226, 543]
+problems = [94, 101, 104, 108, 226, 543, 110]
 +++
 
 #### <font style="color:#DF2A3F;">第九十四题</font>：[二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
@@ -191,3 +191,33 @@ int diameterOfBinaryTree(TreeNode* root)
     return max_dep;
 }
 ```
+
+<a id="VVHAR"></a>
+#### 第一百一十题：[平衡二叉树](<https://leetcode.cn/problems/balanced-binary-tree/>)
+
+<a id="U5AjY"></a>
+```cpp
+int depth(TreeNode* curr, bool& res)
+{
+    if(curr == nullptr) return 0;
+
+    int left = depth(curr->left, res);
+    int right = depth(curr->right, res);
+
+    if(!res) return 0;
+
+    if(std::abs(left - right) > 1) 
+        res = false;
+
+    return std::max(left, right) + 1;
+}
+bool isBalanced(TreeNode* root)
+{
+    bool res = true;
+    depth(root, res);
+    return res;
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/ra46ilsmcmakspvr)
+

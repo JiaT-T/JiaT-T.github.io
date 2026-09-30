@@ -61,6 +61,27 @@ private :
 };
 ```
 
+
+<a id="rM2yw"></a>
+
+<strong>补充解法：递归维护上下界</strong>
+
+```cpp
+bool isValid(TreeNode* root, long min_val, long max_val)
+{
+    if(root == nullptr) return true;
+    if(root->val <= min_val || max_val <= root->val) return false;
+    return isValid(root->left, min_val, root->val) &&
+           isValid(root->right, root->val, max_val);
+}
+bool isValidBST(TreeNode* root)
+{
+    return isValid(root, LONG_MIN, LONG_MAX);
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/gvwgx0lykh5yempx)
+
 #### <font style="color:#DF2A3F;">第一百零二题</font>：[ 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
 使用的是<font style="background-color:#FBDE28;">队列与深度优先搜索</font>
 
@@ -172,7 +193,7 @@ private :
 
 因此，<font style="background-color:#FBDE28;">可以通过迭代，每次将父节点的整棵左子树插入父节点与右子树之间</font>
 
-<img src="https://cdn.nlark.com/yuque/0/2026/png/64464470/1776683950848-d74c54a3-3ad5-4764-a403-b247a3941bb4.png" width="562" title="" crop="0,0,1,1" id="u2c813c24" class="ne-image">
+<img src="/images/leetcode-binary-tree-medium/leetcode-binary-tree-medium-01.png" width="562" title="" crop="0,0,1,1" id="u2c813c24" class="ne-image">
 
 具体实现：
 
@@ -308,3 +329,49 @@ int dfs(TreeNode* curr, long long curr_sum, int targetSum)
     return count;
 }
 ```
+
+<a id="Lm8yG"></a>
+
+<strong>补充解法：前缀和与哈希表</strong>
+
+<a id="u76e63105"></a><a id="YJ1Rh"></a>[https://leetcode.cn/problems/path-sum-iii/solutions/2784856/zuo-fa-he-560-ti-shi-yi-yang-de-pythonja-fmzo/?envType=study-plan-v2&amp;envId=top-100-liked](<https://leetcode.cn/problems/path-sum-iii/solutions/2784856/zuo-fa-he-560-ti-shi-yi-yang-de-pythonja-fmzo/?envType=study-plan-v2&envId=top-100-liked>)
+
+<a id="ub7be5587"></a>核心公式：
+
+<a id="u5f5ae32d"></a><strong>当前前缀和 - 历史前缀和 = targetSum</strong>
+
+<a id="u6c8e0705"></a>移项可得：
+
+<a id="u1032b524"></a><strong>历史前缀和 = 当前前缀和 - targetSum</strong>
+
+<a id="u3d989efd"></a>因此，只需要使用一个哈希表记录“从根节点到当前节点的路径上，以每个节点为终点的前缀和的出现次数”，然后通过判断当前前缀和减去targetSum的值是否存在于哈希表中：如果存在，就说明对应的历史前缀和的终点节点到当前节点的和就是 targetSum
+
+<a id="WUY8z"></a>
+pathSum（）
+
+```cpp
+int pathSum(TreeNode* root, int targetSum)
+{
+    std::unordered_map<long long, int> count = {{0, 1}};
+    int res = 0;
+
+    auto dfs = [&](this auto&& dfs, TreeNode* root, long long s)
+    {
+        if(root == nullptr) return; 
+
+        s += root->val;
+        res += count[s - targetSum];
+
+        count[s]++;
+        dfs(root->left, s);
+        dfs(root->right, s);
+        count[s]--;
+    };
+
+    dfs(root, 0);
+    return res;
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/gvwgx0lykh5yempx)
+

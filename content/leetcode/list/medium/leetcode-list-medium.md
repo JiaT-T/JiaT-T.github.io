@@ -1,6 +1,6 @@
 +++
 title = "2、19、24、26、138、142、146、148"
-problems = [2, 19, 24, 26, 138, 142, 146, 148]
+problems = [2, 19, 24, 26, 138, 142, 146, 148, 92, 109]
 +++
 
 #### <font style="color:#DF2A3F;">第二题</font>：[两数相加](https://leetcode.cn/problems/add-two-numbers/)
@@ -97,6 +97,25 @@ ListNode* swapPairs(ListNode* head)
     }
 ```
 
+
+<a id="Acr0E"></a>
+
+<strong>补充解法：递归交换相邻节点</strong>
+
+```cpp
+ListNode* swapPairs(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr) return head;
+
+    ListNode* newHead = head->next;
+    head->next = swapPairs(newHead->next);
+    newHead->next = head;
+    return newHead;
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/cnlga8u2ysfoqru7)
+
 #### <font style="color:#DF2A3F;">第二十六题</font>：[<font style="color:rgb(10, 132, 255);">删除有序数组中的重复项</font>](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
 使用的是双指针
 
@@ -160,7 +179,7 @@ Node* copyRandomList(Node* head)
 
 当n等于1时，a=c；此时如果放置一个指针从head处向后移动，同时另一个指针从slow与fast相遇的地方以相同的速度沿着c移动，那么两者最终会在环的入口处相遇；至于为什么不考虑n，而是直接取n为1，是因为n仅仅代表着相遇处的指针多走的圈数，最后两者还是会在入口相遇
 
-<img src="https://cdn.nlark.com/yuque/0/2026/png/64464470/1775632532707-e3871f80-ef42-4d8a-94a1-ad0b1f52c075.png" width="2000" title="" crop="0,0,1,1" id="HF5TL" class="ne-image">
+<img src="/images/leetcode-list-medium/leetcode-list-medium-01.png" width="2000" title="" crop="0,0,1,1" id="HF5TL" class="ne-image">
 
 ```cpp
 ListNode *detectCycle(ListNode *head)
@@ -343,3 +362,91 @@ private :
     std::list<int> order; 
 };
 ```
+
+<a id="l9k3z"></a>
+#### 第九十二题：[反转链表 II](<https://leetcode.cn/problems/reverse-linked-list-ii/>)
+
+<a id="u20842552"></a><strong>核心思想：将 left 的前一个节点指向 right，将 left 指向 right 的下一个节点</strong>
+
+<a id="u0e5fe76d"></a>所以一共需要<strong>找到三个节点</strong>的位置，这里使用的是两个遍历，分别定位 <strong>left 的前一个节点 / left节点</strong>和 <strong>right 的下一个节点</strong>
+
+<a id="QPjrk"></a>
+reverseBetween（）
+```cpp
+ListNode* reverse(ListNode* prev, ListNode* curr, ListNode* last)
+{
+    if(curr == last)
+    {
+        return prev;
+    }
+    ListNode* temp = curr->next;
+    curr->next = prev;
+    return reverse(curr, temp, last);
+}
+ListNode* reverseBetween(ListNode* head, int left, int right)
+{
+    ListNode* dummy = new ListNode(0);
+    dummy->next = head;
+    ListNode* pre = dummy;
+
+    // 找到 pre（left 的前一个节点）
+    for(int i = 1; i < left; i++)
+    {
+        pre = pre->next;
+    }
+    // 通过 pre 可以定位到 left
+    ListNode* left_node = pre->next;
+
+    // 找到 right 的下一个节点
+    ListNode* last = left_node;
+    for(int i = left; i <= right; i++)
+    {
+        last = last->next;
+    }
+
+    // 将【left，right】区间翻转
+    // 这里的 new_head 就是之前的 right
+    ListNode* new_head = reverse(nullptr, left_node, last);
+    pre->next = new_head;
+    left_node->next = last;
+
+    return dummy->next;
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/cnlga8u2ysfoqru7)
+
+<a id="qSFMg"></a>
+#### 第一百零九题：[有序链表转换二叉搜索树](<https://leetcode.cn/problems/convert-sorted-list-to-binary-search-tree/>)
+
+<a id="ua961fbd0"></a>使用到了<strong>递归</strong>与<strong>双指针</strong>
+
+<a id="vTsCg"></a>
+sortedListToBST（）
+```cpp
+TreeNode* sortedListToBST(ListNode* head)
+{
+    if(head == nullptr) return nullptr;
+    if(head->next == nullptr) return new TreeNode(head->val);
+
+    // 找出链表的中点
+    // 循环结束时，slow 即为树的根节点
+    // 同时 slow 左边的链表为左子树，slow 右边为右子树
+    ListNode *slow = head, *fast = head, *prev = nullptr;
+    while(fast != nullptr && fast->next != nullptr)
+    {
+        prev = slow;
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    prev->next = nullptr;
+    TreeNode* root = new TreeNode(slow->val);
+    root->left = sortedListToBST(head);
+    root->right = sortedListToBST(slow->next);
+    return root;
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/cnlga8u2ysfoqru7)
+

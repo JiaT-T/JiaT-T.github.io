@@ -1,6 +1,6 @@
 +++
 title = "39、46、78、79、131"
-problems = [39, 46, 78, 79, 131]
+problems = [39, 46, 78, 79, 131, 17, 22]
 +++
 
 #### <font style="color:#DF2A3F;">第三十九题</font>：[组合总和](https://leetcode.cn/problems/combination-sum/)
@@ -82,6 +82,56 @@ size_t factorial(size_t sz)
 ```
 
 
+
+
+<a id="bk8XA"></a>
+
+<strong>补充解法：used 数组回溯</strong>
+
+```cpp
+class Solution
+{
+public:
+    std::vector<vector<int>> res;
+    std::vector<int> path;
+    void backTrack(vector<int>& nums, vector<bool> used)
+    {
+        // 终止条件
+        if(path.size() == nums.size())
+        {
+            res.push_back(path);
+            return;
+        }
+        
+        for(int i = 0; i < nums.size(); i++)
+        {
+            // 如果当前元素已经被使用过了
+            // 就直接跳过它
+            if(used[i])
+                continue;
+
+            // 将当前元素标记为“已使用”
+            used[i] = true;
+            path.push_back(nums[i]);
+            // 对下一个元素进行操作
+            backTrack(nums, used);
+            // 撤销所有操作
+            path.pop_back();
+            used[i] = false;
+        }
+    }
+
+    vector<vector<int>> permute(vector<int>& nums)
+    {
+        // 用来标记已使用的元素
+        std::vector<bool> used(nums.size(), false);
+        backTrack(nums, used);
+        return res;
+    }
+};
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/tvmshwlzcw3s2ta1)
 
 #### <font style="color:#DF2A3F;">第七十八题</font>：[子集](https://leetcode.cn/problems/subsets/)
 核心思路：<font style="background-color:#FBDE28;">枚举每一个位置，并通过递归调用进入下一个位置</font>
@@ -199,3 +249,124 @@ vector<vector<string>> partition(string s)
     return res;
 }
 ```
+
+<a id="ADPJG"></a>
+#### 第十七题：[电话号码的字母组合](<https://leetcode.cn/problems/letter-combinations-of-a-phone-number/>)
+
+<a id="u9a74a1cf"></a>使用到的知识点是 哈希表 和 回溯算法
+
+<a id="u58e87fe6"></a>因为未知输入字符串的长度，所以不能手动的定义for循环去暴力求解
+
+<a id="u7847db98"></a>联想到树的结构，从一个分支一直走到底，再返回上一个最近的分支；与此题类似，以前一个字符串为基点，向后遍历每一个出现的字符，组成新的字符串。
+
+<a id="u224db552"></a>难点在于如何回溯：这里使用到的是递归函数
+
+<a id="u1f04fbb9"></a>根据传入的index确定当前数字，然后再根据数字在map中得到对应的字符，以每一个字符为起点，进行函数的递归调用，直到index与输入字符串长度相同
+
+<a id="wMmcg"></a>
+letterCombinations（）
+```cpp
+class Solution 
+{
+public:
+    void backTrack(const string& digits, int index, std::unordered_map<char, string>& phoneMap, string& combination, std::vector<string>& combinations)
+    {
+        if(index == digits.size()) 
+            combinations.push_back(combination);
+        else
+        {
+            char num = digits[index];
+            const string& letters = phoneMap[num];
+            for(const char& letter : letters)
+            {
+                combination.push_back(letter);
+                backTrack(digits, index + 1, phoneMap, combination, combinations);
+                combination.pop_back();
+            }
+        }
+    }
+
+    vector<string> letterCombinations(string digits) 
+    {
+        if(digits.empty()) return {};
+        std::unordered_map<char, string> phoneMap
+        {
+            {'2', "abc"},
+            {'3', "def"},
+            {'4', "ghi"},
+            {'5', "jkl"},
+            {'6', "mno"},
+            {'7', "pqrs"},
+            {'8', "tuv"},
+            {'9', "wxyz"}
+        };
+        std::vector<string> combinations;
+        string combination;
+        backTrack(digits, 0, phoneMap, combination, combinations);
+        return combinations;
+    }
+};
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/tvmshwlzcw3s2ta1)
+
+<a id="vfqUX"></a>
+#### 第二十二题：[括号生成](<https://leetcode.cn/problems/generate-parentheses/>)
+
+<a id="u1846bb00"></a>使用到的是回溯算法
+
+<a id="u211e00ae"></a>对于输入的数字n，可以知道的是最终的元素为2n个括号，其中左括号和右括号都为n个
+
+<a id="u0219feb5"></a>先经过一次分析得到规律：以n=2为例，每个元素分别有2个左右括号，第一个空必须是' （ ’，此时left的数量加一；而第二个空则有两种可能，当为‘（’时，left的数量已经达到了2，那么之后两个空就只能是‘）’；当为‘）’时，此时left = right，第三个空就只能是‘（’，从而得出第四个空是‘）’
+
+<a id="u513cf301"></a>总结规律，可以得出：
+
+<a id="u4a7149fc"></a>1.当<strong>left &lt; n时，应该添加‘（’</strong>
+
+<a id="u20fd6ddb"></a>2.当<strong>right &lt; left时，应当有‘）’与其配对，故添加‘）’</strong>
+
+<a id="u7a39a59e"></a>在此条件下进行递归，最后当left+right与n相同时终止最后一层递归，返回上一层的枝，继续下一个子节点的递归
+
+<a id="O2k9P"></a>
+generateParenthesis()
+```cpp
+class Solution
+{
+public:
+    vector<string> generateParenthesis(int n)
+    {
+        std::vector<string> combinations;
+        string combination;
+        backTrace(0, 0, combination, combinations, n);
+        return combinations;
+    }
+
+private :
+    void backTrace(int left, int right, string& combination, std::vector<string>& combinations, int n)
+    {
+        if(left + right == 2 * n) 
+        {
+            combinations.push_back(combination);
+            return;
+        }
+        else
+        {
+            if(left < n) 
+            {
+                combination.push_back('(');
+                backTrace(left + 1, right, combination, combinations, n);
+                combination.pop_back();
+            }
+            if(right < left)
+            {
+                combination.push_back(')');
+                backTrace(left, right + 1, combination, combinations, n);
+                combination.pop_back();
+            }
+        }
+    }
+};
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/tvmshwlzcw3s2ta1)
+

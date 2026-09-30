@@ -1,11 +1,11 @@
 +++
 title = "3、438"
-problems = [3, 438]
+problems = [3, 438, 209, 1493]
 +++
 
-\#### <font style="color:#DF2A3F;">第三题</font>：\[无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
+#### <font style="color:#DF2A3F;">第三题</font>：[无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
 
-用到的是滑动窗口和unorder\_map,
+用到的是滑动窗口和unorder_map,
 
 
 
@@ -25,163 +25,224 @@ problems = [3, 438]
 
 
 
-\*\*核心：用unordered\_map记录每个字符的出现次数\*\*
-
-
-
+**核心：用unordered_map记录每个字符的出现次数**
 ```cpp
 
 int lengthOfLongestSubstring(string s) 
 
 {
 
-&nbsp;   int maxStr = 0; // 用来记录出现过的“最长”无重复子串的长度。
+    int maxStr = 0; // 用来记录出现过的“最长”无重复子串的长度。
 
-&nbsp;   
+    
 
-&nbsp;   // 这里的 um (unordered\_map) 是核心工具。
+    // 这里的 um (unordered_map) 是核心工具。
 
-&nbsp;   // Key (char): 窗口里的字符 
+    // Key (char): 窗口里的字符 
 
-&nbsp;   // Value (int): 这个字符在当前窗口里出现了几次
+    // Value (int): 这个字符在当前窗口里出现了几次
 
-&nbsp;   std::unordered\_map<char, int> um; 
+    std::unordered_map<char, int> um; 
 
-&nbsp;   
+    
 
-&nbsp;   // 开始滑动窗口。一开始，左右边界都在最左边（索引 0）。
+    // 开始滑动窗口。一开始，左右边界都在最左边（索引 0）。
 
-&nbsp;   // right++ 代表窗口的右边缘在不断向右扩展，吞进新的字符。
+    // right++ 代表窗口的右边缘在不断向右扩展，吞进新的字符。
 
-&nbsp;   for(int left = 0, right = 0; right < s.size(); right++)
+    for(int left = 0, right = 0; right < s.size(); right++)
 
-&nbsp;   {
+    {
 
-&nbsp;       // s\[right] 是刚刚进入窗口的新字符。
+        // s[right] 是刚刚进入窗口的新字符。
 
-&nbsp;       // um\[s\[right]]++ 的意思是：让这个新字符的出现次数 +1。
+        // um[s[right]]++ 的意思是：让这个新字符的出现次数 +1。
 
-&nbsp;       um\[s\[right]]++; 
+        um[s[right]]++; 
 
-&nbsp;   
+    
 
-&nbsp;       // 检查刚刚吞进来的字符，是不是导致窗口里有重复了？
+        // 检查刚刚吞进来的字符，是不是导致窗口里有重复了？
 
-&nbsp;       // 如果 > 1，说明这个字符之前已经在窗口里存在了。
+        // 如果 > 1，说明这个字符之前已经在窗口里存在了。
 
-&nbsp;       while(um\[s\[right]] > 1) 
+        while(um[s[right]] > 1) 
 
-&nbsp;       {
+        {
 
-&nbsp;           // 既然有重复了，就缩小窗口：
+            // 既然有重复了，就缩小窗口：
 
-&nbsp;           // 把最左边的字符 s\[left] 踢出窗口，所以它的出现次数 -1。
+            // 把最左边的字符 s[left] 踢出窗口，所以它的出现次数 -1。
 
-&nbsp;           um\[s\[left]]--; 
+            um[s[left]]--; 
 
-&nbsp;           // 左边界向右移动一格，窗口缩小。
+            // 左边界向右移动一格，窗口缩小。
 
-&nbsp;           left++;        
+            left++;        
 
-&nbsp;       }
+        }
 
-&nbsp;       
+        
 
-&nbsp;       // 此时认为窗口里已经没有重复字符了。
+        // 此时认为窗口里已经没有重复字符了。
 
-&nbsp;       // right - left + 1 就是当前窗口的长度。
+        // right - left + 1 就是当前窗口的长度。
 
-&nbsp;       // 比如 left=0, right=2，长度就是 2 - 0 + 1 = 3。
+        // 比如 left=0, right=2，长度就是 2 - 0 + 1 = 3。
 
-&nbsp;       // 用 std::max 更新历史最大长度。
+        // 用 std::max 更新历史最大长度。
 
-&nbsp;       maxStr = std::max(maxStr, right - left + 1); 
+        maxStr = std::max(maxStr, right - left + 1); 
 
-&nbsp;   }
+    }
 
-&nbsp;   return maxStr; // 遍历完整个字符串，返回找到的最大值。
+    return maxStr; // 遍历完整个字符串，返回找到的最大值。
 
 }
-
 ```
+#### <font style="color:#DF2A3F;">第四百三十八题</font>：[找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)
 
-
-
-
-
-
-
-\#### <font style="color:#DF2A3F;">第四百三十八题</font>：\[找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)
-
-思路：从左往右移动窗口，每次移动一格；移动的过程中不断\*\*对 left 与 right 指向的元素进行“是否存在于‘p’中“的判断\*\*——如果存在，那么对应字符的出现频率减一.....直到最后整个哈希表清零，就可以认为这个窗口中的元素满足条件，将其存入res中
-
-
-
+思路：从左往右移动窗口，每次移动一格；移动的过程中不断**对 left 与 right 指向的元素进行“是否存在于‘p’中“的判断**——如果存在，那么对应字符的出现频率减一.....直到最后整个哈希表清零，就可以认为这个窗口中的元素满足条件，将其存入res中
 ```cpp
 
 vector<int> findAnagrams(string s, string p)
 
 {
 
-&nbsp;   int ns = s.size(), np = p.size();
+    int ns = s.size(), np = p.size();
 
-&nbsp;   if(ns < np) return {};
+    if(ns < np) return {};
 
-&nbsp;   std::vector<int> res;
-
-
-
-&nbsp;   std::vector<int> count(26, 0);
-
-&nbsp;   for(auto c : p) count\[c - 'a']++;
+    std::vector<int> res;
 
 
 
-&nbsp;   int left = 0, right = 0, need = np;
+    std::vector<int> count(26, 0);
 
-&nbsp;   while(right < ns)
-
-&nbsp;   {
-
-&nbsp;       char c = s\[right];
-
-&nbsp;       // 扩大窗口
-
-&nbsp;       if(count\[c - 'a'] > 0) need--;
-
-&nbsp;       count\[c - 'a']--;
-
-&nbsp;       right++;
+    for(auto c : p) count[c - 'a']++;
 
 
 
-&nbsp;       // 缩小窗口
+    int left = 0, right = 0, need = np;
 
-&nbsp;       if(right - left > np)
+    while(right < ns)
 
-&nbsp;       {
+    {
 
-&nbsp;           char d = s\[left];
+        char c = s[right];
 
-&nbsp;           if(count\[d - 'a'] >= 0) need++;
+        // 扩大窗口
 
-&nbsp;           count\[d - 'a']++;
+        if(count[c - 'a'] > 0) need--;
 
-&nbsp;           left++;                
+        count[c - 'a']--;
 
-&nbsp;       }
+        right++;
 
 
 
-&nbsp;       if(need == 0) res.push\_back(left);
+        // 缩小窗口
 
-&nbsp;   }
+        if(right - left > np)
 
-&nbsp;   return res;
+        {
+
+            char d = s[left];
+
+            if(count[d - 'a'] >= 0) need++;
+
+            count[d - 'a']++;
+
+            left++;                
+
+        }
+
+
+
+        if(need == 0) res.push_back(left);
+
+    }
+
+    return res;
 
 }
-
 ```
 
+<a id="A5ODj"></a>
+#### 第二百零九题：[长度最小的子数组](<https://leetcode.cn/problems/minimum-size-subarray-sum/>)
 
+<a id="ue4eb73e4"></a>使用到的是滑动窗口
+
+<a id="tcFqA"></a>
+minSubArrayLen（）
+```cpp
+int minSubArrayLen(int target, vector<int>& nums)
+{
+    int n = nums.size(), sum = 0, left = 0;
+    // 因为最后的结果输出的是子数组长度
+    // 所以最大长度肯定不会超过原数组长度 n
+    int res = n + 1;
+    // 遍历右边的节点
+    for(int right = 0; right < n; right++)
+    {
+        // 首先将右指针指向的节点加到 sum 中
+        sum += nums[right];
+        // 不断缩小窗口
+        while(target <= sum - nums[left])
+        {
+            sum -= nums[left];
+            // 左端点右移
+            left++;
+        }
+        // 此时经过缩小之后，如果 sum 仍然大于等于 target
+        // 就记录一次答案
+        if(target <= sum)
+        {
+            res = std::min(res, right - left + 1);
+        }
+    }
+    return res == n + 1 ? 0 : res;
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/yg57x00m0sytet7u)
+
+<a id="eN0b2"></a>
+#### 第一千四百九十三题：[删掉一个元素以后全为 1 的最长子数组](<https://leetcode.cn/problems/longest-subarray-of-1s-after-deleting-one-element/>)
+
+<strong>原笔记（代码待复核）</strong>
+
+
+
+<a id="uffe18c70"></a>维护一个滑动窗口，窗口内只能存在一个零，同时每一步都动态更新最长子数组的长度
+
+<a id="u6312f1b2"></a>当窗口内零的数量大于一时，将左边界右移，直到零的数量变为一
+
+<a id="on0TP"></a>
+longestSubarray（）
+```cpp
+int longestSubarray(vector<int>& nums)
+{
+    int left = 0, zero_count = 0, res = 0;
+
+    for(int right = 0; right < nums.size(); right++)
+    {
+        if(nums[right] == 0)
+            zero_count++;
+
+        while(1 < zero_count)
+        {
+            if(nums[left] == 0)
+                zero_count--;
+
+            left++;
+        }
+
+        res = std::max(right - left + 1 - 1,);
+    }
+    return res;
+}
+```
+
+来源：[语雀原笔记](https://www.yuque.com/u62694975/iaaa/yg57x00m0sytet7u)
 
