@@ -1,0 +1,15 @@
+{{- if or .Sections .RegularPages -}}
+<section class="archive-topic-section">
+    <h2 class="archive-topic-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a><span>{{ len .RegularPagesRecursive }} 篇</span></h2>
+    {{- range .Sections.ByTitle }}
+    {{ partial "note-archive-section.html" . }}
+    {{- end }}
+    {{- if .RegularPages }}
+    <div class="archive-note-grid">
+        {{- range .RegularPages.ByTitle }}
+        {{ partial "note-archive-entry.html" . }}
+        {{- end }}
+    </div>
+    {{- end }}
+</section>
+{{- end -}}

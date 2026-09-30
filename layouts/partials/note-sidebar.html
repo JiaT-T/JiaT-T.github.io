@@ -1,8 +1,8 @@
 {{- $current := . -}}
-<aside class="note-sidebar" aria-label="文章目录">
-    <div class="note-sidebar-heading">文章</div>
-    <nav class="note-sidebar-nav">
-        <a class="note-sidebar-home" href="/archives/">技术笔记归档</a>
+<details class="note-sidebar" aria-label="笔记目录" data-reader-panel="1280" open>
+    <summary class="note-sidebar-heading"><span>笔记目录</span><span class="note-panel-chevron" aria-hidden="true">⌄</span></summary>
+    <nav class="note-sidebar-nav" aria-label="按主题浏览笔记">
+        <a class="note-sidebar-home" href="/archives/">← 全部技术笔记</a>
 
         {{- with site.GetPage "section" "leetcode" }}
         {{ partial "note-sidebar-section.html" (dict "node" . "current" $current) }}
@@ -24,21 +24,20 @@
             {{- end -}}
         {{- end -}}
         <details class="note-sidebar-group" {{ if $isOpen }}open{{ end }}>
-            <summary>
-                <a href="{{ .url }}">{{ .title }}</a>
-            </summary>
+            <summary>{{ .title }}</summary>
             <ul>
+                <li><a class="note-sidebar-link note-sidebar-category" href="{{ .url }}">浏览此分类 →</a></li>
                 {{- range $pages.ByDate.Reverse }}
                 {{- $pageTitle := .Title -}}
                 {{- if and (not $pageTitle) .File -}}
                     {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) -}}
                 {{- end -}}
                 <li>
-                    <a class="note-sidebar-link {{ if eq .RelPermalink $current.RelPermalink }}is-active{{ end }}" href="{{ .RelPermalink }}">{{ $pageTitle }}</a>
+                    <a class="note-sidebar-link {{ if eq .RelPermalink $current.RelPermalink }}is-active{{ end }}" href="{{ .RelPermalink }}" {{ if eq .RelPermalink $current.RelPermalink }}aria-current="page"{{ end }}>{{ $pageTitle }}</a>
                 </li>
                 {{- end }}
             </ul>
         </details>
         {{- end }}
     </nav>
-</aside>
+</details>

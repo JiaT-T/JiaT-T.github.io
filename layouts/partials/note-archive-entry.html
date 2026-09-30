@@ -1,0 +1,18 @@
+{{- $title := .Title -}}
+{{- if and (not $title) .File -}}
+    {{- $title = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) -}}
+{{- end -}}
+{{- $summary := .Description | default (.Summary | plainify) -}}
+{{- if and (eq .Section "leetcode") .Params.problems -}}
+    {{- $summary = delimit .Params.problems " · " -}}
+{{- end -}}
+<a class="archive-note-card" href="{{ .RelPermalink }}">
+    <span class="archive-note-body">
+        <span class="archive-note-title">{{ $title }}</span>
+        {{- with $summary }}<span class="archive-note-summary">{{ . | truncate 110 }}</span>{{ end }}
+    </span>
+    <span class="archive-note-meta">
+        {{- if gt .Date.Year 2000 }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>{{ end }}
+        <span class="archive-note-arrow" aria-hidden="true">→</span>
+    </span>
+</a>

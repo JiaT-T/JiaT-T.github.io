@@ -1,16 +1,30 @@
-baseURL = "https://JiaT-T.github.io/"
-languageCode = "zh-cn"
+baseURL = "https://jiat-t.github.io/"
+locale = "zh-CN"
+defaultContentLanguage = "zh-cn"
+enableRobotsTXT = true
 title = "榎aaaa的个人主页"
 theme = "PaperMod"
 
 [params]
     env = "production"
-    title = "代码与艺术"
-    description = "图形学、C++ 渲染与游戏引擎开发笔记"
+    title = "榎aaaa · Graphics & Game Development"
+    description = "榎aaaa的开发者主页：C++、实时渲染、Unreal Engine 项目与图形学技术笔记。"
     author = "榎aaaa"
-    defaultTheme = "light" # 允许自动切换
-    disableThemeToggle = true    # 隐藏右上角的太阳/月亮切换按钮
-    displayRGBColor = true
+    defaultTheme = "dark"
+    disableThemeToggle = false
+    ShowReadingTime = true
+    ShowBreadCrumbs = true
+    ShowPostNavLinks = true
+    ShowCodeCopyButtons = true
+    images = ["images/avatar.jpg"]
+
+    [params.assets]
+        favicon = "favicon.svg"
+        favicon16x16 = "favicon-16x16.png"
+        favicon32x32 = "favicon-32x32.png"
+        apple_touch_icon = "apple-touch-icon.png"
+        safari_pinned_tab = "favicon.svg"
+        theme_color = "#111315"
 
     # 主页配置
     [params.profileMode]
@@ -30,7 +44,7 @@ subtitle = """
             name = "渲染与引擎项目"
             url = "/portfolio/"
 [[params.profileMode.buttons]]
-            name = "📚 进入笔记入口"
+            name = "阅读技术笔记"
             url = "/archives/"  # 这里的 URL 指向刚才创建的 archives 页面
 
     # 社交链接（显示在名字下方）
@@ -42,6 +56,7 @@ subtitle = """
     noClasses = false # 这里改为 false，我们需要用类名来控制反向颜色
     style = "monokai" # 明亮模式下使用的深色风格
     lineNos = true
+    lineNumbersInTable = false
 
 [markup.tableOfContents]
     startLevel = 2
@@ -58,21 +73,26 @@ subtitle = """
     block = [['\[', '\]'], ['$$', '$$']]
     inline = [['\(', '\)'], ['$', '$']]
 
-# 顶部导航栏分类
+# 文章列表与分类继续保留在笔记页。
+[[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 1
 [[menu.main]]
     identifier = "portfolio"
     name = "项目"
     url = "/portfolio/"
     weight = 5
 [[menu.main]]
-    identifier = "posts"
-    name = "所有文章"
-    url = "/posts/"
+    identifier = "notes"
+    name = "笔记"
+    url = "/archives/"
     weight = 10
 [[menu.main]]
-    identifier = "categories"
-    name = "分类"
-    url = "/categories/"
+    identifier = "about"
+    name = "关于"
+    url = "/#about"
     weight = 20
 [[menu.main]]
     identifier = "search"

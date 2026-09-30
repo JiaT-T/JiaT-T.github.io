@@ -179,7 +179,7 @@ Node* copyRandomList(Node* head)
 
 当n等于1时，a=c；此时如果放置一个指针从head处向后移动，同时另一个指针从slow与fast相遇的地方以相同的速度沿着c移动，那么两者最终会在环的入口处相遇；至于为什么不考虑n，而是直接取n为1，是因为n仅仅代表着相遇处的指针多走的圈数，最后两者还是会在入口相遇
 
-<img src="/images/leetcode-list-medium/leetcode-list-medium-01.png" width="2000" title="" crop="0,0,1,1" id="HF5TL" class="ne-image">
+<img src="/images/leetcode-list-medium/leetcode-list-medium-01.png" width="2000" title="" crop="0,0,1,1" id="HF5TL" class="ne-image" alt="环形链表中，环外长度 a、入口至相遇点长度 b 和返回入口长度 c 的示意" loading="lazy" decoding="async" height="1125">
 
 ```cpp
 ListNode *detectCycle(ListNode *head)

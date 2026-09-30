@@ -2,6 +2,7 @@
 title: "渲染与引擎项目"
 description: "C++、实时图形 API 与 Unreal Engine 技术实验"
 hideMeta: true
+layout: "portfolio"
 ---
 
 这里优先展示渲染与引擎方向的六个项目。代码、现有预览、运行依赖与当前限制见各仓库 README；性能数字应结合原始测试条件阅读。

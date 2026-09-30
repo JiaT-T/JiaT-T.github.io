@@ -3,10 +3,9 @@
 {{- $isOpen := hasPrefix $current.RelPermalink $node.RelPermalink -}}
 {{- if or $node.Sections $node.RegularPages -}}
 <details class="note-sidebar-group note-sidebar-tree" {{ if $isOpen }}open{{ end }}>
-    <summary>
-        <a href="{{ $node.RelPermalink }}">{{ $node.Title }}</a>
-    </summary>
+    <summary>{{ $node.Title }}</summary>
     <ul>
+        <li><a class="note-sidebar-link note-sidebar-category" href="{{ $node.RelPermalink }}">浏览此分类 →</a></li>
         {{- range $node.Sections.ByTitle }}
         <li>{{ partial "note-sidebar-section.html" (dict "node" . "current" $current) }}</li>
         {{- end }}
@@ -22,7 +21,7 @@
             {{- end -}}
         {{- end -}}
         <li>
-            <a class="note-sidebar-link {{ if eq .RelPermalink $current.RelPermalink }}is-active{{ end }}" href="{{ .RelPermalink }}">{{ $pageTitle }}</a>
+            <a class="note-sidebar-link {{ if eq .RelPermalink $current.RelPermalink }}is-active{{ end }}" href="{{ .RelPermalink }}" {{ if eq .RelPermalink $current.RelPermalink }}aria-current="page"{{ end }}>{{ $pageTitle }}</a>
         </li>
         {{- end }}
     </ul>

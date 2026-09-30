@@ -1,135 +1,59 @@
 {{ define "main" }}
-<header class="page-header">
-    <h1 class="simsun-bold">{{ .Title }}</h1>
+<header class="page-header notes-page-header">
+    {{- if ne .RelPermalink "/archives/" }}
+    <a class="notes-back-link" href="/archives/">← 全部技术笔记</a>
+    {{- else }}
+    <p class="section-eyebrow">NOTES / KNOWLEDGE BASE</p>
+    {{- end }}
+    <h1>{{ .Title }}</h1>
+    {{- with .Description | default .Summary }}
+    <p class="notes-page-description">{{ . | plainify }}</p>
+    {{- end }}
+    <nav class="notes-tools" aria-label="其他笔记浏览方式">
+        <a href="/posts/">全部文章 <span aria-hidden="true">↗</span></a>
+        <a href="/categories/">分类 <span aria-hidden="true">↗</span></a>
+        <a href="/search/">搜索笔记 <span aria-hidden="true">↗</span></a>
+    </nav>
 </header>
 
 {{- if eq .RelPermalink "/archives/" }}
 {{- $noteGroups := slice
-    (dict "title" "LeetCode" "url" "/leetcode/" "desc" "LeetCode Hot 100" "count" (len (where site.RegularPages "Section" "leetcode")))
-    (dict "title" "C++" "url" "/cpp/" "desc" "现代 C++、设计模式与基础语法笔记" "count" (len (partial "note-group-pages.html" (dict "group" "cpp"))))
-    (dict "title" "图形学" "url" "/graphics/" "desc" "渲染、采样、阴影与图形学公式笔记" "count" (len (partial "note-group-pages.html" (dict "group" "graphics"))))
-    (dict "title" "DirectX 12" "url" "/directx12/" "desc" "DX12 API 与渲染管线笔记" "count" (len (partial "note-group-pages.html" (dict "group" "directx12"))))
-    (dict "title" "Vulkan" "url" "/vulkan/" "desc" "Vulkan API 与底层渲染流程笔记" "count" (len (partial "note-group-pages.html" (dict "group" "vulkan"))))
-    (dict "title" "Unreal Engine" "url" "/ue/" "desc" "UE Gameplay Framework 与引擎架构笔记" "count" (len (partial "note-group-pages.html" (dict "group" "unreal"))))
+    (dict "title" "Unreal Engine" "url" "/ue/" "desc" "Gameplay Framework、GAS 与引擎架构" "label" "ENGINE" "count" (len (partial "note-group-pages.html" (dict "group" "unreal"))))
+    (dict "title" "图形学" "url" "/graphics/" "desc" "渲染、采样、光照与图形学推导" "label" "GRAPHICS" "count" (len (partial "note-group-pages.html" (dict "group" "graphics"))))
+    (dict "title" "C++" "url" "/cpp/" "desc" "语言基础、内存管理与设计模式" "label" "LANGUAGE" "count" (len (partial "note-group-pages.html" (dict "group" "cpp"))))
+    (dict "title" "DirectX 12" "url" "/directx12/" "desc" "DX12 API、DXR 与渲染管线" "label" "GRAPHICS API" "count" (len (partial "note-group-pages.html" (dict "group" "directx12"))))
+    (dict "title" "Vulkan" "url" "/vulkan/" "desc" "Vulkan API 与底层渲染流程" "label" "GRAPHICS API" "count" (len (partial "note-group-pages.html" (dict "group" "vulkan"))))
+    (dict "title" "LeetCode" "url" "/leetcode/" "desc" "Hot 100、数据结构与算法实践" "label" "ALGORITHMS" "count" (len (where site.RegularPages "Section" "leetcode")))
 -}}
-<div class="tree-archive-container">
-    <div class="archive-root-grid">
+<div class="archive-root-grid">
     {{- range $noteGroups }}
     <a class="archive-folder-card" href="{{ .url }}">
-        <span class="archive-folder-icon">📁</span>
-        <span class="archive-folder-body">
-            <span class="archive-folder-title">{{ .title }}</span>
-            <span class="archive-folder-desc">{{ .desc }} · {{ .count }} 篇</span>
-        </span>
-        <span class="archive-folder-arrow">进入</span>
+        <span class="archive-folder-label">{{ .label }}</span>
+        <span class="archive-folder-title">{{ .title }}<span class="archive-folder-arrow" aria-hidden="true">↗</span></span>
+        <span class="archive-folder-desc">{{ .desc }}</span>
+        <span class="archive-folder-count">{{ .count }} 篇笔记</span>
     </a>
     {{- end }}
-    </div>
 </div>
 {{- else if .Params.archiveGroup }}
 {{- $groupPages := partial "note-group-pages.html" (dict "group" .Params.archiveGroup) }}
-<div class="tree-archive-container">
-    <section class="glass-section-level-1">
-        <div class="archive-note-grid">
-            {{- range $groupPages.ByDate.Reverse }}
-            {{- $pageTitle := .Title }}
-            {{- if and (not $pageTitle) .File }}
-                {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
-            {{- end }}
-            <a class="archive-note-card" href="{{ .RelPermalink }}">
-                <span class="archive-note-title">{{ $pageTitle }}</span>
-                {{- with .Summary }}
-                <span class="archive-note-summary">{{ . | plainify | truncate 90 }}</span>
-                {{- end }}
-            </a>
-            {{- end }}
-        </div>
-    </section>
+<div class="archive-list-heading"><span>{{ len $groupPages }} 篇笔记</span><span>按发布时间排列</span></div>
+<div class="archive-note-grid">
+    {{- range $groupPages.ByDate.Reverse }}
+    {{ partial "note-archive-entry.html" . }}
+    {{- end }}
 </div>
 {{- else }}
 <div class="tree-archive-container">
-    {{- if .Sections }}
-        {{- range .Sections }}
-            {{- if or .Sections .RegularPages }}
-            <div class="glass-section-level-2">
-                <h2 class="archive-title-l2">📁 {{ .Title }}</h2>
-
-                <div class="archive-sub-grid">
-                    {{- range .Sections }}
-                        {{- if or .Sections .RegularPages }}
-                        <div class="glass-section-level-3">
-                            <h3 class="archive-title-l3">{{ .Title | upper }}</h3>
-                            <ul class="archive-list">
-                                {{- range .RegularPages.ByTitle }}
-                                {{- $pageTitle := .Title }}
-                                {{- if and (not $pageTitle) .File }}
-                                    {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
-                                {{- end }}
-                                {{- $problemList := "" }}
-                                {{- if and (eq .Section "leetcode") (isset .Params "problems") }}
-                                    {{- $problemList = delimit .Params.problems "、" }}
-                                    {{- if not $problemList }}
-                                        {{- $problemList = "暂无" }}
-                                    {{- end }}
-                                {{- end }}
-                                <li>
-                                    <a href="{{ .RelPermalink }}">
-                                        <span class="title">{{ if $problemList }}{{ $problemList }}{{ else }}{{ $pageTitle }}{{ end }}</span>
-                                    </a>
-                                </li>
-                                {{- end }}
-                            </ul>
-                        </div>
-                        {{- end }}
-                    {{- end }}
-
-                    {{- if .RegularPages }}
-                    <div class="glass-section-level-3">
-                        <ul class="archive-list">
-                            {{- range .RegularPages.ByTitle }}
-                            {{- $pageTitle := .Title }}
-                            {{- if and (not $pageTitle) .File }}
-                                {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
-                            {{- end }}
-                            {{- $problemList := "" }}
-                            {{- if and (eq .Section "leetcode") (isset .Params "problems") }}
-                                {{- $problemList = delimit .Params.problems "、" }}
-                                {{- if not $problemList }}
-                                    {{- $problemList = "暂无" }}
-                                {{- end }}
-                            {{- end }}
-                            <li>
-                                <a href="{{ .RelPermalink }}">
-                                    <span class="title">{{ if $problemList }}{{ $problemList }}{{ else }}{{ $pageTitle }}{{ end }}</span>
-                                </a>
-                            </li>
-                            {{- end }}
-                        </ul>
-                    </div>
-                    {{- end }}
-                </div>
-            </div>
-            {{- end }}
-        {{- end }}
+    {{- range .Sections.ByTitle }}
+    {{ partial "note-archive-section.html" . }}
     {{- end }}
-
     {{- if .RegularPages }}
-    <section class="glass-section-level-1">
-        <div class="archive-note-grid">
-            {{- range .RegularPages.ByTitle }}
-            {{- $pageTitle := .Title }}
-            {{- if and (not $pageTitle) .File }}
-                {{- $pageTitle = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) }}
-            {{- end }}
-            <a class="archive-note-card" href="{{ .RelPermalink }}">
-                <span class="archive-note-title">{{ $pageTitle }}</span>
-                {{- with .Summary }}
-                <span class="archive-note-summary">{{ . | plainify | truncate 90 }}</span>
-                {{- end }}
-            </a>
-            {{- end }}
-        </div>
-    </section>
+    <div class="archive-note-grid">
+        {{- range .RegularPages.ByTitle }}
+        {{ partial "note-archive-entry.html" . }}
+        {{- end }}
+    </div>
     {{- end }}
 </div>
 {{- end }}

@@ -193,7 +193,7 @@ private :
 
 因此，<font style="background-color:#FBDE28;">可以通过迭代，每次将父节点的整棵左子树插入父节点与右子树之间</font>
 
-<img src="/images/leetcode-binary-tree-medium/leetcode-binary-tree-medium-01.png" width="562" title="" crop="0,0,1,1" id="u2c813c24" class="ne-image">
+<img src="/images/leetcode-binary-tree-medium/leetcode-binary-tree-medium-01.png" width="562" title="" crop="0,0,1,1" id="u2c813c24" class="ne-image" alt="二叉树按先序顺序展开为 1 至 6 的右指针链表" loading="lazy" decoding="async" height="249">
 
 具体实现：
 
