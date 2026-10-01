@@ -1,0 +1,17 @@
+# Project preview images
+
+These are existing project results published by the site owner, JiaT-T. They are used here to illustrate the corresponding projects, as requested by the owner. They are not stock photography or AI-generated project results. This file records provenance; it does not grant a new license to the screenshots or to models, textures, environment maps, or tutorial materials visible in them.
+
+The original URLs are retained in `data/portfolio.json` and linked below every preview. The site serves local Hugo image resources; these links are attribution/reference links, not runtime image dependencies.
+
+| Local file | Original image | Original dimensions | Local dimensions | Use and provenance |
+| --- | --- | --- | --- | --- |
+| `fft-ocean.webp` | [UE5-FFT-Ocean / Docs/preview.png](https://raw.githubusercontent.com/JiaT-T/UE5-FFT-Ocean/main/Docs/preview.png) | 2114 × 1428 | 2114 × 1428 | Wide featured project and home ocean scene. Existing UE viewport capture of a Niagara GPU FFT study based on the [Epic Ocean Simulation tutorial](https://dev.epicgames.com/community/learning/tutorials/qM1o/unreal-engine-ocean-simulation). The project summary retains the tutorial attribution. |
+| `pathtracer.webp` | [PathTracer-CPP / docs/images/readme-showcase.png](https://raw.githubusercontent.com/JiaT-T/PathTracer-CPP/main/docs/images/readme-showcase.png) | 1280 × 720 | 1280 × 720 | CPU path tracer's existing material-sphere result. |
+| `dx12.webp` | [DX12-Renderer / README_Assets/sponza_preview.png](https://raw.githubusercontent.com/JiaT-T/DX12-Renderer/main/README_Assets/sponza_preview.png) | 1621 × 1039 | 1621 × 1039 | Existing renderer result using an external Sponza model/HDR. The preview caption identifies the external model; the renderer does not claim authorship of that model. See the source repository's [asset provenance](https://github.com/JiaT-T/DX12-Renderer/blob/main/ASSETS.md). |
+| `software-rasterizer.webp` | [Soft-Raster-Renderer / framebuffer.png](https://raw.githubusercontent.com/JiaT-T/Soft-Raster-Renderer/main/framebuffer.png) | 1022 × 1026 | 1022 × 1026 | Existing character-rendering result, displayed with `object-fit: contain` to keep the complete model. The pre-existing WebP is unchanged. |
+| `procedural-grassland.webp` | [UE5-Procedural-Grassland / docs/images/procedural-grassland.png](https://raw.githubusercontent.com/JiaT-T/UE5-Procedural-Grassland/main/docs/images/procedural-grassland.png) | 2098 × 1638 | 2098 × 1638 | Existing UE editor capture of the PCG grassland experiment; editor selection outlines remain visible. |
+
+On 2026-10-01 the five originals were downloaded and inspected alongside the existing local previews. Four local previews were re-encoded from those originals as RGB WebP, quality 86, method 6, at the original pixel dimensions. No upscaling, retouching, replacement subjects, or AI enhancement was applied. The featured ocean was chosen for its clear wave texture, sunlight, and sufficient source resolution. The software rasterizer remains square; the remaining previews receive responsive layout crops in CSS.
+
+Hugo generates 480 px, 800 px, and up to 1400 px derivatives; the original-sized local WebP remains available for higher-density displays. All dimensions are reserved in the HTML. The Vulkan project has no verified runtime preview and continues to use a plainly labeled HTML/CSS rendering-path diagram.

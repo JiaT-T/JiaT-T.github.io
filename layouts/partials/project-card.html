@@ -1,0 +1,64 @@
+{{- $project := .project -}}
+{{- $index := .index -}}
+{{- $featured := eq $index 0 -}}
+{{- $kind := "landscape" -}}
+{{- if $featured }}{{ $kind = "featured" }}{{ end -}}
+{{- if eq $project.name "DX12-Renderer" }}{{ $kind = "portrait" }}{{ end -}}
+{{- if eq $project.name "Soft-Raster-Renderer" }}{{ $kind = "square" }}{{ end -}}
+{{- if not $project.image }}{{ $kind = "diagram" }}{{ end -}}
+{{- $id := printf "project-%s" ($project.name | urlize) -}}
+<article class="portfolio-card portfolio-card-{{ $kind }}" aria-labelledby="{{ $id }}">
+  <figure class="portfolio-figure">
+    {{- with $project.image }}
+      {{- $image := resources.Get . }}
+      {{- $small := $image.Resize "480x webp q82" }}
+      {{- $medium := $image.Resize "800x webp q84" }}
+      {{- $largeWidth := math.Min 1400 $image.Width | int }}
+      {{- $large := $image.Resize (printf "%dx webp q85" $largeWidth) }}
+      {{- $sizes := "(max-width: 700px) calc(100vw - 40px), (max-width: 1248px) calc((100vw - 84px) * .5834), 676px" }}
+      {{- if or (eq $kind "portrait") (eq $kind "square") }}
+        {{- $sizes = "(max-width: 700px) calc(100vw - 40px), (max-width: 1248px) calc((100vw - 84px) * .4167), 480px" }}
+      {{- end }}
+      {{- if $featured }}
+        {{- $sizes = "(max-width: 700px) calc(100vw - 40px), (max-width: 1248px) calc(100vw - 48px), 1200px" }}
+      {{- end }}
+    <a class="portfolio-preview{{ if eq $project.imageFit "contain" }} portfolio-preview-contain{{ end }}" href="{{ $project.url }}" rel="noopener" aria-label="查看 {{ $project.name }} 项目">
+      <img src="{{ $medium.RelPermalink }}"
+        srcset="{{ $small.RelPermalink }} {{ $small.Width }}w, {{ $medium.RelPermalink }} {{ $medium.Width }}w, {{ $large.RelPermalink }} {{ $large.Width }}w{{ if gt $image.Width $large.Width }}, {{ $image.RelPermalink }} {{ $image.Width }}w{{ end }}"
+        sizes="{{ $sizes }}"
+        width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $project.imageAlt }}" loading="lazy" decoding="async">
+      {{- if $featured }}<span class="portfolio-feature-label">FEATURED PROJECT</span>{{ end }}
+      <span class="portfolio-image-open" aria-hidden="true">↗</span>
+    </a>
+    <figcaption class="portfolio-image-caption"><span>项目渲染预览{{ if eq $project.name "DX12-Renderer" }} · 外部 Sponza 模型{{ end }}{{ if eq $project.name "UE5-Procedural-Grassland" }} · UE 编辑器{{ end }}</span>{{ with $project.imageSource }}<a href="{{ . }}" rel="noopener">原始截图 <span aria-hidden="true">↗</span></a>{{ end }}</figcaption>
+    {{- else }}
+    <div class="portfolio-preview portfolio-diagram" role="img" aria-label="Vulkan 渲染路径示意：前向或延迟渲染、G-buffer 与 SDR 或 HDR 输出">
+      <span class="pipeline-label">VULKAN / RENDER PATHS</span>
+      <div class="pipeline-stages" aria-hidden="true"><span><i>01 / FORWARD</i>Color + Depth</span><span><i>02 / DEFERRED</i>G-buffer → Lighting</span></div>
+      <span class="pipeline-connector" aria-hidden="true">↓</span>
+      <span class="pipeline-output" aria-hidden="true"><span>SDR</span><span>HDR</span></span>
+    </div>
+    <figcaption class="portfolio-image-caption">渲染路径示意 · 非运行截图</figcaption>
+    {{- end }}
+  </figure>
+  <div class="portfolio-card-content">
+    <div class="portfolio-title-block">
+      <div class="portfolio-meta"><span class="portfolio-number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span><p class="portfolio-category">{{ $project.category }}</p></div>
+      {{ if .isHome }}
+      <h3 id="{{ $id }}"><a href="{{ $project.url }}" rel="noopener">{{ $project.name }}</a></h3>
+      {{ else }}
+      <h2 id="{{ $id }}"><a href="{{ $project.url }}" rel="noopener">{{ $project.name }}</a></h2>
+      {{ end }}
+      <ul class="portfolio-tags" aria-label="技术栈">
+        {{- range $project.tags }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    </div>
+    <div class="portfolio-description-block">
+      <p class="portfolio-summary">{{ $project.summary }}</p>
+      <div class="portfolio-links">
+        <a class="portfolio-source" href="{{ $project.url }}" rel="noopener" aria-label="{{ $project.name }} GitHub 仓库">GitHub <span aria-hidden="true">↗</span></a>
+        {{- with $project.note }}<a class="portfolio-note" href="{{ . | relURL }}">实现笔记 <span aria-hidden="true">→</span></a>{{ end }}
+      </div>
+    </div>
+  </div>
+</article>
