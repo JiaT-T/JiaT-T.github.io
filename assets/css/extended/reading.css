@@ -144,7 +144,10 @@ details[open] > summary > .note-panel-chevron { transform: rotate(0); }
 .note-article .post-content table:not(.highlighttable, .highlight table) td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
 .note-article .post-content table th { background: var(--entry); color: var(--primary); font-weight: 600; white-space: nowrap; }
 .note-article .post-content table:not(.lntable) tbody tr:hover { background: var(--entry); }
-.note-article .post-content mjx-container[display="true"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-block: 8px; }
+/* Long equations scroll within the reading column, including inline TeX in lists. */
+.note-article .post-content mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.note-article .post-content mjx-container:not([display="true"]) { display: inline-block; vertical-align: middle; padding-block: 2px; }
+.note-article .post-content mjx-container[display="true"] { padding-block: 8px; }
 
 /* Older Yuque exports embed light-theme colors in font/span elements. Keep
    their emphasis semantics while letting ordinary text follow the theme. */
