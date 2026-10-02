@@ -1,0 +1,9 @@
+<div class="site-ambient" aria-hidden="true">
+  <div class="ambient-particles">
+    {{- range seq 0 27 }}
+    <span class="ambient-particle" style="{{ printf "--x:%d%%;--y:%d%%;--size:%dpx;--drift-x:%dpx;--drift-y:-%dpx;--duration:%ds;--delay:-%ds" (mod (add (mul . 37) 7) 100) (mod (add (mul . 23) 11) 100) (add (mod . 3) 1) (sub (mod (mul . 7) 25) 12) (add (mod (mul . 11) 29) 18) (add (mod (mul . 7) 21) 28) (mod (mul . 13) 47) | safeCSS }}"></span>
+    {{- end }}
+  </div>
+</div>
+{{- $script := resources.Get "js/ambient.js" | minify | fingerprint }}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
