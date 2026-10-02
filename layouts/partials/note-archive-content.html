@@ -1,4 +1,12 @@
-{{- if or .Sections .RegularPages -}}
+{{- if .Params.archiveGroup -}}
+{{- $groupPages := partial "note-group-pages.html" (dict "group" .Params.archiveGroup) -}}
+<div class="archive-list-heading"><span>{{ len $groupPages }} 篇笔记</span><span>按发布时间排列</span></div>
+<div class="archive-note-grid">
+    {{- range $groupPages.ByDate.Reverse }}
+    {{ partial "note-archive-entry.html" . }}
+    {{- end }}
+</div>
+{{- else -}}
 {{- $sections := .Sections.ByTitle -}}
 {{- $pages := .RegularPages.ByTitle -}}
 {{- if eq .Section "leetcode" -}}
@@ -7,12 +15,7 @@
     {{- end -}}
     {{- $pages = .RegularPages.ByWeight -}}
 {{- end -}}
-<details class="archive-topic-section" open>
-    <summary class="archive-topic-summary">
-        <h2 class="archive-topic-title"><span>{{ .Title }}</span><span class="archive-topic-count">{{ len .RegularPagesRecursive }} 篇</span><span class="archive-folder-arrow" aria-hidden="true">›</span></h2>
-    </summary>
-    <div class="archive-topic-content">
-    <a class="archive-category-link" href="{{ .RelPermalink }}">浏览 {{ .Title }} 分类 <span aria-hidden="true">→</span></a>
+<div class="tree-archive-container">
     {{- range $sections }}
     {{ partial "note-archive-section.html" . }}
     {{- end }}
@@ -23,6 +26,5 @@
         {{- end }}
     </div>
     {{- end }}
-    </div>
-</details>
+</div>
 {{- end -}}
