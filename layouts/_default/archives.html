@@ -44,13 +44,21 @@
     {{- end }}
 </div>
 {{- else }}
+{{- $sections := .Sections.ByTitle -}}
+{{- $pages := .RegularPages.ByTitle -}}
+{{- if eq .Section "leetcode" -}}
+    {{- if ne .RelPermalink .FirstSection.RelPermalink -}}
+        {{- $sections = .Sections.ByWeight -}}
+    {{- end -}}
+    {{- $pages = .RegularPages.ByWeight -}}
+{{- end -}}
 <div class="tree-archive-container">
-    {{- range .Sections.ByTitle }}
+    {{- range $sections }}
     {{ partial "note-archive-section.html" . }}
     {{- end }}
     {{- if .RegularPages }}
     <div class="archive-note-grid">
-        {{- range .RegularPages.ByTitle }}
+        {{- range $pages }}
         {{ partial "note-archive-entry.html" . }}
         {{- end }}
     </div>

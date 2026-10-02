@@ -6,8 +6,21 @@
 
   document.querySelectorAll("[data-reader-panel]").forEach((panel) => {
     const narrow = window.matchMedia(`(max-width: ${panel.dataset.readerPanel}px)`);
+    const revealCurrent = () => {
+      if (!panel.open || !panel.classList.contains("note-sidebar")) return;
+      const current = panel.querySelector('[aria-current="page"]');
+      const scroller = narrow.matches ? panel.querySelector(".note-sidebar-nav") : panel;
+      if (!current || !scroller || !current.getClientRects().length) return;
+      const bounds = scroller.getBoundingClientRect();
+      const item = current.getBoundingClientRect();
+      if (item.top < bounds.top || item.bottom > bounds.bottom) {
+        scroller.scrollTop += item.top - bounds.top - (scroller.clientHeight - item.height) / 2;
+      }
+    };
+    panel.addEventListener("toggle", () => window.requestAnimationFrame(revealCurrent));
     const updatePanel = () => { panel.open = !narrow.matches; };
     updatePanel();
+    window.requestAnimationFrame(revealCurrent);
     narrow.addEventListener("change", updatePanel);
   });
 

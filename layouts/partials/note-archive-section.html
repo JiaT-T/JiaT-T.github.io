@@ -1,12 +1,20 @@
 {{- if or .Sections .RegularPages -}}
+{{- $sections := .Sections.ByTitle -}}
+{{- $pages := .RegularPages.ByTitle -}}
+{{- if eq .Section "leetcode" -}}
+    {{- if ne .RelPermalink .FirstSection.RelPermalink -}}
+        {{- $sections = .Sections.ByWeight -}}
+    {{- end -}}
+    {{- $pages = .RegularPages.ByWeight -}}
+{{- end -}}
 <section class="archive-topic-section">
     <h2 class="archive-topic-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a><span>{{ len .RegularPagesRecursive }} 篇</span></h2>
-    {{- range .Sections.ByTitle }}
+    {{- range $sections }}
     {{ partial "note-archive-section.html" . }}
     {{- end }}
     {{- if .RegularPages }}
     <div class="archive-note-grid">
-        {{- range .RegularPages.ByTitle }}
+        {{- range $pages }}
         {{ partial "note-archive-entry.html" . }}
         {{- end }}
     </div>

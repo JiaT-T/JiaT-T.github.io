@@ -1,19 +1,26 @@
----
-title: "LeetCode 子串：中等题组"
-slug: "leetcode-substring-medium"
-summary: "记录和为 K 的子数组的两种 C++ 实现与思路。"
-categories: ["LeetCode"]
-tags: ["LeetCode", "C++", "子串", "前缀和", "哈希表"]
-date: "2026-05-04T04:06:55.000Z"
-lastmod: "2026-05-26T01:41:00.000Z"
-draft: false
-yuque_slug: "hhhgyq3wipki294y"
-source: "https://www.yuque.com/u62694975/iaaa/hhhgyq3wipki294y"
-problems: [560]
----
++++
+title = "和为 K 的子数组"
+slug = "leetcode-substring-medium"
+summary = "和为 K 的子数组的解题思路与 C++ 实现。"
+categories = ["LeetCode"]
+tags = ["LeetCode", "C++", "子串", "前缀和", "哈希表"]
+date = "2026-05-04T04:06:55.000Z"
+lastmod = "2026-05-26T01:41:00.000Z"
+draft = false
+yuque_slug = "hhhgyq3wipki294y"
+source = "https://www.yuque.com/u62694975/iaaa/hhhgyq3wipki294y"
+problems = [560]
+problem_id = 560
+difficulty = "Medium"
+weight = 560
++++
+
+题目：[和为 K 的子数组](https://leetcode.cn/problems/subarray-sum-equals-k/)
+
+
+<a id="第五百六十题"></a>
 
 <a id="cAdBv"></a>
-#### <span style="color: #DF2A3F">第五百六十题</span>：[<span style="color: inherit">和为 K 的子数组</span>](<https://leetcode.cn/problems/subarray-sum-equals-k/>)
 
 <a id="u04780ee9"></a><span style="background-color: #FBDE28">解法一：暴力解法</span>
 

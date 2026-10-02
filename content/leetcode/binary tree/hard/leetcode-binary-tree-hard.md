@@ -1,19 +1,26 @@
----
-title: "LeetCode 二叉树：困难题组"
-slug: "leetcode-binary-tree-hard"
-summary: "记录二叉树中的最大路径和的递归思路与 C++ 实现。"
-categories: ["LeetCode"]
-tags: ["LeetCode", "C++", "二叉树", "递归"]
-date: "2026-06-02T14:00:22.000Z"
-lastmod: "2026-06-02T14:08:09.000Z"
-draft: false
-yuque_slug: "et78lki3tfprbiwg"
-source: "https://www.yuque.com/u62694975/iaaa/et78lki3tfprbiwg"
-problems: [124]
----
++++
+title = "二叉树中的最大路径和"
+slug = "leetcode-binary-tree-hard"
+summary = "二叉树中的最大路径和的解题思路与 C++ 实现。"
+categories = ["LeetCode"]
+tags = ["LeetCode", "C++", "二叉树", "递归"]
+date = "2026-06-02T14:00:22.000Z"
+lastmod = "2026-06-02T14:08:09.000Z"
+draft = false
+yuque_slug = "et78lki3tfprbiwg"
+source = "https://www.yuque.com/u62694975/iaaa/et78lki3tfprbiwg"
+problems = [124]
+problem_id = 124
+difficulty = "Hard"
+weight = 124
++++
+
+题目：[二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/)
+
+
+<a id="第一百二十四题"></a>
 
 <a id="vropZ"></a>
-#### <span style="color: #DF2A3F">第一百二十四题</span>：[<span style="color: inherit">二叉树中的最大路径和</span>](<https://leetcode.cn/problems/binary-tree-maximum-path-sum/>)
 
 <a id="u1c771ee6"></a>思路：对于任意一个节点，有两件不同的事要做：
 

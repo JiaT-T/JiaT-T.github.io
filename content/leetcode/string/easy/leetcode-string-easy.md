@@ -1,19 +1,26 @@
----
-title: "LeetCode 字符串：简单题组"
-slug: "leetcode-string-easy"
-summary: "记录字符串相加中的逐位计算、进位处理和 C++ 实现。"
-categories: ["LeetCode"]
-tags: ["LeetCode", "C++", "字符串"]
-date: "2026-06-11T03:16:27.000Z"
-lastmod: "2026-06-11T04:29:40.000Z"
-draft: false
-yuque_slug: "szdzq62cywq3al39"
-source: "https://www.yuque.com/u62694975/iaaa/szdzq62cywq3al39"
-problems: [415]
----
++++
+title = "字符串相加"
+slug = "leetcode-string-easy"
+summary = "字符串相加的解题思路与 C++ 实现。"
+categories = ["LeetCode"]
+tags = ["LeetCode", "C++", "字符串"]
+date = "2026-06-11T03:16:27.000Z"
+lastmod = "2026-06-11T04:29:40.000Z"
+draft = false
+yuque_slug = "szdzq62cywq3al39"
+source = "https://www.yuque.com/u62694975/iaaa/szdzq62cywq3al39"
+problems = [415]
+problem_id = 415
+difficulty = "Easy"
+weight = 415
++++
+
+题目：[字符串相加](https://leetcode.cn/problems/add-strings/)
+
+
+<a id="第四百一十五题"></a>
 
 <a id="geenO"></a>
-#### <span style="color: #DF2A3F">第四百一十五题</span>：[<span style="color: rgb(10, 132, 255)">字符串相加</span>](<https://leetcode.cn/problems/add-strings/>)
 
 <a id="ua8d7a8a5"></a>从后往前对两个字符串进行处理
 
