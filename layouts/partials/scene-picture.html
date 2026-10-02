@@ -1,9 +1,9 @@
 {{- $image := resources.Get .image -}}
-{{- $desktop := $image.Fill "1920x1080 Center webp q82" -}}
-{{- $medium := $image.Fill "1280x720 Center webp q80" -}}
-{{- $mobile := $image.Fill "750x1100 Center webp q80" -}}
+{{- $desktop := $image.Resize (printf "%dx webp q82" (int (math.Min 1920 $image.Width))) -}}
+{{- $medium := $image.Resize "1280x webp q80" -}}
+{{- $mobile := $image.Fill "640x940 Center webp q80" -}}
 {{- $phone := $image.Fill "480x704 Center webp q80" -}}
 <picture>
-  <source media="(max-width: 600px)" srcset="{{ $phone.RelPermalink }} 480w, {{ $mobile.RelPermalink }} 750w" sizes="100vw">
+  <source media="(max-width: 600px)" srcset="{{ $phone.RelPermalink }} {{ $phone.Width }}w, {{ $mobile.RelPermalink }} {{ $mobile.Width }}w" sizes="100vw">
   <img src="{{ $desktop.RelPermalink }}" srcset="{{ $medium.RelPermalink }} 1280w, {{ $desktop.RelPermalink }} {{ $desktop.Width }}w" sizes="100vw" width="{{ $desktop.Width }}" height="{{ $desktop.Height }}" alt="" decoding="async" {{ if .priority }}fetchpriority="high"{{ end }} loading="eager">
 </picture>

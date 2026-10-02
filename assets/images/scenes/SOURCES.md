@@ -1,19 +1,23 @@
-# Homepage background photographs
+# Homepage animation backgrounds
 
-Selected on 2026-10-02. These are decorative photographs, separate from the actual project screenshots in `assets/images/projects/`.
+Created on 2026-10-02 with the built-in OpenAI `image_gen` tool. These five images are generated decorative 2D animation-style environments, separate from the actual project screenshots in `assets/images/projects/`. No external photographs, animation frames or reference images were used.
 
-The earlier reference was [Stillmind / awesome-web-prompts](https://github.com/DexZane/awesome-web-prompts/tree/main/prompts/sections/hero/stillmind). Its external video links do not establish a reusable photo license. The same repository's [scroll-expansion-hero prompt](https://github.com/DexZane/awesome-web-prompts/blob/main/prompts/components/scroll-expansion-hero/prompt.md) directly references the valley and underwater photographs below. Three additional Unsplash photographs supply orange, green and purple scenes.
+## Generation briefs
 
-All five images are used under the [Unsplash License](https://unsplash.com/license), which permits downloading, modifying and using photographs on a website without mandatory on-image attribution. Source and photographer records are retained here. This site does not use the Unsplash API, hotlink its backgrounds or present these photographs as personal rendering work.
+The descriptions below summarize the generation prompts; they are not verbatim prompt transcripts.
 
-| Local asset | Source | Selection |
-| --- | --- | --- |
-| `valley.webp` | [Bailey Zindel on Unsplash](https://unsplash.com/photos/river-in-yosemite-valley-at-low-light-NRQV-hBF10M) · [image](https://images.unsplash.com/photo-1506744038136-46273834b3fb) | Blue mountain valley and peach sunset; directly referenced by scroll-expansion-hero |
-| `dunes.webp` | [Zuyet Awarmatik on Unsplash](https://unsplash.com/photos/vibrant-orange-sand-dunes-under-a-soft-sky-7_qz7SWCSVg) · [image](https://images.unsplash.com/photo-1751817617405-fa66da15276b) | Orange sand dunes |
-| `woodland.webp` | [Sebastian Unrau on Unsplash](https://unsplash.com/photos/trees-on-forest-with-sun-rays-sp-p7uuT0tw) · [image](https://images.unsplash.com/photo-1448375240586-882707db888b) | Green woodland with sunlight |
-| `underwater.webp` | [Unsplash original image](https://images.unsplash.com/photo-1682687982501-1e58ab814714) | Blue water and coral; directly referenced by scroll-expansion-hero |
-| `lavender.webp` | [Héctor J. Rivas on Unsplash](https://unsplash.com/photos/a-beautiful-lavender-field-at-sunset-with-distant-mountains-vRLz5so6Zok) · [image](https://images.unsplash.com/photo-1784105992783-a48345381a78) | Purple lavender field at sunset |
+| Local asset | Scene brief |
+| --- | --- |
+| `anime-coast.webp` | Summer coast in Japanese 2D animation background art. |
+| `anime-autumn.webp` | Autumn mountain valley in Japanese 2D animation background art. |
+| `anime-forest.webp` | Forest lake in Japanese 2D animation background art. |
+| `anime-night.webp` | Blue-violet starry sky, a faint Milky Way, layered mountains and their reflection in a lake, with blue-violet flowers and grasses along the shore. |
+| `anime-spring.webp` | Pink and white cherry blossom branches frame a spring riverside; scattered petals, shallow cyan water, distant hills and soft clouds, with an uncluttered center. |
 
-The local source copies were downloaded at 2560px width in WebP quality 84. Hugo generates 1920×1080 and 1280×720 desktop crops, plus 750×1100 and 480×704 mobile crops. Only the initial scene is loaded at page entry; subsequent pictures remain in inert templates until requested. Switching is manual, with a 300ms fade that respects reduced motion.
+The shared brief requested refined hand-painted digital backgrounds with simplified shapes and soft lighting, rather than photographs or realistic 3D. Each scene is one wide composition that remains coherent in a central mobile crop. The prompts exclude people, humanoids, silhouettes, faces, animals, statues, mecha, text, logos, watermarks and UI. No black overlay was baked into the source artwork; the website applies its own CSS shading for title readability.
 
-The former three generated backgrounds, their MP4 derivatives and the video-generation script have been removed from the site.
+## Image processing
+
+The generated source PNGs are 1672×941 pixels, approximately 16:9. Repository assets are WebP conversions at quality 86. Hugo produces a desktop image at the original size and quality 82, plus a 1280px-wide version at quality 80. Mobile images use centered 640×940 and 480×704 crops at quality 80. The desktop pipeline does not upscale the source images.
+
+Only the first background loads on page entry. Later images remain in inert templates until requested; the arrows switch manually after decoding succeeds, retaining the current image on failure. The 300ms transition respects reduced motion. With JavaScript disabled, the first image remains visible.
