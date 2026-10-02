@@ -1,6 +1,6 @@
 {{- $image := resources.Get .image -}}
-{{- $desktop := $image.Resize (printf "%dx webp q82" (math.Min 1920 $image.Width | int)) -}}
-{{- $medium := $image.Resize "1280x webp q80" -}}
+{{- $desktop := $image.Fill "1920x1080 Center webp q82" -}}
+{{- $medium := $image.Fill "1280x720 Center webp q80" -}}
 {{- $mobile := $image.Fill "750x1100 Center webp q80" -}}
 {{- $phone := $image.Fill "480x704 Center webp q80" -}}
 <picture>
