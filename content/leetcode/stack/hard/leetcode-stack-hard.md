@@ -1,19 +1,26 @@
----
-title: "LeetCode 栈：困难题组"
-slug: "leetcode-stack-hard"
-summary: "记录柱状图中最大矩形的思路与 C++ 实现。"
-categories: ["LeetCode"]
-tags: ["LeetCode", "C++", "栈", "单调栈"]
-date: "2026-06-02T04:40:08.000Z"
-lastmod: "2026-06-02T04:55:39.000Z"
-draft: false
-yuque_slug: "evf1id2gv1gqhd7o"
-source: "https://www.yuque.com/u62694975/iaaa/evf1id2gv1gqhd7o"
-problems: [84]
----
++++
+title = "柱状图中最大的矩形"
+slug = "leetcode-stack-hard"
+summary = "柱状图中最大的矩形的解题思路与 C++ 实现。"
+categories = ["LeetCode"]
+tags = ["LeetCode", "C++", "栈", "单调栈"]
+date = "2026-06-02T04:40:08.000Z"
+lastmod = "2026-06-02T04:55:39.000Z"
+draft = false
+yuque_slug = "evf1id2gv1gqhd7o"
+source = "https://www.yuque.com/u62694975/iaaa/evf1id2gv1gqhd7o"
+problems = [84]
+problem_id = 84
+difficulty = "Hard"
+weight = 84
++++
+
+题目：[柱状图中最大的矩形](https://leetcode.cn/problems/largest-rectangle-in-histogram/)
+
+
+<a id="第八十四题"></a>
 
 <a id="klBOh"></a>
-#### <span style="color: #DF2A3F">第八十四题</span>：[<span style="color: inherit">柱状图中最大的矩形</span>](<https://leetcode.cn/problems/largest-rectangle-in-histogram/>)
 
 <a id="u6dab688e"></a>这次与<a id="KTH7b"></a>[盛最多水的容器](<https://leetcode.cn/problems/container-with-most-water/>)非常相似，但不同的的是十一题只需要看两边的木板长度，而这一题需要考虑容器中间的最低高度
 

@@ -1,19 +1,26 @@
----
-title: "LeetCode 子串：困难题组"
-slug: "leetcode-substring-hard"
-summary: "记录最小覆盖子串的滑动窗口思路与 C++ 实现。"
-categories: ["LeetCode"]
-tags: ["LeetCode", "C++", "子串", "滑动窗口"]
-date: "2026-06-03T04:09:47.000Z"
-lastmod: "2026-06-03T04:39:14.000Z"
-draft: false
-yuque_slug: "pexszspw259pqf38"
-source: "https://www.yuque.com/u62694975/iaaa/pexszspw259pqf38"
-problems: [76]
----
++++
+title = "最小覆盖子串"
+slug = "leetcode-substring-hard"
+summary = "最小覆盖子串的解题思路与 C++ 实现。"
+categories = ["LeetCode"]
+tags = ["LeetCode", "C++", "子串", "滑动窗口"]
+date = "2026-06-03T04:09:47.000Z"
+lastmod = "2026-06-03T04:39:14.000Z"
+draft = false
+yuque_slug = "pexszspw259pqf38"
+source = "https://www.yuque.com/u62694975/iaaa/pexszspw259pqf38"
+problems = [76]
+problem_id = 76
+difficulty = "Hard"
+weight = 76
++++
+
+题目：[最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)
+
+
+<a id="第七十八题"></a>
 
 <a id="iGpGa"></a>
-#### <span style="color: #DF2A3F">第七十八题</span>：[<span style="color: inherit">最小覆盖子串</span>](<https://leetcode.cn/problems/minimum-window-substring/>)
 
 <a id="Y69po"></a>
 minWindow（）

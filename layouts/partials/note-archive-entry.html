@@ -3,8 +3,11 @@
     {{- $title = (.File.TranslationBaseName | replaceRE "[-_]+" " " | title) -}}
 {{- end -}}
 {{- $summary := .Description | default (.Summary | plainify) -}}
-{{- if and (eq .Section "leetcode") .Params.problems -}}
-    {{- $summary = delimit .Params.problems " · " -}}
+{{- if and (eq .Section "leetcode") .Params.problem_id -}}
+    {{- $summary = printf "LeetCode %v" .Params.problem_id -}}
+    {{- with .Params.difficulty -}}
+        {{- $summary = printf "%s · %s" $summary . -}}
+    {{- end -}}
 {{- end -}}
 <a class="archive-note-card" href="{{ .RelPermalink }}">
     <span class="archive-note-body">

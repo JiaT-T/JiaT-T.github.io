@@ -24,7 +24,12 @@
       {{- end }}
       {{- if not (.Param "hideMeta") }}
       <div class="post-meta">
-        {{- partial "post_meta.html" . -}}
+        {{- $postMeta := partial "post_meta.html" . -}}
+        {{- if and (eq .Section "leetcode") .Params.problem_id -}}
+        <span>LeetCode {{ .Params.problem_id }}{{ with .Params.difficulty }} · {{ . }}{{ end }}</span>
+        {{- if $postMeta }}&nbsp;·&nbsp;{{ end -}}
+        {{- end -}}
+        {{- $postMeta -}}
         {{- partial "translation_list.html" . -}}
         {{- partial "edit_post.html" . -}}
         {{- partial "post_canonical.html" . -}}
@@ -54,6 +59,10 @@
       </ul>
       {{- if ne (.Param "ShowPostNavLinks") false }}
       {{- $pages := .CurrentSection.RegularPages.ByDate.Reverse }}
+      {{- if eq .Section "leetcode" }}
+      {{- /* Hugo's Prev/Next traverse the reverse of the collection's order. */}}
+      {{- $pages = .CurrentSection.RegularPages.ByWeight.Reverse }}
+      {{- end }}
       {{- if gt (len $pages) 1 }}
       <nav class="paginav" aria-label="相邻笔记">
         {{- with $pages.Prev . }}
