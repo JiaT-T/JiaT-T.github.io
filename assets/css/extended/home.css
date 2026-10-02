@@ -9,8 +9,8 @@
 .hero-scene.is-active { opacity: 1; }
 .hero-scene picture, .hero-scene img { display: block; width: 100%; height: 100%; }
 .hero-scene img { object-fit: cover; object-position: center 56%; }
-.hero-shade { z-index: -1; background: linear-gradient(180deg, #06192366 0%, #10233108 27%, #05182300 52%, #0518239c 100%), radial-gradient(ellipse at 50% 38%, #04131e50 0%, #04131e10 58%, transparent 78%); }
-.hero-copy { width: 100%; max-width: 920px; margin: auto; text-align: center; text-shadow: 0 2px 24px #05162335; }
+.hero-shade { z-index: -1; background: linear-gradient(180deg, #06192366 0%, #10233108 27%, #05182300 52%, #0518239c 100%), radial-gradient(ellipse at 50% 45%, #10182080 0%, #10182030 60%, transparent 82%); }
+.hero-copy { width: 100%; max-width: 920px; margin: auto; text-align: center; text-shadow: 0 1px 4px #051623a6, 0 2px 24px #05162335; }
 .hero-identity { font-size: 15px; letter-spacing: .04em; }
 .hero-identity span { margin-left: 8px; font: 12px var(--font-mono); color: #e4eded; }
 .hero-kicker { font: 10px/1.6 var(--font-mono); letter-spacing: .22em; margin-top: 12px; color: #e1e9eb; }
