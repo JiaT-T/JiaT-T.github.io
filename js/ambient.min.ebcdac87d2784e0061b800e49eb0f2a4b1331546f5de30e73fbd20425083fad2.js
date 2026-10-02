@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector(".site-ambient");if(!e)return;const t=()=>{e.dataset.paused=String(document.hidden)};document.addEventListener("visibilitychange",t),t()})()
