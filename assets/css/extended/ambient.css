@@ -1,0 +1,53 @@
+/* Ambient detail lives behind every surface; opaque hero imagery covers it. */
+body { isolation: isolate; }
+.site-ambient {
+  --ambient-cool: rgb(96 143 133 / .06);
+  --ambient-warm: rgb(161 137 101 / .05);
+  --ambient-particle: #4d786d;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 0% 28%, var(--ambient-cool), transparent 58%),
+    radial-gradient(ellipse at 100% 82%, var(--ambient-warm), transparent 54%);
+}
+[data-theme="dark"] .site-ambient {
+  --ambient-cool: rgb(115 163 153 / .09);
+  --ambient-warm: rgb(171 151 118 / .06);
+  --ambient-particle: #b4d1c9;
+}
+.ambient-particles {
+  position: absolute;
+  inset: 0;
+  opacity: .25;
+  mask-image: linear-gradient(90deg, #000, #0008 15%, #0002 30%, #0001 50%, #0002 70%, #0008 85%, #000);
+}
+[data-theme="dark"] .ambient-particles { opacity: .48; }
+.ambient-particle {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: var(--ambient-particle);
+  animation: ambient-drift var(--duration) ease-in-out var(--delay) infinite alternate;
+}
+.site-ambient[data-paused="true"] .ambient-particle { animation-play-state: paused; }
+@keyframes ambient-drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(var(--drift-x), var(--drift-y)); }
+}
+@media (max-width: 760px) {
+  .ambient-particle:nth-child(n + 17) { display: none; }
+  .ambient-particles { opacity: .18; }
+  [data-theme="dark"] .ambient-particles { opacity: .32; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-particle { animation: none; }
+}
+@media print {
+  .site-ambient { display: none; }
+}
