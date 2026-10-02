@@ -23,46 +23,27 @@
     (dict "title" "C++" "url" "/cpp/" "desc" "语言基础、内存管理与设计模式" "label" "LANGUAGE" "count" (len (partial "note-group-pages.html" (dict "group" "cpp"))))
     (dict "title" "DirectX 12" "url" "/directx12/" "desc" "DX12 API、DXR 与渲染管线" "label" "GRAPHICS API" "count" (len (partial "note-group-pages.html" (dict "group" "directx12"))))
     (dict "title" "Vulkan" "url" "/vulkan/" "desc" "Vulkan API 与底层渲染流程" "label" "GRAPHICS API" "count" (len (partial "note-group-pages.html" (dict "group" "vulkan"))))
-    (dict "title" "LeetCode" "url" "/leetcode/" "desc" "Hot 100、数据结构与算法实践" "label" "ALGORITHMS" "count" (len (where site.RegularPages "Section" "leetcode")))
+    (dict "title" "LeetCode" "url" "/leetcode/" "desc" "数据结构与算法实践" "label" "ALGORITHMS" "count" (len (where site.RegularPages "Section" "leetcode")))
 -}}
 <div class="archive-root-grid">
     {{- range $noteGroups }}
-    <a class="archive-folder-card" href="{{ .url }}">
-        <span class="archive-folder-label">{{ .label }}</span>
-        <span class="archive-folder-title">{{ .title }}<span class="archive-folder-arrow" aria-hidden="true">↗</span></span>
-        <span class="archive-folder-desc">{{ .desc }}</span>
-        <span class="archive-folder-count">{{ .count }} 篇笔记</span>
-    </a>
-    {{- end }}
-</div>
-{{- else if .Params.archiveGroup }}
-{{- $groupPages := partial "note-group-pages.html" (dict "group" .Params.archiveGroup) }}
-<div class="archive-list-heading"><span>{{ len $groupPages }} 篇笔记</span><span>按发布时间排列</span></div>
-<div class="archive-note-grid">
-    {{- range $groupPages.ByDate.Reverse }}
-    {{ partial "note-archive-entry.html" . }}
+    <details class="archive-folder-card">
+        <summary class="archive-folder-summary">
+            <span class="archive-folder-label">{{ .label }}</span>
+            <span class="archive-folder-title">{{ .title }}<span class="archive-folder-arrow" aria-hidden="true">›</span></span>
+            <span class="archive-folder-desc">{{ .desc }}</span>
+            <span class="archive-folder-count">{{ .count }} 篇笔记</span>
+        </summary>
+        <div class="archive-folder-content">
+            <a class="archive-category-link" href="{{ .url }}">浏览 {{ .title }} 分类 <span aria-hidden="true">→</span></a>
+            {{- with site.GetPage .url }}
+            {{ partial "note-archive-content.html" . }}
+            {{- end }}
+        </div>
+    </details>
     {{- end }}
 </div>
 {{- else }}
-{{- $sections := .Sections.ByTitle -}}
-{{- $pages := .RegularPages.ByTitle -}}
-{{- if eq .Section "leetcode" -}}
-    {{- if ne .RelPermalink .FirstSection.RelPermalink -}}
-        {{- $sections = .Sections.ByWeight -}}
-    {{- end -}}
-    {{- $pages = .RegularPages.ByWeight -}}
-{{- end -}}
-<div class="tree-archive-container">
-    {{- range $sections }}
-    {{ partial "note-archive-section.html" . }}
-    {{- end }}
-    {{- if .RegularPages }}
-    <div class="archive-note-grid">
-        {{- range $pages }}
-        {{ partial "note-archive-entry.html" . }}
-        {{- end }}
-    </div>
-    {{- end }}
-</div>
+{{ partial "note-archive-content.html" . }}
 {{- end }}
 {{ end }}

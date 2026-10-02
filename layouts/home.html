@@ -2,15 +2,12 @@
 {{ $scenes := hugo.Data.scenes }}
 {{ $firstScene := index $scenes 0 }}
 <div class="home-page">
-  <section class="home-hero" id="hero" aria-labelledby="hero-title" data-scene="{{ $firstScene.id }}">
+  <section class="home-hero" id="hero" aria-labelledby="hero-title">
     <div class="hero-visuals" aria-hidden="true">
-      {{ range $index, $scene := $scenes }}
-      {{ if eq $index 0 }}
-      <div class="hero-scene is-active" data-scene-image="{{ .id }}" data-scene-name="{{ .name }}">{{ partial "scene-picture.html" (dict "image" .image "priority" true) }}</div>
-      {{ else }}
+      {{ range $scenes }}
       <template data-scene-template="{{ .id }}"><div class="hero-scene" data-scene-image="{{ .id }}" data-scene-name="{{ .name }}">{{ partial "scene-picture.html" (dict "image" .image "priority" false) }}</div></template>
       {{ end }}
-      {{ end }}
+      <noscript><div class="hero-scene is-active">{{ partial "scene-picture.html" (dict "image" $firstScene.image "priority" true) }}</div></noscript>
     </div>
     <div class="hero-shade" aria-hidden="true"></div>
     <div class="hero-copy">
@@ -24,8 +21,9 @@
         <a class="hero-github" href="https://github.com/JiaT-T" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </div>
-    <button class="scene-arrow" type="button" data-scene-step="-1" aria-label="上一张背景" hidden><svg width="24" height="36" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m17 6-12 12 12 12"/></svg></button>
-    <button class="scene-arrow" type="button" data-scene-step="1" aria-label="下一张背景" hidden><svg width="24" height="36" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 6 12 12L7 30"/></svg></button>
+    <button class="scene-arrow" type="button" data-scene-step="-1" aria-label="随机切换背景（左）" hidden><svg width="24" height="36" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m17 6-12 12 12 12"/></svg></button>
+    <button class="scene-arrow" type="button" data-scene-step="1" aria-label="随机切换背景（右）" hidden><svg width="24" height="36" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 6 12 12L7 30"/></svg></button>
+    <button class="scene-playback" type="button" aria-label="暂停自动轮换背景" aria-pressed="false" hidden><svg class="scene-pause-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 3v10M11 3v10"/></svg><svg class="scene-play-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m5 3 8 5-8 5Z"/></svg><span>暂停轮换</span></button>
     <p class="scene-status" aria-live="polite" aria-atomic="true"></p>
     <p class="scene-error" role="status" hidden>背景加载失败，请重试。</p>
     <a class="hero-scroll" href="#projects" aria-label="向下浏览作品"><span aria-hidden="true">↓</span></a>
