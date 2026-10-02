@@ -40,13 +40,41 @@ body { isolation: isolate; }
   from { transform: translate(0, 0); }
   to { transform: translate(var(--drift-x), var(--drift-y)); }
 }
+/* The homepage has broad image/spacing areas: give its atmosphere enough
+   contrast and movement to remain visible around the opaque project previews. */
+.is-home .site-ambient {
+  --ambient-cool: rgb(96 143 133 / .1);
+  --ambient-warm: rgb(161 137 101 / .08);
+}
+[data-theme="dark"] .is-home .site-ambient {
+  --ambient-cool: rgb(115 163 153 / .18);
+  --ambient-warm: rgb(171 151 118 / .13);
+  --ambient-particle: #c4e5dc;
+}
+.is-home .ambient-particles {
+  opacity: .5;
+  -webkit-mask-image: linear-gradient(90deg, #000, #000a 35%, #000a 65%, #000);
+  mask-image: linear-gradient(90deg, #000, #000a 35%, #000a 65%, #000);
+}
+[data-theme="dark"] .is-home .ambient-particles { opacity: .88; }
+.is-home .ambient-particle { animation-name: home-ambient-drift; }
+[data-theme="dark"] .is-home .ambient-particle:nth-child(4n) { box-shadow: 0 0 7px rgb(161 221 202 / .45); }
+@keyframes home-ambient-drift {
+  from { transform: translate(0, 0); opacity: .55; }
+  50% { opacity: 1; }
+  to { transform: translate(var(--drift-x), var(--drift-y)); opacity: .75; }
+}
 @media (max-width: 760px) {
   .ambient-particle:nth-child(n + 17) { display: none; }
   .ambient-particles { opacity: .18; }
   [data-theme="dark"] .ambient-particles { opacity: .32; }
+  .is-home .ambient-particle:nth-child(-n + 32) { display: block; }
+  .is-home .ambient-particle:nth-child(n + 33) { display: none; }
+  .is-home .ambient-particles { opacity: .4; }
+  [data-theme="dark"] .is-home .ambient-particles { opacity: .8; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ambient-particle { animation: none; }
+  .ambient-particle, .is-home .ambient-particle { animation: none; }
 }
 @media print {
   .site-ambient { display: none; }

@@ -7,7 +7,7 @@
     {{- end -}}
     {{- $pages = .RegularPages.ByWeight -}}
 {{- end -}}
-<details class="archive-topic-section" open>
+<details class="archive-topic-section" data-folder-level="{{ partial "note-folder-level.html" . }}" open>
     <summary class="archive-topic-summary">
         <h2 class="archive-topic-title"><span>{{ .Title }}</span><span class="archive-topic-count">{{ len .RegularPagesRecursive }} 篇</span><span class="archive-folder-arrow" aria-hidden="true">›</span></h2>
     </summary>
