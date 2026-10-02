@@ -38,7 +38,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target)
 ```
 
 
- 	<font style="background-color:#FBDE28;">解法二：</font>
+    <font style="background-color:#FBDE28;">解法二：</font>
 
 核心公式：_<font style="color:#117CEE;">a</font>_<font style="color:#117CEE;">[ </font>_<font style="color:#117CEE;">i </font>_<font style="color:#117CEE;">]=</font>_<font style="color:#117CEE;">matrix </font>_<font style="color:#117CEE;">[ </font>_<font style="color:#117CEE;">i </font>_<font style="color:#117CEE;">/ </font>_<font style="color:#117CEE;">n </font>_<font style="color:#117CEE;">][ </font>_<font style="color:#117CEE;">i </font>_<font style="color:#117CEE;">mod </font>_<font style="color:#117CEE;">n </font>_<font style="color:#117CEE;">]</font>
 
