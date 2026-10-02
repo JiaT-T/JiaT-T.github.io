@@ -23,7 +23,7 @@
                 {{- $isOpen = true -}}
             {{- end -}}
         {{- end -}}
-        <details class="note-sidebar-group" {{ if $isOpen }}open{{ end }}>
+        <details class="note-sidebar-group" data-folder-level="1" {{ if $isOpen }}open{{ end }}>
             <summary>{{ .title }}</summary>
             <ul>
                 <li><a class="note-sidebar-link note-sidebar-category" href="{{ .url }}">浏览此分类 →</a></li>

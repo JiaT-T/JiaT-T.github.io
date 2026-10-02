@@ -1,7 +1,20 @@
+{{- $isHome := .IsHome -}}
+{{- $count := 28 -}}
+{{- if $isHome }}{{ $count = 56 }}{{ end -}}
 <div class="site-ambient" aria-hidden="true">
   <div class="ambient-particles">
-    {{- range seq 0 27 }}
-    <span class="ambient-particle" style="{{ printf "--x:%d%%;--y:%d%%;--size:%dpx;--drift-x:%dpx;--drift-y:-%dpx;--duration:%ds;--delay:-%ds" (mod (add (mul . 37) 7) 100) (mod (add (mul . 23) 11) 100) (add (mod . 3) 1) (sub (mod (mul . 7) 25) 12) (add (mod (mul . 11) 29) 18) (add (mod (mul . 7) 21) 28) (mod (mul . 13) 47) | safeCSS }}"></span>
+    {{- range seq 0 (sub $count 1) }}
+    {{- $size := add (mod . 3) 1 -}}
+    {{- $driftX := sub (mod (mul . 7) 25) 12 -}}
+    {{- $driftY := add (mod (mul . 11) 29) 18 -}}
+    {{- $duration := add (mod (mul . 7) 21) 28 -}}
+    {{- if $isHome -}}
+      {{- $size = add (mod . 4) 2 -}}
+      {{- $driftX = sub (mod (mul . 17) 81) 40 -}}
+      {{- $driftY = add (mod (mul . 11) 81) 90 -}}
+      {{- $duration = add (mod (mul . 7) 11) 14 -}}
+    {{- end -}}
+    <span class="ambient-particle" style="{{ printf "--x:%d%%;--y:%d%%;--size:%dpx;--drift-x:%dpx;--drift-y:-%dpx;--duration:%ds;--delay:-%ds" (mod (add (mul . 37) 7) 100) (mod (add (mul . 23) 11) 100) $size $driftX $driftY $duration (mod (mul . 13) 47) | safeCSS }}"></span>
     {{- end }}
   </div>
 </div>

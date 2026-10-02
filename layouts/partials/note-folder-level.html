@@ -1,0 +1,4 @@
+{{- $level := len .Ancestors -}}
+{{- if lt $level 1 -}}{{- $level = 1 -}}{{- end -}}
+{{- if gt $level 3 -}}{{- $level = 3 -}}{{- end -}}
+{{- return $level -}}

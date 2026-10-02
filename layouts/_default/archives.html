@@ -1,5 +1,5 @@
 {{ define "main" }}
-<header class="page-header notes-page-header">
+<header class="page-header notes-page-header"{{ if .IsSection }} data-folder-level="{{ partial "note-folder-level.html" . }}"{{ end }}>
     {{- if ne .RelPermalink "/archives/" }}
     <a class="notes-back-link" href="/archives/">← 全部技术笔记</a>
     {{- else }}
@@ -27,7 +27,7 @@
 -}}
 <div class="archive-root-grid">
     {{- range $noteGroups }}
-    <details class="archive-folder-card">
+    <details class="archive-folder-card" data-folder-level="1">
         <summary class="archive-folder-summary">
             <span class="archive-folder-label">{{ .label }}</span>
             <span class="archive-folder-title">{{ .title }}<span class="archive-folder-arrow" aria-hidden="true">›</span></span>

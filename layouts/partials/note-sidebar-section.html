@@ -10,7 +10,7 @@
     {{- $pages = $node.RegularPages.ByWeight -}}
 {{- end -}}
 {{- if or $node.Sections $node.RegularPages -}}
-<details class="note-sidebar-group note-sidebar-tree" {{ if $isOpen }}open{{ end }}>
+<details class="note-sidebar-group note-sidebar-tree" data-folder-level="{{ partial "note-folder-level.html" $node }}" {{ if $isOpen }}open{{ end }}>
     <summary>{{ $node.Title }}</summary>
     <ul>
         <li><a class="note-sidebar-link note-sidebar-category" href="{{ $node.RelPermalink }}">浏览此分类 →</a></li>
