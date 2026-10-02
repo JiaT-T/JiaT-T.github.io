@@ -46,8 +46,7 @@ PR 分支不会自动更新在线网站。停止跟踪生成文件也不会缩�
 - 所有原文章 URL 保留；`/archives/` 按主题组织，原 `/posts/`、`/categories/`、`/search/` 仍可访问。
 - 文章在桌面显示目录侧栏，小屏可折叠；历史语雀内联色值在阅读样式中做主题适配，不修改原笔记内容。
 - `assets/js/site.js` 处理主题、移动菜单、代码复制；`reading.js` 处理目录。动效尊重 `prefers-reduced-motion`。
-- 首页独立使用 `.home-main` 全幅画布，`home.css` 中的导航覆盖规则仅作用于首页。三幅 AI 装饰场景位于 `assets/images/scenes/`，与真实项目截图分开，并在画面标注。来源与完整生成提示词见该目录的 `SOURCES.md`。
-- `assets/js/scenes.js` 管理 900ms 场景淡入、按需视频、暂停与可见性；`static/media/scenes/` 提供桌面/手机 MP4。这些视频是 AI 静图经缓慢镜头运动编码，不是生成式物理水波动画。首屏图片优先加载，视频失败或禁用 JavaScript 时保留完整静态视觉。
-- 系统减少动态、节省流量或用户暂停时不自动加载视频；离开首屏或切换标签页时暂停。可在页内手动播放，暂停偏好独立记忆。编码参数与生成脚本见 `scripts/build-scene-videos.ps1`。
+- 首页独立使用 `.home-main` 全幅画布，`home.css` 中的导航覆盖规则仅作用于首页。五幅 Unsplash 风景照片位于 `assets/images/scenes/`，顺序和名称在 `data/scenes.json`；照片来源、摄影师和许可见该目录的 `SOURCES.md`。
+- `assets/js/scenes.js` 管理左右箭头手动循环切换与 300ms 淡入，支持方向键和减少动态偏好。首图优先加载，后续图片按需加载并在解码成功后切换，失败保留当前画面；无 JavaScript 时显示首图。
 
 视觉改动后建议检查首页、项目、归档、长代码文章、公式文章和搜索，并在 375 / 430 / 768 / 1440 / 1920px 下确认布局、深浅主题、目录、键盘操作与控制台。

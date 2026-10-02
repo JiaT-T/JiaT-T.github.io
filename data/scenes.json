@@ -1,0 +1,7 @@
+[
+  { "id": "valley", "name": "山谷晚霞", "image": "images/scenes/valley.webp" },
+  { "id": "dunes", "name": "橙色沙丘", "image": "images/scenes/dunes.webp" },
+  { "id": "woodland", "name": "林间晨光", "image": "images/scenes/woodland.webp" },
+  { "id": "underwater", "name": "蓝色海底", "image": "images/scenes/underwater.webp" },
+  { "id": "lavender", "name": "紫色花田", "image": "images/scenes/lavender.webp" }
+]

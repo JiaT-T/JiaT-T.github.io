@@ -5,12 +5,10 @@
 .home-hero { min-height: min(880px, 100svh); position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; background: #213b4a; color: #fff; padding: 148px var(--home-gutter) 156px; }
 .hero-visuals, .hero-scene, .hero-shade { position: absolute; inset: 0; pointer-events: none; }
 .hero-visuals { z-index: -3; overflow: hidden; }
-.hero-scene { opacity: 0; transition: opacity 900ms ease-in-out; }
+.hero-scene { opacity: 0; transition: opacity 300ms ease-in-out; }
 .hero-scene.is-active { opacity: 1; }
 .hero-scene picture, .hero-scene img { display: block; width: 100%; height: 100%; }
 .hero-scene img { object-fit: cover; object-position: center 56%; }
-.hero-scene video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; border-radius: 0; opacity: 0; transition: opacity 350ms ease; }
-.hero-scene.video-ready video { opacity: 1; }
 .hero-shade { z-index: -1; background: linear-gradient(180deg, #06192366 0%, #10233108 27%, #05182300 52%, #0518239c 100%), radial-gradient(ellipse at 50% 38%, #04131e50 0%, #04131e10 58%, transparent 78%); }
 .hero-copy { width: 100%; max-width: 920px; margin: auto; text-align: center; text-shadow: 0 2px 24px #05162335; }
 .hero-identity { font-size: 15px; letter-spacing: .04em; }
@@ -29,22 +27,15 @@
 .hero-github { color: #fff; display: inline-flex; min-height: 44px; align-items: center; gap: 8px; }
 .hero-github:hover { color: #d2ebe7; }
 .home-hero :focus-visible, .is-home.scene-enhanced .header:not(.is-scrolled) :focus-visible { outline-color: #fff; }
-.hero-bottom { position: absolute; bottom: 42px; left: var(--home-gutter); right: var(--home-gutter); display: flex; align-items: end; justify-content: space-between; gap: 28px; }
-.scene-controls { display: flex; align-items: center; gap: 16px; }
-.motion-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid #ffffff50; border-radius: 24px; color: #fff; background: #09273088; font-size: 10px; white-space: nowrap; }
-.motion-toggle[hidden] { display: none; }
-.motion-toggle:hover { background: #15383fcc; }
-.scene-picker { display: flex; gap: 4px; padding: 5px; background: #09273066; border: 1px solid #ffffff4a; border-radius: 12px; backdrop-filter: blur(4px); }
-.scene-picker[hidden] { display: none; }
-.scene-picker button { display: flex; align-items: center; gap: 12px; min-height: 52px; color: #f0f6f6; padding: 8px 20px; border: 1px solid transparent; border-radius: 8px; font-size: 13px; text-align: left; }
-.scene-picker small { display: block; font: 8px/1.6 var(--font-mono); letter-spacing: .13em; margin-top: 2px; }
-.scene-number { font: 10px var(--font-mono); opacity: .7; }
-.scene-picker button[aria-pressed="true"] { background: #eff6f0; color: #193836; border-color: #fff9; }
-.scene-picker button:hover:not([aria-pressed="true"]) { background: #ffffff1a; }
-.scene-picker button[aria-busy="true"] { opacity: .6; }
-.scene-credit { max-width: 340px; font: 10px/1.8 var(--font-mono); color: #e8f0f0; text-align: right; }
-.scene-credit a { color: inherit; }
-.scene-error { color: #ffdfa3; }
+.scene-arrow { position: absolute; z-index: 1; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 48px; height: 48px; color: #fff; background: transparent; opacity: .8; transition: opacity 180ms ease; }
+.scene-arrow[data-scene-step="-1"] { left: clamp(8px, 2.4vw, 46px); }
+.scene-arrow[data-scene-step="1"] { right: clamp(8px, 2.4vw, 46px); }
+.scene-arrow[hidden] { display: none; }
+.scene-arrow svg { width: 20px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.5; filter: drop-shadow(0 1px 3px #0009); }
+.scene-arrow:hover, .scene-arrow:focus-visible { opacity: 1; }
+.scene-arrow[aria-disabled="true"] { cursor: wait; opacity: .5; }
+.scene-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.scene-error { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 44px); padding: 8px 12px; border-radius: 4px; background: #15272bd9; color: #ffdfa3; font-size: 12px; line-height: 1.6; text-align: center; }
 .hero-scroll { position: absolute; bottom: 47px; left: calc(50% - 20px); display: grid; place-items: center; height: 44px; width: 40px; color: #fff; font-size: 26px; }
 .focus-strip { padding: 25px var(--home-gutter); background: #172329; color: #e1e9e9; display: flex; justify-content: center; gap: clamp(30px, 7vw, 115px); border-top: 1px solid #ffffff1f; }
 .focus-strip > span { font-size: 12px; }
@@ -89,11 +80,9 @@
 .is-home .header.is-scrolled { background: var(--theme); color: var(--primary); padding-top: 0; border-color: var(--border); }
 @media (min-width: 1800px) { .home-hero { min-height: 960px; } }
 @media (max-width: 1000px) {
-  .hero-bottom { bottom: 30px; }
   .hero-scroll { display: none; }
   .notes-layout, .home-about { gap: 44px; }
   .focus-strip { gap: 30px; justify-content: space-between; }
-  .scene-picker button { padding-inline: 13px; }
   .is-home .brand-note, .is-home .nav-github { display: none; }
 }
 @media (max-width: 760px) {
@@ -103,20 +92,15 @@
   .is-home.scene-enhanced .header:not(.is-scrolled) .mobile-menu ul { top: 76px; }
 }
 @media (max-width: 600px) {
-  .home-hero { min-height: 780px; min-height: max(760px, 100svh); padding: 126px 22px 192px; }
-  .hero-copy { margin: auto 0; }
-  .hero-copy h1 { font-size: clamp(44px, 10.5vw, 62px); line-height: 1.35; margin-block: 26px; }
+  .home-hero { min-height: 780px; min-height: max(760px, 100svh); padding: 126px 22px 128px; }
+  .hero-copy { margin: auto 0; padding-inline: 34px; }
+  .hero-copy h1 { font-size: clamp(34px, 8.8vw, 52px); line-height: 1.35; margin-block: 26px; }
   .hero-description { font-size: 12px; }
   .mobile-break { display: initial; }
   .hero-kicker { font-size: 8px; letter-spacing: .14em; }
   .hero-actions { gap: 10px 16px; margin-top: 26px; }
-  .button-primary, .button-quiet { padding: 11px 20px; gap: 20px; }
+  .button-primary, .button-quiet { padding: 11px 16px; gap: 14px; }
   .hero-github { flex-basis: 100%; justify-content: center; font-size: 11px; }
-  .hero-bottom { left: 22px; right: 22px; bottom: 28px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-  .scene-controls { width: 100%; max-width: 380px; flex-wrap: wrap; justify-content: center; gap: 12px; }
-  .scene-picker { width: 100%; max-width: 380px; }
-  .scene-picker button { flex: 1; justify-content: center; padding-inline: 6px; gap: 9px; }
-  .scene-credit { text-align: center; font-size: 9px; }
   .focus-strip { gap: 8px; padding: 22px; }
   .focus-strip > span { flex: 1; font-size: 10px; }
   .focus-strip b { display: block; margin: 0 0 7px; }
